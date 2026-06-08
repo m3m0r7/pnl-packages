@@ -65,6 +65,7 @@
         "SDL2/SDL_pixels.h",
         "SDL2/SDL_platform.h",
         "SDL2/SDL_power.h",
+        "SDL2/SDL_render.h",
         "SDL2/SDL_rwops.h",
         "SDL2/SDL_sensor.h",
         "SDL2/SDL_shape.h",
