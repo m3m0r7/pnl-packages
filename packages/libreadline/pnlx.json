@@ -1,0 +1,53 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libreadline/libreadline",
+  "version": "8.2",
+  "description": "PHP FFI wrapper for GNU Readline line editing.",
+  "authors": [
+    {
+      "name": "GNU Readline maintainers"
+    }
+  ],
+  "license": "GPL-3.0-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libreadline\\Libreadline",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "readline": {
+      "symbol_prefix": "rl",
+      "library_names": [
+        "libreadline.dylib",
+        "libreadline.so",
+        "readline.dll"
+      ],
+      "header_names": [
+        "readline/readline.h",
+        "readline/history.h"
+      ],
+      "version": ">=8.0.0 <9.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

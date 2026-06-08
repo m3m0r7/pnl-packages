@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libavutil/libavutil",
+  "version": "59.8.100",
+  "description": "PHP FFI wrapper for FFmpeg libavutil.",
+  "authors": [
+    {
+      "name": "FFmpeg libavutil maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libavutil\\Libavutil",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libavutil": {
+      "symbol_prefix": "av",
+      "library_names": [
+        "libavutil.dylib",
+        "libavutil.so",
+        "avutil.dll"
+      ],
+      "header_names": [
+        "libavutil/avutil.h"
+      ],
+      "version": ">=56.0.0 <60.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

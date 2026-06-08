@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libhidapi/libhidapi",
+  "version": "0.14.0",
+  "description": "PHP FFI wrapper for the HIDAPI USB HID library.",
+  "authors": [
+    {
+      "name": "HIDAPI maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libhidapi\\Libhidapi",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libhidapi": {
+      "symbol_prefix": "hid",
+      "library_names": [
+        "libhidapi.dylib",
+        "libhidapi.so",
+        "hidapi.dll"
+      ],
+      "header_names": [
+        "hidapi/hidapi.h"
+      ],
+      "version": ">=0.10.0 <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

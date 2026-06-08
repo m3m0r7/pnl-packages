@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libpcre2/libpcre2",
+  "version": "10.43",
+  "description": "PHP FFI wrapper for PCRE2 regular expressions.",
+  "authors": [
+    {
+      "name": "PCRE2 maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libpcre2\\Libpcre2",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libpcre2-8": {
+      "symbol_prefix": "pcre2",
+      "library_names": [
+        "libpcre2-8.dylib",
+        "libpcre2-8.so",
+        "pcre2-8.dll"
+      ],
+      "header_names": [
+        "pcre2.h"
+      ],
+      "version": ">=10.0.0 <11.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

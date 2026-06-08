@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libgit2/libgit2",
+  "version": "1.7.2",
+  "description": "PHP FFI wrapper for libgit2.",
+  "authors": [
+    {
+      "name": "libgit2 maintainers"
+    }
+  ],
+  "license": "GPL-2.0-with-GCC-exception",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libgit2\\Libgit2",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libgit2": {
+      "symbol_prefix": "git",
+      "library_names": [
+        "libgit2.dylib",
+        "libgit2.so",
+        "git2.dll"
+      ],
+      "header_names": [
+        "git2.h"
+      ],
+      "version": ">=1.0.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

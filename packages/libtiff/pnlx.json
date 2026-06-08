@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libtiff/libtiff",
+  "version": "4.6.0",
+  "description": "PHP FFI wrapper for libtiff image codec.",
+  "authors": [
+    {
+      "name": "libtiff maintainers"
+    }
+  ],
+  "license": "libtiff",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libtiff\\Libtiff",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libtiff": {
+      "symbol_prefix": "TIFF",
+      "library_names": [
+        "libtiff.dylib",
+        "libtiff.so",
+        "tiff.dll"
+      ],
+      "header_names": [
+        "tiffio.h"
+      ],
+      "version": ">=4.0.0 <5.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

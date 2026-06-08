@@ -1,0 +1,53 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libpng/libpng",
+  "version": "1.6.43",
+  "description": "PHP FFI wrapper for libpng image codec.",
+  "authors": [
+    {
+      "name": "libpng maintainers"
+    }
+  ],
+  "license": "libpng-2.0",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libpng\\Libpng",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libpng": {
+      "symbol_prefix": "png",
+      "library_names": [
+        "libpng.dylib",
+        "libpng16.so",
+        "libpng16.dll"
+      ],
+      "header_names": [
+        "png.h",
+        "pngconf.h"
+      ],
+      "version": ">=1.6.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libportaudio/libportaudio",
+  "version": "19.7.0",
+  "description": "PHP FFI wrapper for PortAudio audio I/O.",
+  "authors": [
+    {
+      "name": "PortAudio maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libportaudio\\Libportaudio",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libportaudio": {
+      "symbol_prefix": "Pa",
+      "library_names": [
+        "libportaudio.dylib",
+        "libportaudio.so",
+        "portaudio.dll"
+      ],
+      "header_names": [
+        "portaudio.h"
+      ],
+      "version": ">=19.0.0 <20.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

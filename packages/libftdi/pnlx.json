@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libftdi/libftdi",
+  "version": "1.5",
+  "description": "PHP FFI wrapper for libftdi1 USB-serial.",
+  "authors": [
+    {
+      "name": "libftdi1 maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-only",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libftdi\\Libftdi",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libftdi1": {
+      "symbol_prefix": "ftdi",
+      "library_names": [
+        "libftdi1.dylib",
+        "libftdi1.so",
+        "ftdi1.dll"
+      ],
+      "header_names": [
+        "libftdi1/ftdi.h"
+      ],
+      "version": ">=1.0.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

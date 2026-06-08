@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libbz2/libbz2",
+  "version": "1.0.8",
+  "description": "PHP FFI wrapper for bzip2 compression.",
+  "authors": [
+    {
+      "name": "bzip2 maintainers"
+    }
+  ],
+  "license": "bzip2-1.0.6",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libbz2\\Libbz2",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libbz2": {
+      "symbol_prefix": "BZ2",
+      "library_names": [
+        "libbz2.dylib",
+        "libbz2.so",
+        "bz2.dll"
+      ],
+      "header_names": [
+        "bzlib.h"
+      ],
+      "version": ">=1.0.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

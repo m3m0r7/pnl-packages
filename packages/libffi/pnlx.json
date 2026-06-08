@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libffi/libffi",
+  "version": "3.4.6",
+  "description": "PHP FFI wrapper for libffi.",
+  "authors": [
+    {
+      "name": "libffi maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libffi\\Libffi",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libffi": {
+      "symbol_prefix": "ffi",
+      "library_names": [
+        "libffi.dylib",
+        "libffi.so",
+        "ffi.dll"
+      ],
+      "header_names": [
+        "ffi.h"
+      ],
+      "version": ">=3.0.0 <4.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

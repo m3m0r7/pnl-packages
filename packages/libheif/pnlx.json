@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libheif/libheif",
+  "version": "1.17.6",
+  "description": "PHP FFI wrapper for libheif HEIF/AVIF codec.",
+  "authors": [
+    {
+      "name": "libheif maintainers"
+    }
+  ],
+  "license": "LGPL-3.0-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libheif\\Libheif",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libheif": {
+      "symbol_prefix": "heif",
+      "library_names": [
+        "libheif.dylib",
+        "libheif.so",
+        "heif.dll"
+      ],
+      "header_names": [
+        "libheif/heif.h"
+      ],
+      "version": ">=1.0.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libopus/libopus",
+  "version": "1.5.2",
+  "description": "PHP FFI wrapper for the Opus audio codec.",
+  "authors": [
+    {
+      "name": "Opus maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libopus\\Libopus",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "opus": {
+      "symbol_prefix": "opus",
+      "library_names": [
+        "libopus.dylib",
+        "libopus.so",
+        "opus.dll"
+      ],
+      "header_names": [
+        "opus/opus.h"
+      ],
+      "version": ">=1.3.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libgumbo/libgumbo",
+  "version": "0.10.1",
+  "description": "PHP FFI wrapper for the Gumbo HTML5 parser.",
+  "authors": [
+    {
+      "name": "Gumbo maintainers"
+    }
+  ],
+  "license": "Apache-2.0",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libgumbo\\Libgumbo",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libgumbo": {
+      "symbol_prefix": "gumbo",
+      "library_names": [
+        "libgumbo.dylib",
+        "libgumbo.so",
+        "gumbo.dll"
+      ],
+      "header_names": [
+        "gumbo.h"
+      ],
+      "version": ">=0.10.0 <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

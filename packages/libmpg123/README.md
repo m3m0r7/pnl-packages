@@ -1,0 +1,15 @@
+# mpg123 Package
+
+Package: `libmpg123/libmpg123`
+
+Base library: mpg123
+
+License: LGPL-2.1-only
+
+Install with `pnl`:
+
+```sh
+pnl install https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmpg123
+```
+
+The package requires mpg123 headers and library files to be available through the system, Homebrew, pkg-config, or configured search paths.

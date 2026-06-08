@@ -1,0 +1,51 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "zlib/zlib",
+  "version": "1.3.1",
+  "description": "PHP FFI wrapper for zlib compression.",
+  "authors": [
+    {
+      "name": "zlib maintainers"
+    }
+  ],
+  "license": "Zlib",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Zlib\\Zlib",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "zlib": {
+      "library_names": [
+        "libz.dylib",
+        "libz.so",
+        "zlib1.dll"
+      ],
+      "header_names": [
+        "zlib.h"
+      ],
+      "version": ">=1.2.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

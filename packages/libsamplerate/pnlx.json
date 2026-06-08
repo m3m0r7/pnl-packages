@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libsamplerate/libsamplerate",
+  "version": "0.2.2",
+  "description": "PHP FFI wrapper for libsamplerate sample-rate conversion.",
+  "authors": [
+    {
+      "name": "libsamplerate maintainers"
+    }
+  ],
+  "license": "BSD-2-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libsamplerate\\Libsamplerate",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libsamplerate": {
+      "symbol_prefix": "src",
+      "library_names": [
+        "libsamplerate.dylib",
+        "libsamplerate.so",
+        "samplerate.dll"
+      ],
+      "header_names": [
+        "samplerate.h"
+      ],
+      "version": ">=0.2.0 <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

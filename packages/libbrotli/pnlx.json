@@ -1,0 +1,53 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libbrotli/libbrotli",
+  "version": "1.1.0",
+  "description": "PHP FFI wrapper for Brotli compression.",
+  "authors": [
+    {
+      "name": "Brotli maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libbrotli\\Libbrotli",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libbrotlidec": {
+      "symbol_prefix": "Brotli",
+      "library_names": [
+        "libbrotlidec.dylib",
+        "libbrotlidec.so",
+        "brotlidec.dll"
+      ],
+      "header_names": [
+        "brotli/decode.h",
+        "brotli/encode.h"
+      ],
+      "version": ">=1.0.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

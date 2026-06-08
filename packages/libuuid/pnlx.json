@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libuuid/libuuid",
+  "version": "2.40",
+  "description": "PHP FFI wrapper for libuuid.",
+  "authors": [
+    {
+      "name": "util-linux libuuid maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libuuid\\Libuuid",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libuuid": {
+      "symbol_prefix": "uuid",
+      "library_names": [
+        "libuuid.dylib",
+        "libuuid.so",
+        "uuid.dll"
+      ],
+      "header_names": [
+        "uuid/uuid.h"
+      ],
+      "version": ">=2.0.0 <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

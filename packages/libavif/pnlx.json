@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libavif/libavif",
+  "version": "1.0.4",
+  "description": "PHP FFI wrapper for the libavif AVIF codec.",
+  "authors": [
+    {
+      "name": "libavif maintainers"
+    }
+  ],
+  "license": "BSD-2-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libavif\\Libavif",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libavif": {
+      "symbol_prefix": "avif",
+      "library_names": [
+        "libavif.dylib",
+        "libavif.so",
+        "avif.dll"
+      ],
+      "header_names": [
+        "avif/avif.h"
+      ],
+      "version": ">=1.0.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

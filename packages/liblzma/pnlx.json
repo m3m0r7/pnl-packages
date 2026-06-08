@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "liblzma/liblzma",
+  "version": "5.6.1",
+  "description": "PHP FFI wrapper for the xz/liblzma compression library.",
+  "authors": [
+    {
+      "name": "xz / liblzma maintainers"
+    }
+  ],
+  "license": "0BSD",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Liblzma\\Liblzma",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "liblzma": {
+      "symbol_prefix": "lzma",
+      "library_names": [
+        "liblzma.dylib",
+        "liblzma.so",
+        "lzma.dll"
+      ],
+      "header_names": [
+        "lzma.h"
+      ],
+      "version": ">=5.0.0 <6.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libswscale/libswscale",
+  "version": "8.1.100",
+  "description": "PHP FFI wrapper for FFmpeg libswscale.",
+  "authors": [
+    {
+      "name": "FFmpeg libswscale maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libswscale\\Libswscale",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libswscale": {
+      "symbol_prefix": "sws",
+      "library_names": [
+        "libswscale.dylib",
+        "libswscale.so",
+        "swscale.dll"
+      ],
+      "header_names": [
+        "libswscale/swscale.h"
+      ],
+      "version": ">=5.0.0 <9.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

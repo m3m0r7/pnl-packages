@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libavformat/libavformat",
+  "version": "61.1.100",
+  "description": "PHP FFI wrapper for FFmpeg libavformat.",
+  "authors": [
+    {
+      "name": "FFmpeg libavformat maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libavformat\\Libavformat",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libavformat": {
+      "symbol_prefix": "avformat",
+      "library_names": [
+        "libavformat.dylib",
+        "libavformat.so",
+        "avformat.dll"
+      ],
+      "header_names": [
+        "libavformat/avformat.h"
+      ],
+      "version": ">=58.0.0 <62.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

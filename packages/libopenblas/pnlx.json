@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libopenblas/libopenblas",
+  "version": "0.3.27",
+  "description": "PHP FFI wrapper for the OpenBLAS/CBLAS interface.",
+  "authors": [
+    {
+      "name": "OpenBLAS maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libopenblas\\Libopenblas",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libopenblas": {
+      "symbol_prefix": "cblas",
+      "library_names": [
+        "libopenblas.dylib",
+        "libopenblas.so",
+        "openblas.dll"
+      ],
+      "header_names": [
+        "cblas.h"
+      ],
+      "version": ">=0.3.0 <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

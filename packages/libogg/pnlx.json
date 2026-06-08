@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libogg/libogg",
+  "version": "1.3.5",
+  "description": "PHP FFI wrapper for the Ogg container library.",
+  "authors": [
+    {
+      "name": "Ogg maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libogg\\Libogg",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libogg": {
+      "symbol_prefix": "ogg",
+      "library_names": [
+        "libogg.dylib",
+        "libogg.so",
+        "ogg.dll"
+      ],
+      "header_names": [
+        "ogg/ogg.h"
+      ],
+      "version": ">=1.3.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

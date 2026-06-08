@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libjansson/libjansson",
+  "version": "2.14",
+  "description": "PHP FFI wrapper for the Jansson JSON library.",
+  "authors": [
+    {
+      "name": "Jansson maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libjansson\\Libjansson",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libjansson": {
+      "symbol_prefix": "json",
+      "library_names": [
+        "libjansson.dylib",
+        "libjansson.so",
+        "jansson.dll"
+      ],
+      "header_names": [
+        "jansson.h"
+      ],
+      "version": ">=2.0.0 <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

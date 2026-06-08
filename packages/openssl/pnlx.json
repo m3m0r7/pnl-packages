@@ -1,0 +1,53 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "openssl/openssl",
+  "version": "3.3.0",
+  "description": "PHP FFI wrapper for OpenSSL libssl/libcrypto.",
+  "authors": [
+    {
+      "name": "OpenSSL maintainers"
+    }
+  ],
+  "license": "Apache-2.0",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Openssl\\Openssl",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libssl": {
+      "library_names": [
+        "libssl.dylib",
+        "libssl.so",
+        "libssl.dll"
+      ],
+      "header_names": [
+        "openssl/ssl.h",
+        "openssl/crypto.h",
+        "openssl/evp.h"
+      ],
+      "version": ">=3.0.0 <4.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libjpeg/libjpeg",
+  "version": "3.0.2",
+  "description": "PHP FFI wrapper for libjpeg image codec.",
+  "authors": [
+    {
+      "name": "libjpeg-turbo maintainers"
+    }
+  ],
+  "license": "IJG",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libjpeg\\Libjpeg",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libjpeg": {
+      "symbol_prefix": "jpeg",
+      "library_names": [
+        "libjpeg.dylib",
+        "libjpeg.so",
+        "jpeg.dll"
+      ],
+      "header_names": [
+        "jpeglib.h"
+      ],
+      "version": ">=8.0.0 <10.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

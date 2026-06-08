@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libhiredis/libhiredis",
+  "version": "1.2.0",
+  "description": "PHP FFI wrapper for the hiredis Redis client.",
+  "authors": [
+    {
+      "name": "hiredis maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libhiredis\\Libhiredis",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "hiredis": {
+      "symbol_prefix": "redis",
+      "library_names": [
+        "libhiredis.dylib",
+        "libhiredis.so",
+        "hiredis.dll"
+      ],
+      "header_names": [
+        "hiredis/hiredis.h"
+      ],
+      "version": ">=1.0.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

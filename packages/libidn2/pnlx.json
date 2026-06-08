@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libidn2/libidn2",
+  "version": "2.3.7",
+  "description": "PHP FFI wrapper for libidn2 IDNA handling.",
+  "authors": [
+    {
+      "name": "libidn2 maintainers"
+    }
+  ],
+  "license": "LGPL-3.0-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libidn2\\Libidn2",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libidn2": {
+      "symbol_prefix": "idn2",
+      "library_names": [
+        "libidn2.dylib",
+        "libidn2.so",
+        "idn2.dll"
+      ],
+      "header_names": [
+        "idn2.h"
+      ],
+      "version": ">=2.0.0 <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

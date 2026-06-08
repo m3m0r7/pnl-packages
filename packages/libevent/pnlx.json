@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libevent/libevent",
+  "version": "2.1.12",
+  "description": "PHP FFI wrapper for the libevent event loop.",
+  "authors": [
+    {
+      "name": "libevent maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libevent\\Libevent",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libevent": {
+      "symbol_prefix": "event",
+      "library_names": [
+        "libevent.dylib",
+        "libevent.so",
+        "event.dll"
+      ],
+      "header_names": [
+        "event2/event.h"
+      ],
+      "version": ">=2.1.0 <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

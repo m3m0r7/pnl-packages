@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libharfbuzz/libharfbuzz",
+  "version": "8.4.0",
+  "description": "PHP FFI wrapper for the HarfBuzz text shaping engine.",
+  "authors": [
+    {
+      "name": "HarfBuzz maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libharfbuzz\\Libharfbuzz",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libharfbuzz": {
+      "symbol_prefix": "hb",
+      "library_names": [
+        "libharfbuzz.dylib",
+        "libharfbuzz.so",
+        "harfbuzz.dll"
+      ],
+      "header_names": [
+        "harfbuzz/hb.h"
+      ],
+      "version": ">=6.0.0 <9.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

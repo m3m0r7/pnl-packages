@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libyaml/libyaml",
+  "version": "0.2.5",
+  "description": "PHP FFI wrapper for libyaml YAML parser.",
+  "authors": [
+    {
+      "name": "libyaml maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libyaml\\Libyaml",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "yaml": {
+      "symbol_prefix": "yaml",
+      "library_names": [
+        "libyaml.dylib",
+        "libyaml-0.so",
+        "yaml.dll"
+      ],
+      "header_names": [
+        "yaml.h"
+      ],
+      "version": ">=0.2.0 <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

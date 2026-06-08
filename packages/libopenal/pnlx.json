@@ -1,0 +1,53 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libopenal/libopenal",
+  "version": "1.23.1",
+  "description": "PHP FFI wrapper for OpenAL audio.",
+  "authors": [
+    {
+      "name": "OpenAL Soft maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libopenal\\Libopenal",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libopenal": {
+      "symbol_prefix": "al",
+      "library_names": [
+        "libopenal.dylib",
+        "libopenal.so",
+        "OpenAL32.dll"
+      ],
+      "header_names": [
+        "AL/al.h",
+        "AL/alc.h"
+      ],
+      "version": ">=1.20.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

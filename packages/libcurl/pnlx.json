@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libcurl/libcurl",
+  "version": "8.7.1",
+  "description": "PHP FFI wrapper for libcurl HTTP client.",
+  "authors": [
+    {
+      "name": "libcurl maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libcurl\\Libcurl",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libcurl": {
+      "symbol_prefix": "curl",
+      "library_names": [
+        "libcurl.dylib",
+        "libcurl.so",
+        "libcurl.dll"
+      ],
+      "header_names": [
+        "curl/curl.h"
+      ],
+      "version": ">=7.0.0 <9.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libtidy/libtidy",
+  "version": "5.8.0",
+  "description": "PHP FFI wrapper for HTML Tidy.",
+  "authors": [
+    {
+      "name": "HTML Tidy maintainers"
+    }
+  ],
+  "license": "W3C",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libtidy\\Libtidy",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libtidy": {
+      "symbol_prefix": "tidy",
+      "library_names": [
+        "libtidy.dylib",
+        "libtidy.so",
+        "tidy.dll"
+      ],
+      "header_names": [
+        "tidy.h",
+        "tidybuffio.h"
+      ],
+      "version": ">=5.0.0 <6.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

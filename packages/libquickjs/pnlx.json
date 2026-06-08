@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libquickjs/libquickjs",
+  "version": "0.8.0",
+  "description": "PHP FFI wrapper for the QuickJS JavaScript engine.",
+  "authors": [
+    {
+      "name": "QuickJS maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libquickjs\\Libquickjs",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libquickjs": {
+      "symbol_prefix": "JS",
+      "library_names": [
+        "libquickjs.dylib",
+        "libquickjs.so",
+        "quickjs.dll"
+      ],
+      "header_names": [
+        "quickjs.h"
+      ],
+      "version": ">=0.1.0 <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

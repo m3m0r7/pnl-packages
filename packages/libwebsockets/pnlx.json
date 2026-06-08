@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libwebsockets/libwebsockets",
+  "version": "4.3.3",
+  "description": "PHP FFI wrapper for libwebsockets.",
+  "authors": [
+    {
+      "name": "libwebsockets maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libwebsockets\\Libwebsockets",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libwebsockets": {
+      "symbol_prefix": "lws",
+      "library_names": [
+        "libwebsockets.dylib",
+        "libwebsockets.so",
+        "websockets.dll"
+      ],
+      "header_names": [
+        "libwebsockets.h"
+      ],
+      "version": ">=4.0.0 <5.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

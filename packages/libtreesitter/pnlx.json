@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libtreesitter/libtreesitter",
+  "version": "0.22.6",
+  "description": "PHP FFI wrapper for the Tree-sitter parsing library.",
+  "authors": [
+    {
+      "name": "Tree-sitter maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libtreesitter\\Libtreesitter",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libtree-sitter": {
+      "symbol_prefix": "ts",
+      "library_names": [
+        "libtree-sitter.dylib",
+        "libtree-sitter.so",
+        "tree-sitter.dll"
+      ],
+      "header_names": [
+        "tree_sitter/api.h"
+      ],
+      "version": ">=0.20.0 <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

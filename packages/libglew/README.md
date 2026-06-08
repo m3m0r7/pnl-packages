@@ -1,0 +1,15 @@
+# GLEW Package
+
+Package: `libglew/libglew`
+
+Base library: GLEW
+
+License: BSD-3-Clause
+
+Install with `pnl`:
+
+```sh
+pnl install https://github.com/m3m0r7/pnl-packages/tree/main/packages/libglew
+```
+
+The package requires GLEW headers and library files to be available through the system, Homebrew, pkg-config, or configured search paths.

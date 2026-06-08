@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libcmark/libcmark",
+  "version": "0.31.0",
+  "description": "PHP FFI wrapper for the cmark CommonMark parser.",
+  "authors": [
+    {
+      "name": "cmark maintainers"
+    }
+  ],
+  "license": "BSD-2-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libcmark\\Libcmark",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libcmark": {
+      "symbol_prefix": "cmark",
+      "library_names": [
+        "libcmark.dylib",
+        "libcmark.so",
+        "cmark.dll"
+      ],
+      "header_names": [
+        "cmark.h"
+      ],
+      "version": ">=0.29.0 <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

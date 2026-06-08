@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libgcrypt/libgcrypt",
+  "version": "1.10.3",
+  "description": "PHP FFI wrapper for Libgcrypt cryptography.",
+  "authors": [
+    {
+      "name": "Libgcrypt maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libgcrypt\\Libgcrypt",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libgcrypt": {
+      "symbol_prefix": "gcry",
+      "library_names": [
+        "libgcrypt.dylib",
+        "libgcrypt.so",
+        "gcrypt.dll"
+      ],
+      "header_names": [
+        "gcrypt.h"
+      ],
+      "version": ">=1.8.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

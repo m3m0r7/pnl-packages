@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libfftw3/libfftw3",
+  "version": "3.3.10",
+  "description": "PHP FFI wrapper for the FFTW FFT library.",
+  "authors": [
+    {
+      "name": "FFTW maintainers"
+    }
+  ],
+  "license": "GPL-2.0-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libfftw3\\Libfftw3",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libfftw3": {
+      "symbol_prefix": "fftw",
+      "library_names": [
+        "libfftw3.dylib",
+        "libfftw3.so",
+        "fftw3.dll"
+      ],
+      "header_names": [
+        "fftw3.h"
+      ],
+      "version": ">=3.0.0 <4.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

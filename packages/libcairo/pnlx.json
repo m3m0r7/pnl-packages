@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libcairo/libcairo",
+  "version": "1.18.0",
+  "description": "PHP FFI wrapper for the cairo 2D graphics library.",
+  "authors": [
+    {
+      "name": "cairo maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libcairo\\Libcairo",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "cairo": {
+      "symbol_prefix": "cairo",
+      "library_names": [
+        "libcairo.dylib",
+        "libcairo.so",
+        "cairo.dll"
+      ],
+      "header_names": [
+        "cairo/cairo.h"
+      ],
+      "version": ">=1.16.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

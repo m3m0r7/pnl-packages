@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libmagic/libmagic",
+  "version": "5.45",
+  "description": "PHP FFI wrapper for libmagic file type detection.",
+  "authors": [
+    {
+      "name": "libmagic maintainers"
+    }
+  ],
+  "license": "BSD-2-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libmagic\\Libmagic",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libmagic": {
+      "symbol_prefix": "magic",
+      "library_names": [
+        "libmagic.dylib",
+        "libmagic.so",
+        "magic.dll"
+      ],
+      "header_names": [
+        "magic.h"
+      ],
+      "version": ">=5.0.0 <6.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "liboniguruma/liboniguruma",
+  "version": "6.9.9",
+  "description": "PHP FFI wrapper for the Oniguruma regex library.",
+  "authors": [
+    {
+      "name": "Oniguruma maintainers"
+    }
+  ],
+  "license": "BSD-2-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Liboniguruma\\Liboniguruma",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libonig": {
+      "symbol_prefix": "onig",
+      "library_names": [
+        "libonig.dylib",
+        "libonig.so",
+        "onig.dll"
+      ],
+      "header_names": [
+        "oniguruma.h"
+      ],
+      "version": ">=6.0.0 <7.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libsqlite3/libsqlite3",
+  "version": "3.45.0",
+  "description": "PHP FFI wrapper for SQLite3.",
+  "authors": [
+    {
+      "name": "SQLite3 maintainers"
+    }
+  ],
+  "license": "blessing",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libsqlite3\\Libsqlite3",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "sqlite3": {
+      "symbol_prefix": "sqlite3",
+      "library_names": [
+        "libsqlite3.dylib",
+        "libsqlite3.so",
+        "sqlite3.dll"
+      ],
+      "header_names": [
+        "sqlite3.h"
+      ],
+      "version": ">=3.0.0 <4.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

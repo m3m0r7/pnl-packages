@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libicu/libicu",
+  "version": "74.2",
+  "description": "PHP FFI wrapper for ICU Unicode utilities.",
+  "authors": [
+    {
+      "name": "ICU maintainers"
+    }
+  ],
+  "license": "ICU",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libicu\\Libicu",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libicuuc": {
+      "library_names": [
+        "libicuuc.dylib",
+        "libicuuc.so",
+        "icuuc.dll"
+      ],
+      "header_names": [
+        "unicode/utypes.h",
+        "unicode/ustring.h"
+      ],
+      "version": ">=70.0.0 <80.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

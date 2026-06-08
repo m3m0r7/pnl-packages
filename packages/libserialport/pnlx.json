@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libserialport/libserialport",
+  "version": "0.1.1",
+  "description": "PHP FFI wrapper for libserialport serial I/O.",
+  "authors": [
+    {
+      "name": "libserialport maintainers"
+    }
+  ],
+  "license": "LGPL-3.0-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libserialport\\Libserialport",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libserialport": {
+      "symbol_prefix": "sp",
+      "library_names": [
+        "libserialport.dylib",
+        "libserialport.so",
+        "serialport.dll"
+      ],
+      "header_names": [
+        "libserialport.h"
+      ],
+      "version": ">=0.1.0 <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libxml2/libxml2",
+  "version": "2.12.6",
+  "description": "PHP FFI wrapper for libxml2 XML parser.",
+  "authors": [
+    {
+      "name": "libxml2 maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libxml2\\Libxml2",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libxml2": {
+      "symbol_prefix": "xml",
+      "library_names": [
+        "libxml2.dylib",
+        "libxml2.so",
+        "libxml2.dll"
+      ],
+      "header_names": [
+        "libxml/parser.h",
+        "libxml/tree.h"
+      ],
+      "version": ">=2.9.0 <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

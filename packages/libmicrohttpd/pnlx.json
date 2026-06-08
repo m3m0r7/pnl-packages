@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libmicrohttpd/libmicrohttpd",
+  "version": "1.0.1",
+  "description": "PHP FFI wrapper for GNU libmicrohttpd.",
+  "authors": [
+    {
+      "name": "GNU libmicrohttpd maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libmicrohttpd\\Libmicrohttpd",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libmicrohttpd": {
+      "symbol_prefix": "MHD",
+      "library_names": [
+        "libmicrohttpd.dylib",
+        "libmicrohttpd.so",
+        "microhttpd.dll"
+      ],
+      "header_names": [
+        "microhttpd.h"
+      ],
+      "version": ">=0.9.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libleveldb/libleveldb",
+  "version": "1.23",
+  "description": "PHP FFI wrapper for the LevelDB key-value store.",
+  "authors": [
+    {
+      "name": "LevelDB maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libleveldb\\Libleveldb",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libleveldb": {
+      "symbol_prefix": "leveldb",
+      "library_names": [
+        "libleveldb.dylib",
+        "libleveldb.so",
+        "leveldb.dll"
+      ],
+      "header_names": [
+        "leveldb/c.h"
+      ],
+      "version": ">=1.20.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

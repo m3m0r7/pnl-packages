@@ -1,0 +1,53 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libwebp/libwebp",
+  "version": "1.4.0",
+  "description": "PHP FFI wrapper for WebP image codec.",
+  "authors": [
+    {
+      "name": "libwebp maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libwebp\\Libwebp",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libwebp": {
+      "symbol_prefix": "WebP",
+      "library_names": [
+        "libwebp.dylib",
+        "libwebp.so",
+        "webp.dll"
+      ],
+      "header_names": [
+        "webp/decode.h",
+        "webp/encode.h"
+      ],
+      "version": ">=1.0.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

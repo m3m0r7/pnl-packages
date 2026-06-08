@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libdbus/libdbus",
+  "version": "1.14.10",
+  "description": "PHP FFI wrapper for the D-Bus IPC library.",
+  "authors": [
+    {
+      "name": "D-Bus maintainers"
+    }
+  ],
+  "license": "AFL-2.1",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libdbus\\Libdbus",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libdbus-1": {
+      "symbol_prefix": "dbus",
+      "library_names": [
+        "libdbus-1.dylib",
+        "libdbus-1.so",
+        "dbus-1.dll"
+      ],
+      "header_names": [
+        "dbus/dbus.h"
+      ],
+      "version": ">=1.12.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libmbedtls/libmbedtls",
+  "version": "3.6.0",
+  "description": "PHP FFI wrapper for Mbed TLS.",
+  "authors": [
+    {
+      "name": "Mbed TLS maintainers"
+    }
+  ],
+  "license": "Apache-2.0",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libmbedtls\\Libmbedtls",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libmbedtls": {
+      "symbol_prefix": "mbedtls",
+      "library_names": [
+        "libmbedtls.dylib",
+        "libmbedtls.so",
+        "mbedtls.dll"
+      ],
+      "header_names": [
+        "mbedtls/ssl.h"
+      ],
+      "version": ">=3.0.0 <4.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

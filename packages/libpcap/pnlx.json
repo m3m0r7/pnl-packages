@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libpcap/libpcap",
+  "version": "1.10.4",
+  "description": "PHP FFI wrapper for libpcap packet capture.",
+  "authors": [
+    {
+      "name": "libpcap maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libpcap\\Libpcap",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libpcap": {
+      "symbol_prefix": "pcap",
+      "library_names": [
+        "libpcap.dylib",
+        "libpcap.so",
+        "pcap.dll"
+      ],
+      "header_names": [
+        "pcap.h"
+      ],
+      "version": ">=1.0.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

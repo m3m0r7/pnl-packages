@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libavcodec/libavcodec",
+  "version": "61.3.100",
+  "description": "PHP FFI wrapper for FFmpeg libavcodec.",
+  "authors": [
+    {
+      "name": "FFmpeg libavcodec maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libavcodec\\Libavcodec",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libavcodec": {
+      "symbol_prefix": "avcodec",
+      "library_names": [
+        "libavcodec.dylib",
+        "libavcodec.so",
+        "avcodec.dll"
+      ],
+      "header_names": [
+        "libavcodec/avcodec.h"
+      ],
+      "version": ">=58.0.0 <62.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

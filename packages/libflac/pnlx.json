@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libflac/libflac",
+  "version": "1.4.3",
+  "description": "PHP FFI wrapper for the FLAC audio codec.",
+  "authors": [
+    {
+      "name": "FLAC maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libflac\\Libflac",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libflac": {
+      "symbol_prefix": "FLAC",
+      "library_names": [
+        "libFLAC.dylib",
+        "libFLAC.so",
+        "FLAC.dll"
+      ],
+      "header_names": [
+        "FLAC/all.h"
+      ],
+      "version": ">=1.3.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

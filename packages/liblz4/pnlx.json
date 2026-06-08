@@ -1,0 +1,53 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "liblz4/liblz4",
+  "version": "1.9.4",
+  "description": "PHP FFI wrapper for LZ4 compression.",
+  "authors": [
+    {
+      "name": "LZ4 maintainers"
+    }
+  ],
+  "license": "BSD-2-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Liblz4\\Liblz4",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "liblz4": {
+      "symbol_prefix": "LZ4",
+      "library_names": [
+        "liblz4.dylib",
+        "liblz4.so",
+        "lz4.dll"
+      ],
+      "header_names": [
+        "lz4.h",
+        "lz4frame.h"
+      ],
+      "version": ">=1.9.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

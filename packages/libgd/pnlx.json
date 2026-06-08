@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libgd/libgd",
+  "version": "2.3.3",
+  "description": "PHP FFI wrapper for the GD graphics library.",
+  "authors": [
+    {
+      "name": "GD maintainers"
+    }
+  ],
+  "license": "GD",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libgd\\Libgd",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libgd": {
+      "symbol_prefix": "gd",
+      "library_names": [
+        "libgd.dylib",
+        "libgd.so",
+        "gd.dll"
+      ],
+      "header_names": [
+        "gd.h"
+      ],
+      "version": ">=2.0.0 <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

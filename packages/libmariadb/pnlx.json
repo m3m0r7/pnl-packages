@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libmariadb/libmariadb",
+  "version": "3.3.10",
+  "description": "PHP FFI wrapper for the MariaDB/MySQL client library.",
+  "authors": [
+    {
+      "name": "MariaDB Connector/C maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libmariadb\\Libmariadb",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libmariadb": {
+      "symbol_prefix": "mysql",
+      "library_names": [
+        "libmariadb.dylib",
+        "libmariadb.so",
+        "libmariadb.dll"
+      ],
+      "header_names": [
+        "mysql.h"
+      ],
+      "version": ">=3.0.0 <4.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "liblua/liblua",
+  "version": "5.4.6",
+  "description": "PHP FFI wrapper for the Lua interpreter.",
+  "authors": [
+    {
+      "name": "Lua maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Liblua\\Liblua",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "liblua": {
+      "symbol_prefix": "lua",
+      "library_names": [
+        "liblua.dylib",
+        "liblua.so",
+        "lua54.dll"
+      ],
+      "header_names": [
+        "lua.h",
+        "lauxlib.h",
+        "lualib.h"
+      ],
+      "version": ">=5.1.0 <6.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

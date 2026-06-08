@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libtcc/libtcc",
+  "version": "0.9.27",
+  "description": "PHP FFI wrapper for the TinyCC compiler.",
+  "authors": [
+    {
+      "name": "TinyCC maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libtcc\\Libtcc",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libtcc": {
+      "symbol_prefix": "tcc",
+      "library_names": [
+        "libtcc.dylib",
+        "libtcc.so",
+        "tcc.dll"
+      ],
+      "header_names": [
+        "libtcc.h"
+      ],
+      "version": ">=0.9.0 <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

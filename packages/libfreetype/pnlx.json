@@ -1,0 +1,53 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libfreetype/libfreetype",
+  "version": "2.13.2",
+  "description": "PHP FFI wrapper for FreeType font rendering.",
+  "authors": [
+    {
+      "name": "FreeType maintainers"
+    }
+  ],
+  "license": "FTL",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libfreetype\\Libfreetype",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "freetype2": {
+      "symbol_prefix": "FT",
+      "library_names": [
+        "libfreetype.dylib",
+        "libfreetype.so",
+        "freetype.dll"
+      ],
+      "header_names": [
+        "ft2build.h",
+        "freetype/freetype.h"
+      ],
+      "version": ">=2.10.0 <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libargon2/libargon2",
+  "version": "1.0.0",
+  "description": "PHP FFI wrapper for the Argon2 password hashing library.",
+  "authors": [
+    {
+      "name": "Argon2 maintainers"
+    }
+  ],
+  "license": "Apache-2.0",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libargon2\\Libargon2",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libargon2": {
+      "symbol_prefix": "argon2",
+      "library_names": [
+        "libargon2.dylib",
+        "libargon2.so",
+        "argon2.dll"
+      ],
+      "header_names": [
+        "argon2.h"
+      ],
+      "version": ">=0.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

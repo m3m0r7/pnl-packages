@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libxxhash/libxxhash",
+  "version": "0.8.2",
+  "description": "PHP FFI wrapper for the xxHash hashing library.",
+  "authors": [
+    {
+      "name": "xxHash maintainers"
+    }
+  ],
+  "license": "BSD-2-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libxxhash\\Libxxhash",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libxxhash": {
+      "symbol_prefix": "XXH",
+      "library_names": [
+        "libxxhash.dylib",
+        "libxxhash.so",
+        "xxhash.dll"
+      ],
+      "header_names": [
+        "xxhash.h"
+      ],
+      "version": ">=0.8.0 <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

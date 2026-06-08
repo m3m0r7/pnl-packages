@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libexif/libexif",
+  "version": "0.6.24",
+  "description": "PHP FFI wrapper for libexif EXIF metadata.",
+  "authors": [
+    {
+      "name": "libexif maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libexif\\Libexif",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libexif": {
+      "symbol_prefix": "exif",
+      "library_names": [
+        "libexif.dylib",
+        "libexif.so",
+        "exif.dll"
+      ],
+      "header_names": [
+        "libexif/exif-data.h"
+      ],
+      "version": ">=0.6.0 <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

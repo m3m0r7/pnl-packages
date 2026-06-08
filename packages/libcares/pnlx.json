@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libcares/libcares",
+  "version": "1.28.1",
+  "description": "PHP FFI wrapper for the c-ares async DNS library.",
+  "authors": [
+    {
+      "name": "c-ares maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libcares\\Libcares",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libcares": {
+      "symbol_prefix": "ares",
+      "library_names": [
+        "libcares.dylib",
+        "libcares.so",
+        "cares.dll"
+      ],
+      "header_names": [
+        "ares.h"
+      ],
+      "version": ">=1.0.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libprotobufc/libprotobufc",
+  "version": "1.5.0",
+  "description": "PHP FFI wrapper for the protobuf-c library.",
+  "authors": [
+    {
+      "name": "protobuf-c maintainers"
+    }
+  ],
+  "license": "BSD-2-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libprotobufc\\Libprotobufc",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libprotobuf-c": {
+      "symbol_prefix": "protobuf_c",
+      "library_names": [
+        "libprotobuf-c.dylib",
+        "libprotobuf-c.so",
+        "protobuf-c.dll"
+      ],
+      "header_names": [
+        "protobuf-c/protobuf-c.h"
+      ],
+      "version": ">=1.0.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

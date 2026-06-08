@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libmosquitto/libmosquitto",
+  "version": "2.0.18",
+  "description": "PHP FFI wrapper for the Mosquitto MQTT client.",
+  "authors": [
+    {
+      "name": "Mosquitto maintainers"
+    }
+  ],
+  "license": "EPL-2.0",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libmosquitto\\Libmosquitto",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libmosquitto": {
+      "symbol_prefix": "mosquitto",
+      "library_names": [
+        "libmosquitto.dylib",
+        "libmosquitto.so",
+        "mosquitto.dll"
+      ],
+      "header_names": [
+        "mosquitto.h"
+      ],
+      "version": ">=2.0.0 <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

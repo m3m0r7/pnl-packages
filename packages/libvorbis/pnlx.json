@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libvorbis/libvorbis",
+  "version": "1.3.7",
+  "description": "PHP FFI wrapper for the Vorbis audio codec.",
+  "authors": [
+    {
+      "name": "Vorbis maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libvorbis\\Libvorbis",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libvorbis": {
+      "symbol_prefix": "vorbis",
+      "library_names": [
+        "libvorbis.dylib",
+        "libvorbis.so",
+        "vorbis.dll"
+      ],
+      "header_names": [
+        "vorbis/codec.h"
+      ],
+      "version": ">=1.3.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

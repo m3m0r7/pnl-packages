@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "librocksdb/librocksdb",
+  "version": "9.1.1",
+  "description": "PHP FFI wrapper for the RocksDB key-value store.",
+  "authors": [
+    {
+      "name": "RocksDB maintainers"
+    }
+  ],
+  "license": "Apache-2.0",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Librocksdb\\Librocksdb",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "librocksdb": {
+      "symbol_prefix": "rocksdb",
+      "library_names": [
+        "librocksdb.dylib",
+        "librocksdb.so",
+        "rocksdb.dll"
+      ],
+      "header_names": [
+        "rocksdb/c.h"
+      ],
+      "version": ">=8.0.0 <10.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

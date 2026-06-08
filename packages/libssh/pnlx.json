@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libssh/libssh",
+  "version": "0.10.6",
+  "description": "PHP FFI wrapper for the libssh SSH library.",
+  "authors": [
+    {
+      "name": "libssh maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-only",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libssh\\Libssh",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libssh": {
+      "symbol_prefix": "ssh",
+      "library_names": [
+        "libssh.dylib",
+        "libssh.so",
+        "ssh.dll"
+      ],
+      "header_names": [
+        "libssh/libssh.h"
+      ],
+      "version": ">=0.9.0 <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

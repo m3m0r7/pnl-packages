@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libsndfile/libsndfile",
+  "version": "1.2.2",
+  "description": "PHP FFI wrapper for libsndfile audio I/O.",
+  "authors": [
+    {
+      "name": "libsndfile maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libsndfile\\Libsndfile",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "sndfile": {
+      "symbol_prefix": "sf",
+      "library_names": [
+        "libsndfile.dylib",
+        "libsndfile.so",
+        "sndfile.dll"
+      ],
+      "header_names": [
+        "sndfile.h"
+      ],
+      "version": ">=1.0.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

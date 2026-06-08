@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libzstd/libzstd",
+  "version": "1.5.6",
+  "description": "PHP FFI wrapper for Zstandard compression.",
+  "authors": [
+    {
+      "name": "Zstandard maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libzstd\\Libzstd",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libzstd": {
+      "symbol_prefix": "ZSTD",
+      "library_names": [
+        "libzstd.dylib",
+        "libzstd.so",
+        "zstd.dll"
+      ],
+      "header_names": [
+        "zstd.h"
+      ],
+      "version": ">=1.4.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libglew/libglew",
+  "version": "2.2.0",
+  "description": "PHP FFI wrapper for the GLEW OpenGL extension loader.",
+  "authors": [
+    {
+      "name": "GLEW maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libglew\\Libglew",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libGLEW": {
+      "symbol_prefix": "glew",
+      "library_names": [
+        "libGLEW.dylib",
+        "libGLEW.so",
+        "glew32.dll"
+      ],
+      "header_names": [
+        "GL/glew.h"
+      ],
+      "version": ">=2.0.0 <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

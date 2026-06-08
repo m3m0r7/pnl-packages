@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "liblmdb/liblmdb",
+  "version": "0.9.31",
+  "description": "PHP FFI wrapper for the LMDB key-value store.",
+  "authors": [
+    {
+      "name": "LMDB maintainers"
+    }
+  ],
+  "license": "OLDAP-2.8",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Liblmdb\\Liblmdb",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "liblmdb": {
+      "symbol_prefix": "mdb",
+      "library_names": [
+        "liblmdb.dylib",
+        "liblmdb.so",
+        "lmdb.dll"
+      ],
+      "header_names": [
+        "lmdb.h"
+      ],
+      "version": ">=0.9.0 <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

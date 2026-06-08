@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libutf8proc/libutf8proc",
+  "version": "2.9.0",
+  "description": "PHP FFI wrapper for the utf8proc Unicode library.",
+  "authors": [
+    {
+      "name": "utf8proc maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libutf8proc\\Libutf8proc",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libutf8proc": {
+      "symbol_prefix": "utf8proc",
+      "library_names": [
+        "libutf8proc.dylib",
+        "libutf8proc.so",
+        "utf8proc.dll"
+      ],
+      "header_names": [
+        "utf8proc.h"
+      ],
+      "version": ">=2.0.0 <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

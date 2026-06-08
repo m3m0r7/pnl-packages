@@ -1,0 +1,51 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libsodium/libsodium",
+  "version": "1.0.19",
+  "description": "PHP FFI wrapper for libsodium cryptography.",
+  "authors": [
+    {
+      "name": "libsodium maintainers"
+    }
+  ],
+  "license": "ISC",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libsodium\\Libsodium",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libsodium": {
+      "library_names": [
+        "libsodium.dylib",
+        "libsodium.so",
+        "libsodium.dll"
+      ],
+      "header_names": [
+        "sodium.h"
+      ],
+      "version": ">=1.0.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

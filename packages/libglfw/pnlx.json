@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libglfw/libglfw",
+  "version": "3.4.0",
+  "description": "PHP FFI wrapper for the GLFW windowing library.",
+  "authors": [
+    {
+      "name": "GLFW maintainers"
+    }
+  ],
+  "license": "Zlib",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libglfw\\Libglfw",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "glfw3": {
+      "symbol_prefix": "glfw",
+      "library_names": [
+        "libglfw.dylib",
+        "libglfw.so",
+        "glfw3.dll"
+      ],
+      "header_names": [
+        "GLFW/glfw3.h"
+      ],
+      "version": ">=3.3.0 <4.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

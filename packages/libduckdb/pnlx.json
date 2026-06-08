@@ -1,0 +1,52 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libduckdb/libduckdb",
+  "version": "0.10.2",
+  "description": "PHP FFI wrapper for the DuckDB analytical database.",
+  "authors": [
+    {
+      "name": "DuckDB maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libduckdb\\Libduckdb",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "duckdb": {
+      "symbol_prefix": "duckdb",
+      "library_names": [
+        "libduckdb.dylib",
+        "libduckdb.so",
+        "duckdb.dll"
+      ],
+      "header_names": [
+        "duckdb.h"
+      ],
+      "version": ">=0.9.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}
