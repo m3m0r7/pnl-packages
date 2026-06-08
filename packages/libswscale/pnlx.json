@@ -44,7 +44,7 @@
       "header_names": [
         "libswscale/swscale.h"
       ],
-      "version": ">=5.0.0 <9.0.0",
+      "version": ">=5.0.0 & <9.0.0",
       "required": true
     }
   },

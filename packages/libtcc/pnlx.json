@@ -44,7 +44,7 @@
       "header_names": [
         "libtcc.h"
       ],
-      "version": ">=0.9.0 <1.0.0",
+      "version": ">=0.9.0 & <1.0.0",
       "required": true
     }
   },

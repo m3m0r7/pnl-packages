@@ -44,7 +44,7 @@
       "header_names": [
         "portaudio.h"
       ],
-      "version": ">=19.0.0 <20.0.0",
+      "version": ">=19.0.0 & <20.0.0",
       "required": true
     }
   },

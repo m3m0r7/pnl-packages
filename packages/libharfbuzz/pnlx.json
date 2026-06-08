@@ -44,7 +44,7 @@
       "header_names": [
         "harfbuzz/hb.h"
       ],
-      "version": ">=6.0.0 <9.0.0",
+      "version": ">=6.0.0 & <9.0.0",
       "required": true
     }
   },

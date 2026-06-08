@@ -44,7 +44,7 @@
       "header_names": [
         "libftdi1/ftdi.h"
       ],
-      "version": ">=1.0.0 <2.0.0",
+      "version": ">=1.0.0 & <2.0.0",
       "required": true
     }
   },

@@ -44,7 +44,7 @@
       "header_names": [
         "libexif/exif-data.h"
       ],
-      "version": ">=0.6.0 <1.0.0",
+      "version": ">=0.6.0 & <1.0.0",
       "required": true
     }
   },

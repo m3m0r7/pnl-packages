@@ -44,7 +44,7 @@
       "header_names": [
         "samplerate.h"
       ],
-      "version": ">=0.2.0 <1.0.0",
+      "version": ">=0.2.0 & <1.0.0",
       "required": true
     }
   },

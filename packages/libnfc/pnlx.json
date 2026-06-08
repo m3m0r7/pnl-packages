@@ -46,7 +46,7 @@
         "nfc/nfc-types.h",
         "nfc/nfc-emulation.h"
       ],
-      "version": ">=1.8.0 <2.0.0",
+      "version": ">=1.8.0 & <2.0.0",
       "required": true
     }
   },

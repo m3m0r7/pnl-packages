@@ -45,7 +45,7 @@
         "AL/al.h",
         "AL/alc.h"
       ],
-      "version": ">=1.20.0 <2.0.0",
+      "version": ">=1.20.0 & <2.0.0",
       "required": true
     }
   },

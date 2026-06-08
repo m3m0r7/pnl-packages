@@ -44,7 +44,7 @@
       "header_names": [
         "mpg123.h"
       ],
-      "version": ">=1.30.0 <2.0.0",
+      "version": ">=1.30.0 & <2.0.0",
       "required": true
     }
   },

@@ -44,7 +44,7 @@
         "unicode/utypes.h",
         "unicode/ustring.h"
       ],
-      "version": ">=70.0.0 <80.0.0",
+      "version": ">=70.0.0 & <80.0.0",
       "required": true
     }
   },

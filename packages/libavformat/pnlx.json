@@ -44,7 +44,7 @@
       "header_names": [
         "libavformat/avformat.h"
       ],
-      "version": ">=58.0.0 <62.0.0",
+      "version": ">=58.0.0 & <62.0.0",
       "required": true
     }
   },

@@ -44,7 +44,7 @@
       "header_names": [
         "hidapi/hidapi.h"
       ],
-      "version": ">=0.10.0 <1.0.0",
+      "version": ">=0.10.0 & <1.0.0",
       "required": true
     }
   },

@@ -128,7 +128,7 @@ Minimal shape:
       "header_names": [
         "native/native.h"
       ],
-      "version": ">=1.0.0 <2.0.0",
+      "version": ">=1.0.0 & <2.0.0",
       "required": true
     }
   },
@@ -198,7 +198,7 @@ Example from libusb:
     "header_names": [
       "libusb-1.0/libusb.h"
     ],
-    "version": ">=1.0.0 <2.0.0",
+    "version": ">=1.0.0 & <2.0.0",
     "required": true
   }
 }

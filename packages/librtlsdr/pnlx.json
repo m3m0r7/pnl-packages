@@ -44,7 +44,7 @@
       "header_names": [
         "rtl-sdr.h"
       ],
-      "version": ">=0.6.0 <3.0.0",
+      "version": ">=0.6.0 & <3.0.0",
       "required": true
     }
   },
