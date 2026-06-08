@@ -1,0 +1,36 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libusb/libusb",
+  "version": "1.0.29",
+  "description": "PHP FFI wrapper for libusb-1.0.",
+  "authors": [
+    {
+      "name": "libusb maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libusb\\Libusb",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    }
+  ],
+  "requires": {
+    "libusb-1.0": {
+      "symbol_prefix": "libusb",
+      "library_names": [
+        "libusb-1.0.dylib",
+        "libusb-1.0.so",
+        "libusb-1.0.dll"
+      ],
+      "header_names": [
+        "libusb-1.0/libusb.h"
+      ],
+      "version": ">=1.0.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libnfc/libnfc",
+  "version": "1.8.0",
+  "description": "PHP FFI wrapper for libnfc.",
+  "authors": [
+    {
+      "name": "libnfc maintainers"
+    }
+  ],
+  "license": "LGPL-3.0-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libnfc\\Libnfc",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    }
+  ],
+  "requires": {
+    "libnfc": {
+      "symbol_prefix": "nfc",
+      "library_names": [
+        "libnfc.dylib",
+        "libnfc.so",
+        "libnfc.dll"
+      ],
+      "header_names": [
+        "nfc/nfc.h",
+        "nfc/nfc-types.h",
+        "nfc/nfc-emulation.h"
+      ],
+      "version": ">=1.8.0 <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

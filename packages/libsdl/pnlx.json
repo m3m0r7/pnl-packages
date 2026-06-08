@@ -1,0 +1,68 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libsdl/libsdl",
+  "version": "2.32.10",
+  "description": "PHP FFI wrapper for SDL version APIs.",
+  "authors": [
+    {
+      "name": "SDL maintainers"
+    }
+  ],
+  "license": "Zlib",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libsdl\\Libsdl",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    }
+  ],
+  "requires": {
+    "sdl2": {
+      "symbol_prefix": "SDL",
+      "library_names": [
+        "libSDL2.dylib",
+        "libSDL2-2.0.so",
+        "SDL2.dll"
+      ],
+      "header_names": [
+        "SDL2/SDL.h",
+        "SDL2/SDL_audio.h",
+        "SDL2/SDL_clipboard.h",
+        "SDL2/SDL_cpuinfo.h",
+        "SDL2/SDL_error.h",
+        "SDL2/SDL_events.h",
+        "SDL2/SDL_filesystem.h",
+        "SDL2/SDL_gamecontroller.h",
+        "SDL2/SDL_haptic.h",
+        "SDL2/SDL_hidapi.h",
+        "SDL2/SDL_hints.h",
+        "SDL2/SDL_joystick.h",
+        "SDL2/SDL_keyboard.h",
+        "SDL2/SDL_loadso.h",
+        "SDL2/SDL_locale.h",
+        "SDL2/SDL_log.h",
+        "SDL2/SDL_messagebox.h",
+        "SDL2/SDL_misc.h",
+        "SDL2/SDL_mouse.h",
+        "SDL2/SDL_mutex.h",
+        "SDL2/SDL_pixels.h",
+        "SDL2/SDL_platform.h",
+        "SDL2/SDL_power.h",
+        "SDL2/SDL_rwops.h",
+        "SDL2/SDL_sensor.h",
+        "SDL2/SDL_shape.h",
+        "SDL2/SDL_surface.h",
+        "SDL2/SDL_thread.h",
+        "SDL2/SDL_timer.h",
+        "SDL2/SDL_touch.h",
+        "SDL2/SDL_version.h",
+        "SDL2/SDL_video.h",
+        "SDL2/SDL_vulkan.h"
+      ],
+      "version": ">=2.0.0 <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}
