@@ -11,6 +11,9 @@
   "license": "BSD-3-Clause",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libogg\\Libogg",
+  "examples": [
+    "use Pnlx\\Libogg\\Libogg;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libogg = $runtime->load(Libogg::class);\n\n// Initialise a sync state for reading an Ogg bitstream from a file\n$syncState = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$libogg->ogg_sync_init($syncState);\n\n// Write raw bytes into the sync buffer\n$buf = $libogg->ogg_sync_buffer($syncState, 4096);\n$bytes = fread(fopen('file.ogg', 'rb'), 4096);\n// ... copy $bytes into $buf, then call ogg_sync_wrote() ...\n$libogg->ogg_sync_wrote($syncState, strlen($bytes));\n\n// Parse pages and submit to a stream state\n$streamState = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$libogg->ogg_stream_init($streamState, 1);\n// ... ogg_sync_pageout() / ogg_stream_packetout() loop ...\n$libogg->ogg_stream_clear($streamState);\n$libogg->ogg_sync_clear($syncState);"
+  ],
   "platforms": [
     {
       "os": "darwin",

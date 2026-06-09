@@ -11,6 +11,9 @@
   "license": "BSD-2-Clause",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libprotobufc\\Libprotobufc",
+  "examples": [
+    "use Pnlx\\Libprotobufc\\Libprotobufc;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libprotobufc = $runtime->load(Libprotobufc::class);\n\n// Query protobuf-c library version\n$versionStr = $libprotobufc->protobuf_c_version();\n$versionNum = $libprotobufc->protobuf_c_version_number();\necho \"protobuf-c version: {$versionStr} ({$versionNum})\\n\";\n\n// Packing/unpacking messages requires a generated C descriptor; see protobuf-c docs:\n// $libprotobufc->protobuf_c_message_pack($message, $out)     // serialise\n// $libprotobufc->protobuf_c_message_unpack($desc, null, $len, $data) // deserialise"
+  ],
   "platforms": [
     {
       "os": "darwin",

@@ -11,6 +11,9 @@
   "license": "BSD-2-Clause",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libxxhash\\Libxxhash",
+  "examples": [
+    "use Pnlx\\Libxxhash\\Libxxhash;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libxxhash = $runtime->load(Libxxhash::class);\n\n// XXH_versionNumber() returns version as (major*100*100 + minor*100 + patch).\n$ver = $libxxhash->XXH_versionNumber();\necho sprintf(\"xxHash %d.%d.%d\\n\",\n    intdiv($ver, 10000), intdiv($ver % 10000, 100), $ver % 100);\n\n// Explore further: XXH32(), XXH64(), XXH3_64bits(), XXH3_128bits(), ..."
+  ],
   "platforms": [
     {
       "os": "darwin",

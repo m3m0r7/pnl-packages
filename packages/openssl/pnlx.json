@@ -11,6 +11,9 @@
   "license": "Apache-2.0",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Openssl\\Openssl",
+  "examples": [
+    "use Pnlx\\Openssl\\Openssl;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$openssl = $runtime->load(Openssl::class);\n\n// OpenSSL_version(0) returns the full version string (OPENSSL_VERSION == 0).\n$version = $openssl->OpenSSL_version(0);\necho \"OpenSSL: $version\\n\";\n\n// Explore further: EVP_MD_CTX_new(), EVP_DigestInit_ex(),\n// EVP_DigestUpdate(), EVP_DigestFinal_ex(), EVP_MD_CTX_free(), ..."
+  ],
   "platforms": [
     {
       "os": "darwin",

@@ -11,6 +11,9 @@
   "license": "LGPL-2.1-or-later",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libgcrypt\\Libgcrypt",
+  "examples": [
+    "use Pnlx\\Libgcrypt\\Libgcrypt;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libgcrypt = $runtime->load(Libgcrypt::class);\n\n// Check the runtime version (returns null if requirement not met).\n$version = $libgcrypt->gcry_check_version(null);\necho \"libgcrypt version: \" . $version . PHP_EOL;\n\n// Hash a string with SHA-256.\n// GCRY_MD_SHA256 = 8, GCRY_MD_FLAG_SECURE = 2\n$allocator = $runtime->allocator();\n$hd = $allocator->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$libgcrypt->gcry_md_open($hd, 8, 0);\n$data = \"Hello, world!\";\n$libgcrypt->gcry_md_write($hd->cdata, $data, strlen($data));\n$libgcrypt->gcry_md_final($hd->cdata);\n// gcry_md_read(hd, algo) returns a pointer to the digest buffer.\n$libgcrypt->gcry_md_close($hd->cdata);\necho \"SHA-256 hash computed.\" . PHP_EOL;"
+  ],
   "platforms": [
     {
       "os": "darwin",

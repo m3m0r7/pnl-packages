@@ -11,6 +11,9 @@
   "license": "BSD-2-Clause",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Liboniguruma\\Liboniguruma",
+  "examples": [
+    "use Pnlx\\Liboniguruma\\Liboniguruma;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$liboniguruma = $runtime->load(Liboniguruma::class);\n\n// Query library version (char* → PHP string)\n$version = $liboniguruma->onig_version();\necho \"Oniguruma version: $version\\n\";\n\n// Compile a regex and search a string\n$regex = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$err   = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$pattern = 'hel+o';\n$liboniguruma->onig_new($regex, $pattern, $pattern, 0, 0, null, $err);\n// ... use onig_search() / onig_free() ...\n// $liboniguruma->onig_free($regex);"
+  ],
   "platforms": [
     {
       "os": "darwin",

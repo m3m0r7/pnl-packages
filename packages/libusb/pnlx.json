@@ -11,6 +11,9 @@
   "license": "LGPL-2.1-or-later",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libusb\\Libusb",
+  "examples": [
+    "use Pnlx\\Libusb\\Libusb;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$usb = $runtime->load(Libusb::class);\n\nif ($usb->libusb_init(null) !== 0) {\n    throw new RuntimeException('libusb_init failed');\n}\ntry {\n    // ... enumerate and talk to USB devices ...\n} finally {\n    $usb->libusb_exit(null);\n}"
+  ],
   "platforms": [
     {
       "os": "darwin",

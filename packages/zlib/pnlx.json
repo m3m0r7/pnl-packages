@@ -11,6 +11,9 @@
   "license": "Zlib",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Zlib\\Zlib",
+  "examples": [
+    "use Pnlx\\Zlib\\Zlib;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$zlib = $runtime->load(Zlib::class);\n\n// zlibVersion() returns the library version string, e.g. \"1.3.1\".\n$version = $zlib->zlibVersion();\necho \"zlib version: $version\\n\";\n\n// compressBound(sourceLen) returns the worst-case compressed size.\n$bound = $zlib->compressBound(1024);\necho \"Max compressed size for 1024 bytes: $bound\\n\";\n\n// Explore further: compress2(), uncompress(), deflateInit(),\n// deflate(), deflateEnd(), inflateInit(), inflate(), inflateEnd(), ..."
+  ],
   "platforms": [
     {
       "os": "darwin",

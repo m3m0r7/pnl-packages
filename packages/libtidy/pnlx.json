@@ -11,6 +11,9 @@
   "license": "W3C",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libtidy\\Libtidy",
+  "examples": [
+    "use Pnlx\\Libtidy\\Libtidy;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libtidy = $runtime->load(Libtidy::class);\n\n// Create a Tidy document, clean and repair an HTML string, then release.\n$doc = $libtidy->tidyCreate();\n$libtidy->tidyOptSetBool($doc, 1 /* TidyXhtmlOut */, 1);\n$libtidy->tidyOptSetBool($doc, 68 /* TidyShowWarnings */, 0);\n$libtidy->tidyParseString($doc, '<html><body><p>Hello<br>World</p></body></html>');\n$libtidy->tidyCleanAndRepair($doc);\n// Retrieve output via tidySaveBuffer; see tidybuffio.h for TidyBuffer helpers.\n$libtidy->tidyRelease($doc);"
+  ],
   "platforms": [
     {
       "os": "darwin",

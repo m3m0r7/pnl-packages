@@ -11,6 +11,9 @@
   "license": "LGPL-3.0-or-later",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libheif\\Libheif",
+  "examples": [
+    "use Pnlx\\Libheif\\Libheif;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libheif = $runtime->load(Libheif::class);\n\n// Query libheif version string\n$version = $libheif->heif_get_version();\necho \"libheif version: \" . $version . \"\\n\";\n\n// Allocate a context, load a HEIF file, then release\n$ctx = $libheif->heif_context_alloc();\nif (!is_null($ctx)) {\n    // $err = $libheif->heif_context_read_from_file($ctx, 'image.heic', null);\n    $libheif->heif_context_free($ctx);\n}"
+  ],
   "platforms": [
     {
       "os": "darwin",

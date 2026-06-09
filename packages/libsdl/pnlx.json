@@ -11,6 +11,9 @@
   "license": "Zlib",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libsdl\\Libsdl",
+  "examples": [
+    "use Pnlx\\Libsdl\\Libsdl;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\nconst SDL_INIT_VIDEO = 0x00000020;\nconst SDL_WINDOWPOS_CENTERED = 0x2FFF0000;\nconst SDL_WINDOW_SHOWN = 0x00000004;\n\n$runtime = new Runtime(__DIR__);\n$sdl = $runtime->load(Libsdl::class);\n\n$sdl->SDL_Init(SDL_INIT_VIDEO);\n$window = $sdl->SDL_CreateWindow('Hello', SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 360, SDL_WINDOW_SHOWN);\nif (is_null($window)) {\n    throw new RuntimeException('SDL_CreateWindow failed: ' . $sdl->SDL_GetError());\n}\n$sdl->SDL_Delay(2000);\n$sdl->SDL_DestroyWindow($window);\n$sdl->SDL_Quit();"
+  ],
   "platforms": [
     {
       "os": "darwin",

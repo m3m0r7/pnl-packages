@@ -11,6 +11,9 @@
   "license": "LGPL-3.0-or-later",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libnfc\\Libnfc",
+  "examples": [
+    "use Pnlx\\Libnfc\\Libnfc;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libnfc = $runtime->load(Libnfc::class);\n\n// Query the library version (returns char* → PHP string)\n$version = $libnfc->nfc_version();\necho \"libnfc version: $version\\n\";\n\n// Initialise a context, open the first available NFC device\n$ctx = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$libnfc->nfc_init($ctx);\n$device = $libnfc->nfc_open($ctx, null);\nif (is_null($device)) {\n    echo \"No NFC device found\\n\";\n} else {\n    // ... use $device ...\n    $libnfc->nfc_close($device);\n}\n$libnfc->nfc_exit($ctx);"
+  ],
   "platforms": [
     {
       "os": "darwin",

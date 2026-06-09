@@ -11,6 +11,9 @@
   "license": "BSD-2-Clause",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libavif\\Libavif",
+  "examples": [
+    "use Pnlx\\Libavif\\Libavif;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libavif = $runtime->load(Libavif::class);\n\n// Print the libavif version string\n$version = $libavif->avifVersion();\necho \"libavif version: {$version}\\n\";\n\n// Decode an AVIF file\n$decoder = $libavif->avifDecoderCreate();\nif (is_null($decoder)) {\n    throw new \\RuntimeException('avifDecoderCreate failed');\n}\n// $libavif->avifDecoderSetIOFile($decoder, 'image.avif');\n// $libavif->avifDecoderParse($decoder);\n// $libavif->avifDecoderNextImage($decoder);\n$libavif->avifDecoderDestroy($decoder);"
+  ],
   "platforms": [
     {
       "os": "darwin",

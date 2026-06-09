@@ -11,6 +11,9 @@
   "license": "Zlib",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libglfw\\Libglfw",
+  "examples": [
+    "use Pnlx\\Libglfw\\Libglfw;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libglfw = $runtime->load(Libglfw::class);\n\n// Query GLFW version string before initializing (always safe)\n$versionStr = $libglfw->glfwGetVersionString();\necho \"GLFW: \" . $versionStr . \"\\n\";\n\n// Initialize GLFW, create a window, then terminate\nif ($libglfw->glfwInit()) {\n    $libglfw->glfwWindowHint(0x00022001, 1); // GLFW_CONTEXT_VERSION_MAJOR = 3\n    // $window = $libglfw->glfwCreateWindow(800, 600, 'Hello', null, null);\n    $libglfw->glfwTerminate();\n}"
+  ],
   "platforms": [
     {
       "os": "darwin",

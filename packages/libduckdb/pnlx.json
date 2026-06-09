@@ -11,6 +11,9 @@
   "license": "MIT",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libduckdb\\Libduckdb",
+  "examples": [
+    "use Pnlx\\Libduckdb\\Libduckdb;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libduckdb = $runtime->load(Libduckdb::class);\n\n// Query the DuckDB library version string.\n$version = $libduckdb->duckdb_library_version();\necho \"DuckDB version: \" . $version . PHP_EOL;\n\n// Open an in-memory database, connect, run a query, then close.\n// duckdb_open(path, *db)  duckdb_connect(db, *con)  duckdb_query(con, sql, *result)\n$allocator = $runtime->allocator();\n$db     = $allocator->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$con    = $allocator->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$result = $allocator->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$libduckdb->duckdb_open(null, $db);\n$libduckdb->duckdb_connect($db->cdata, $con);\n$libduckdb->duckdb_query($con->cdata, \"SELECT 42 AS answer\", $result);\n$libduckdb->duckdb_destroy_result($result);\n$libduckdb->duckdb_disconnect($con);\n$libduckdb->duckdb_close($db);"
+  ],
   "platforms": [
     {
       "os": "darwin",

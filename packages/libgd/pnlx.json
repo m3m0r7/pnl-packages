@@ -11,6 +11,9 @@
   "license": "GD",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libgd\\Libgd",
+  "examples": [
+    "use Pnlx\\Libgd\\Libgd;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libgd = $runtime->load(Libgd::class);\n\n// Create a 200x100 true-colour image, draw a filled red rectangle, save as PNG.\n$image = $libgd->gdImageCreateTrueColor(200, 100);\nif (is_null($image)) {\n    throw new \\RuntimeException('gdImageCreateTrueColor() failed');\n}\n\n$red  = $libgd->gdImageColorAllocate($image, 255, 0, 0);\n$libgd->gdImageFilledRectangle($image, 0, 0, 199, 99, $red);\n\n// gdImagePngPtr(image, &size) returns a PNG blob in memory.\n$allocator = $runtime->allocator();\n$size = $allocator->make(\\Pnlx\\FFI\\AllocationType::Int);\n$png = $libgd->gdImagePngPtr($image, $size);\necho \"PNG blob: \" . $size->cdata . \" bytes\" . PHP_EOL;\n\n$libgd->gdFree($png);\n$libgd->gdImageDestroy($image);"
+  ],
   "platforms": [
     {
       "os": "darwin",

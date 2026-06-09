@@ -92,6 +92,7 @@ pnlx build
 | `entrypoint` | string | yes | 生成される PHP のエントリポイント。通常は `src/generated/index.php`。 |
 | `class` | string | yes | 生成される PHP エンティティクラスの完全修飾名。名前空間を含める必要がある。 |
 | `class_prefix` | string | optional | 生成されるクラス／コンテキスト名に付与するプレフィックス。クラス名の衝突を避ける場合を除き空のままにする。 |
+| `examples` | array | optional | PHP の使い方スニペット。各文字列は `pnl install` 完了時に出力され、利用者がすぐ呼び出し方を確認できます。短く実行可能なものにし、パッケージ README にも同じものを載せます。 |
 | `platforms` | array | yes | ラッパーパッケージがサポートする OS/arch の組み合わせ。 |
 | `requires` | object | yes | ネイティブライブラリの要件。少なくとも 1 エントリを含める必要がある。 |
 | `dependencies` | object | yes | 他の pnl 拡張への依存。依存解決はまだ完成していない。 |

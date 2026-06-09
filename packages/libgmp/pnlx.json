@@ -11,6 +11,9 @@
   "license": "LGPL-3.0-or-later",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libgmp\\Libgmp",
+  "examples": [
+    "use Pnlx\\Libgmp\\Libgmp;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libgmp = $runtime->load(Libgmp::class);\n\n// Arbitrary-precision addition: a + b -> result printed as decimal string\n$a = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$b = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$result = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n\n$libgmp->__gmpz_init($a);\n$libgmp->__gmpz_init($b);\n$libgmp->__gmpz_init($result);\n$libgmp->__gmpz_set_str($a, '123456789012345678901234567890', 10);\n$libgmp->__gmpz_set_str($b, '987654321098765432109876543210', 10);\n$libgmp->__gmpz_add($result, $a, $b);\necho $libgmp->__gmpz_get_str(null, 10, $result) . \"\\n\";\n$libgmp->__gmpz_clear($a);\n$libgmp->__gmpz_clear($b);\n$libgmp->__gmpz_clear($result);"
+  ],
   "platforms": [
     {
       "os": "darwin",

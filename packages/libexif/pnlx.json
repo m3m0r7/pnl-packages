@@ -11,6 +11,9 @@
   "license": "LGPL-2.1-or-later",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libexif\\Libexif",
+  "examples": [
+    "use Pnlx\\Libexif\\Libexif;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libexif = $runtime->load(Libexif::class);\n\n// Load EXIF data from a JPEG file.\n$data = $libexif->exif_data_new_from_file('/path/to/photo.jpg');\nif (is_null($data)) {\n    echo \"No EXIF data found.\" . PHP_EOL;\n} else {\n    // Dump all tags to stdout (uses the library's own formatter).\n    $libexif->exif_data_dump($data);\n    $libexif->exif_data_unref($data);\n}\n\n// exif_data_new_from_data() can parse raw bytes from a variable instead."
+  ],
   "platforms": [
     {
       "os": "darwin",

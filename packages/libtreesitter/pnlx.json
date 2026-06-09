@@ -11,6 +11,9 @@
   "license": "MIT",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libtreesitter\\Libtreesitter",
+  "examples": [
+    "use Pnlx\\Libtreesitter\\Libtreesitter;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libtreesitter = $runtime->load(Libtreesitter::class);\n\n// Create a parser (language must be set before parsing).\n$parser = $libtreesitter->ts_parser_new();\nif (is_null($parser)) { throw new \\RuntimeException('ts_parser_new failed'); }\n\n// Set the language, then parse source code into a syntax tree.\n// $libtreesitter->ts_parser_set_language($parser, $lang);\n// $tree = $libtreesitter->ts_parser_parse_string($parser, null, $src, strlen($src));\n// $root = $libtreesitter->ts_tree_root_node($tree);\n$libtreesitter->ts_parser_delete($parser);"
+  ],
   "platforms": [
     {
       "os": "darwin",

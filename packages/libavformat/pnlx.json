@@ -11,6 +11,9 @@
   "license": "LGPL-2.1-or-later",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libavformat\\Libavformat",
+  "examples": [
+    "use Pnlx\\Libavformat\\Libavformat;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libavformat = $runtime->load(Libavformat::class);\n\n// Print the libavformat version and configuration\n$version = $libavformat->avformat_version();\n$major   = ($version >> 16) & 0xff;\n$minor   = ($version >>  8) & 0xff;\n$micro   = $version & 0xff;\necho \"libavformat version: {$major}.{$minor}.{$micro}\\n\";\n\n$config = $libavformat->avformat_configuration();\necho \"Configuration: {$config}\\n\";\n\n// Open a media file: $libavformat->avformat_open_input($ctx, 'video.mp4', null, null)\n// then $libavformat->avformat_find_stream_info($ctx, null)"
+  ],
   "platforms": [
     {
       "os": "darwin",

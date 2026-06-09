@@ -11,6 +11,9 @@
   "license": "BSD-3-Clause",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libzstd\\Libzstd",
+  "examples": [
+    "use Pnlx\\Libzstd\\Libzstd;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libzstd = $runtime->load(Libzstd::class);\n\n// ZSTD_versionString() returns the library version, e.g. \"1.5.6\".\n$version = $libzstd->ZSTD_versionString();\necho \"Zstandard version: $version\\n\";\n\n// ZSTD_compressBound(srcSize) returns the worst-case compressed size.\n$bound = $libzstd->ZSTD_compressBound(1024);\necho \"Max compressed size for 1024 bytes: $bound\\n\";\n\n// Explore further: ZSTD_compress(), ZSTD_decompress(),\n// ZSTD_createCCtx(), ZSTD_compressStream2(), ..."
+  ],
   "platforms": [
     {
       "os": "darwin",

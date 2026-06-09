@@ -11,6 +11,9 @@
   "license": "LGPL-2.1-or-later",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libavutil\\Libavutil",
+  "examples": [
+    "use Pnlx\\Libavutil\\Libavutil;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libavutil = $runtime->load(Libavutil::class);\n\n// Print the libavutil version string\n$version = $libavutil->avutil_version();\n$major   = ($version >> 16) & 0xff;\n$minor   = ($version >>  8) & 0xff;\n$micro   = $version & 0xff;\necho \"libavutil version: {$major}.{$minor}.{$micro}\\n\";\n\n// Compute a log2 value using the libavutil helper\n$log2val = $libavutil->av_log2(256);\necho \"av_log2(256) = {$log2val}\\n\"; // 8\n\n// Rescale a timestamp: $libavutil->av_rescale_q($pts, $src_tb, $dst_tb)"
+  ],
   "platforms": [
     {
       "os": "darwin",

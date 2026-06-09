@@ -11,6 +11,9 @@
   "license": "MIT",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Liblua\\Liblua",
+  "examples": [
+    "use Pnlx\\Liblua\\Liblua;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$liblua = $runtime->load(Liblua::class);\n\n// Create a Lua state, execute a snippet, then close the state.\n$L = $liblua->luaL_newstate();\nif (is_null($L)) {\n    throw new \\RuntimeException('Failed to create Lua state');\n}\n$liblua->luaL_openlibs($L);\n$liblua->luaL_dostring($L, 'print(\"Hello from Lua!\")');\n$liblua->lua_close($L);"
+  ],
   "platforms": [
     {
       "os": "darwin",

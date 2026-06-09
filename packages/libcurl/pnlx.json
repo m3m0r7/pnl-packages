@@ -11,6 +11,9 @@
   "license": "MIT",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libcurl\\Libcurl",
+  "examples": [
+    "use Pnlx\\Libcurl\\Libcurl;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libcurl = $runtime->load(Libcurl::class);\n\n// Perform a simple GET request and print the response body\n$libcurl->curl_global_init(3); // CURL_GLOBAL_ALL\n$handle = $libcurl->curl_easy_init();\nif (is_null($handle)) {\n    throw new \\RuntimeException('curl_easy_init failed');\n}\n$libcurl->curl_easy_setopt($handle, 10002, 'https://example.com'); // CURLOPT_URL\n$libcurl->curl_easy_setopt($handle, 64,    1);                      // CURLOPT_FOLLOWLOCATION\n$rc = $libcurl->curl_easy_perform($handle);\nif ($rc !== 0) {\n    echo 'curl error: ' . $libcurl->curl_easy_strerror($rc) . \"\\n\";\n}\n$libcurl->curl_easy_cleanup($handle);\n$libcurl->curl_global_cleanup();"
+  ],
   "platforms": [
     {
       "os": "darwin",

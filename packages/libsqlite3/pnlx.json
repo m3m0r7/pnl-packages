@@ -11,6 +11,9 @@
   "license": "blessing",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libsqlite3\\Libsqlite3",
+  "examples": [
+    "use Pnlx\\Libsqlite3\\Libsqlite3;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libsqlite3 = $runtime->load(Libsqlite3::class);\n\necho $libsqlite3->sqlite3_libversion() . PHP_EOL;\n\n// Open an in-memory database.\n$dbPtr = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$rc = $libsqlite3->sqlite3_open(':memory:', $dbPtr);\nif ($rc !== 0) { throw new \\RuntimeException('sqlite3_open failed: ' . $rc); }\n$db = $dbPtr[0];\n$libsqlite3->sqlite3_exec($db, 'CREATE TABLE t (id INTEGER PRIMARY KEY, val TEXT)', null, null, null);\n$libsqlite3->sqlite3_close($db);"
+  ],
   "platforms": [
     {
       "os": "darwin",

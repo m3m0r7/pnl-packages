@@ -11,6 +11,9 @@
   "license": "bzip2-1.0.6",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libbz2\\Libbz2",
+  "examples": [
+    "use Pnlx\\Libbz2\\Libbz2;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libbz2 = $runtime->load(Libbz2::class);\n\n// Open a file for bzip2-compressed writing, write data, then close it\n$bzfile = $libbz2->BZ2_bzopen('output.bz2', 'w');\nif (\\is_null($bzfile)) {\n    throw new \\RuntimeException('BZ2_bzopen failed');\n}\n$data = 'Hello, bzip2 compression!';\n$libbz2->BZ2_bzwrite($bzfile, $data, strlen($data));\n$libbz2->BZ2_bzclose($bzfile);\n\n// Open for reading: $libbz2->BZ2_bzopen('output.bz2', 'r')\n// then: $libbz2->BZ2_bzread($bzfile, $buf, $len)"
+  ],
   "platforms": [
     {
       "os": "darwin",

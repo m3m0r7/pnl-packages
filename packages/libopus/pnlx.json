@@ -11,6 +11,9 @@
   "license": "BSD-3-Clause",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libopus\\Libopus",
+  "examples": [
+    "use Pnlx\\Libopus\\Libopus;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libopus = $runtime->load(Libopus::class);\n\n// Query the library version string (char* → PHP string)\n$version = $libopus->opus_get_version_string();\necho \"Opus version: $version\\n\";\n\n// Create an encoder: 48 kHz, 2 channels, OPUS_APPLICATION_AUDIO = 2049\n$error = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$encoder = $libopus->opus_encoder_create(48000, 2, 2049, $error);\nif (is_null($encoder)) {\n    echo \"Encoder error: \" . $error->cdata . \"\\n\";\n} else {\n    // ... encode PCM frames with opus_encode() ...\n    $libopus->opus_encoder_destroy($encoder);\n}"
+  ],
   "platforms": [
     {
       "os": "darwin",

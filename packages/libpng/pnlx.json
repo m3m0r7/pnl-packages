@@ -11,6 +11,9 @@
   "license": "libpng-2.0",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libpng\\Libpng",
+  "examples": [
+    "use Pnlx\\Libpng\\Libpng;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libpng = $runtime->load(Libpng::class);\n\n// Print the runtime libpng version string\n$versionNum = $libpng->png_access_version_number();\necho \"libpng version number: {$versionNum}\\n\"; // e.g. 10643\n\n// Read a PNG file: create read struct, set up I/O, then call png_read_image()\n$png = $libpng->png_create_read_struct('1.6.43', null, null, null);\nif (is_null($png)) {\n    throw new \\RuntimeException('png_create_read_struct failed');\n}\n$info = $libpng->png_create_info_struct($png);\n// $libpng->png_init_io($png, $fp);\n// $libpng->png_read_info($png, $info);\n// $width  = $libpng->png_get_image_width($png, $info);\n// $height = $libpng->png_get_image_height($png, $info);\n$libpng->png_destroy_read_struct($png, $info, null);"
+  ],
   "platforms": [
     {
       "os": "darwin",

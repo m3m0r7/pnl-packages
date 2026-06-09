@@ -11,6 +11,9 @@
   "license": "GPL-2.0-with-GCC-exception",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libgit2\\Libgit2",
+  "examples": [
+    "use Pnlx\\Libgit2\\Libgit2;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libgit2 = $runtime->load(Libgit2::class);\n\n$libgit2->git_libgit2_init();\n\n// Open an existing repository and read its HEAD reference\n$repo = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$rc = $libgit2->git_repository_open($repo, '/path/to/repo');\nif ($rc === 0) {\n    $ref = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n    $libgit2->git_repository_head($ref, $repo[0]);\n    echo \"HEAD: \" . $libgit2->git_reference_shorthand($ref[0]) . \"\\n\";\n    $libgit2->git_reference_free($ref[0]);\n    $libgit2->git_repository_free($repo[0]);\n}\n\n$libgit2->git_libgit2_shutdown();"
+  ],
   "platforms": [
     {
       "os": "darwin",

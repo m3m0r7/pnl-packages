@@ -11,6 +11,9 @@
   "license": "LGPL-2.1-or-later",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libavcodec\\Libavcodec",
+  "examples": [
+    "use Pnlx\\Libavcodec\\Libavcodec;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libavcodec = $runtime->load(Libavcodec::class);\n\n// Print the libavcodec version string\n$version = $libavcodec->avcodec_version();\n$major   = ($version >> 16) & 0xff;\n$minor   = ($version >>  8) & 0xff;\n$micro   = $version & 0xff;\necho \"libavcodec version: {$major}.{$minor}.{$micro}\\n\";\n\n// List available codec configuration\n$config = $libavcodec->avcodec_configuration();\necho \"Configuration: {$config}\\n\";\n\n// Explore codecs: $libavcodec->avcodec_find_encoder(AV_CODEC_ID_H264)\n// then $libavcodec->avcodec_alloc_context3($codec)"
+  ],
   "platforms": [
     {
       "os": "darwin",

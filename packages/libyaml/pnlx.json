@@ -11,6 +11,9 @@
   "license": "MIT",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libyaml\\Libyaml",
+  "examples": [
+    "use Pnlx\\Libyaml\\Libyaml;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libyaml = $runtime->load(Libyaml::class);\n\n// yaml_get_version_string() returns the libyaml version, e.g. \"0.2.5\".\n$version = $libyaml->yaml_get_version_string();\necho \"libyaml version: $version\\n\";\n\n// Explore further: yaml_parser_initialize(), yaml_parser_set_input_string(),\n// yaml_parser_parse(), yaml_parser_delete(), yaml_emitter_initialize(), ..."
+  ],
   "platforms": [
     {
       "os": "darwin",

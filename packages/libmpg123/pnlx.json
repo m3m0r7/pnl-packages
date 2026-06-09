@@ -11,6 +11,9 @@
   "license": "LGPL-2.1-only",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmpg123\\Libmpg123",
+  "examples": [
+    "use Pnlx\\Libmpg123\\Libmpg123;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libmpg123 = $runtime->load(Libmpg123::class);\n\n$libmpg123->mpg123_init();\n\n// Open a handle for decoding; mpg123_new() returns a pointer\n$handle = $libmpg123->mpg123_new(null, null);\nif (is_null($handle)) {\n    echo \"Failed to create mpg123 handle\\n\";\n} else {\n    $libmpg123->mpg123_open($handle, 'audio.mp3');\n    // ... decode with mpg123_read() ...\n    $libmpg123->mpg123_close($handle);\n    $libmpg123->mpg123_delete($handle);\n}\n\n$libmpg123->mpg123_exit();"
+  ],
   "platforms": [
     {
       "os": "darwin",

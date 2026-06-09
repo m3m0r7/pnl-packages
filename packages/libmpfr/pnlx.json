@@ -11,6 +11,9 @@
   "license": "LGPL-3.0-or-later",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmpfr\\Libmpfr",
+  "examples": [
+    "use Pnlx\\Libmpfr\\Libmpfr;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libmpfr = $runtime->load(Libmpfr::class);\n\n// Query library version\n$version = $libmpfr->mpfr_get_version(); // returns char* → PHP string\necho \"MPFR version: $version\\n\";\n\n// Allocate a mpfr_t variable and compute a high-precision value\n$x = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$libmpfr->mpfr_init2($x, 256);           // 256-bit precision\n$libmpfr->mpfr_set_d($x, 3.14159, 0);   // MPFR_RNDN = 0\n$result = $libmpfr->mpfr_get_d($x, 0);\necho \"Value: $result\\n\";\n$libmpfr->mpfr_clear($x);"
+  ],
   "platforms": [
     {
       "os": "darwin",

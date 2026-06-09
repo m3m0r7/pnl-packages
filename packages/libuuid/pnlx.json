@@ -11,6 +11,9 @@
   "license": "BSD-3-Clause",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libuuid\\Libuuid",
+  "examples": [
+    "use Pnlx\\Libuuid\\Libuuid;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libuuid = $runtime->load(Libuuid::class);\n\n// uuid_t is typedef unsigned char[16].\n// Allocate a uuid_t and a 37-byte output buffer using the pnl allocator.\n$uuid = $runtime->allocator()->new('unsigned char[16]');\n$buf  = $runtime->allocator()->new('char[37]');\n$libuuid->uuid_generate($uuid);\n$libuuid->uuid_unparse($uuid, $buf);\necho \\FFI::string($buf, 36) . PHP_EOL;\n// uuid_generate_random() and uuid_generate_time() select a specific variant."
+  ],
   "platforms": [
     {
       "os": "darwin",

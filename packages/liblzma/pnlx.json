@@ -11,6 +11,9 @@
   "license": "0BSD",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Liblzma\\Liblzma",
+  "examples": [
+    "use Pnlx\\Liblzma\\Liblzma;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$liblzma = $runtime->load(Liblzma::class);\n\n// Query the liblzma runtime version string and number.\n$verStr = $liblzma->lzma_version_string(); // returns string, e.g. \"5.6.1\"\n$verNum = $liblzma->lzma_version_number(); // returns int, e.g. 50060010\necho 'liblzma version: ' . $verStr . ' (' . $verNum . ')' . PHP_EOL;\n// Main entry points to explore: lzma_easy_encoder, lzma_stream_decoder,\n// lzma_code, lzma_end for streaming XZ/LZMA2 compression."
+  ],
   "platforms": [
     {
       "os": "darwin",

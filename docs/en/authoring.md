@@ -92,6 +92,7 @@ Fields:
 | `entrypoint` | string | yes | Generated PHP entrypoint, usually `src/generated/index.php`. |
 | `class` | string | yes | Fully qualified generated PHP entity class. Must include a namespace. |
 | `class_prefix` | string | optional | Prefix applied to generated class/context names. Leave empty unless avoiding class collisions. |
+| `examples` | array | optional | PHP usage snippets. Each string is printed when `pnl install` finishes, so users immediately see how to call the package. Keep them short and runnable, and mirror them in the package README. |
 | `platforms` | array | yes | Supported OS/arch combinations for the wrapper package. |
 | `requires` | object | yes | Native library requirements. Must contain at least one entry. |
 | `dependencies` | object | yes | Other pnl extension dependencies. Dependency solving is not complete yet. |

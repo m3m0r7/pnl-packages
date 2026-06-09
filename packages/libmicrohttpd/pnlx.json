@@ -11,6 +11,9 @@
   "license": "LGPL-2.1-or-later",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmicrohttpd\\Libmicrohttpd",
+  "examples": [
+    "use Pnlx\\Libmicrohttpd\\Libmicrohttpd;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libmicrohttpd = $runtime->load(Libmicrohttpd::class);\n\n// Query the libmicrohttpd runtime version string.\n$ver = $libmicrohttpd->MHD_get_version(); // returns string, e.g. \"0.9.77\"\necho 'libmicrohttpd version: ' . $ver . PHP_EOL;\n// Main entry point to explore: MHD_start_daemon() -- starts an embedded HTTP\n// server on a given port with a request-handler callback, returns MHD_Daemon*."
+  ],
   "platforms": [
     {
       "os": "darwin",

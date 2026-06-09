@@ -11,6 +11,9 @@
   "license": "X11",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libncurses\\Libncurses",
+  "examples": [
+    "use Pnlx\\Libncurses\\Libncurses;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libncurses = $runtime->load(Libncurses::class);\n\n// Initialise the terminal, print a message, wait for a key, then exit\n$libncurses->initscr();\n$libncurses->cbreak();\n$libncurses->noecho();\n\n$libncurses->mvprintw(0, 0, \"Hello from ncurses!\");\n$libncurses->refresh();\n$libncurses->getch();\n\n$libncurses->endwin();"
+  ],
   "platforms": [
     {
       "os": "darwin",
