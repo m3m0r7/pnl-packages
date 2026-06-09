@@ -1,0 +1,63 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libc/libc",
+  "version": "1.0.0",
+  "description": "PHP FFI wrapper for the C standard library (printf, puts).",
+  "authors": [
+    {
+      "name": "pnl"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libc\\Libc",
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libc": {
+      "symbol_prefix": "",
+      "library_names": [
+        {
+          "name": "libc.dylib",
+          "virtual": true
+        },
+        {
+          "name": "libc.so.6",
+          "virtual": true
+        },
+        {
+          "name": "libc.so",
+          "virtual": true
+        },
+        {
+          "name": "msvcrt.dll",
+          "virtual": true
+        }
+      ],
+      "header_inline": "int printf(const char *format);\nint puts(const char *s);\n",
+      "version": ">=0.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}
