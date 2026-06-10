@@ -92,8 +92,8 @@ Fields:
 | `entrypoint` | string | yes | Generated PHP entrypoint, usually `src/generated/index.php`. |
 | `class` | string | yes | Fully qualified generated PHP entity class. Must include a namespace. |
 | `class_prefix` | string | optional | Prefix applied to generated class/context names. Leave empty unless avoiding class collisions. |
-| `examples` | array | optional | PHP usage snippets. Each string is printed when `pnl install` finishes, so users immediately see how to call the package. Keep them short and runnable, and mirror them in the package README. |
-| `installation` | object | optional | Per-OS commands that install the package's native dependencies. See [Installing native dependencies](#installing-native-dependencies). |
+| `examples` | array | optional | Paths to usage example files, relative to the package root (e.g. `EXAMPLES.md`). The file content is printed when `pnl install` finishes, so users immediately see how to call the package. Keep the snippets short and runnable, and mirror them in the package README. |
+| `installation` | object | optional | Per-OS / per-distro commands that install the package's native dependencies. See [Installing native dependencies](#installing-native-dependencies). |
 | `platforms` | array | yes | Supported OS/arch combinations for the wrapper package. |
 | `requires` | object | yes | Native library requirements. Must contain at least one entry. |
 | `dependencies` | object | yes | Other pnl extension dependencies. Dependency solving is not complete yet. |
@@ -202,10 +202,12 @@ A virtual library is **linked by name** and never required to exist as a file. p
 
 ### Installing native dependencies
 
-A package may declare `installation` so `pnl install` can fetch its native libraries/headers for the user. It is an object keyed by OS name (`darwin`, `linux`, `windows`); each entry has:
+A package may declare `installation` so `pnl install` can fetch its native libraries/headers for the user. It is an object keyed by OS or Linux distro name — `darwin`, `windows`, `alpine`, `ubuntu`, `debian`, `fedora`, `rhel`, …, plus a generic `linux` fallback; each entry has:
 
 - `install` — shell command lines to run to install the dependency.
 - `checkIfExists` (optional) — shell command lines that exit `0` when the dependency is already present. If they all pass, installation is skipped.
+
+On Linux, pnl picks the entry using `/etc/os-release`: the distro `ID` (e.g. `alpine`, `ubuntu`, `fedora`) is tried first, then each `ID_LIKE` ancestor (so Ubuntu falls back to a `debian` entry, and Rocky/Alma/CentOS fall back to a `rhel` entry), then `linux`.
 
 ```json
 "installation": {
@@ -213,14 +215,22 @@ A package may declare `installation` so `pnl install` can fetch its native libra
     "install": ["brew install sdl2 sdl2_image sdl2_ttf"],
     "checkIfExists": ["brew list sdl2 && brew list sdl2_image && brew list sdl2_ttf"]
   },
-  "linux": {
+  "ubuntu": {
     "install": ["sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev"],
+    "checkIfExists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
+  },
+  "alpine": {
+    "install": ["apk add sdl2-dev sdl2_image-dev sdl2_ttf-dev"],
+    "checkIfExists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
+  },
+  "fedora": {
+    "install": ["sudo dnf install -y SDL2-devel SDL2_image-devel SDL2_ttf-devel"],
     "checkIfExists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
   }
 }
 ```
 
-When `installation` is present and `checkIfExists` does not pass, `pnl install` asks `Run the following to install them? [Y/n]` before running the commands; `pnl install … -y` (or `--yes`) answers yes automatically. When a package has **no** `installation`, and the native library cannot be found, pnl prints exactly which `library_names` and `header_names` it is looking for and where to place them (e.g. `/usr/local/lib` and `/usr/local/include`).
+When `installation` is present and `checkIfExists` does not pass, `pnl install` asks `Run the following to install them? [Y/n]` before running the commands; `pnl install … -y` (or `--yes`) answers yes automatically. If an install command fails, pnl reports the failed command and asks the user to install the libraries and headers manually before running `pnl install` again. When a package has **no** `installation`, and the native library cannot be found, pnl prints exactly which `library_names` and `header_names` it is looking for and where to place them (e.g. `/usr/local/lib` and `/usr/local/include`).
 
 Most packages wrap a single system library and need no `installation` at all. Declare it for libraries that come as several packages (e.g. SDL2 plus `sdl2_image` / `sdl2_ttf`) or that are awkward to install by hand.
 

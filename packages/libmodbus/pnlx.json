@@ -12,16 +12,56 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmodbus\\Libmodbus",
   "examples": [
-    "use Pnlx\\Libmodbus\\Libmodbus;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libmodbus = $runtime->load(Libmodbus::class);\n\n// Create a Modbus TCP context, connect, read holding registers, then close.\n$ctx = $libmodbus->modbus_new_tcp('192.168.1.10', 502);\nif (is_null($ctx)) {\n    throw new \\RuntimeException('modbus_new_tcp failed');\n}\n$libmodbus->modbus_set_slave($ctx, 1);\nif ($libmodbus->modbus_connect($ctx) !== -1) {\n    // modbus_read_registers: start=0, count=2; explore returned register array\n    $libmodbus->modbus_read_registers($ctx, 0, 2, null);\n    $libmodbus->modbus_close($ctx);\n}\n$libmodbus->modbus_free($ctx);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install libmodbus"],
-      "checkIfExists": ["brew list libmodbus"]
+      "install": [
+        "brew install libmodbus"
+      ],
+      "checkIfExists": [
+        "brew list libmodbus"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libmodbus-dev"],
-      "checkIfExists": ["pkg-config --exists libmodbus"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libmodbus-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmodbus"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libmodbus-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmodbus"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libmodbus-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmodbus"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libmodbus-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmodbus"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libmodbus-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmodbus"
+      ]
     }
   },
   "platforms": [

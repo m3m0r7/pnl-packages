@@ -92,8 +92,8 @@ pnlx build
 | `entrypoint` | string | yes | 生成される PHP のエントリポイント。通常は `src/generated/index.php`。 |
 | `class` | string | yes | 生成される PHP エンティティクラスの完全修飾名。名前空間を含める必要がある。 |
 | `class_prefix` | string | optional | 生成されるクラス／コンテキスト名に付与するプレフィックス。クラス名の衝突を避ける場合を除き空のままにする。 |
-| `examples` | array | optional | PHP の使い方スニペット。各文字列は `pnl install` 完了時に出力され、利用者がすぐ呼び出し方を確認できます。短く実行可能なものにし、パッケージ README にも同じものを載せます。 |
-| `installation` | object | optional | OS ごとに、パッケージのネイティブ依存をインストールするコマンド。[ネイティブ依存のインストール](#installing-native-dependencies) を参照。 |
+| `examples` | array | optional | 使い方例ファイルへの、パッケージルートからの相対パス（例: `EXAMPLES.md`）。ファイルの内容が `pnl install` 完了時に出力され、利用者がすぐ呼び出し方を確認できます。スニペットは短く実行可能なものにし、パッケージ README にも同じものを載せます。 |
+| `installation` | object | optional | OS / ディストリビューションごとに、パッケージのネイティブ依存をインストールするコマンド。[ネイティブ依存のインストール](#installing-native-dependencies) を参照。 |
 | `platforms` | array | yes | ラッパーパッケージがサポートする OS/arch の組み合わせ。 |
 | `requires` | object | yes | ネイティブライブラリの要件。少なくとも 1 エントリを含める必要がある。 |
 | `dependencies` | object | yes | 他の pnl 拡張への依存。依存解決はまだ完成していない。 |
@@ -202,10 +202,12 @@ libusb の例:
 
 ### Installing native dependencies
 
-パッケージは `installation` を宣言でき、`pnl install` がネイティブのライブラリ/ヘッダーを利用者の代わりに取得できます。OS 名（`darwin`・`linux`・`windows`）をキーにしたオブジェクトで、各エントリは次を持ちます。
+パッケージは `installation` を宣言でき、`pnl install` がネイティブのライブラリ/ヘッダーを利用者の代わりに取得できます。OS 名または Linux ディストリビューション名（`darwin`・`windows`・`alpine`・`ubuntu`・`debian`・`fedora`・`rhel` など、および汎用フォールバックの `linux`）をキーにしたオブジェクトで、各エントリは次を持ちます。
 
 - `install` … 依存をインストールするために実行するシェルコマンド行。
 - `checkIfExists`（任意）… 依存が既に存在するとき終了コード `0` になるシェルコマンド行。すべて成功すればインストールはスキップされます。
+
+Linux ではエントリは `/etc/os-release` から選択されます。ディストリビューションの `ID`（例: `alpine`・`ubuntu`・`fedora`）→ `ID_LIKE` の各祖先（Ubuntu は `debian` エントリへ、Rocky/Alma/CentOS は `rhel` エントリへフォールバック）→ `linux` の順で照合します。
 
 ```json
 "installation": {
@@ -213,14 +215,22 @@ libusb の例:
     "install": ["brew install sdl2 sdl2_image sdl2_ttf"],
     "checkIfExists": ["brew list sdl2 && brew list sdl2_image && brew list sdl2_ttf"]
   },
-  "linux": {
+  "ubuntu": {
     "install": ["sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev"],
+    "checkIfExists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
+  },
+  "alpine": {
+    "install": ["apk add sdl2-dev sdl2_image-dev sdl2_ttf-dev"],
+    "checkIfExists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
+  },
+  "fedora": {
+    "install": ["sudo dnf install -y SDL2-devel SDL2_image-devel SDL2_ttf-devel"],
     "checkIfExists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
   }
 }
 ```
 
-`installation` があり `checkIfExists` が通らない場合、`pnl install` はコマンド実行前に `Run the following to install them? [Y/n]` と確認します。`pnl install … -y`（または `--yes`）で自動的に yes になります。`installation` が**無い**パッケージでネイティブライブラリが見つからない場合、pnl は探している `library_names` と `header_names`、そしてどこに置けばよいか（例: `/usr/local/lib` と `/usr/local/include`）を表示します。
+`installation` があり `checkIfExists` が通らない場合、`pnl install` はコマンド実行前に `Run the following to install them? [Y/n]` と確認します。`pnl install … -y`（または `--yes`）で自動的に yes になります。インストールコマンドが失敗した場合は、失敗したコマンドを表示し、手動でライブラリとヘッダーをインストールしてから改めて `pnl install` を実行するよう案内します。`installation` が**無い**パッケージでネイティブライブラリが見つからない場合、pnl は探している `library_names` と `header_names`、そしてどこに置けばよいか（例: `/usr/local/lib` と `/usr/local/include`）を表示します。
 
 ほとんどのパッケージは単一のシステムライブラリをラップしており `installation` は不要です。SDL2 と `sdl2_image` / `sdl2_ttf` のように複数パッケージから成るものや、手動インストールが面倒なライブラリに宣言してください。
 

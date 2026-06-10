@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libopenblas\\Libopenblas",
   "examples": [
-    "use Pnlx\\Libopenblas\\Libopenblas;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libopenblas = $runtime->load(Libopenblas::class);\n\n// Compute dot product of two double vectors: [1,2,3] · [4,5,6] = 32\n// cblas_ddot(n, x, incx, y, incy) → double (returned as PHP float)\n$n = 3;\n$x = \\FFI::new(\"double[$n]\");\n$y = \\FFI::new(\"double[$n]\");\n$x[0] = 1.0; $x[1] = 2.0; $x[2] = 3.0;\n$y[0] = 4.0; $y[1] = 5.0; $y[2] = 6.0;\n\n$dot = $libopenblas->cblas_ddot($n, $x, 1, $y, 1);\necho \"Dot product: $dot\\n\"; // 32\n// ... use cblas_dgemm() for matrix multiplication ..."
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install openblas"],
-      "checkIfExists": ["brew list openblas"]
+      "install": [
+        "brew install openblas"
+      ],
+      "checkIfExists": [
+        "brew list openblas"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libopenblas-dev"],
-      "checkIfExists": ["pkg-config --exists openblas"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libopenblas-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists openblas"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libopenblas-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists openblas"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add openblas-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists openblas"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y openblas-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists openblas"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y openblas-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists openblas"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install openblas"
+      ]
     }
   },
   "platforms": [

@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Liblz4\\Liblz4",
   "examples": [
-    "use Pnlx\\Liblz4\\Liblz4;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$liblz4 = $runtime->load(Liblz4::class);\n\n// Compress and decompress a string with LZ4.\n$src = 'Hello, LZ4 compression!';\n$srcSize = strlen($src);\n$maxDst = $liblz4->LZ4_compressBound($srcSize); // returns int\n$compressed = str_repeat(\"\\0\", $maxDst);\n$compSize = $liblz4->LZ4_compress_default($src, $compressed, $srcSize, $maxDst);\n$decompressed = str_repeat(\"\\0\", $srcSize);\n$liblz4->LZ4_decompress_safe($compressed, $decompressed, $compSize, $srcSize);\necho $decompressed . PHP_EOL; // \"Hello, LZ4 compression!\""
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install lz4"],
-      "checkIfExists": ["brew list lz4"]
+      "install": [
+        "brew install lz4"
+      ],
+      "checkIfExists": [
+        "brew list lz4"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y liblz4-dev"],
-      "checkIfExists": ["pkg-config --exists liblz4"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y liblz4-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists liblz4"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y liblz4-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists liblz4"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add lz4-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists liblz4"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y lz4-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists liblz4"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y lz4-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists liblz4"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install lz4"
+      ]
     }
   },
   "platforms": [

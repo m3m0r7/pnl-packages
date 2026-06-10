@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmbedtls\\Libmbedtls",
   "examples": [
-    "use Pnlx\\Libmbedtls\\Libmbedtls;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libmbedtls = $runtime->load(Libmbedtls::class);\n\n// Compute an SHA-256 digest using the Mbed TLS MD (message digest) API.\n$ctx = $libmbedtls->mbedtls_md_info_from_type(6); // MBEDTLS_MD_SHA256 = 6\n$mdCtx = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$libmbedtls->mbedtls_md_init($mdCtx);\n$libmbedtls->mbedtls_md_setup($mdCtx, $ctx, 0);\n$libmbedtls->mbedtls_md_starts($mdCtx);\n$msg = 'hello';\n$libmbedtls->mbedtls_md_update($mdCtx, $msg, strlen($msg));\n$out = str_repeat(\"\\0\", 32);\n$libmbedtls->mbedtls_md_finish($mdCtx, $out);\necho bin2hex($out) . PHP_EOL; // SHA-256 of \"hello\"\n$libmbedtls->mbedtls_md_free($mdCtx);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install mbedtls"],
-      "checkIfExists": ["brew list mbedtls"]
+      "install": [
+        "brew install mbedtls"
+      ],
+      "checkIfExists": [
+        "brew list mbedtls"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libmbedtls-dev"],
-      "checkIfExists": ["pkg-config --exists mbedtls"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libmbedtls-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists mbedtls"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libmbedtls-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists mbedtls"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add mbedtls-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists mbedtls"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y mbedtls-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists mbedtls"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y mbedtls-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists mbedtls"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install mbedtls"
+      ]
     }
   },
   "platforms": [

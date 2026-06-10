@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Liblua\\Liblua",
   "examples": [
-    "use Pnlx\\Liblua\\Liblua;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$liblua = $runtime->load(Liblua::class);\n\n// Create a Lua state, execute a snippet, then close the state.\n$L = $liblua->luaL_newstate();\nif (is_null($L)) {\n    throw new \\RuntimeException('Failed to create Lua state');\n}\n$liblua->luaL_openlibs($L);\n$liblua->luaL_dostring($L, 'print(\"Hello from Lua!\")');\n$liblua->lua_close($L);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install lua"],
-      "checkIfExists": ["brew list lua"]
+      "install": [
+        "brew install lua"
+      ],
+      "checkIfExists": [
+        "brew list lua"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y liblua5.4-dev"],
-      "checkIfExists": ["ldconfig -p | grep -q liblua"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y liblua5.4-dev"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q liblua"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y liblua5.4-dev"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q liblua"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add lua5.4-dev"
+      ],
+      "checkIfExists": [
+        "apk info -e lua5.4-dev"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y lua-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q lua-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y lua-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q lua-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install lua"
+      ]
     }
   },
   "platforms": [

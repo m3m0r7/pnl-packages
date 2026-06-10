@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libfftw3\\Libfftw3",
   "examples": [
-    "use Pnlx\\Libfftw3\\Libfftw3;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libfftw3 = $runtime->load(Libfftw3::class);\n\n// Allocate a complex input/output array and create a 1-D DFT plan.\n$n = 8;\n$in  = $libfftw3->fftw_alloc_complex($n);\n$out = $libfftw3->fftw_alloc_complex($n);\nif (is_null($in) || is_null($out)) {\n    throw new \\RuntimeException('fftw_alloc_complex() failed');\n}\n\n// FFTW_FORWARD = -1, FFTW_ESTIMATE = (1 << 6) = 64\n$plan = $libfftw3->fftw_plan_dft_1d($n, $in, $out, -1, 64);\n$libfftw3->fftw_execute($plan);\n$libfftw3->fftw_destroy_plan($plan);\n$libfftw3->fftw_free($in);\n$libfftw3->fftw_free($out);\necho \"1-D DFT of {$n} complex samples computed.\" . PHP_EOL;"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install fftw"],
-      "checkIfExists": ["brew list fftw"]
+      "install": [
+        "brew install fftw"
+      ],
+      "checkIfExists": [
+        "brew list fftw"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libfftw3-dev"],
-      "checkIfExists": ["pkg-config --exists fftw3"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libfftw3-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists fftw3"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libfftw3-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists fftw3"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add fftw-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists fftw3"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y fftw-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists fftw3"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y fftw-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists fftw3"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install fftw3"
+      ]
     }
   },
   "platforms": [

@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libjansson\\Libjansson",
   "examples": [
-    "use Pnlx\\Libjansson\\Libjansson;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libjansson = $runtime->load(Libjansson::class);\n\n// Parse a JSON string and read a value from it.\n$root = $libjansson->json_loads('{\"name\":\"pnl\",\"version\":1}', 0, null);\n$nameVal = $libjansson->json_object_get($root, 'name');\n$name = $libjansson->json_string_value($nameVal); // returns string \"pnl\"\necho $name . PHP_EOL;\n$libjansson->json_decref($root);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install jansson"],
-      "checkIfExists": ["brew list jansson"]
+      "install": [
+        "brew install jansson"
+      ],
+      "checkIfExists": [
+        "brew list jansson"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libjansson-dev"],
-      "checkIfExists": ["pkg-config --exists jansson"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libjansson-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists jansson"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libjansson-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists jansson"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add jansson-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists jansson"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y jansson-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists jansson"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y jansson-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists jansson"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install jansson"
+      ]
     }
   },
   "platforms": [

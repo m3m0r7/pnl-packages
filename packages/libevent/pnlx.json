@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libevent\\Libevent",
   "examples": [
-    "use Pnlx\\Libevent\\Libevent;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libevent = $runtime->load(Libevent::class);\n\n// Query the libevent version string and method (backend) name.\n$version = $libevent->event_get_version();\necho \"libevent version: \" . $version . PHP_EOL;\n\n// Create a default event_base (uses best available backend).\n$base = $libevent->event_base_new();\nif (is_null($base)) {\n    throw new \\RuntimeException('event_base_new() failed');\n}\n$method = $libevent->event_base_get_method($base);\necho \"Backend method: \" . $method . PHP_EOL;\n\n$libevent->event_base_free($base);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install libevent"],
-      "checkIfExists": ["brew list libevent"]
+      "install": [
+        "brew install libevent"
+      ],
+      "checkIfExists": [
+        "brew list libevent"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libevent-dev"],
-      "checkIfExists": ["pkg-config --exists libevent"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libevent-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libevent"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libevent-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libevent"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libevent-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libevent"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libevent-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libevent"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libevent-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libevent"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libevent"
+      ]
     }
   },
   "platforms": [

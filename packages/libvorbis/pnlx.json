@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libvorbis\\Libvorbis",
   "examples": [
-    "use Pnlx\\Libvorbis\\Libvorbis;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libvorbis = $runtime->load(Libvorbis::class);\n\n// vorbis_version_string() returns the library version as a plain C string.\n$version = $libvorbis->vorbis_version_string();\necho \"Vorbis version: $version\\n\";\n\n// Explore further: vorbis_info_init(), vorbis_encode_init(),\n// vorbis_analysis_init(), vorbis_block_init(), vorbis_analysis_wrote(), ..."
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install libvorbis"],
-      "checkIfExists": ["brew list libvorbis"]
+      "install": [
+        "brew install libvorbis"
+      ],
+      "checkIfExists": [
+        "brew list libvorbis"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libvorbis-dev"],
-      "checkIfExists": ["pkg-config --exists vorbis"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libvorbis-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vorbis"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libvorbis-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vorbis"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libvorbis-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vorbis"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libvorbis-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vorbis"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libvorbis-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vorbis"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libvorbis"
+      ]
     }
   },
   "platforms": [

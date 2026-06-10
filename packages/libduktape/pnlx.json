@@ -12,16 +12,56 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libduktape\\Libduktape",
   "examples": [
-    "use Pnlx\\Libduktape\\Libduktape;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libduktape = $runtime->load(Libduktape::class);\n\n// Create a Duktape heap and evaluate a JavaScript expression.\n$ctx = $libduktape->duk_create_heap_default();\nif (is_null($ctx)) {\n    throw new \\RuntimeException('Failed to create Duktape heap');\n}\n\n$libduktape->duk_eval_string($ctx, \"1 + 2\");\n$result = $libduktape->duk_get_number($ctx, -1);\necho \"1 + 2 = \" . $result . PHP_EOL;   // 3\n\n$libduktape->duk_pop($ctx);\n$libduktape->duk_destroy_heap($ctx);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install duktape"],
-      "checkIfExists": ["brew list duktape"]
+      "install": [
+        "brew install duktape"
+      ],
+      "checkIfExists": [
+        "brew list duktape"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libduktape-dev"],
-      "checkIfExists": ["ldconfig -p | grep -q libduktape.so"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libduktape-dev"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q libduktape.so"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libduktape-dev"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q libduktape.so"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add duktape-dev"
+      ],
+      "checkIfExists": [
+        "apk info -e duktape-dev"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y duktape-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q duktape-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y duktape-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q duktape-devel"
+      ]
     }
   },
   "platforms": [

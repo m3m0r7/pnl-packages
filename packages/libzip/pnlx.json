@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libzip\\Libzip",
   "examples": [
-    "use Pnlx\\Libzip\\Libzip;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libzip = $runtime->load(Libzip::class);\n\n// zip_open() opens a ZIP archive; zip_get_num_entries() counts its entries.\n$errp = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$zip = $libzip->zip_open(\"/path/to/archive.zip\", 0, $errp);\nif (is_null($zip)) {\n    echo \"zip_open failed, error: \" . $errp[0] . \"\\n\";\n} else {\n    $count = $libzip->zip_get_num_entries($zip, 0);\n    echo \"Entries: $count\\n\";\n    $libzip->zip_close($zip);\n}"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install libzip"],
-      "checkIfExists": ["brew list libzip"]
+      "install": [
+        "brew install libzip"
+      ],
+      "checkIfExists": [
+        "brew list libzip"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libzip-dev"],
-      "checkIfExists": ["pkg-config --exists libzip"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libzip-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libzip"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libzip-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libzip"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libzip-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libzip"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libzip-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libzip-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libzip-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libzip-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libzip"
+      ]
     }
   },
   "platforms": [

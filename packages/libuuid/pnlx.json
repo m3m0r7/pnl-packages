@@ -12,16 +12,56 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libuuid\\Libuuid",
   "examples": [
-    "use Pnlx\\Libuuid\\Libuuid;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libuuid = $runtime->load(Libuuid::class);\n\n// uuid_t is typedef unsigned char[16].\n// Allocate a uuid_t and a 37-byte output buffer using the pnl allocator.\n$uuid = $runtime->allocator()->new('unsigned char[16]');\n$buf  = $runtime->allocator()->new('char[37]');\n$libuuid->uuid_generate($uuid);\n$libuuid->uuid_unparse($uuid, $buf);\necho \\FFI::string($buf, 36) . PHP_EOL;\n// uuid_generate_random() and uuid_generate_time() select a specific variant."
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install ossp-uuid"],
-      "checkIfExists": ["brew list ossp-uuid"]
+      "install": [
+        "brew install ossp-uuid"
+      ],
+      "checkIfExists": [
+        "brew list ossp-uuid"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y uuid-dev"],
-      "checkIfExists": ["pkg-config --exists uuid"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y uuid-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists uuid"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y uuid-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists uuid"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add util-linux-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists uuid"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libuuid-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists uuid"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libuuid-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists uuid"
+      ]
     }
   },
   "platforms": [

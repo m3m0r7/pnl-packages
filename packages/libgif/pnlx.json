@@ -12,16 +12,56 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libgif\\Libgif",
   "examples": [
-    "use Pnlx\\Libgif\\Libgif;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libgif = $runtime->load(Libgif::class);\n\n// Open a GIF file for reading (returns GifFileType* handle)\n$error = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$gif = $libgif->DGifOpenFileName('animation.gif', $error);\nif (is_null($gif)) {\n    echo \"Could not open GIF (error code: \" . $error[0] . \")\\n\";\n} else {\n    $libgif->DGifSlurp($gif);\n    echo \"Image count: \" . $gif->ImageCount . \"\\n\";\n    $libgif->DGifCloseFile($gif, $error);\n}"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install giflib"],
-      "checkIfExists": ["brew list giflib"]
+      "install": [
+        "brew install giflib"
+      ],
+      "checkIfExists": [
+        "brew list giflib"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libgif-dev"],
-      "checkIfExists": ["ldconfig -p | grep -q libgif.so"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libgif-dev"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q libgif.so"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libgif-dev"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q libgif.so"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add giflib-dev"
+      ],
+      "checkIfExists": [
+        "apk info -e giflib-dev"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y giflib-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q giflib-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y giflib-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q giflib-devel"
+      ]
     }
   },
   "platforms": [

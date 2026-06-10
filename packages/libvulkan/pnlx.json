@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libvulkan\\Libvulkan",
   "examples": [
-    "use Pnlx\\Libvulkan\\Libvulkan;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libvulkan = $runtime->load(Libvulkan::class);\n\n// vkEnumerateInstanceVersion() fills an out-parameter with the Vulkan\n// instance version packed as (major<<22|minor<<12|patch).\n$pApiVersion = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$result = $libvulkan->vkEnumerateInstanceVersion($pApiVersion);\n$ver = $pApiVersion[0];\necho sprintf(\"Vulkan %d.%d.%d (VkResult=%d)\\n\",\n    ($ver >> 22) & 0x7f, ($ver >> 12) & 0x3ff, $ver & 0xfff, $result);\n\n// Explore further: vkCreateInstance(), vkEnumeratePhysicalDevices(), ..."
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install vulkan-loader"],
-      "checkIfExists": ["brew list vulkan-loader"]
+      "install": [
+        "brew install vulkan-loader"
+      ],
+      "checkIfExists": [
+        "brew list vulkan-loader"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libvulkan-dev"],
-      "checkIfExists": ["pkg-config --exists vulkan"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libvulkan-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vulkan"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libvulkan-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vulkan"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add vulkan-loader-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vulkan"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y vulkan-loader-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vulkan"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y vulkan-loader-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vulkan"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install vulkan"
+      ]
     }
   },
   "platforms": [

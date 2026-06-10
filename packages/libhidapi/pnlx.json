@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libhidapi\\Libhidapi",
   "examples": [
-    "use Pnlx\\Libhidapi\\Libhidapi;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libhidapi = $runtime->load(Libhidapi::class);\n\n// Initialize HIDAPI and enumerate connected USB HID devices\n$rc = $libhidapi->hid_init();\nif ($rc === 0) {\n    // Enumerate all HID devices (vendor 0, product 0 = all)\n    $devs = $libhidapi->hid_enumerate(0, 0);\n    $cur = $devs;\n    while (!is_null($cur)) {\n        echo \"Device: \" . $cur->manufacturer_string . \"\\n\";\n        $cur = $cur->next;\n    }\n    $libhidapi->hid_free_enumeration($devs);\n    $libhidapi->hid_exit();\n}"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install hidapi"],
-      "checkIfExists": ["brew list hidapi"]
+      "install": [
+        "brew install hidapi"
+      ],
+      "checkIfExists": [
+        "brew list hidapi"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libhidapi-dev"],
-      "checkIfExists": ["pkg-config --exists hidapi-libusb"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libhidapi-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists hidapi-libusb"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libhidapi-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists hidapi-libusb"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add hidapi-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists hidapi-libusb"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y hidapi-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists hidapi-libusb"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y hidapi-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists hidapi-libusb"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install hidapi"
+      ]
     }
   },
   "platforms": [

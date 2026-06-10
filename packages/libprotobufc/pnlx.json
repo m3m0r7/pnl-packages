@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libprotobufc\\Libprotobufc",
   "examples": [
-    "use Pnlx\\Libprotobufc\\Libprotobufc;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libprotobufc = $runtime->load(Libprotobufc::class);\n\n// Query protobuf-c library version\n$versionStr = $libprotobufc->protobuf_c_version();\n$versionNum = $libprotobufc->protobuf_c_version_number();\necho \"protobuf-c version: {$versionStr} ({$versionNum})\\n\";\n\n// Packing/unpacking messages requires a generated C descriptor; see protobuf-c docs:\n// $libprotobufc->protobuf_c_message_pack($message, $out)     // serialise\n// $libprotobufc->protobuf_c_message_unpack($desc, null, $len, $data) // deserialise"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install protobuf-c"],
-      "checkIfExists": ["brew list protobuf-c"]
+      "install": [
+        "brew install protobuf-c"
+      ],
+      "checkIfExists": [
+        "brew list protobuf-c"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libprotobuf-c-dev"],
-      "checkIfExists": ["pkg-config --exists libprotobuf-c"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libprotobuf-c-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libprotobuf-c"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libprotobuf-c-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libprotobuf-c"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add protobuf-c-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libprotobuf-c"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y protobuf-c-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libprotobuf-c"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y protobuf-c-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libprotobuf-c"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install protobuf-c"
+      ]
     }
   },
   "platforms": [

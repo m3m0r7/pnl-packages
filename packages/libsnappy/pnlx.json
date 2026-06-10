@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libsnappy\\Libsnappy",
   "examples": [
-    "use Pnlx\\Libsnappy\\Libsnappy;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libsnappy = $runtime->load(Libsnappy::class);\n\n$input    = 'Hello, Snappy compression!';\n$inputLen = strlen($input);\n\n// Allocate output buffer sized to the worst-case compressed length\n$maxLen      = $libsnappy->snappy_max_compressed_length($inputLen);\n$compressed  = str_repeat(\"\\0\", $maxLen);\n$compressedLen = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$compressedLen[0] = $maxLen;\n\n$rc = $libsnappy->snappy_compress($input, $inputLen, $compressed, $compressedLen);\nif ($rc !== 0) { // SNAPPY_OK = 0\n    throw new \\RuntimeException(\"snappy_compress failed: {$rc}\");\n}\necho \"Compressed {$inputLen} -> {$compressedLen[0]} bytes\\n\";\n\n// Decompress back\n$uncompressedLen = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$libsnappy->snappy_uncompressed_length($compressed, $compressedLen[0], $uncompressedLen);\n$output = str_repeat(\"\\0\", $uncompressedLen[0]);\n$libsnappy->snappy_uncompress($compressed, $compressedLen[0], $output, $uncompressedLen);\necho $output . \"\\n\";"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install snappy"],
-      "checkIfExists": ["brew list snappy"]
+      "install": [
+        "brew install snappy"
+      ],
+      "checkIfExists": [
+        "brew list snappy"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libsnappy-dev"],
-      "checkIfExists": ["ldconfig -p | grep -q libsnappy"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libsnappy-dev"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q libsnappy"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libsnappy-dev"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q libsnappy"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add snappy-dev"
+      ],
+      "checkIfExists": [
+        "apk info -e snappy-dev"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y snappy-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q snappy-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y snappy-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q snappy-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install snappy"
+      ]
     }
   },
   "platforms": [

@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libuv\\Libuv",
   "examples": [
-    "use Pnlx\\Libuv\\Libuv;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libuv = $runtime->load(Libuv::class);\n\n// Print the libuv version string and numeric version.\necho $libuv->uv_version_string() . PHP_EOL; // e.g. '1.48.0'\necho $libuv->uv_version() . PHP_EOL;        // packed int: major<<16|minor<<8|patch\n\n// Get (or create) the default event loop and run it.\n$loop = $libuv->uv_default_loop();\n// Attach handles/requests to $loop here, then:\n$libuv->uv_run($loop, 0 /* UV_RUN_DEFAULT */);\n$libuv->uv_loop_close($loop);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install libuv"],
-      "checkIfExists": ["brew list libuv"]
+      "install": [
+        "brew install libuv"
+      ],
+      "checkIfExists": [
+        "brew list libuv"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libuv1-dev"],
-      "checkIfExists": ["pkg-config --exists libuv"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libuv1-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libuv"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libuv1-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libuv"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libuv-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libuv"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libuv-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libuv"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libuv-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libuv"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libuv"
+      ]
     }
   },
   "platforms": [

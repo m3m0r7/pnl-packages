@@ -1,0 +1,20 @@
+# zlib/zlib examples
+
+```php
+use Pnlx\Zlib\Zlib;
+use Pnlx\Runtime;
+
+$runtime = new Runtime(__DIR__);
+$zlib = $runtime->load(Zlib::class);
+
+// zlibVersion() returns the library version string, e.g. "1.3.1".
+$version = $zlib->zlibVersion();
+echo "zlib version: $version\n";
+
+// compressBound(sourceLen) returns the worst-case compressed size.
+$bound = $zlib->compressBound(1024);
+echo "Max compressed size for 1024 bytes: $bound\n";
+
+// Explore further: compress2(), uncompress(), deflateInit(),
+// deflate(), deflateEnd(), inflateInit(), inflate(), inflateEnd(), ...
+```

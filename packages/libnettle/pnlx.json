@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libnettle\\Libnettle",
   "examples": [
-    "use Pnlx\\Libnettle\\Libnettle;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libnettle = $runtime->load(Libnettle::class);\n\n// Query the library version\n$major = $libnettle->nettle_version_major(); // returns int\n$minor = $libnettle->nettle_version_minor(); // returns int\necho \"Nettle version: $major.$minor\\n\";\n\n// Compute a SHA-256 digest using the unprefixed algorithm functions\n$ctx = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$libnettle->sha256_init($ctx);\n$libnettle->sha256_update($ctx, strlen('hello'), 'hello');\n$digest = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$libnettle->sha256_digest($ctx, 32, $digest);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install nettle"],
-      "checkIfExists": ["brew list nettle"]
+      "install": [
+        "brew install nettle"
+      ],
+      "checkIfExists": [
+        "brew list nettle"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y nettle-dev"],
-      "checkIfExists": ["pkg-config --exists nettle"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y nettle-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists nettle"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y nettle-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists nettle"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add nettle-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists nettle"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y nettle-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists nettle"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y nettle-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists nettle"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install nettle"
+      ]
     }
   },
   "platforms": [

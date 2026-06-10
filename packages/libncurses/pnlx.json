@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libncurses\\Libncurses",
   "examples": [
-    "use Pnlx\\Libncurses\\Libncurses;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libncurses = $runtime->load(Libncurses::class);\n\n// Initialise the terminal, print a message, wait for a key, then exit\n$libncurses->initscr();\n$libncurses->cbreak();\n$libncurses->noecho();\n\n$libncurses->mvprintw(0, 0, \"Hello from ncurses!\");\n$libncurses->refresh();\n$libncurses->getch();\n\n$libncurses->endwin();"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install ncurses"],
-      "checkIfExists": ["brew list ncurses"]
+      "install": [
+        "brew install ncurses"
+      ],
+      "checkIfExists": [
+        "brew list ncurses"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libncurses-dev"],
-      "checkIfExists": ["ldconfig -p | grep -q libncurses"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libncurses-dev"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q libncurses"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libncurses-dev"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q libncurses"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add ncurses-dev"
+      ],
+      "checkIfExists": [
+        "apk info -e ncurses-dev"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y ncurses-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q ncurses-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y ncurses-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q ncurses-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install ncurses"
+      ]
     }
   },
   "platforms": [

@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libsamplerate\\Libsamplerate",
   "examples": [
-    "use Pnlx\\Libsamplerate\\Libsamplerate;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libsamplerate = $runtime->load(Libsamplerate::class);\n\n// Print library version and available converter names\necho $libsamplerate->src_get_version() . \"\\n\";\necho $libsamplerate->src_get_name(0) . \"\\n\"; // SRC_SINC_BEST_QUALITY\n\n// Create a resampler (SRC_LINEAR = 2), 1 channel\n$errCode = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$state = $libsamplerate->src_new(2, 1, $errCode);\nif (is_null($state)) {\n    throw new \\RuntimeException('src_new failed: ' . $libsamplerate->src_strerror($errCode[0]));\n}\n\n// Convert: fill an SRC_DATA struct, then $libsamplerate->src_process($state, $srcData)\n// Ratio example — 44100 Hz -> 22050 Hz: $srcData->src_ratio = 0.5\n\n$libsamplerate->src_delete($state);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install libsamplerate"],
-      "checkIfExists": ["brew list libsamplerate"]
+      "install": [
+        "brew install libsamplerate"
+      ],
+      "checkIfExists": [
+        "brew list libsamplerate"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libsamplerate0-dev"],
-      "checkIfExists": ["pkg-config --exists samplerate"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libsamplerate0-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists samplerate"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libsamplerate0-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists samplerate"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libsamplerate-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists samplerate"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libsamplerate-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists samplerate"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libsamplerate-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists samplerate"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libsamplerate"
+      ]
     }
   },
   "platforms": [

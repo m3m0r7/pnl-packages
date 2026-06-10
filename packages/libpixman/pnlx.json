@@ -12,16 +12,56 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libpixman\\Libpixman",
   "examples": [
-    "use Pnlx\\Libpixman\\Libpixman;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libpixman = $runtime->load(Libpixman::class);\n\n// Query the Pixman library version\n$versionStr = $libpixman->pixman_version_string();\necho \"Pixman version: {$versionStr}\\n\";\n\n// Composite two ARGB32 images: allocate image structs with pixman_image_create_bits(),\n// then call pixman_image_composite32() to blend them, and pixman_image_unref() to free.\n// Example: $src = $libpixman->pixman_image_create_bits(PIXMAN_a8r8g8b8, $w, $h, $bits, $stride);\n//          $libpixman->pixman_image_composite32(PIXMAN_OP_OVER, $src, null, $dst, 0, 0, 0, 0, 0, 0, $w, $h);\n//          $libpixman->pixman_image_unref($src);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install pixman"],
-      "checkIfExists": ["brew list pixman"]
+      "install": [
+        "brew install pixman"
+      ],
+      "checkIfExists": [
+        "brew list pixman"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libpixman-1-dev"],
-      "checkIfExists": ["pkg-config --exists pixman-1"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libpixman-1-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists pixman-1"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libpixman-1-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists pixman-1"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add pixman-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists pixman-1"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y pixman-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists pixman-1"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y pixman-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists pixman-1"
+      ]
     }
   },
   "platforms": [

@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libjpeg\\Libjpeg",
   "examples": [
-    "use Pnlx\\Libjpeg\\Libjpeg;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libjpeg = $runtime->load(Libjpeg::class);\n\n// Query the compile-time library version (e.g. 80 for libjpeg v8).\n$version = $libjpeg->jpeg_lib_version(); // returns int\necho 'libjpeg version: ' . $version . PHP_EOL;\n// Main entry points to explore: jpeg_CreateCompress / jpeg_CreateDecompress,\n// jpeg_stdio_dest / jpeg_stdio_src, jpeg_start_compress, jpeg_finish_compress."
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install jpeg-turbo"],
-      "checkIfExists": ["brew list jpeg-turbo"]
+      "install": [
+        "brew install jpeg-turbo"
+      ],
+      "checkIfExists": [
+        "brew list jpeg-turbo"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libjpeg-dev"],
-      "checkIfExists": ["pkg-config --exists libjpeg"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libjpeg-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libjpeg"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libjpeg-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libjpeg"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libjpeg-turbo-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libjpeg"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libjpeg-turbo-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libjpeg"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libjpeg-turbo-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libjpeg"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libjpeg-turbo"
+      ]
     }
   },
   "platforms": [

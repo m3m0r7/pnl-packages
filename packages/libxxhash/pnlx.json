@@ -12,16 +12,56 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libxxhash\\Libxxhash",
   "examples": [
-    "use Pnlx\\Libxxhash\\Libxxhash;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libxxhash = $runtime->load(Libxxhash::class);\n\n// XXH_versionNumber() returns version as (major*100*100 + minor*100 + patch).\n$ver = $libxxhash->XXH_versionNumber();\necho sprintf(\"xxHash %d.%d.%d\\n\",\n    intdiv($ver, 10000), intdiv($ver % 10000, 100), $ver % 100);\n\n// Explore further: XXH32(), XXH64(), XXH3_64bits(), XXH3_128bits(), ..."
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install xxhash"],
-      "checkIfExists": ["brew list xxhash"]
+      "install": [
+        "brew install xxhash"
+      ],
+      "checkIfExists": [
+        "brew list xxhash"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libxxhash-dev"],
-      "checkIfExists": ["pkg-config --exists libxxhash"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libxxhash-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libxxhash"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libxxhash-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libxxhash"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add xxhash-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libxxhash"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y xxhash-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q xxhash-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y xxhash-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q xxhash-devel"
+      ]
     }
   },
   "platforms": [

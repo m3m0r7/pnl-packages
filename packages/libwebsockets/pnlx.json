@@ -12,16 +12,56 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libwebsockets\\Libwebsockets",
   "examples": [
-    "use Pnlx\\Libwebsockets\\Libwebsockets;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libwebsockets = $runtime->load(Libwebsockets::class);\n\n// lws_get_library_version() returns the version string, e.g. \"4.3.3\".\n$version = $libwebsockets->lws_get_library_version();\necho \"libwebsockets version: $version\\n\";\n\n// Explore further: lws_create_context(), lws_client_connect_via_info(),\n// lws_service(), lws_context_destroy(), ..."
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install libwebsockets"],
-      "checkIfExists": ["brew list libwebsockets"]
+      "install": [
+        "brew install libwebsockets"
+      ],
+      "checkIfExists": [
+        "brew list libwebsockets"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libwebsockets-dev"],
-      "checkIfExists": ["pkg-config --exists libwebsockets"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libwebsockets-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libwebsockets"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libwebsockets-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libwebsockets"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libwebsockets-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libwebsockets"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libwebsockets-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libwebsockets"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libwebsockets-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libwebsockets"
+      ]
     }
   },
   "platforms": [

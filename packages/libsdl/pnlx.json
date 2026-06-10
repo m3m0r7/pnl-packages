@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libsdl\\Libsdl",
   "examples": [
-    "use Pnlx\\Libsdl\\Libsdl;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\nconst SDL_INIT_VIDEO = 0x00000020;\nconst SDL_WINDOWPOS_CENTERED = 0x2FFF0000;\nconst SDL_WINDOW_SHOWN = 0x00000004;\n\n$runtime = new Runtime(__DIR__);\n$sdl = $runtime->load(Libsdl::class);\n\n$sdl->SDL_Init(SDL_INIT_VIDEO);\n$window = $sdl->SDL_CreateWindow('Hello', SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 360, SDL_WINDOW_SHOWN);\nif (is_null($window)) {\n    throw new RuntimeException('SDL_CreateWindow failed: ' . $sdl->SDL_GetError());\n}\n$sdl->SDL_Delay(2000);\n$sdl->SDL_DestroyWindow($window);\n$sdl->SDL_Quit();"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install sdl2 sdl2_image sdl2_ttf"],
-      "checkIfExists": ["brew list sdl2 && brew list sdl2_image && brew list sdl2_ttf"]
+      "install": [
+        "brew install sdl2 sdl2_image sdl2_ttf"
+      ],
+      "checkIfExists": [
+        "brew list sdl2 && brew list sdl2_image && brew list sdl2_ttf"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev"],
-      "checkIfExists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists sdl2 SDL2_image SDL2_ttf"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists sdl2 SDL2_image SDL2_ttf"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add sdl2-dev sdl2_image-dev sdl2_ttf-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists sdl2 SDL2_image SDL2_ttf"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y SDL2-devel SDL2_image-devel SDL2_ttf-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists sdl2 SDL2_image SDL2_ttf"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y SDL2-devel SDL2_image-devel SDL2_ttf-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists sdl2 SDL2_image SDL2_ttf"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install sdl2 sdl2-image sdl2-ttf"
+      ]
     }
   },
   "platforms": [

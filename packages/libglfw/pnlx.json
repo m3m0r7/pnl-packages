@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libglfw\\Libglfw",
   "examples": [
-    "use Pnlx\\Libglfw\\Libglfw;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libglfw = $runtime->load(Libglfw::class);\n\n// Query GLFW version string before initializing (always safe)\n$versionStr = $libglfw->glfwGetVersionString();\necho \"GLFW: \" . $versionStr . \"\\n\";\n\n// Initialize GLFW, create a window, then terminate\nif ($libglfw->glfwInit()) {\n    $libglfw->glfwWindowHint(0x00022001, 1); // GLFW_CONTEXT_VERSION_MAJOR = 3\n    // $window = $libglfw->glfwCreateWindow(800, 600, 'Hello', null, null);\n    $libglfw->glfwTerminate();\n}"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install glfw"],
-      "checkIfExists": ["brew list glfw"]
+      "install": [
+        "brew install glfw"
+      ],
+      "checkIfExists": [
+        "brew list glfw"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libglfw3-dev"],
-      "checkIfExists": ["pkg-config --exists glfw3"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libglfw3-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists glfw3"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libglfw3-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists glfw3"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add glfw-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists glfw3"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y glfw-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists glfw3"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y glfw-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists glfw3"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install glfw3"
+      ]
     }
   },
   "platforms": [

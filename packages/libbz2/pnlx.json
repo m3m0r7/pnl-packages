@@ -12,16 +12,56 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libbz2\\Libbz2",
   "examples": [
-    "use Pnlx\\Libbz2\\Libbz2;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libbz2 = $runtime->load(Libbz2::class);\n\n// Open a file for bzip2-compressed writing, write data, then close it\n$bzfile = $libbz2->BZ2_bzopen('output.bz2', 'w');\nif (\\is_null($bzfile)) {\n    throw new \\RuntimeException('BZ2_bzopen failed');\n}\n$data = 'Hello, bzip2 compression!';\n$libbz2->BZ2_bzwrite($bzfile, $data, strlen($data));\n$libbz2->BZ2_bzclose($bzfile);\n\n// Open for reading: $libbz2->BZ2_bzopen('output.bz2', 'r')\n// then: $libbz2->BZ2_bzread($bzfile, $buf, $len)"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install bzip2"],
-      "checkIfExists": ["brew list bzip2"]
+      "install": [
+        "brew install bzip2"
+      ],
+      "checkIfExists": [
+        "brew list bzip2"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libbz2-dev"],
-      "checkIfExists": ["ldconfig -p | grep -q libbz2"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libbz2-dev"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q libbz2"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libbz2-dev"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q libbz2"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add bzip2-dev"
+      ],
+      "checkIfExists": [
+        "apk info -e bzip2-dev"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y bzip2-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q bzip2-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y bzip2-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q bzip2-devel"
+      ]
     }
   },
   "platforms": [

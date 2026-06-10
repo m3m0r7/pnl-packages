@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libavif\\Libavif",
   "examples": [
-    "use Pnlx\\Libavif\\Libavif;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libavif = $runtime->load(Libavif::class);\n\n// Print the libavif version string\n$version = $libavif->avifVersion();\necho \"libavif version: {$version}\\n\";\n\n// Decode an AVIF file\n$decoder = $libavif->avifDecoderCreate();\nif (is_null($decoder)) {\n    throw new \\RuntimeException('avifDecoderCreate failed');\n}\n// $libavif->avifDecoderSetIOFile($decoder, 'image.avif');\n// $libavif->avifDecoderParse($decoder);\n// $libavif->avifDecoderNextImage($decoder);\n$libavif->avifDecoderDestroy($decoder);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install libavif"],
-      "checkIfExists": ["brew list libavif"]
+      "install": [
+        "brew install libavif"
+      ],
+      "checkIfExists": [
+        "brew list libavif"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libavif-dev"],
-      "checkIfExists": ["pkg-config --exists libavif"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libavif-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libavif"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libavif-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libavif"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libavif-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libavif"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libavif-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libavif"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libavif-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libavif"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libavif"
+      ]
     }
   },
   "platforms": [

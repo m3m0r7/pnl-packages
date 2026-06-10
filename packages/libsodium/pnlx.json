@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libsodium\\Libsodium",
   "examples": [
-    "use Pnlx\\Libsodium\\Libsodium;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libsodium = $runtime->load(Libsodium::class);\n\n// Initialise the library (must be called once before any crypto operation).\n$libsodium->sodium_init();\n\n// Print the library version string.\n$version = $libsodium->sodium_version_string();\necho $version . PHP_EOL;\n\n// Key and nonce size constants are returned as plain integers.\n$keyBytes   = $libsodium->crypto_secretbox_keybytes();\n$nonceBytes = $libsodium->crypto_secretbox_noncebytes();\necho \"secretbox key={$keyBytes} nonce={$nonceBytes}\" . PHP_EOL;\n// Use $libsodium->crypto_secretbox_easy(...) for authenticated encryption."
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install libsodium"],
-      "checkIfExists": ["brew list libsodium"]
+      "install": [
+        "brew install libsodium"
+      ],
+      "checkIfExists": [
+        "brew list libsodium"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libsodium-dev"],
-      "checkIfExists": ["pkg-config --exists libsodium"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libsodium-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libsodium"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libsodium-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libsodium"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libsodium-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libsodium"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libsodium-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libsodium"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libsodium-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libsodium"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libsodium"
+      ]
     }
   },
   "platforms": [

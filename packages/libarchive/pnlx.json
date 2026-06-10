@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libarchive\\Libarchive",
   "examples": [
-    "use Pnlx\\Libarchive\\Libarchive;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libarchive = $runtime->load(Libarchive::class);\n\n// Read a tar.gz archive entry by entry\n$a = $libarchive->archive_read_new();\nif (is_null($a)) {\n    throw new \\RuntimeException('archive_read_new failed');\n}\n$libarchive->archive_read_support_filter_gzip($a);\n$libarchive->archive_read_support_format_tar($a);\n$libarchive->archive_read_open_filename($a, 'archive.tar.gz', 10240);\n// Process entries: $libarchive->archive_read_next_header($a, $entry)\n$libarchive->archive_read_free($a);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install libarchive"],
-      "checkIfExists": ["brew list libarchive"]
+      "install": [
+        "brew install libarchive"
+      ],
+      "checkIfExists": [
+        "brew list libarchive"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libarchive-dev"],
-      "checkIfExists": ["pkg-config --exists libarchive"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libarchive-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libarchive"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libarchive-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libarchive"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libarchive-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libarchive"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libarchive-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libarchive"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libarchive-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libarchive"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libarchive"
+      ]
     }
   },
   "platforms": [

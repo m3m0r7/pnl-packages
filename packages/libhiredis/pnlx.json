@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libhiredis\\Libhiredis",
   "examples": [
-    "use Pnlx\\Libhiredis\\Libhiredis;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libhiredis = $runtime->load(Libhiredis::class);\n\n// Connect to Redis, run a PING command, then disconnect\n$ctx = $libhiredis->redisConnect('127.0.0.1', 6379);\nif (!is_null($ctx) && $ctx->err === 0) {\n    $reply = $libhiredis->redisCommand($ctx, 'PING');\n    if (!is_null($reply)) {\n        echo \"Redis reply: \" . $reply->str . \"\\n\";\n        $libhiredis->freeReplyObject($reply);\n    }\n    $libhiredis->redisFree($ctx);\n}"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install hiredis"],
-      "checkIfExists": ["brew list hiredis"]
+      "install": [
+        "brew install hiredis"
+      ],
+      "checkIfExists": [
+        "brew list hiredis"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libhiredis-dev"],
-      "checkIfExists": ["pkg-config --exists hiredis"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libhiredis-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists hiredis"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libhiredis-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists hiredis"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add hiredis-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists hiredis"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y hiredis-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists hiredis"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y hiredis-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists hiredis"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install hiredis"
+      ]
     }
   },
   "platforms": [

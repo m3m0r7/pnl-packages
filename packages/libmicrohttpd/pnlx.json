@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmicrohttpd\\Libmicrohttpd",
   "examples": [
-    "use Pnlx\\Libmicrohttpd\\Libmicrohttpd;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libmicrohttpd = $runtime->load(Libmicrohttpd::class);\n\n// Query the libmicrohttpd runtime version string.\n$ver = $libmicrohttpd->MHD_get_version(); // returns string, e.g. \"0.9.77\"\necho 'libmicrohttpd version: ' . $ver . PHP_EOL;\n// Main entry point to explore: MHD_start_daemon() -- starts an embedded HTTP\n// server on a given port with a request-handler callback, returns MHD_Daemon*."
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install libmicrohttpd"],
-      "checkIfExists": ["brew list libmicrohttpd"]
+      "install": [
+        "brew install libmicrohttpd"
+      ],
+      "checkIfExists": [
+        "brew list libmicrohttpd"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libmicrohttpd-dev"],
-      "checkIfExists": ["pkg-config --exists libmicrohttpd"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libmicrohttpd-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmicrohttpd"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libmicrohttpd-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmicrohttpd"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libmicrohttpd-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmicrohttpd"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libmicrohttpd-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmicrohttpd"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libmicrohttpd-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmicrohttpd"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libmicrohttpd"
+      ]
     }
   },
   "platforms": [

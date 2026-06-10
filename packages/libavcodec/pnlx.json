@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libavcodec\\Libavcodec",
   "examples": [
-    "use Pnlx\\Libavcodec\\Libavcodec;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libavcodec = $runtime->load(Libavcodec::class);\n\n// Print the libavcodec version string\n$version = $libavcodec->avcodec_version();\n$major   = ($version >> 16) & 0xff;\n$minor   = ($version >>  8) & 0xff;\n$micro   = $version & 0xff;\necho \"libavcodec version: {$major}.{$minor}.{$micro}\\n\";\n\n// List available codec configuration\n$config = $libavcodec->avcodec_configuration();\necho \"Configuration: {$config}\\n\";\n\n// Explore codecs: $libavcodec->avcodec_find_encoder(AV_CODEC_ID_H264)\n// then $libavcodec->avcodec_alloc_context3($codec)"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install ffmpeg"],
-      "checkIfExists": ["brew list ffmpeg"]
+      "install": [
+        "brew install ffmpeg"
+      ],
+      "checkIfExists": [
+        "brew list ffmpeg"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libavcodec-dev"],
-      "checkIfExists": ["pkg-config --exists libavcodec"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libavcodec-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libavcodec"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libavcodec-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libavcodec"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add ffmpeg-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libavcodec"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y ffmpeg-free-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libavcodec"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y ffmpeg-free-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libavcodec"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install ffmpeg"
+      ]
     }
   },
   "platforms": [

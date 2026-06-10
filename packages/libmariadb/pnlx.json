@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmariadb\\Libmariadb",
   "examples": [
-    "use Pnlx\\Libmariadb\\Libmariadb;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libmariadb = $runtime->load(Libmariadb::class);\n\n// Connect to MariaDB, run a query, fetch a row, then close.\n$info = $libmariadb->mysql_get_client_info(); // returns string\necho 'Client: ' . $info . PHP_EOL;\n$conn = $libmariadb->mysql_init(null);\nif (is_null($conn)) {\n    throw new \\RuntimeException('mysql_init failed');\n}\n$handle = $libmariadb->mysql_real_connect(\n    $conn, '127.0.0.1', 'root', '', 'test', 3306, null, 0\n);\n$libmariadb->mysql_query($conn, 'SELECT VERSION()');\n$result = $libmariadb->mysql_store_result($conn);\n$libmariadb->mysql_free_result($result);\n$libmariadb->mysql_close($conn);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install mariadb-connector-c"],
-      "checkIfExists": ["brew list mariadb-connector-c"]
+      "install": [
+        "brew install mariadb-connector-c"
+      ],
+      "checkIfExists": [
+        "brew list mariadb-connector-c"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libmariadb-dev"],
-      "checkIfExists": ["pkg-config --exists libmariadb"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libmariadb-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmariadb"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libmariadb-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmariadb"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add mariadb-connector-c-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmariadb"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y mariadb-connector-c-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmariadb"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y mariadb-connector-c-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmariadb"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libmariadb"
+      ]
     }
   },
   "platforms": [

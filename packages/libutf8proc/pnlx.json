@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libutf8proc\\Libutf8proc",
   "examples": [
-    "use Pnlx\\Libutf8proc\\Libutf8proc;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libutf8proc = $runtime->load(Libutf8proc::class);\n\n// Print the library version string.\necho $libutf8proc->utf8proc_version() . PHP_EOL;\n\n// Look up the Unicode category name for a codepoint (e.g. U+0041 'A' -> Lu).\n$category = $libutf8proc->utf8proc_category(0x0041); // returns int (enum)\n$name = $libutf8proc->utf8proc_category_string(0x0041); // returns char*\necho \"U+0041 category: {$name}\" . PHP_EOL;\n\n// Normalise a UTF-8 string to NFC (UTF8PROC_COMPOSE=1).\n// $out = $libutf8proc->utf8proc_map($input, strlen($input), $outPtr, 1);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install utf8proc"],
-      "checkIfExists": ["brew list utf8proc"]
+      "install": [
+        "brew install utf8proc"
+      ],
+      "checkIfExists": [
+        "brew list utf8proc"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libutf8proc-dev"],
-      "checkIfExists": ["pkg-config --exists libutf8proc"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libutf8proc-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libutf8proc"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libutf8proc-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libutf8proc"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add utf8proc-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libutf8proc"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y utf8proc-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libutf8proc"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y utf8proc-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libutf8proc"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install utf8proc"
+      ]
     }
   },
   "platforms": [

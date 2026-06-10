@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libglew\\Libglew",
   "examples": [
-    "use Pnlx\\Libglew\\Libglew;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libglew = $runtime->load(Libglew::class);\n\n// glewGetString returns a GLubyte* (string) with GLEW version info.\n// A valid OpenGL context must be current before calling glewInit().\n$versionStr = $libglew->glewGetString(1); // GLEW_VERSION = 1\necho \"GLEW version: \" . $versionStr . \"\\n\";\n\n// After glewInit() succeeds (rc == GLEW_OK == 0), extension checks become available.\n// $rc = $libglew->glewInit();\n// $supported = $libglew->glewIsSupported('GL_ARB_vertex_array_object');"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install glew"],
-      "checkIfExists": ["brew list glew"]
+      "install": [
+        "brew install glew"
+      ],
+      "checkIfExists": [
+        "brew list glew"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libglew-dev"],
-      "checkIfExists": ["pkg-config --exists glew"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libglew-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists glew"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libglew-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists glew"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add glew-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists glew"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y glew-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists glew"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y glew-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists glew"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install glew"
+      ]
     }
   },
   "platforms": [

@@ -12,16 +12,56 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libquickjs\\Libquickjs",
   "examples": [
-    "use Pnlx\\Libquickjs\\Libquickjs;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libquickjs = $runtime->load(Libquickjs::class);\n\n// Create a QuickJS runtime and context\n$jsRuntime = $libquickjs->JS_NewRuntime();\nif (is_null($jsRuntime)) {\n    throw new \\RuntimeException('JS_NewRuntime failed');\n}\n$ctx = $libquickjs->JS_NewContext($jsRuntime);\nif (is_null($ctx)) {\n    $libquickjs->JS_FreeRuntime($jsRuntime);\n    throw new \\RuntimeException('JS_NewContext failed');\n}\n\n// Evaluate a JavaScript expression\n$val = $libquickjs->JS_Eval($ctx, '1 + 2', 5, '<input>', 0);\n$str = $libquickjs->JS_ToCString($ctx, $val);\necho \"Result: {$str}\\n\"; // 3\n$libquickjs->JS_FreeCString($ctx, $str);\n$libquickjs->JS_FreeValue($ctx, $val);\n\n$libquickjs->JS_FreeContext($ctx);\n$libquickjs->JS_FreeRuntime($jsRuntime);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install quickjs"],
-      "checkIfExists": ["brew list quickjs"]
+      "install": [
+        "brew install quickjs"
+      ],
+      "checkIfExists": [
+        "brew list quickjs"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y quickjs"],
-      "checkIfExists": ["ldconfig -p | grep -q libquickjs"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y quickjs"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q libquickjs"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y quickjs"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q libquickjs"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add quickjs-dev"
+      ],
+      "checkIfExists": [
+        "apk info -e quickjs-dev"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y quickjs-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q quickjs-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y quickjs-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q quickjs-devel"
+      ]
     }
   },
   "platforms": [

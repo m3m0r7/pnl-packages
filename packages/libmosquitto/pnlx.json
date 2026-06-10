@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmosquitto\\Libmosquitto",
   "examples": [
-    "use Pnlx\\Libmosquitto\\Libmosquitto;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libmosquitto = $runtime->load(Libmosquitto::class);\n\n// Initialise the library, create a client, publish a message, then clean up.\n$libmosquitto->mosquitto_lib_init();\n$mosq = $libmosquitto->mosquitto_new('php-pnl-client', true, null);\nif (is_null($mosq)) {\n    throw new \\RuntimeException('mosquitto_new failed');\n}\nif ($libmosquitto->mosquitto_connect($mosq, 'localhost', 1883, 60) === 0) {\n    $msg = 'hello mqtt';\n    $libmosquitto->mosquitto_publish($mosq, null, 'test/topic', strlen($msg), $msg, 0, false);\n    $libmosquitto->mosquitto_disconnect($mosq);\n}\n$libmosquitto->mosquitto_destroy($mosq);\n$libmosquitto->mosquitto_lib_cleanup();"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install mosquitto"],
-      "checkIfExists": ["brew list mosquitto"]
+      "install": [
+        "brew install mosquitto"
+      ],
+      "checkIfExists": [
+        "brew list mosquitto"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libmosquitto-dev"],
-      "checkIfExists": ["pkg-config --exists libmosquitto"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libmosquitto-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmosquitto"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libmosquitto-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmosquitto"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add mosquitto-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmosquitto"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y mosquitto-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmosquitto"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y mosquitto-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmosquitto"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install mosquitto"
+      ]
     }
   },
   "platforms": [

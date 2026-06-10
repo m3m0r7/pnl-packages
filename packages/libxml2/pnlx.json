@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libxml2\\Libxml2",
   "examples": [
-    "use Pnlx\\Libxml2\\Libxml2;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libxml2 = $runtime->load(Libxml2::class);\n\n// xmlReadMemory() parses an XML document held in a string buffer.\n$xml = \"<root><item>hello</item></root>\";\n$doc = $libxml2->xmlReadMemory($xml, strlen($xml), \"doc.xml\", null, 0);\nif (is_null($doc)) {\n    echo \"Parse failed\\n\";\n} else {\n    echo \"Parsed OK\\n\";\n    $libxml2->xmlFreeDoc($doc);\n}\n$libxml2->xmlCleanupParser();"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install libxml2"],
-      "checkIfExists": ["brew list libxml2"]
+      "install": [
+        "brew install libxml2"
+      ],
+      "checkIfExists": [
+        "brew list libxml2"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libxml2-dev"],
-      "checkIfExists": ["pkg-config --exists libxml-2.0"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libxml2-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libxml-2.0"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libxml2-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libxml-2.0"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libxml2-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libxml-2.0"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libxml2-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libxml-2.0"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libxml2-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libxml-2.0"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libxml2"
+      ]
     }
   },
   "platforms": [

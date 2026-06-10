@@ -12,16 +12,56 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libswscale\\Libswscale",
   "examples": [
-    "use Pnlx\\Libswscale\\Libswscale;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libswscale = $runtime->load(Libswscale::class);\n\n// Print the libswscale version and license.\necho $libswscale->swscale_version() . PHP_EOL;\necho $libswscale->swscale_license() . PHP_EOL;\n\n// Allocate a scaling context (640x480 YUV420P -> 1280x720 RGB24).\n// AV_PIX_FMT_YUV420P=0, AV_PIX_FMT_RGB24=2, SWS_BILINEAR=2.\n$ctx = $libswscale->sws_getContext(640, 480, 0, 1280, 720, 2, 2, null, null, null);\n// if (!is_null($ctx)) { /* sws_scale(...) */ $libswscale->sws_freeContext($ctx); }"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install ffmpeg"],
-      "checkIfExists": ["brew list ffmpeg"]
+      "install": [
+        "brew install ffmpeg"
+      ],
+      "checkIfExists": [
+        "brew list ffmpeg"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libswscale-dev"],
-      "checkIfExists": ["pkg-config --exists libswscale"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libswscale-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libswscale"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libswscale-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libswscale"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add ffmpeg-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libswscale"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y ffmpeg-free-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libswscale"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y ffmpeg-free-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libswscale"
+      ]
     }
   },
   "platforms": [

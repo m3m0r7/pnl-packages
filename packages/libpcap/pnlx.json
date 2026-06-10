@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libpcap\\Libpcap",
   "examples": [
-    "use Pnlx\\Libpcap\\Libpcap;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libpcap = $runtime->load(Libpcap::class);\n\n// Query the library version string (char* → PHP string)\n$version = $libpcap->pcap_lib_version();\necho \"libpcap version: $version\\n\";\n\n// Look up the default network device for capture\n$errbuf = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$handle = $libpcap->pcap_open_live('eth0', 65535, 1, 1000, $errbuf);\nif (is_null($handle)) {\n    echo \"Could not open device\\n\";\n} else {\n    // ... capture packets with pcap_loop() / pcap_next() ...\n    $libpcap->pcap_close($handle);\n}"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install libpcap"],
-      "checkIfExists": ["brew list libpcap"]
+      "install": [
+        "brew install libpcap"
+      ],
+      "checkIfExists": [
+        "brew list libpcap"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libpcap-dev"],
-      "checkIfExists": ["ldconfig -p | grep -q libpcap"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libpcap-dev"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q libpcap"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libpcap-dev"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q libpcap"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libpcap-dev"
+      ],
+      "checkIfExists": [
+        "apk info -e libpcap-dev"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libpcap-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libpcap-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libpcap-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libpcap-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libpcap"
+      ]
     }
   },
   "platforms": [

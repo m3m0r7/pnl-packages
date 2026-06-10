@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libzstd\\Libzstd",
   "examples": [
-    "use Pnlx\\Libzstd\\Libzstd;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libzstd = $runtime->load(Libzstd::class);\n\n// ZSTD_versionString() returns the library version, e.g. \"1.5.6\".\n$version = $libzstd->ZSTD_versionString();\necho \"Zstandard version: $version\\n\";\n\n// ZSTD_compressBound(srcSize) returns the worst-case compressed size.\n$bound = $libzstd->ZSTD_compressBound(1024);\necho \"Max compressed size for 1024 bytes: $bound\\n\";\n\n// Explore further: ZSTD_compress(), ZSTD_decompress(),\n// ZSTD_createCCtx(), ZSTD_compressStream2(), ..."
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install zstd"],
-      "checkIfExists": ["brew list zstd"]
+      "install": [
+        "brew install zstd"
+      ],
+      "checkIfExists": [
+        "brew list zstd"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libzstd-dev"],
-      "checkIfExists": ["pkg-config --exists libzstd"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libzstd-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libzstd"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libzstd-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libzstd"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add zstd-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libzstd"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libzstd-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libzstd-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libzstd-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libzstd-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install zstd"
+      ]
     }
   },
   "platforms": [

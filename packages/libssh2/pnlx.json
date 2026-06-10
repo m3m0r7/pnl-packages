@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libssh2\\Libssh2",
   "examples": [
-    "use Pnlx\\Libssh2\\Libssh2;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libssh2 = $runtime->load(Libssh2::class);\n\n// Print the libssh2 version string.\necho $libssh2->libssh2_version(0) . PHP_EOL;\n\n// Initialise the library (call once at application start).\n$libssh2->libssh2_init(0);\n\n// Create a session for a connected socket $sock (int):\n// $session = $libssh2->libssh2_session_init_ex(null, null, null, null);\n// if (!is_null($session)) { $libssh2->libssh2_session_handshake($session, $sock); }\n$libssh2->libssh2_exit();"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install libssh2"],
-      "checkIfExists": ["brew list libssh2"]
+      "install": [
+        "brew install libssh2"
+      ],
+      "checkIfExists": [
+        "brew list libssh2"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libssh2-1-dev"],
-      "checkIfExists": ["pkg-config --exists libssh2"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libssh2-1-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libssh2"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libssh2-1-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libssh2"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libssh2-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libssh2"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libssh2-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libssh2"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libssh2-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libssh2"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libssh2"
+      ]
     }
   },
   "platforms": [

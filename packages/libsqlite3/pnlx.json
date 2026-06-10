@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libsqlite3\\Libsqlite3",
   "examples": [
-    "use Pnlx\\Libsqlite3\\Libsqlite3;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libsqlite3 = $runtime->load(Libsqlite3::class);\n\necho $libsqlite3->sqlite3_libversion() . PHP_EOL;\n\n// Open an in-memory database.\n$dbPtr = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$rc = $libsqlite3->sqlite3_open(':memory:', $dbPtr);\nif ($rc !== 0) { throw new \\RuntimeException('sqlite3_open failed: ' . $rc); }\n$db = $dbPtr[0];\n$libsqlite3->sqlite3_exec($db, 'CREATE TABLE t (id INTEGER PRIMARY KEY, val TEXT)', null, null, null);\n$libsqlite3->sqlite3_close($db);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install sqlite"],
-      "checkIfExists": ["brew list sqlite"]
+      "install": [
+        "brew install sqlite"
+      ],
+      "checkIfExists": [
+        "brew list sqlite"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libsqlite3-dev"],
-      "checkIfExists": ["pkg-config --exists sqlite3"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libsqlite3-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists sqlite3"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libsqlite3-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists sqlite3"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add sqlite-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists sqlite3"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y sqlite-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists sqlite3"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y sqlite-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists sqlite3"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install sqlite3"
+      ]
     }
   },
   "platforms": [

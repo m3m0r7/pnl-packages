@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libicu\\Libicu",
   "examples": [
-    "use Pnlx\\Libicu\\Libicu;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libicu = $runtime->load(Libicu::class);\n\n// Query the ICU library version\n$verBuf = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$libicu->u_getVersion($verBuf);\necho \"ICU version: \" . $verBuf[0] . \".\" . $verBuf[1] . \"\\n\";\n\n// Normalize a Unicode string to NFC using unorm2\n// $norm = $libicu->unorm2_getNFCInstance($error);\n// $libicu->unorm2_normalize($norm, $src, -1, $dest, $destCapacity, $error);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install icu4c"],
-      "checkIfExists": ["brew list icu4c"]
+      "install": [
+        "brew install icu4c"
+      ],
+      "checkIfExists": [
+        "brew list icu4c"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libicu-dev"],
-      "checkIfExists": ["pkg-config --exists icu-uc"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libicu-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists icu-uc"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libicu-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists icu-uc"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add icu-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists icu-uc"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libicu-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists icu-uc"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libicu-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists icu-uc"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install icu"
+      ]
     }
   },
   "platforms": [

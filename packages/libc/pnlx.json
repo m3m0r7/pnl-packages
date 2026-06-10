@@ -12,7 +12,7 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libc\\Libc",
   "examples": [
-    "use Pnlx\\Libc\\Libc;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libc = $runtime->load(Libc::class);\n\n$libc->printf(\"Hello, World from libc!\\n\");\n$libc->puts(\"And this line is printed by libc puts.\");"
+    "EXAMPLES.md"
   ],
   "platforms": [
     {

@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libbrotli\\Libbrotli",
   "examples": [
-    "use Pnlx\\Libbrotli\\Libbrotli;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libbrotli = $runtime->load(Libbrotli::class);\n\n// Print the Brotli encoder version number\n$version = $libbrotli->BrotliEncoderVersion();\n$major   = ($version >> 24) & 0xff;\n$minor   = ($version >> 12) & 0xfff;\n$patch   = $version & 0xfff;\necho \"Brotli encoder version: {$major}.{$minor}.{$patch}\\n\";\n\n// Compute the maximum compressed size for a given input length\n$inputLen    = 1024;\n$maxEncoded  = $libbrotli->BrotliEncoderMaxCompressedSize($inputLen);\necho \"Max compressed size for {$inputLen} bytes: {$maxEncoded}\\n\";\n\n// Compress/decompress: $libbrotli->BrotliEncoderCompress(quality, window, mode, inputLen, input, $encodedSize, $encodedBuf)\n// then: $libbrotli->BrotliDecoderDecompress($encodedSize, $encodedBuf, $decodedSize, $decodedBuf)"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install brotli"],
-      "checkIfExists": ["brew list brotli"]
+      "install": [
+        "brew install brotli"
+      ],
+      "checkIfExists": [
+        "brew list brotli"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libbrotli-dev"],
-      "checkIfExists": ["pkg-config --exists libbrotlidec"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libbrotli-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libbrotlidec"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libbrotli-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libbrotlidec"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add brotli-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libbrotlidec"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y brotli-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libbrotlidec"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y brotli-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libbrotlidec"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install brotli"
+      ]
     }
   },
   "platforms": [

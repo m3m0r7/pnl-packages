@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libcjson\\Libcjson",
   "examples": [
-    "use Pnlx\\Libcjson\\Libcjson;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libcjson = $runtime->load(Libcjson::class);\n\n// Parse a JSON string and read a field value\n$json = '{\"name\":\"Alice\",\"age\":30}';\n$root = $libcjson->cJSON_Parse($json);\nif (is_null($root)) {\n    throw new \\RuntimeException('cJSON_Parse failed: ' . $libcjson->cJSON_GetErrorPtr());\n}\n$nameItem = $libcjson->cJSON_GetObjectItemCaseSensitive($root, 'name');\n$name     = $libcjson->cJSON_GetStringValue($nameItem);\necho \"name: {$name}\\n\"; // Alice\n\n$printed = $libcjson->cJSON_Print($root);\necho $printed . \"\\n\";\n$libcjson->cJSON_Delete($root);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install cjson"],
-      "checkIfExists": ["brew list cjson"]
+      "install": [
+        "brew install cjson"
+      ],
+      "checkIfExists": [
+        "brew list cjson"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libcjson-dev"],
-      "checkIfExists": ["pkg-config --exists libcjson"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libcjson-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libcjson"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libcjson-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libcjson"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add cjson-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libcjson"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y cjson-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libcjson"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y cjson-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libcjson"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install cjson"
+      ]
     }
   },
   "platforms": [

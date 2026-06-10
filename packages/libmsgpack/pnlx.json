@@ -12,16 +12,61 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmsgpack\\Libmsgpack",
   "examples": [
-    "use Pnlx\\Libmsgpack\\Libmsgpack;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libmsgpack = $runtime->load(Libmsgpack::class);\n\n// Pack an integer into a msgpack buffer\n$sbuf = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$packer = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n\n$libmsgpack->msgpack_sbuffer_init($sbuf);\n$libmsgpack->msgpack_packer_init($packer, $sbuf, null);\n$libmsgpack->msgpack_pack_int($packer, 42);\n\necho \"Packed bytes: \" . $sbuf->size . \"\\n\";\n// ... transmit $sbuf->data ...\n\n$libmsgpack->msgpack_sbuffer_destroy($sbuf);"
+    "EXAMPLES.md"
   ],
   "installation": {
     "darwin": {
-      "install": ["brew install msgpack"],
-      "checkIfExists": ["brew list msgpack"]
+      "install": [
+        "brew install msgpack"
+      ],
+      "checkIfExists": [
+        "brew list msgpack"
+      ]
     },
-    "linux": {
-      "install": ["sudo apt-get install -y libmsgpack-dev"],
-      "checkIfExists": ["ldconfig -p | grep -q libmsgpackc"]
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libmsgpack-dev"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q libmsgpackc"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libmsgpack-dev"
+      ],
+      "checkIfExists": [
+        "ldconfig -p | grep -q libmsgpackc"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add msgpack-c-dev"
+      ],
+      "checkIfExists": [
+        "apk info -e msgpack-c-dev"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y msgpack-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q msgpack-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y msgpack-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q msgpack-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install msgpack"
+      ]
     }
   },
   "platforms": [
