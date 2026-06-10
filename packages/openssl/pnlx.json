@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Openssl\\Openssl;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$openssl = $runtime->load(Openssl::class);\n\n// OpenSSL_version(0) returns the full version string (OPENSSL_VERSION == 0).\n$version = $openssl->OpenSSL_version(0);\necho \"OpenSSL: $version\\n\";\n\n// Explore further: EVP_MD_CTX_new(), EVP_DigestInit_ex(),\n// EVP_DigestUpdate(), EVP_DigestFinal_ex(), EVP_MD_CTX_free(), ..."
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install openssl@3"],
+      "checkIfExists": ["brew list openssl@3"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libssl-dev"],
+      "checkIfExists": ["pkg-config --exists openssl"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

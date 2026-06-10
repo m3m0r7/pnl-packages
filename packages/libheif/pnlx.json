@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libheif\\Libheif;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libheif = $runtime->load(Libheif::class);\n\n// Query libheif version string\n$version = $libheif->heif_get_version();\necho \"libheif version: \" . $version . \"\\n\";\n\n// Allocate a context, load a HEIF file, then release\n$ctx = $libheif->heif_context_alloc();\nif (!is_null($ctx)) {\n    // $err = $libheif->heif_context_read_from_file($ctx, 'image.heic', null);\n    $libheif->heif_context_free($ctx);\n}"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install libheif"],
+      "checkIfExists": ["brew list libheif"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libheif-dev"],
+      "checkIfExists": ["pkg-config --exists libheif"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

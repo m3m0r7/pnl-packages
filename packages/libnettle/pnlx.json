@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libnettle\\Libnettle;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libnettle = $runtime->load(Libnettle::class);\n\n// Query the library version\n$major = $libnettle->nettle_version_major(); // returns int\n$minor = $libnettle->nettle_version_minor(); // returns int\necho \"Nettle version: $major.$minor\\n\";\n\n// Compute a SHA-256 digest using the unprefixed algorithm functions\n$ctx = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$libnettle->sha256_init($ctx);\n$libnettle->sha256_update($ctx, strlen('hello'), 'hello');\n$digest = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$libnettle->sha256_digest($ctx, 32, $digest);"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install nettle"],
+      "checkIfExists": ["brew list nettle"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y nettle-dev"],
+      "checkIfExists": ["pkg-config --exists nettle"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

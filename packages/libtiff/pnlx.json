@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libtiff\\Libtiff;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libtiff = $runtime->load(Libtiff::class);\n\n// Print the libtiff version string.\necho $libtiff->TIFFGetVersion() . PHP_EOL;\n\n// Open a TIFF file for reading.\n$tif = $libtiff->TIFFOpen('/path/to/image.tiff', 'r');\nif (is_null($tif)) { throw new \\RuntimeException('TIFFOpen failed'); }\n// Read image width and height (TIFFTAG_IMAGEWIDTH=256, TIFFTAG_IMAGELENGTH=257).\n// $libtiff->TIFFGetField($tif, 256, $widthPtr);\n$libtiff->TIFFClose($tif);"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install libtiff"],
+      "checkIfExists": ["brew list libtiff"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libtiff-dev"],
+      "checkIfExists": ["pkg-config --exists libtiff-4"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

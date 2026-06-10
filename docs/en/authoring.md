@@ -93,6 +93,7 @@ Fields:
 | `class` | string | yes | Fully qualified generated PHP entity class. Must include a namespace. |
 | `class_prefix` | string | optional | Prefix applied to generated class/context names. Leave empty unless avoiding class collisions. |
 | `examples` | array | optional | PHP usage snippets. Each string is printed when `pnl install` finishes, so users immediately see how to call the package. Keep them short and runnable, and mirror them in the package README. |
+| `installation` | object | optional | Per-OS commands that install the package's native dependencies. See [Installing native dependencies](#installing-native-dependencies). |
 | `platforms` | array | yes | Supported OS/arch combinations for the wrapper package. |
 | `requires` | object | yes | Native library requirements. Must contain at least one entry. |
 | `dependencies` | object | yes | Other pnl extension dependencies. Dependency solving is not complete yet. |
@@ -198,6 +199,30 @@ Some libraries are provided by the operating system and have **no file on disk**
 ```
 
 A virtual library is **linked by name** and never required to exist as a file. pnl still prefers a real on-disk match when a non-virtual entry resolves; the virtual entry is the fallback.
+
+### Installing native dependencies
+
+A package may declare `installation` so `pnl install` can fetch its native libraries/headers for the user. It is an object keyed by OS name (`darwin`, `linux`, `windows`); each entry has:
+
+- `install` — shell command lines to run to install the dependency.
+- `checkIfExists` (optional) — shell command lines that exit `0` when the dependency is already present. If they all pass, installation is skipped.
+
+```json
+"installation": {
+  "darwin": {
+    "install": ["brew install sdl2 sdl2_image sdl2_ttf"],
+    "checkIfExists": ["brew list sdl2 && brew list sdl2_image && brew list sdl2_ttf"]
+  },
+  "linux": {
+    "install": ["sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev"],
+    "checkIfExists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
+  }
+}
+```
+
+When `installation` is present and `checkIfExists` does not pass, `pnl install` asks `Run the following to install them? [Y/n]` before running the commands; `pnl install … -y` (or `--yes`) answers yes automatically. When a package has **no** `installation`, and the native library cannot be found, pnl prints exactly which `library_names` and `header_names` it is looking for and where to place them (e.g. `/usr/local/lib` and `/usr/local/include`).
+
+Most packages wrap a single system library and need no `installation` at all. Declare it for libraries that come as several packages (e.g. SDL2 plus `sdl2_image` / `sdl2_ttf`) or that are awkward to install by hand.
 
 ### Header And Bridge Generation
 

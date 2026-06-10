@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libnghttp2\\Libnghttp2;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libnghttp2 = $runtime->load(Libnghttp2::class);\n\n// nghttp2_version() returns a pointer to a nghttp2_info struct\n$info = $libnghttp2->nghttp2_version(0);\necho \"nghttp2 version: \" . $info->version_str . \"\\n\";\necho \"Protocol: \"       . $info->proto_str    . \"\\n\";\n\n// Validate an HTTP/2 header name (returns int 1 = valid, 0 = invalid)\n$valid = $libnghttp2->nghttp2_check_header_name('content-type', strlen('content-type'));\necho \"Header valid: $valid\\n\";\n// ... use nghttp2_session_client_new() to start an HTTP/2 session ..."
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install nghttp2"],
+      "checkIfExists": ["brew list nghttp2"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libnghttp2-dev"],
+      "checkIfExists": ["pkg-config --exists libnghttp2"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

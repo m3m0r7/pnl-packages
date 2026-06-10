@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libdbus\\Libdbus;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libdbus = $runtime->load(Libdbus::class);\n\n// dbus_get_local_machine_id() returns the machine's D-Bus UUID as a string.\n$machineId = $libdbus->dbus_get_local_machine_id();\necho \"Machine ID: \" . $machineId . PHP_EOL;\n\n// Retrieve library version components via out-parameters.\n$allocator = $runtime->allocator();\n$major = $allocator->make(\\Pnlx\\FFI\\AllocationType::Int);\n$minor = $allocator->make(\\Pnlx\\FFI\\AllocationType::Int);\n$micro = $allocator->make(\\Pnlx\\FFI\\AllocationType::Int);\n$libdbus->dbus_get_version($major, $minor, $micro);\necho \"libdbus version: {$major->cdata}.{$minor->cdata}.{$micro->cdata}\" . PHP_EOL;"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install dbus"],
+      "checkIfExists": ["brew list dbus"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libdbus-1-dev"],
+      "checkIfExists": ["pkg-config --exists dbus-1"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

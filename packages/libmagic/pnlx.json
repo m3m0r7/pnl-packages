@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libmagic\\Libmagic;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libmagic = $runtime->load(Libmagic::class);\n\n// Detect the MIME type of a file using libmagic.\n$magic = $libmagic->magic_open(0x000010); // MAGIC_MIME_TYPE = 0x000010\nif (is_null($magic)) {\n    throw new \\RuntimeException('magic_open failed');\n}\n$libmagic->magic_load($magic, null); // null = use default magic database\n$mimeType = $libmagic->magic_file($magic, '/etc/hosts'); // returns string\necho $mimeType . PHP_EOL; // e.g. \"text/plain\"\n$libmagic->magic_close($magic);"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install libmagic"],
+      "checkIfExists": ["brew list libmagic"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libmagic-dev"],
+      "checkIfExists": ["ldconfig -p | grep -q libmagic"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

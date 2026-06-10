@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libtcc\\Libtcc;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libtcc = $runtime->load(Libtcc::class);\n\n// Create a TinyCC compilation context.\n$tcc = $libtcc->tcc_new();\nif (is_null($tcc)) { throw new \\RuntimeException('tcc_new failed'); }\n\n// Compile a C string in memory and run it.\n$libtcc->tcc_set_output_type($tcc, 1 /* TCC_OUTPUT_MEMORY */);\n$libtcc->tcc_compile_string($tcc, 'int add(int a,int b){return a+b;}');\n$libtcc->tcc_relocate($tcc);\n// $fn = $libtcc->tcc_get_symbol($tcc, 'add'); // returns FFI\\CData pointer\n$libtcc->tcc_delete($tcc);"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install tinycc"],
+      "checkIfExists": ["brew list tinycc"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libtcc-dev"],
+      "checkIfExists": ["ldconfig -p | grep -q libtcc.so"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

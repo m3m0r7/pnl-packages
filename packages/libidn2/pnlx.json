@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libidn2\\Libidn2;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libidn2 = $runtime->load(Libidn2::class);\n\n// Check library version\n$version = $libidn2->idn2_check_version('2.0.0');\necho \"libidn2 version >= 2.0.0: \" . ($version !== null ? $version : 'no') . \"\\n\";\n\n// Convert an internationalized domain name to ACE (ASCII-compatible encoding)\n$output = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$rc = $libidn2->idn2_lookup_u8('www.b\\u00fccher.example', $output, 0);\nif ($rc === 0) {\n    echo \"ACE label: \" . $output[0] . \"\\n\";\n    $libidn2->idn2_free($output[0]);\n}"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install libidn2"],
+      "checkIfExists": ["brew list libidn2"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libidn2-dev"],
+      "checkIfExists": ["pkg-config --exists libidn2"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

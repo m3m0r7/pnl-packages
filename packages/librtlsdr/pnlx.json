@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Librtlsdr\\Librtlsdr;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$librtlsdr = $runtime->load(Librtlsdr::class);\n\n// List all connected RTL-SDR devices\n$count = $librtlsdr->rtlsdr_get_device_count();\necho \"RTL-SDR devices found: {$count}\\n\";\nfor ($i = 0; $i < $count; $i++) {\n    $name = $librtlsdr->rtlsdr_get_device_name($i);\n    echo \"  [{$i}] {$name}\\n\";\n}\n\n// Open the first device and tune to FM broadcast band\nif ($count > 0) {\n    $dev = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n    $librtlsdr->rtlsdr_open($dev, 0);\n    $librtlsdr->rtlsdr_set_center_freq($dev[0], 98_000_000); // 98 MHz\n    $librtlsdr->rtlsdr_set_sample_rate($dev[0], 2_048_000);  // 2.048 MS/s\n    // $librtlsdr->rtlsdr_read_sync($dev[0], $buf, $len, $nRead)\n    $librtlsdr->rtlsdr_close($dev[0]);\n}"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install librtlsdr"],
+      "checkIfExists": ["brew list librtlsdr"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y librtlsdr-dev"],
+      "checkIfExists": ["ldconfig -p | grep -q librtlsdr"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

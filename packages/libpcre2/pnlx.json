@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libpcre2\\Libpcre2;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libpcre2 = $runtime->load(Libpcre2::class);\n\n// Compile a PCRE2 pattern (8-bit / UTF-8 API)\n$errorCode   = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$errorOffset = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$re = $libpcre2->pcre2_compile_8('\\\\d+', -1, 0, $errorCode, $errorOffset, null);\nif (is_null($re)) {\n    throw new \\RuntimeException('pcre2_compile_8 failed at offset ' . $errorOffset[0]);\n}\n\n// Match against a subject string\n$matchData = $libpcre2->pcre2_match_data_create_from_pattern_8($re, null);\n$rc = $libpcre2->pcre2_match_8($re, '42 items', 8, 0, 0, $matchData, null);\necho \"Match count: {$rc}\\n\"; // 1 on success\n\n$libpcre2->pcre2_match_data_free_8($matchData);\n$libpcre2->pcre2_code_free_8($re);"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install pcre2"],
+      "checkIfExists": ["brew list pcre2"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libpcre2-dev"],
+      "checkIfExists": ["pkg-config --exists libpcre2-8"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

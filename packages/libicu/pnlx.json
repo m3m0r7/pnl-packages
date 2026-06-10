@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libicu\\Libicu;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libicu = $runtime->load(Libicu::class);\n\n// Query the ICU library version\n$verBuf = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$libicu->u_getVersion($verBuf);\necho \"ICU version: \" . $verBuf[0] . \".\" . $verBuf[1] . \"\\n\";\n\n// Normalize a Unicode string to NFC using unorm2\n// $norm = $libicu->unorm2_getNFCInstance($error);\n// $libicu->unorm2_normalize($norm, $src, -1, $dest, $destCapacity, $error);"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install icu4c"],
+      "checkIfExists": ["brew list icu4c"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libicu-dev"],
+      "checkIfExists": ["pkg-config --exists icu-uc"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

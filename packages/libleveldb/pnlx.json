@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libleveldb\\Libleveldb;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libleveldb = $runtime->load(Libleveldb::class);\n\n// Open a LevelDB database, write a key, read it back, then close.\n$options = $libleveldb->leveldb_options_create();\n$libleveldb->leveldb_options_set_create_if_missing($options, 1);\n$errPtr = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$db = $libleveldb->leveldb_open($options, '/tmp/pnl-test-leveldb', $errPtr);\n$wopts = $libleveldb->leveldb_writeoptions_create();\n$libleveldb->leveldb_put($db, $wopts, 'hello', 5, 'world', 5, $errPtr);\n$ropts = $libleveldb->leveldb_readoptions_create();\n$vlenPtr = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int64);\n$val = $libleveldb->leveldb_get($db, $ropts, 'hello', 5, $vlenPtr, $errPtr);\necho $val . PHP_EOL; // \"world\"\n$libleveldb->leveldb_close($db);\n$libleveldb->leveldb_options_destroy($options);"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install leveldb"],
+      "checkIfExists": ["brew list leveldb"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libleveldb-dev"],
+      "checkIfExists": ["ldconfig -p | grep -q libleveldb"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libreadline\\Libreadline;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libreadline = $runtime->load(Libreadline::class);\n\n// Initialise the Readline library explicitly\n$libreadline->rl_initialize();\n\n// Read a line from stdin with an interactive prompt.\n// readline() returns a PHP string (malloc-allocated in C); add it to history\n// so the user can recall it with the up-arrow key, then free the C buffer.\n$line = $libreadline->readline('Enter command: ');\nif ($line !== null) {\n    echo \"You entered: {$line}\\n\";\n    $libreadline->add_history($line);\n    $libreadline->rl_free($line);\n}\n// For batch history save/restore: $libreadline->write_history('~/.myapp_history')\n//                               / $libreadline->read_history('~/.myapp_history')"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install readline"],
+      "checkIfExists": ["brew list readline"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libreadline-dev"],
+      "checkIfExists": ["ldconfig -p | grep -q libreadline"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

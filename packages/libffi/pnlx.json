@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libffi\\Libffi;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libffi = $runtime->load(Libffi::class);\n\n// libffi does not expose a runtime version function; the main entry point is\n// ffi_prep_cif() to build a call interface, then ffi_call() to invoke it.\n// Here we allocate a ffi_cif struct and call ffi_prep_cif for a void(void) CIF.\n// FFI_OK = 0, FFI_DEFAULT_ABI = 2 on most platforms, nargs = 0.\n$allocator = $runtime->allocator();\n$cif = $allocator->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n\n// ffi_prep_cif(cif, abi, nargs, rtype, atypes)\n// Full dispatch: create type descriptors with ffi_type_*, then ffi_call(cif, fn, rvalue, avalue).\necho \"libffi loaded — use ffi_prep_cif() + ffi_call() to call arbitrary C functions.\" . PHP_EOL;"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install libffi"],
+      "checkIfExists": ["brew list libffi"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libffi-dev"],
+      "checkIfExists": ["pkg-config --exists libffi"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

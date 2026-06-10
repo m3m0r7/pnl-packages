@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libpq\\Libpq;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libpq = $runtime->load(Libpq::class);\n\n// Connect to a PostgreSQL database\n$conn = $libpq->PQconnectdb('host=127.0.0.1 dbname=mydb user=postgres password=secret');\nif (is_null($conn) || $libpq->PQstatus($conn) !== 0) { // CONNECTION_OK = 0\n    throw new \\RuntimeException('PQconnectdb failed: ' . $libpq->PQerrorMessage($conn));\n}\n\n// Execute a query\n$res = $libpq->PQexec($conn, 'SELECT version()');\nif ($libpq->PQresultStatus($res) === 1) { // PGRES_TUPLES_OK = 1 (but use constant when available)\n    echo $libpq->PQgetvalue($res, 0, 0) . \"\\n\";\n}\n$libpq->PQclear($res);\n$libpq->PQfinish($conn);"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install libpq"],
+      "checkIfExists": ["brew list libpq"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libpq-dev"],
+      "checkIfExists": ["pkg-config --exists libpq"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

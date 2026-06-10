@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libsdl\\Libsdl;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\nconst SDL_INIT_VIDEO = 0x00000020;\nconst SDL_WINDOWPOS_CENTERED = 0x2FFF0000;\nconst SDL_WINDOW_SHOWN = 0x00000004;\n\n$runtime = new Runtime(__DIR__);\n$sdl = $runtime->load(Libsdl::class);\n\n$sdl->SDL_Init(SDL_INIT_VIDEO);\n$window = $sdl->SDL_CreateWindow('Hello', SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 360, SDL_WINDOW_SHOWN);\nif (is_null($window)) {\n    throw new RuntimeException('SDL_CreateWindow failed: ' . $sdl->SDL_GetError());\n}\n$sdl->SDL_Delay(2000);\n$sdl->SDL_DestroyWindow($window);\n$sdl->SDL_Quit();"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install sdl2 sdl2_image sdl2_ttf"],
+      "checkIfExists": ["brew list sdl2 && brew list sdl2_image && brew list sdl2_ttf"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev"],
+      "checkIfExists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

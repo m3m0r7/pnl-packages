@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Liblmdb\\Liblmdb;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$liblmdb = $runtime->load(Liblmdb::class);\n\n// Query the LMDB library version string (returns char*).\n$majorPtr = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$minorPtr = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$patchPtr = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$ver = $liblmdb->mdb_version($majorPtr, $minorPtr, $patchPtr); // returns string\necho 'LMDB version: ' . $ver . PHP_EOL;\n// Main entry points to explore: mdb_env_create, mdb_env_open,\n// mdb_txn_begin, mdb_dbi_open, mdb_put, mdb_get, mdb_txn_commit, mdb_env_close."
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install lmdb"],
+      "checkIfExists": ["brew list lmdb"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y liblmdb-dev"],
+      "checkIfExists": ["ldconfig -p | grep -q liblmdb"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

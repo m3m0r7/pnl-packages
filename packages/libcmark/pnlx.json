@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libcmark\\Libcmark;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libcmark = $runtime->load(Libcmark::class);\n\n// Convert CommonMark (Markdown) to HTML\n$markdown = \"# Hello\\n\\nThis is **cmark** via PHP FFI.\\n\";\n$html     = $libcmark->cmark_markdown_to_html(\n    $markdown,\n    strlen($markdown),\n    0  // options: CMARK_OPT_DEFAULT\n);\necho $html;\n// Outputs: <h1>Hello</h1>\\n<p>This is <strong>cmark</strong> via PHP FFI.</p>\\n\n\n// For more control: $libcmark->cmark_parse_document($md, $len, 0)\n// then $libcmark->cmark_render_html($node, 0)"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install cmark"],
+      "checkIfExists": ["brew list cmark"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libcmark-dev"],
+      "checkIfExists": ["ldconfig -p | grep -q libcmark"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

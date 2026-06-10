@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libftdi\\Libftdi;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libftdi = $runtime->load(Libftdi::class);\n\n// Allocate and initialise a new ftdi_context.\n$ctx = $libftdi->ftdi_new();\nif (is_null($ctx)) {\n    throw new \\RuntimeException('ftdi_new() failed');\n}\n\n// Query the libftdi version information struct.\n$vi = $libftdi->ftdi_get_library_version();\necho \"libftdi version: {$vi->major}.{$vi->minor}.{$vi->micro}\" . PHP_EOL;\necho \"Version string: \" . $vi->version_str . PHP_EOL;\n\n// ftdi_usb_open(ctx, vendor, product) opens a connected FTDI device.\n$libftdi->ftdi_free($ctx);"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install libftdi"],
+      "checkIfExists": ["brew list libftdi"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libftdi1-dev"],
+      "checkIfExists": ["pkg-config --exists libftdi1"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

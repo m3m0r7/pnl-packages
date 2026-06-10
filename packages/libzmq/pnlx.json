@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libzmq\\Libzmq;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libzmq = $runtime->load(Libzmq::class);\n\n// zmq_version() fills three int out-parameters with major/minor/patch.\n$major = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$minor = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$patch = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$libzmq->zmq_version($major, $minor, $patch);\necho \"ZeroMQ {$major[0]}.{$minor[0]}.{$patch[0]}\\n\";\n\n// Explore further: zmq_ctx_new(), zmq_socket(), zmq_bind(),\n// zmq_connect(), zmq_send(), zmq_recv(), zmq_close(), zmq_ctx_term(), ..."
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install zeromq"],
+      "checkIfExists": ["brew list zeromq"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libzmq3-dev"],
+      "checkIfExists": ["pkg-config --exists libzmq"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

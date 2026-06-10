@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Librocksdb\\Librocksdb;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$librocksdb = $runtime->load(Librocksdb::class);\n\n// Open a RocksDB database\n$opts = $librocksdb->rocksdb_options_create();\n$librocksdb->rocksdb_options_set_create_if_missing($opts, 1);\n$err = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$db = $librocksdb->rocksdb_open($opts, '/tmp/myrocksdb', $err);\nif (is_null($db)) {\n    throw new \\RuntimeException('rocksdb_open failed');\n}\n\n// Write and read a key\n$wopts = $librocksdb->rocksdb_writeoptions_create();\n$librocksdb->rocksdb_put($db, $wopts, 'hello', 5, 'world', 5, $err);\n$ropts = $librocksdb->rocksdb_readoptions_create();\n$vlen  = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::Int);\n$val   = $librocksdb->rocksdb_get($db, $ropts, 'hello', 5, $vlen, $err);\necho \"hello => {$val}\\n\";\n\n$librocksdb->rocksdb_close($db);\n$librocksdb->rocksdb_options_destroy($opts);"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install rocksdb"],
+      "checkIfExists": ["brew list rocksdb"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y librocksdb-dev"],
+      "checkIfExists": ["ldconfig -p | grep -q librocksdb"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

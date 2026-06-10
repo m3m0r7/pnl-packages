@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libserialport\\Libserialport;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libserialport = $runtime->load(Libserialport::class);\n\n// Get a port handle by name and open it\n$port = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$rc = $libserialport->sp_get_port_by_name('/dev/ttyUSB0', $port);\nif ($rc !== 0) { // SP_OK = 0\n    throw new \\RuntimeException('sp_get_port_by_name failed: ' . $rc);\n}\n\n$libserialport->sp_open($port[0], 3); // SP_MODE_READ_WRITE = 3\n$libserialport->sp_set_baudrate($port[0], 9600);\n\n// Write and read data\n$libserialport->sp_blocking_write($port[0], 'AT\\r\\n', 4, 1000);\n$buf = $libserialport->sp_blocking_read($port[0], 64, 1000);\necho \"Response: {$buf}\\n\";\n\n$libserialport->sp_close($port[0]);\n$libserialport->sp_free_port($port[0]);"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install libserialport"],
+      "checkIfExists": ["brew list libserialport"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libserialport-dev"],
+      "checkIfExists": ["pkg-config --exists libserialport"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

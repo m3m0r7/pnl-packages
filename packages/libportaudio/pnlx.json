@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libportaudio\\Libportaudio;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libportaudio = $runtime->load(Libportaudio::class);\n\n// Initialise PortAudio and print library version info\n$err = $libportaudio->Pa_Initialize();\nif ($err !== 0) { // paNoError = 0\n    throw new \\RuntimeException('Pa_Initialize failed: ' . $libportaudio->Pa_GetErrorText($err));\n}\n\n$versionText = $libportaudio->Pa_GetVersionText();\necho \"PortAudio: {$versionText}\\n\";\n\n$deviceCount = $libportaudio->Pa_GetDeviceCount();\necho \"Audio devices: {$deviceCount}\\n\";\n\n// Open a default output stream: $libportaudio->Pa_OpenDefaultStream($stream, 0, 2, paFloat32, 44100, 256, $callback, null)\n$libportaudio->Pa_Terminate();"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install portaudio"],
+      "checkIfExists": ["brew list portaudio"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y portaudio19-dev"],
+      "checkIfExists": ["pkg-config --exists portaudio-2.0"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

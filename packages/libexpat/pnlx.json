@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libexpat\\Libexpat;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libexpat = $runtime->load(Libexpat::class);\n\n// Query Expat's version string (e.g. \"expat_2.6.2\").\n$version = $libexpat->XML_ExpatVersion();\necho \"Expat version: \" . $version . PHP_EOL;\n\n// Create a parser, feed a small XML document, then free it.\n$parser = $libexpat->XML_ParserCreate(null);\nif (is_null($parser)) {\n    throw new \\RuntimeException('XML_ParserCreate failed');\n}\n$xml = '<root><child attr=\"hello\">world</child></root>';\n$libexpat->XML_Parse($parser, $xml, strlen($xml), 1);\n$libexpat->XML_ParserFree($parser);\necho \"Parsed successfully.\" . PHP_EOL;"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install expat"],
+      "checkIfExists": ["brew list expat"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libexpat1-dev"],
+      "checkIfExists": ["pkg-config --exists expat"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libharfbuzz\\Libharfbuzz;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libharfbuzz = $runtime->load(Libharfbuzz::class);\n\n// Query HarfBuzz version\n$versionStr = $libharfbuzz->hb_version_string();\necho \"HarfBuzz: \" . $versionStr . \"\\n\";\n\n// Create a shaping buffer, add text, then destroy it\n$buf = $libharfbuzz->hb_buffer_create();\n$libharfbuzz->hb_buffer_add_utf8($buf, 'Hello', -1, 0, -1);\n$libharfbuzz->hb_buffer_guess_segment_properties($buf);\n// Shape with a font: $libharfbuzz->hb_shape($font, $buf, null, 0);\n$libharfbuzz->hb_buffer_destroy($buf);"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install harfbuzz"],
+      "checkIfExists": ["brew list harfbuzz"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libharfbuzz-dev"],
+      "checkIfExists": ["pkg-config --exists harfbuzz"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

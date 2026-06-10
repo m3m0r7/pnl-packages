@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libgit2\\Libgit2;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libgit2 = $runtime->load(Libgit2::class);\n\n$libgit2->git_libgit2_init();\n\n// Open an existing repository and read its HEAD reference\n$repo = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$rc = $libgit2->git_repository_open($repo, '/path/to/repo');\nif ($rc === 0) {\n    $ref = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n    $libgit2->git_repository_head($ref, $repo[0]);\n    echo \"HEAD: \" . $libgit2->git_reference_shorthand($ref[0]) . \"\\n\";\n    $libgit2->git_reference_free($ref[0]);\n    $libgit2->git_repository_free($repo[0]);\n}\n\n$libgit2->git_libgit2_shutdown();"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install libgit2"],
+      "checkIfExists": ["brew list libgit2"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libgit2-dev"],
+      "checkIfExists": ["pkg-config --exists libgit2"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

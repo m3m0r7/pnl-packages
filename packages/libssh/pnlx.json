@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libssh\\Libssh;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libssh = $runtime->load(Libssh::class);\n\n// Create a new SSH session.\n$session = $libssh->ssh_new();\nif (is_null($session)) { throw new \\RuntimeException('ssh_new failed'); }\n\n// Configure the host before connecting.\n$libssh->ssh_options_set($session, 0 /* SSH_OPTIONS_HOST */, 'example.com');\n\n// Connect, authenticate, run commands, then free the session.\n// $libssh->ssh_connect($session);\n$libssh->ssh_free($session);"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install libssh"],
+      "checkIfExists": ["brew list libssh"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libssh-dev"],
+      "checkIfExists": ["pkg-config --exists libssh"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

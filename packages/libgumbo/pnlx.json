@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libgumbo\\Libgumbo;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libgumbo = $runtime->load(Libgumbo::class);\n\n$html = '<html><body><h1>Hello, Gumbo!</h1></body></html>';\n\n// gumbo_parse returns a GumboOutput* struct with a root GumboNode*\n$output = $libgumbo->gumbo_parse($html);\nif (!is_null($output)) {\n    $root = $output->root;\n    echo \"Root node type: \" . $root->type . \"\\n\";\n    $libgumbo->gumbo_destroy_output($output);\n}"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install gumbo-parser"],
+      "checkIfExists": ["brew list gumbo-parser"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libgumbo-dev"],
+      "checkIfExists": ["ldconfig -p | grep -q libgumbo.so"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

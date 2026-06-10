@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libcairo\\Libcairo;\nuse Pnlx\\Runtime;\nuse function Pnlx\\Util\\is_null;\n\n$runtime = new Runtime(__DIR__);\n$libcairo = $runtime->load(Libcairo::class);\n\n// Draw a red circle on a PNG image surface and save it\n$surface = $libcairo->cairo_image_surface_create(\n    0,    // CAIRO_FORMAT_ARGB32\n    200, 200\n);\nif (is_null($surface)) {\n    throw new \\RuntimeException('cairo_image_surface_create failed');\n}\n$cr = $libcairo->cairo_create($surface);\n$libcairo->cairo_set_source_rgb($cr, 1.0, 0.0, 0.0); // red\n$libcairo->cairo_arc($cr, 100.0, 100.0, 80.0, 0.0, 2 * M_PI);\n$libcairo->cairo_fill($cr);\n$libcairo->cairo_surface_write_to_png($surface, 'circle.png');\n$libcairo->cairo_destroy($cr);\n$libcairo->cairo_surface_destroy($surface);"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install cairo"],
+      "checkIfExists": ["brew list cairo"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libcairo2-dev"],
+      "checkIfExists": ["pkg-config --exists cairo"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

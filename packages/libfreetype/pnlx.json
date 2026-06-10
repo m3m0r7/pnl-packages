@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libfreetype\\Libfreetype;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libfreetype = $runtime->load(Libfreetype::class);\n\n// Initialise the FreeType library and query its version.\n$allocator = $runtime->allocator();\n$library = $allocator->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n$libfreetype->FT_Init_FreeType($library);\n\n$major = $allocator->make(\\Pnlx\\FFI\\AllocationType::Int);\n$minor = $allocator->make(\\Pnlx\\FFI\\AllocationType::Int);\n$patch = $allocator->make(\\Pnlx\\FFI\\AllocationType::Int);\n$libfreetype->FT_Library_Version($library->cdata, $major, $minor, $patch);\necho \"FreeType version: {$major->cdata}.{$minor->cdata}.{$patch->cdata}\" . PHP_EOL;\n\n// FT_New_Face() loads a font file; FT_Done_FreeType() tears down.\n$libfreetype->FT_Done_FreeType($library->cdata);"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install freetype"],
+      "checkIfExists": ["brew list freetype"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libfreetype-dev"],
+      "checkIfExists": ["pkg-config --exists freetype2"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

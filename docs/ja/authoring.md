@@ -93,6 +93,7 @@ pnlx build
 | `class` | string | yes | 生成される PHP エンティティクラスの完全修飾名。名前空間を含める必要がある。 |
 | `class_prefix` | string | optional | 生成されるクラス／コンテキスト名に付与するプレフィックス。クラス名の衝突を避ける場合を除き空のままにする。 |
 | `examples` | array | optional | PHP の使い方スニペット。各文字列は `pnl install` 完了時に出力され、利用者がすぐ呼び出し方を確認できます。短く実行可能なものにし、パッケージ README にも同じものを載せます。 |
+| `installation` | object | optional | OS ごとに、パッケージのネイティブ依存をインストールするコマンド。[ネイティブ依存のインストール](#installing-native-dependencies) を参照。 |
 | `platforms` | array | yes | ラッパーパッケージがサポートする OS/arch の組み合わせ。 |
 | `requires` | object | yes | ネイティブライブラリの要件。少なくとも 1 エントリを含める必要がある。 |
 | `dependencies` | object | yes | 他の pnl 拡張への依存。依存解決はまだ完成していない。 |
@@ -198,6 +199,30 @@ libusb の例:
 ```
 
 仮想ライブラリは **名前でリンク** され、ファイルとして存在することは一切要求されません。非仮想のエントリが解決できる場合、pnl は引き続き実際のディスク上の一致を優先し、仮想エントリはフォールバックとして使われます。
+
+### Installing native dependencies
+
+パッケージは `installation` を宣言でき、`pnl install` がネイティブのライブラリ/ヘッダーを利用者の代わりに取得できます。OS 名（`darwin`・`linux`・`windows`）をキーにしたオブジェクトで、各エントリは次を持ちます。
+
+- `install` … 依存をインストールするために実行するシェルコマンド行。
+- `checkIfExists`（任意）… 依存が既に存在するとき終了コード `0` になるシェルコマンド行。すべて成功すればインストールはスキップされます。
+
+```json
+"installation": {
+  "darwin": {
+    "install": ["brew install sdl2 sdl2_image sdl2_ttf"],
+    "checkIfExists": ["brew list sdl2 && brew list sdl2_image && brew list sdl2_ttf"]
+  },
+  "linux": {
+    "install": ["sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev"],
+    "checkIfExists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
+  }
+}
+```
+
+`installation` があり `checkIfExists` が通らない場合、`pnl install` はコマンド実行前に `Run the following to install them? [Y/n]` と確認します。`pnl install … -y`（または `--yes`）で自動的に yes になります。`installation` が**無い**パッケージでネイティブライブラリが見つからない場合、pnl は探している `library_names` と `header_names`、そしてどこに置けばよいか（例: `/usr/local/lib` と `/usr/local/include`）を表示します。
+
+ほとんどのパッケージは単一のシステムライブラリをラップしており `installation` は不要です。SDL2 と `sdl2_image` / `sdl2_ttf` のように複数パッケージから成るものや、手動インストールが面倒なライブラリに宣言してください。
 
 ### Header And Bridge Generation
 

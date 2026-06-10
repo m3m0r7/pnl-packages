@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libusb\\Libusb;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$usb = $runtime->load(Libusb::class);\n\nif ($usb->libusb_init(null) !== 0) {\n    throw new RuntimeException('libusb_init failed');\n}\ntry {\n    // ... enumerate and talk to USB devices ...\n} finally {\n    $usb->libusb_exit(null);\n}"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install libusb"],
+      "checkIfExists": ["brew list libusb"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libusb-1.0-0-dev"],
+      "checkIfExists": ["pkg-config --exists libusb-1.0"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

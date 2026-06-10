@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libgsl\\Libgsl;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libgsl = $runtime->load(Libgsl::class);\n\n// Evaluate a Bessel function J0(x) and a polynomial power\n$j0 = $libgsl->gsl_sf_bessel_J0(5.0);\necho \"J0(5.0) = \" . $j0 . \"\\n\";\n\n$pow3 = $libgsl->gsl_pow_int(2.0, 10);\necho \"2^10 = \" . $pow3 . \"\\n\";\n\n// gsl_version is a global const char* string exposed as a method\n// echo \"GSL version: \" . $libgsl->gsl_version() . \"\\n\";"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install gsl"],
+      "checkIfExists": ["brew list gsl"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libgsl-dev"],
+      "checkIfExists": ["pkg-config --exists gsl"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",

@@ -14,6 +14,16 @@
   "examples": [
     "use Pnlx\\Libargon2\\Libargon2;\nuse Pnlx\\Runtime;\n\n$runtime = new Runtime(__DIR__);\n$libargon2 = $runtime->load(Libargon2::class);\n\n// Hash a password with Argon2id and verify it\n// argon2id_hash_encoded writes into a caller-supplied buffer (char *encoded)\n$password   = 'hunter2';\n$salt       = 'somesalt12345678'; // 16 bytes\n$encodedLen = 512;\n$encodedBuf = $runtime->allocator()->make(\\Pnlx\\FFI\\AllocationType::VoidPointer);\n\n$rc = $libargon2->argon2id_hash_encoded(\n    2,              // t_cost: iterations\n    1 << 16,        // m_cost: memory (64 MiB)\n    1,              // parallelism\n    $password, strlen($password),\n    $salt, strlen($salt),\n    32,             // hash length in bytes\n    $encodedBuf, $encodedLen\n);\n// ARGON2_OK == 0\necho $rc === 0 ? \"hash ok\\n\" : 'error: ' . $libargon2->argon2_error_message($rc) . \"\\n\";\n// Verify: $libargon2->argon2id_verify($encodedBuf, $password, strlen($password))"
   ],
+  "installation": {
+    "darwin": {
+      "install": ["brew install argon2"],
+      "checkIfExists": ["brew list argon2"]
+    },
+    "linux": {
+      "install": ["sudo apt-get install -y libargon2-dev"],
+      "checkIfExists": ["pkg-config --exists libargon2"]
+    }
+  },
   "platforms": [
     {
       "os": "darwin",
