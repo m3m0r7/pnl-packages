@@ -33,6 +33,38 @@
         }
       }
     },
+    "libass/libass": {
+      "versions": {
+        "0.17.3": {
+          "manifest": "libass/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libass",
+            "sha256": "98b5f3e8f21e38c953fc972f8cb5db57a0192eff13b1e8f42572ec01fa2a7d2f"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libass",
+            "reference": "0.17.3"
+          }
+        }
+      }
+    },
+    "libassimp/libassimp": {
+      "versions": {
+        "5.4.0": {
+          "manifest": "libassimp/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libassimp",
+            "sha256": "3d6c800e0316ee35ff2bc5febed404af6d9782cc9c10e64a44e4bfb01fdb5b2f"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libassimp",
+            "reference": "5.4.0"
+          }
+        }
+      }
+    },
     "libavcodec/libavcodec": {
       "versions": {
         "61.3.100": {
@@ -161,6 +193,22 @@
         }
       }
     },
+    "libcap/libcap": {
+      "versions": {
+        "2.69.0": {
+          "manifest": "libcap/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libcap",
+            "sha256": "a6a90cf0aab980176ba5e49c23008146cf857a8645b56efcb6f8eec435f67f84"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libcap",
+            "reference": "2.69.0"
+          }
+        }
+      }
+    },
     "libcares/libcares": {
       "versions": {
         "1.28.1": {
@@ -173,6 +221,22 @@
             "type": "git",
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libcares",
             "reference": "1.28.1"
+          }
+        }
+      }
+    },
+    "libcbor/libcbor": {
+      "versions": {
+        "0.11.0": {
+          "manifest": "libcbor/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libcbor",
+            "sha256": "0cf1acc01d2a5e957314fc38d39f22b9e83d385b5d40bd9d60e139e5da17f3db"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libcbor",
+            "reference": "0.11.0"
           }
         }
       }
@@ -209,6 +273,22 @@
         }
       }
     },
+    "libconfig/libconfig": {
+      "versions": {
+        "1.7.3": {
+          "manifest": "libconfig/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libconfig",
+            "sha256": "67c99d030b5f886d8bd1a5f83a1afd4004ae41064efc5ae1d8e0f97a256daa24"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libconfig",
+            "reference": "1.7.3"
+          }
+        }
+      }
+    },
     "libcurl/libcurl": {
       "versions": {
         "8.7.1": {
@@ -241,6 +321,22 @@
         }
       }
     },
+    "libdeflate/libdeflate": {
+      "versions": {
+        "1.20.0": {
+          "manifest": "libdeflate/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libdeflate",
+            "sha256": "06b775af284f57402b5d0c84e91215913d82a3e584604b583ea487c637408c86"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libdeflate",
+            "reference": "1.20.0"
+          }
+        }
+      }
+    },
     "libduckdb/libduckdb": {
       "versions": {
         "0.10.2": {
@@ -269,6 +365,22 @@
             "type": "git",
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libduktape",
             "reference": "2.7.0"
+          }
+        }
+      }
+    },
+    "libenet/libenet": {
+      "versions": {
+        "1.3.18": {
+          "manifest": "libenet/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libenet",
+            "sha256": "c23a0d47b03c9be9e86162eef969bfe6a8394d3d1d2ee980daaaa7f9f17e4e63"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libenet",
+            "reference": "1.3.18"
           }
         }
       }
@@ -365,6 +477,22 @@
             "type": "git",
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libflac",
             "reference": "1.4.3"
+          }
+        }
+      }
+    },
+    "libfontconfig/libfontconfig": {
+      "versions": {
+        "2.15.0": {
+          "manifest": "libfontconfig/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libfontconfig",
+            "sha256": "46f715808b423476f517debbad0c3d461d4573fb36ef71b3a62ebef280f37bce"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libfontconfig",
+            "reference": "2.15.0"
           }
         }
       }
@@ -497,6 +625,22 @@
         }
       }
     },
+    "libglib2/libglib2": {
+      "versions": {
+        "2.80.0": {
+          "manifest": "libglib2/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libglib2",
+            "sha256": "8dcf9a00b677441788da1985fa127a0dd2f4d3ffd973d4b6dfdb13088397e4c1"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libglib2",
+            "reference": "2.80.0"
+          }
+        }
+      }
+    },
     "libgmp/libgmp": {
       "versions": {
         "6.3.0": {
@@ -509,6 +653,22 @@
             "type": "git",
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libgmp",
             "reference": "6.3.0"
+          }
+        }
+      }
+    },
+    "libgnutls/libgnutls": {
+      "versions": {
+        "3.8.5": {
+          "manifest": "libgnutls/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libgnutls",
+            "sha256": "b410893e0b363898f1877033880f0f58e42d2e2a2cffa4161c3630495c2f394e"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libgnutls",
+            "reference": "3.8.5"
           }
         }
       }
@@ -609,6 +769,22 @@
         }
       }
     },
+    "libhunspell/libhunspell": {
+      "versions": {
+        "1.7.2": {
+          "manifest": "libhunspell/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libhunspell",
+            "sha256": "e0480aedae52cd0a46c08c288ca3f5ba12a5ef191c7b661cba6b3f542c8e2f70"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libhunspell",
+            "reference": "1.7.2"
+          }
+        }
+      }
+    },
     "libicu/libicu": {
       "versions": {
         "74.2": {
@@ -669,6 +845,22 @@
             "type": "git",
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libjpeg",
             "reference": "3.0.2"
+          }
+        }
+      }
+    },
+    "libjxl/libjxl": {
+      "versions": {
+        "0.10.2": {
+          "manifest": "libjxl/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libjxl",
+            "sha256": "0002344bc832c15a53f4ef9393c103fe7a5482ea5892dbc7383313054f535ba9"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libjxl",
+            "reference": "0.10.2"
           }
         }
       }
@@ -753,6 +945,22 @@
         }
       }
     },
+    "liblzo2/liblzo2": {
+      "versions": {
+        "2.10.0": {
+          "manifest": "liblzo2/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/liblzo2",
+            "sha256": "9fb770925debb86f4becf6ab90bc24a2889baf1a3e3ccd44f765f24099f78720"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/liblzo2",
+            "reference": "2.10.0"
+          }
+        }
+      }
+    },
     "libmagic/libmagic": {
       "versions": {
         "5.45": {
@@ -781,6 +989,22 @@
             "type": "git",
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmariadb",
             "reference": "3.3.10"
+          }
+        }
+      }
+    },
+    "libmaxminddb/libmaxminddb": {
+      "versions": {
+        "1.10.0": {
+          "manifest": "libmaxminddb/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmaxminddb",
+            "sha256": "1c4d82594eeebeedda08bf629d8a1aba676ee1407d717113778db153abb512ef"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmaxminddb",
+            "reference": "1.10.0"
           }
         }
       }
@@ -829,6 +1053,22 @@
             "type": "git",
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmodbus",
             "reference": "3.1.10"
+          }
+        }
+      }
+    },
+    "libmongoc/libmongoc": {
+      "versions": {
+        "1.27.0": {
+          "manifest": "libmongoc/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmongoc",
+            "sha256": "89fb01dae831d49cdbebe74e583eda8efa5bc08f33f7eaf9ebc8dbdbadd8ef98"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmongoc",
+            "reference": "1.27.0"
           }
         }
       }
@@ -913,6 +1153,22 @@
         }
       }
     },
+    "libnetcdf/libnetcdf": {
+      "versions": {
+        "4.9.2": {
+          "manifest": "libnetcdf/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libnetcdf",
+            "sha256": "fa4c9ffcf5ff6d08d678bc7598f1f9f0065e98b32cf6d8d85f81189b7bc73944"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libnetcdf",
+            "reference": "4.9.2"
+          }
+        }
+      }
+    },
     "libnettle/libnettle": {
       "versions": {
         "3.9.1": {
@@ -957,6 +1213,54 @@
             "type": "git",
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libnghttp2",
             "reference": "1.61.0"
+          }
+        }
+      }
+    },
+    "libnlopt/libnlopt": {
+      "versions": {
+        "2.7.1": {
+          "manifest": "libnlopt/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libnlopt",
+            "sha256": "714f25201c8624d1e09068079b03339ffe5be767332bdc197834c9ce6dc550b1"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libnlopt",
+            "reference": "2.7.1"
+          }
+        }
+      }
+    },
+    "libnng/libnng": {
+      "versions": {
+        "1.8.0": {
+          "manifest": "libnng/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libnng",
+            "sha256": "55bc22f1bd5bcfa7ec8fadb14db9f35faaf52f6b4e8e793dd56454322153bfc9"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libnng",
+            "reference": "1.8.0"
+          }
+        }
+      }
+    },
+    "libnotcurses/libnotcurses": {
+      "versions": {
+        "3.0.9": {
+          "manifest": "libnotcurses/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libnotcurses",
+            "sha256": "087bc164853cfac15768140ebb22dd64b846eb8dc4db736c126ac949cead58e3"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libnotcurses",
+            "reference": "3.0.9"
           }
         }
       }
@@ -1025,6 +1329,22 @@
         }
       }
     },
+    "libopenjp2/libopenjp2": {
+      "versions": {
+        "2.5.2": {
+          "manifest": "libopenjp2/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libopenjp2",
+            "sha256": "b1b4a5da206af49738c334fe1289d9ede65fdf52693b0f10593542f9c5d8cfce"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libopenjp2",
+            "reference": "2.5.2"
+          }
+        }
+      }
+    },
     "libopus/libopus": {
       "versions": {
         "1.5.2": {
@@ -1037,6 +1357,22 @@
             "type": "git",
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libopus",
             "reference": "1.5.2"
+          }
+        }
+      }
+    },
+    "libpango/libpango": {
+      "versions": {
+        "1.52.0": {
+          "manifest": "libpango/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libpango",
+            "sha256": "77a39ae9f95b6d6ce574a7ec61c1228928cb1787eda8e7f6016c42acaead2bc3"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libpango",
+            "reference": "1.52.0"
           }
         }
       }
@@ -1105,6 +1441,22 @@
         }
       }
     },
+    "libpopt/libpopt": {
+      "versions": {
+        "1.19.0": {
+          "manifest": "libpopt/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libpopt",
+            "sha256": "d00c83a15a949083b61da94afaefcab1da4ad868c99b44d7ad06a80c85c2d33c"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libpopt",
+            "reference": "1.19.0"
+          }
+        }
+      }
+    },
     "libportaudio/libportaudio": {
       "versions": {
         "19.7.0": {
@@ -1137,6 +1489,22 @@
         }
       }
     },
+    "libproj/libproj": {
+      "versions": {
+        "9.4.0": {
+          "manifest": "libproj/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libproj",
+            "sha256": "afd37cc8fca5270b5cf692d4883a645c1783f8abca34413590654ad81ce0a74c"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libproj",
+            "reference": "9.4.0"
+          }
+        }
+      }
+    },
     "libprotobufc/libprotobufc": {
       "versions": {
         "1.5.0": {
@@ -1165,6 +1533,22 @@
             "type": "git",
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libquickjs",
             "reference": "0.8.0"
+          }
+        }
+      }
+    },
+    "libraw/libraw": {
+      "versions": {
+        "0.21.2": {
+          "manifest": "libraw/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libraw",
+            "sha256": "c54caae6bff72a06dffcac09479364a1ba5f9f222f1138d5f257f6f88c4259de"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libraw",
+            "reference": "0.21.2"
           }
         }
       }
@@ -1249,6 +1633,38 @@
         }
       }
     },
+    "libseccomp/libseccomp": {
+      "versions": {
+        "2.5.5": {
+          "manifest": "libseccomp/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libseccomp",
+            "sha256": "49f29c97646cea8270382ef2f939e0ea2182f0ae3e6efc4896741f25833403e9"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libseccomp",
+            "reference": "2.5.5"
+          }
+        }
+      }
+    },
+    "libsecp256k1/libsecp256k1": {
+      "versions": {
+        "0.5.1": {
+          "manifest": "libsecp256k1/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libsecp256k1",
+            "sha256": "75ac93ffa9f20edad321a383c1d5c6a02c915689ce89172c8dc61dc71c9ddc2b"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libsecp256k1",
+            "reference": "0.5.1"
+          }
+        }
+      }
+    },
     "libserialport/libserialport": {
       "versions": {
         "0.1.1": {
@@ -1261,6 +1677,22 @@
             "type": "git",
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libserialport",
             "reference": "0.1.1"
+          }
+        }
+      }
+    },
+    "libsixel/libsixel": {
+      "versions": {
+        "1.10.3": {
+          "manifest": "libsixel/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libsixel",
+            "sha256": "eb78dc9d258147c1e91df8a77f7799d14bee4b80f2924e1904a808fc2124ac64"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libsixel",
+            "reference": "1.10.3"
           }
         }
       }
@@ -1309,6 +1741,38 @@
             "type": "git",
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libsodium",
             "reference": "1.0.19"
+          }
+        }
+      }
+    },
+    "libsoxr/libsoxr": {
+      "versions": {
+        "0.1.3": {
+          "manifest": "libsoxr/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libsoxr",
+            "sha256": "bfb59f99a2cd06e6d5845395c88e668c2041907156e9a2039b9ce39726f2d38f"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libsoxr",
+            "reference": "0.1.3"
+          }
+        }
+      }
+    },
+    "libspeex/libspeex": {
+      "versions": {
+        "1.2.1": {
+          "manifest": "libspeex/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libspeex",
+            "sha256": "6a4399f0a2f8de9b2a3ced0bf6983473990eb722b94811be9cfe8532c8d88edc"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libspeex",
+            "reference": "1.2.1"
           }
         }
       }
@@ -1393,6 +1857,22 @@
         }
       }
     },
+    "libtheora/libtheora": {
+      "versions": {
+        "1.1.1": {
+          "manifest": "libtheora/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libtheora",
+            "sha256": "4325ba5105c9a01faba88239eb877838e08ccf646604c737a571e135ecf8f68a"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libtheora",
+            "reference": "1.1.1"
+          }
+        }
+      }
+    },
     "libtidy/libtidy": {
       "versions": {
         "5.8.0": {
@@ -1437,6 +1917,38 @@
             "type": "git",
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libtreesitter",
             "reference": "0.22.6"
+          }
+        }
+      }
+    },
+    "libudev/libudev": {
+      "versions": {
+        "255.0.0": {
+          "manifest": "libudev/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libudev",
+            "sha256": "0c3bddea31d114838d47b0ae583b0c4099f256c4818ed34b858a412c80ece680"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libudev",
+            "reference": "255.0.0"
+          }
+        }
+      }
+    },
+    "liburiparser/liburiparser": {
+      "versions": {
+        "0.9.8": {
+          "manifest": "liburiparser/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/liburiparser",
+            "sha256": "72a77c96a304cebb5aaa21483237130c057c205b09a2f08b04bd75d98a04955a"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/liburiparser",
+            "reference": "0.9.8"
           }
         }
       }
@@ -1505,6 +2017,22 @@
         }
       }
     },
+    "libvips/libvips": {
+      "versions": {
+        "8.15.1": {
+          "manifest": "libvips/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libvips",
+            "sha256": "48fd7bd20c20605e90d49feca41a7499f16b3494af15f4f6bebce5ff4aa22c5c"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libvips",
+            "reference": "8.15.1"
+          }
+        }
+      }
+    },
     "libvorbis/libvorbis": {
       "versions": {
         "1.3.7": {
@@ -1521,6 +2049,38 @@
         }
       }
     },
+    "libvpx/libvpx": {
+      "versions": {
+        "1.14.1": {
+          "manifest": "libvpx/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libvpx",
+            "sha256": "883f4633af505cc205bf96564cfb1674eeff2013adad069c7adc3e49c9059bdd"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libvpx",
+            "reference": "1.14.1"
+          }
+        }
+      }
+    },
+    "libvterm/libvterm": {
+      "versions": {
+        "0.3.3": {
+          "manifest": "libvterm/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libvterm",
+            "sha256": "e62adc95509cb079ad6932d8fbec2a1d71d097646d2ba298b18de431d35e0158"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libvterm",
+            "reference": "0.3.3"
+          }
+        }
+      }
+    },
     "libvulkan/libvulkan": {
       "versions": {
         "1.3.280": {
@@ -1533,6 +2093,22 @@
             "type": "git",
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libvulkan",
             "reference": "1.3.280"
+          }
+        }
+      }
+    },
+    "libwavpack/libwavpack": {
+      "versions": {
+        "5.7.0": {
+          "manifest": "libwavpack/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libwavpack",
+            "sha256": "e422850cb4a8443bd11b40bde85b02c895a4ead4456fc63629f22362d302342d"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libwavpack",
+            "reference": "5.7.0"
           }
         }
       }
@@ -1585,6 +2161,22 @@
         }
       }
     },
+    "libxslt/libxslt": {
+      "versions": {
+        "1.1.39": {
+          "manifest": "libxslt/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libxslt",
+            "sha256": "c355a15d4ce716a842f4c5d978c351b92681bbc0a02217e6ee115dc41a220715"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libxslt",
+            "reference": "1.1.39"
+          }
+        }
+      }
+    },
     "libxxhash/libxxhash": {
       "versions": {
         "0.8.2": {
@@ -1597,6 +2189,22 @@
             "type": "git",
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libxxhash",
             "reference": "0.8.2"
+          }
+        }
+      }
+    },
+    "libyajl/libyajl": {
+      "versions": {
+        "2.1.0": {
+          "manifest": "libyajl/pnlx.json",
+          "dist": {
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libyajl",
+            "sha256": "76c59871260726fb1c16c4541b5f9e41d0297ee6ec4378f37350782fe8ad0668"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libyajl",
+            "reference": "2.1.0"
           }
         }
       }

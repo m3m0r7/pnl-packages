@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libmaxminddb/libmaxminddb",
+  "version": "1.10.0",
+  "description": "PHP FFI wrapper for libmaxminddb MaxMind DB (GeoIP2) lookups.",
+  "authors": [
+    {
+      "name": "MaxMind maintainers"
+    }
+  ],
+  "license": "Apache-2.0",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libmaxminddb\\Libmaxminddb",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install libmaxminddb"
+      ],
+      "checkIfExists": [
+        "brew list libmaxminddb"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libmaxminddb-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmaxminddb"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libmaxminddb-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmaxminddb"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libmaxminddb-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmaxminddb"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libmaxminddb-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libmaxminddb-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libmaxminddb-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libmaxminddb-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libmaxminddb"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libmaxminddb": {
+      "symbol_prefix": "MMDB",
+      "library_names": [
+        "libmaxminddb.dylib",
+        "libmaxminddb.so",
+        "maxminddb.dll"
+      ],
+      "header_names": [
+        "maxminddb.h"
+      ],
+      "version": ">=1.0.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

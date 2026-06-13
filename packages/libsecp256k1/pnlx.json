@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libsecp256k1/libsecp256k1",
+  "version": "0.5.1",
+  "description": "PHP FFI wrapper for libsecp256k1 elliptic-curve cryptography.",
+  "authors": [
+    {
+      "name": "Bitcoin Core / libsecp256k1 maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libsecp256k1\\Libsecp256k1",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install secp256k1"
+      ],
+      "checkIfExists": [
+        "brew list secp256k1"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libsecp256k1-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libsecp256k1"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libsecp256k1-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libsecp256k1"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libsecp256k1-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libsecp256k1"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libsecp256k1-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libsecp256k1-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libsecp256k1-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libsecp256k1-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install secp256k1"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "secp256k1": {
+      "symbol_prefix": "secp256k1",
+      "library_names": [
+        "libsecp256k1.dylib",
+        "libsecp256k1.so",
+        "secp256k1.dll"
+      ],
+      "header_names": [
+        "secp256k1.h"
+      ],
+      "version": ">=0.3.0 & <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

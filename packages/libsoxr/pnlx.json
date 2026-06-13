@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libsoxr/libsoxr",
+  "version": "0.1.3",
+  "description": "PHP FFI wrapper for the SoX Resampler library (soxr).",
+  "authors": [
+    {
+      "name": "SoX / soxr maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libsoxr\\Libsoxr",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install libsoxr"
+      ],
+      "checkIfExists": [
+        "brew list libsoxr"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libsoxr-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists soxr"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libsoxr-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists soxr"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add soxr-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists soxr"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y soxr-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q soxr-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y soxr-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q soxr-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install soxr"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "soxr": {
+      "symbol_prefix": "soxr",
+      "library_names": [
+        "libsoxr.dylib",
+        "libsoxr.so",
+        "soxr.dll"
+      ],
+      "header_names": [
+        "soxr.h"
+      ],
+      "version": ">=0.1.0 & <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

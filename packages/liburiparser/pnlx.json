@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "liburiparser/liburiparser",
+  "version": "0.9.8",
+  "description": "PHP FFI wrapper for the uriparser RFC 3986 URI parsing library.",
+  "authors": [
+    {
+      "name": "uriparser maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Liburiparser\\Liburiparser",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install uriparser"
+      ],
+      "checkIfExists": [
+        "brew list uriparser"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y liburiparser-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists liburiparser"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y liburiparser-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists liburiparser"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add uriparser-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists liburiparser"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y uriparser-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q uriparser-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y uriparser-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q uriparser-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install uriparser"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "uriparser": {
+      "symbol_prefix": "uri",
+      "library_names": [
+        "liburiparser.dylib",
+        "liburiparser.so",
+        "uriparser.dll"
+      ],
+      "header_names": [
+        "uriparser/Uri.h"
+      ],
+      "version": ">=0.9.0 & <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

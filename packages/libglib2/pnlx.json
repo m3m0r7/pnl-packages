@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libglib2/libglib2",
+  "version": "2.80.0",
+  "description": "PHP FFI wrapper for GLib core utilities and data structures.",
+  "authors": [
+    {
+      "name": "GNOME / GLib maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libglib2\\Libglib2",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install glib"
+      ],
+      "checkIfExists": [
+        "brew list glib"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libglib2.0-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists glib-2.0"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libglib2.0-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists glib-2.0"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add glib-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists glib-2.0"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y glib2-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q glib2-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y glib2-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q glib2-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install glib"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "glib-2.0": {
+      "symbol_prefix": "g",
+      "library_names": [
+        "libglib-2.0.dylib",
+        "libglib-2.0.so",
+        "glib-2.0-0.dll"
+      ],
+      "header_names": [
+        "glib.h"
+      ],
+      "version": ">=2.50.0 & <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

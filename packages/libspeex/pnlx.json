@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libspeex/libspeex",
+  "version": "1.2.1",
+  "description": "PHP FFI wrapper for the Speex speech audio codec.",
+  "authors": [
+    {
+      "name": "Xiph.Org / Speex maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libspeex\\Libspeex",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install speex"
+      ],
+      "checkIfExists": [
+        "brew list speex"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libspeex-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists speex"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libspeex-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists speex"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add speex-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists speex"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y speex-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q speex-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y speex-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q speex-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install speex"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "speex": {
+      "symbol_prefix": "speex",
+      "library_names": [
+        "libspeex.dylib",
+        "libspeex.so",
+        "speex.dll"
+      ],
+      "header_names": [
+        "speex/speex.h"
+      ],
+      "version": ">=1.2.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

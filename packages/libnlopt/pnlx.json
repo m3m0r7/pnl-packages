@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libnlopt/libnlopt",
+  "version": "2.7.1",
+  "description": "PHP FFI wrapper for the NLopt nonlinear-optimization library.",
+  "authors": [
+    {
+      "name": "NLopt maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libnlopt\\Libnlopt",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install nlopt"
+      ],
+      "checkIfExists": [
+        "brew list nlopt"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libnlopt-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists nlopt"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libnlopt-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists nlopt"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add nlopt-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists nlopt"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y nlopt-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q nlopt-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y nlopt-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q nlopt-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install nlopt"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "nlopt": {
+      "symbol_prefix": "nlopt",
+      "library_names": [
+        "libnlopt.dylib",
+        "libnlopt.so",
+        "nlopt.dll"
+      ],
+      "header_names": [
+        "nlopt.h"
+      ],
+      "version": ">=2.6.0 & <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libnotcurses/libnotcurses",
+  "version": "3.0.9",
+  "description": "PHP FFI wrapper for notcurses rich TUI / terminal graphics.",
+  "authors": [
+    {
+      "name": "notcurses maintainers"
+    }
+  ],
+  "license": "Apache-2.0",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libnotcurses\\Libnotcurses",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install notcurses"
+      ],
+      "checkIfExists": [
+        "brew list notcurses"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libnotcurses-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists notcurses"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libnotcurses-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists notcurses"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add notcurses-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists notcurses"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y notcurses-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q notcurses-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y notcurses-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q notcurses-devel"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "requires": {
+    "notcurses": {
+      "symbol_prefix": "notcurses",
+      "library_names": [
+        "libnotcurses.dylib",
+        "libnotcurses.so"
+      ],
+      "header_names": [
+        "notcurses/notcurses.h"
+      ],
+      "version": ">=3.0.0 & <4.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

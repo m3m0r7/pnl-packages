@@ -1,0 +1,83 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libcap/libcap",
+  "version": "2.69.0",
+  "description": "PHP FFI wrapper for libcap POSIX capabilities management on Linux.",
+  "authors": [
+    {
+      "name": "libcap maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libcap\\Libcap",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libcap-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libcap"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libcap-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libcap"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libcap-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libcap"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libcap-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libcap-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libcap-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libcap-devel"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "requires": {
+    "libcap": {
+      "symbol_prefix": "cap",
+      "library_names": [
+        "libcap.so"
+      ],
+      "header_names": [
+        "sys/capability.h"
+      ],
+      "version": ">=2.40.0 & <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

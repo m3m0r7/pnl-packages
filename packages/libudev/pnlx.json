@@ -1,0 +1,83 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libudev/libudev",
+  "version": "255.0.0",
+  "description": "PHP FFI wrapper for libudev Linux device enumeration and monitoring.",
+  "authors": [
+    {
+      "name": "systemd / udev maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libudev\\Libudev",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libudev-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libudev"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libudev-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libudev"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add eudev-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libudev"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y systemd-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q systemd-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y systemd-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q systemd-devel"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "requires": {
+    "libudev": {
+      "symbol_prefix": "udev",
+      "library_names": [
+        "libudev.so"
+      ],
+      "header_names": [
+        "libudev.h"
+      ],
+      "version": ">=240.0.0 & <260.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

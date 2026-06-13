@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libcbor/libcbor",
+  "version": "0.11.0",
+  "description": "PHP FFI wrapper for libcbor, a CBOR (RFC 8949) encoder and decoder.",
+  "authors": [
+    {
+      "name": "libcbor maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libcbor\\Libcbor",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install libcbor"
+      ],
+      "checkIfExists": [
+        "brew list libcbor"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libcbor-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libcbor"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libcbor-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libcbor"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libcbor-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libcbor"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libcbor-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libcbor-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libcbor-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libcbor-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libcbor"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libcbor": {
+      "symbol_prefix": "cbor",
+      "library_names": [
+        "libcbor.dylib",
+        "libcbor.so",
+        "cbor.dll"
+      ],
+      "header_names": [
+        "cbor.h"
+      ],
+      "version": ">=0.9.0 & <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

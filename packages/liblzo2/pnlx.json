@@ -1,0 +1,111 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "liblzo2/liblzo2",
+  "version": "2.10.0",
+  "description": "PHP FFI wrapper for the LZO real-time data compression library.",
+  "authors": [
+    {
+      "name": "LZO maintainers"
+    }
+  ],
+  "license": "GPL-2.0-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Liblzo2\\Liblzo2",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install lzo"
+      ],
+      "checkIfExists": [
+        "brew list lzo"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y liblzo2-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists lzo2"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y liblzo2-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists lzo2"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add lzo-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists lzo2"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y lzo-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q lzo-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y lzo-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q lzo-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install lzo"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "lzo2": {
+      "symbol_prefix": "lzo",
+      "library_names": [
+        "liblzo2.dylib",
+        "liblzo2.so",
+        "lzo2.dll"
+      ],
+      "header_names": [
+        "lzo/lzo1x.h",
+        "lzo/lzoconf.h"
+      ],
+      "version": ">=2.0.0 & <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

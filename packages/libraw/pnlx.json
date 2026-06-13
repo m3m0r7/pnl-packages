@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libraw/libraw",
+  "version": "0.21.2",
+  "description": "PHP FFI wrapper for LibRaw camera raw image decoding.",
+  "authors": [
+    {
+      "name": "LibRaw maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libraw\\Libraw",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install libraw"
+      ],
+      "checkIfExists": [
+        "brew list libraw"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libraw-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libraw"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libraw-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libraw"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libraw-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libraw"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y LibRaw-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q LibRaw-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y LibRaw-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q LibRaw-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libraw"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libraw": {
+      "symbol_prefix": "libraw",
+      "library_names": [
+        "libraw.dylib",
+        "libraw.so",
+        "raw.dll"
+      ],
+      "header_names": [
+        "libraw/libraw.h"
+      ],
+      "version": ">=0.20.0 & <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

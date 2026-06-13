@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libenet/libenet",
+  "version": "1.3.18",
+  "description": "PHP FFI wrapper for ENet reliable UDP networking.",
+  "authors": [
+    {
+      "name": "ENet maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libenet\\Libenet",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install enet"
+      ],
+      "checkIfExists": [
+        "brew list enet"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libenet-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libenet"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libenet-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libenet"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add enet-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libenet"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y enet-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q enet-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y enet-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q enet-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install enet"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "enet": {
+      "symbol_prefix": "enet",
+      "library_names": [
+        "libenet.dylib",
+        "libenet.so",
+        "enet.dll"
+      ],
+      "header_names": [
+        "enet/enet.h"
+      ],
+      "version": ">=1.3.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

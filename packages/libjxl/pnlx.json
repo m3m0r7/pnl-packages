@@ -1,0 +1,111 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libjxl/libjxl",
+  "version": "0.10.2",
+  "description": "PHP FFI wrapper for libjxl JPEG XL encoding and decoding.",
+  "authors": [
+    {
+      "name": "libjxl maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libjxl\\Libjxl",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install jpeg-xl"
+      ],
+      "checkIfExists": [
+        "brew list jpeg-xl"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libjxl-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libjxl"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libjxl-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libjxl"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libjxl-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libjxl"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libjxl-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libjxl-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libjxl-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libjxl-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libjxl"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libjxl": {
+      "symbol_prefix": "Jxl",
+      "library_names": [
+        "libjxl.dylib",
+        "libjxl.so",
+        "jxl.dll"
+      ],
+      "header_names": [
+        "jxl/decode.h",
+        "jxl/encode.h"
+      ],
+      "version": ">=0.7.0 & <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

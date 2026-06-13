@@ -1,0 +1,100 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libvterm/libvterm",
+  "version": "0.3.3",
+  "description": "PHP FFI wrapper for libvterm VT220/xterm terminal emulation.",
+  "authors": [
+    {
+      "name": "libvterm maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libvterm\\Libvterm",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install libvterm"
+      ],
+      "checkIfExists": [
+        "brew list libvterm"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libvterm-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vterm"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libvterm-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vterm"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libvterm-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vterm"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libvterm-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libvterm-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libvterm-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libvterm-devel"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "requires": {
+    "vterm": {
+      "symbol_prefix": "vterm",
+      "library_names": [
+        "libvterm.dylib",
+        "libvterm.so"
+      ],
+      "header_names": [
+        "vterm.h"
+      ],
+      "version": ">=0.3.0 & <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

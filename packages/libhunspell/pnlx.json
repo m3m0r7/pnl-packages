@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libhunspell/libhunspell",
+  "version": "1.7.2",
+  "description": "PHP FFI wrapper for the Hunspell spell checker.",
+  "authors": [
+    {
+      "name": "Hunspell maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libhunspell\\Libhunspell",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install hunspell"
+      ],
+      "checkIfExists": [
+        "brew list hunspell"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libhunspell-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists hunspell"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libhunspell-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists hunspell"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add hunspell-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists hunspell"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y hunspell-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q hunspell-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y hunspell-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q hunspell-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install hunspell"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "hunspell": {
+      "symbol_prefix": "Hunspell",
+      "library_names": [
+        "libhunspell-1.7.dylib",
+        "libhunspell-1.7.so",
+        "hunspell.dll"
+      ],
+      "header_names": [
+        "hunspell/hunspell.h"
+      ],
+      "version": ">=1.6.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

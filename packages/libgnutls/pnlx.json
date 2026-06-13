@@ -1,0 +1,100 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libgnutls/libgnutls",
+  "version": "3.8.5",
+  "description": "PHP FFI wrapper for the GnuTLS transport-layer security library.",
+  "authors": [
+    {
+      "name": "GnuTLS maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libgnutls\\Libgnutls",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install gnutls"
+      ],
+      "checkIfExists": [
+        "brew list gnutls"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libgnutls28-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists gnutls"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libgnutls28-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists gnutls"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add gnutls-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists gnutls"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y gnutls-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q gnutls-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y gnutls-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q gnutls-devel"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "requires": {
+    "gnutls": {
+      "symbol_prefix": "gnutls",
+      "library_names": [
+        "libgnutls.dylib",
+        "libgnutls.so"
+      ],
+      "header_names": [
+        "gnutls/gnutls.h"
+      ],
+      "version": ">=3.6.0 & <4.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

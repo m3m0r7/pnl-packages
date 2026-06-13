@@ -1,0 +1,111 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libassimp/libassimp",
+  "version": "5.4.0",
+  "description": "PHP FFI wrapper for Assimp 3D model import via its C API.",
+  "authors": [
+    {
+      "name": "Open Asset Import Library maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libassimp\\Libassimp",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install assimp"
+      ],
+      "checkIfExists": [
+        "brew list assimp"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libassimp-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists assimp"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libassimp-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists assimp"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add assimp-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists assimp"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y assimp-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q assimp-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y assimp-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q assimp-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install assimp"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "assimp": {
+      "symbol_prefix": "ai",
+      "library_names": [
+        "libassimp.dylib",
+        "libassimp.so",
+        "assimp.dll"
+      ],
+      "header_names": [
+        "assimp/cimport.h",
+        "assimp/scene.h"
+      ],
+      "version": ">=5.0.0 & <6.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

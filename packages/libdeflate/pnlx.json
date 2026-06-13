@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libdeflate/libdeflate",
+  "version": "1.20.0",
+  "description": "PHP FFI wrapper for libdeflate fast DEFLATE/zlib/gzip (de)compression.",
+  "authors": [
+    {
+      "name": "libdeflate maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libdeflate\\Libdeflate",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install libdeflate"
+      ],
+      "checkIfExists": [
+        "brew list libdeflate"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libdeflate-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libdeflate"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libdeflate-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libdeflate"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libdeflate-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libdeflate"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libdeflate-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libdeflate-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libdeflate-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libdeflate-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libdeflate"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libdeflate": {
+      "symbol_prefix": "libdeflate",
+      "library_names": [
+        "libdeflate.dylib",
+        "libdeflate.so",
+        "deflate.dll"
+      ],
+      "header_names": [
+        "libdeflate.h"
+      ],
+      "version": ">=1.0.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

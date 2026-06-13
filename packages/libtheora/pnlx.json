@@ -1,0 +1,111 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libtheora/libtheora",
+  "version": "1.1.1",
+  "description": "PHP FFI wrapper for the Theora video codec.",
+  "authors": [
+    {
+      "name": "Xiph.Org / Theora maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libtheora\\Libtheora",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install theora"
+      ],
+      "checkIfExists": [
+        "brew list theora"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libtheora-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists theora"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libtheora-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists theora"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libtheora-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists theora"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libtheora-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libtheora-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libtheora-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libtheora-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libtheora"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "theora": {
+      "symbol_prefix": "th",
+      "library_names": [
+        "libtheora.dylib",
+        "libtheora.so",
+        "theora.dll"
+      ],
+      "header_names": [
+        "theora/theora.h",
+        "theora/codec.h"
+      ],
+      "version": ">=1.1.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

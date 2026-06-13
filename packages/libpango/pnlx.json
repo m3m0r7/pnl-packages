@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libpango/libpango",
+  "version": "1.52.0",
+  "description": "PHP FFI wrapper for Pango text layout and rendering.",
+  "authors": [
+    {
+      "name": "GNOME / Pango maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libpango\\Libpango",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install pango"
+      ],
+      "checkIfExists": [
+        "brew list pango"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libpango1.0-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists pango"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libpango1.0-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists pango"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add pango-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists pango"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y pango-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q pango-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y pango-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q pango-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install pango"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "pango": {
+      "symbol_prefix": "pango",
+      "library_names": [
+        "libpango-1.0.dylib",
+        "libpango-1.0.so",
+        "pango-1.0.dll"
+      ],
+      "header_names": [
+        "pango/pango.h"
+      ],
+      "version": ">=1.40.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

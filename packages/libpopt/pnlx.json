@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libpopt/libpopt",
+  "version": "1.19.0",
+  "description": "PHP FFI wrapper for the popt command-line option parser.",
+  "authors": [
+    {
+      "name": "popt maintainers"
+    }
+  ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libpopt\\Libpopt",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install popt"
+      ],
+      "checkIfExists": [
+        "brew list popt"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libpopt-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists popt"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libpopt-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists popt"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add popt-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists popt"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y popt-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q popt-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y popt-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q popt-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install popt"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "popt": {
+      "symbol_prefix": "popt",
+      "library_names": [
+        "libpopt.dylib",
+        "libpopt.so",
+        "popt.dll"
+      ],
+      "header_names": [
+        "popt.h"
+      ],
+      "version": ">=1.16.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libyajl/libyajl",
+  "version": "2.1.0",
+  "description": "PHP FFI wrapper for YAJL, a streaming JSON parser and generator.",
+  "authors": [
+    {
+      "name": "YAJL maintainers"
+    }
+  ],
+  "license": "ISC",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libyajl\\Libyajl",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install yajl"
+      ],
+      "checkIfExists": [
+        "brew list yajl"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libyajl-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists yajl"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libyajl-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists yajl"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add yajl-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists yajl"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y yajl-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q yajl-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y yajl-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q yajl-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install yajl"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "yajl": {
+      "symbol_prefix": "yajl",
+      "library_names": [
+        "libyajl.dylib",
+        "libyajl.so",
+        "yajl.dll"
+      ],
+      "header_names": [
+        "yajl/yajl_parse.h",
+        "yajl/yajl_gen.h"
+      ],
+      "version": ">=2.0.0 & <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

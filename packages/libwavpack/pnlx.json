@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libwavpack/libwavpack",
+  "version": "5.7.0",
+  "description": "PHP FFI wrapper for the WavPack hybrid lossless audio codec.",
+  "authors": [
+    {
+      "name": "WavPack maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libwavpack\\Libwavpack",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install wavpack"
+      ],
+      "checkIfExists": [
+        "brew list wavpack"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libwavpack-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists wavpack"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libwavpack-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists wavpack"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add wavpack-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists wavpack"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y wavpack-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q wavpack-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y wavpack-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q wavpack-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install wavpack"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "wavpack": {
+      "symbol_prefix": "Wavpack",
+      "library_names": [
+        "libwavpack.dylib",
+        "libwavpack.so",
+        "wavpack.dll"
+      ],
+      "header_names": [
+        "wavpack/wavpack.h"
+      ],
+      "version": ">=5.0.0 & <6.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

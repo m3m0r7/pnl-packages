@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libass/libass",
+  "version": "0.17.3",
+  "description": "PHP FFI wrapper for libass ASS/SSA subtitle rendering.",
+  "authors": [
+    {
+      "name": "libass maintainers"
+    }
+  ],
+  "license": "ISC",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libass\\Libass",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install libass"
+      ],
+      "checkIfExists": [
+        "brew list libass"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libass-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libass"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libass-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libass"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libass-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libass"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libass-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libass-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libass-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libass-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libass"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libass": {
+      "symbol_prefix": "ass",
+      "library_names": [
+        "libass.dylib",
+        "libass.so",
+        "ass.dll"
+      ],
+      "header_names": [
+        "ass/ass.h"
+      ],
+      "version": ">=0.15.0 & <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libvips/libvips",
+  "version": "8.15.1",
+  "description": "PHP FFI wrapper for the libvips demand-driven image processing library.",
+  "authors": [
+    {
+      "name": "libvips maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libvips\\Libvips",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install vips"
+      ],
+      "checkIfExists": [
+        "brew list vips"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libvips-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vips"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libvips-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vips"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add vips-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vips"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y vips-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q vips-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y vips-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q vips-devel"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "requires": {
+    "vips": {
+      "symbol_prefix": "vips",
+      "library_names": [
+        "libvips.dylib",
+        "libvips.so"
+      ],
+      "header_names": [
+        "vips/vips.h"
+      ],
+      "version": ">=8.10.0 & <9.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

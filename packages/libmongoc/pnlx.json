@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libmongoc/libmongoc",
+  "version": "1.27.0",
+  "description": "PHP FFI wrapper for the MongoDB C driver (libmongoc).",
+  "authors": [
+    {
+      "name": "MongoDB / mongo-c-driver maintainers"
+    }
+  ],
+  "license": "Apache-2.0",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libmongoc\\Libmongoc",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install mongo-c-driver"
+      ],
+      "checkIfExists": [
+        "brew list mongo-c-driver"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libmongoc-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmongoc-1.0"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libmongoc-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmongoc-1.0"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add mongo-c-driver-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libmongoc-1.0"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y mongo-c-driver-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q mongo-c-driver-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y mongo-c-driver-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q mongo-c-driver-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install mongo-c-driver"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libmongoc-1.0": {
+      "symbol_prefix": "mongoc",
+      "library_names": [
+        "libmongoc-1.0.dylib",
+        "libmongoc-1.0.so",
+        "mongoc-1.0.dll"
+      ],
+      "header_names": [
+        "mongoc/mongoc.h"
+      ],
+      "version": ">=1.20.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

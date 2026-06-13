@@ -1,0 +1,112 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libvpx/libvpx",
+  "version": "1.14.1",
+  "description": "PHP FFI wrapper for the libvpx VP8/VP9 video codec.",
+  "authors": [
+    {
+      "name": "WebM / libvpx maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libvpx\\Libvpx",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install libvpx"
+      ],
+      "checkIfExists": [
+        "brew list libvpx"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libvpx-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vpx"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libvpx-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vpx"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libvpx-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists vpx"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libvpx-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libvpx-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libvpx-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libvpx-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install libvpx"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libvpx": {
+      "symbol_prefix": "vpx",
+      "library_names": [
+        "libvpx.dylib",
+        "libvpx.so",
+        "vpx.dll"
+      ],
+      "header_names": [
+        "vpx/vpx_codec.h",
+        "vpx/vpx_encoder.h",
+        "vpx/vpx_decoder.h"
+      ],
+      "version": ">=1.8.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

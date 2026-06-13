@@ -1,0 +1,83 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libseccomp/libseccomp",
+  "version": "2.5.5",
+  "description": "PHP FFI wrapper for libseccomp Linux syscall filtering (seccomp-bpf).",
+  "authors": [
+    {
+      "name": "libseccomp maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-only",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libseccomp\\Libseccomp",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libseccomp-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libseccomp"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libseccomp-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libseccomp"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add libseccomp-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libseccomp"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libseccomp-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libseccomp-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y libseccomp-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q libseccomp-devel"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "requires": {
+    "libseccomp": {
+      "symbol_prefix": "seccomp",
+      "library_names": [
+        "libseccomp.so"
+      ],
+      "header_names": [
+        "seccomp.h"
+      ],
+      "version": ">=2.4.0 & <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

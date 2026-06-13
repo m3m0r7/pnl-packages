@@ -1,0 +1,110 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libopenjp2/libopenjp2",
+  "version": "2.5.2",
+  "description": "PHP FFI wrapper for OpenJPEG JPEG 2000 encoding and decoding.",
+  "authors": [
+    {
+      "name": "OpenJPEG maintainers"
+    }
+  ],
+  "license": "BSD-2-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libopenjp2\\Libopenjp2",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install openjpeg"
+      ],
+      "checkIfExists": [
+        "brew list openjpeg"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libopenjp2-7-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libopenjp2"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libopenjp2-7-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libopenjp2"
+      ]
+    },
+    "alpine": {
+      "install": [
+        "apk add openjpeg-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libopenjp2"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y openjpeg2-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q openjpeg2-devel"
+      ]
+    },
+    "rhel": {
+      "install": [
+        "sudo dnf install -y openjpeg2-devel"
+      ],
+      "checkIfExists": [
+        "rpm -q openjpeg2-devel"
+      ]
+    },
+    "windows": {
+      "install": [
+        "vcpkg install openjpeg"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    },
+    {
+      "os": "windows",
+      "arch": "x86_64"
+    }
+  ],
+  "requires": {
+    "libopenjp2": {
+      "symbol_prefix": "opj",
+      "library_names": [
+        "libopenjp2.dylib",
+        "libopenjp2.so",
+        "openjp2.dll"
+      ],
+      "header_names": [
+        "openjpeg.h"
+      ],
+      "version": ">=2.3.0 & <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}
