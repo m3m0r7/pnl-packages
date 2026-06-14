@@ -3,10 +3,8 @@
 ```php
 use Pnlx\Libjpeg\Libjpeg;
 
-$libjpeg = new Libjpeg();
-
 // Query the compile-time library version (e.g. 80 for libjpeg v8).
-$version = $libjpeg->jpeg_lib_version(); // returns int
+$version = Libjpeg::jpeg_lib_version(); // returns int
 echo 'libjpeg version: ' . $version . PHP_EOL;
 // Main entry points to explore: jpeg_CreateCompress / jpeg_CreateDecompress,
 // jpeg_stdio_dest / jpeg_stdio_src, jpeg_start_compress, jpeg_finish_compress.

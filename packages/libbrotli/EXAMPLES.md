@@ -3,10 +3,8 @@
 ```php
 use Pnlx\Libbrotli\Libbrotli;
 
-$libbrotli = new Libbrotli();
-
 // Print the Brotli encoder version number
-$version = $libbrotli->BrotliEncoderVersion();
+$version = Libbrotli::BrotliEncoderVersion();
 $major   = ($version >> 24) & 0xff;
 $minor   = ($version >> 12) & 0xfff;
 $patch   = $version & 0xfff;
@@ -14,9 +12,9 @@ echo "Brotli encoder version: {$major}.{$minor}.{$patch}\n";
 
 // Compute the maximum compressed size for a given input length
 $inputLen    = 1024;
-$maxEncoded  = $libbrotli->BrotliEncoderMaxCompressedSize($inputLen);
+$maxEncoded  = Libbrotli::BrotliEncoderMaxCompressedSize($inputLen);
 echo "Max compressed size for {$inputLen} bytes: {$maxEncoded}\n";
 
-// Compress/decompress: $libbrotli->BrotliEncoderCompress(quality, window, mode, inputLen, input, $encodedSize, $encodedBuf)
-// then: $libbrotli->BrotliDecoderDecompress($encodedSize, $encodedBuf, $decodedSize, $decodedBuf)
+// Compress/decompress: Libbrotli::BrotliEncoderCompress(quality, window, mode, inputLen, input, $encodedSize, $encodedBuf)
+// then: Libbrotli::BrotliDecoderDecompress($encodedSize, $encodedBuf, $decodedSize, $decodedBuf)
 ```

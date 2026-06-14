@@ -3,8 +3,6 @@
 ```php
 use Pnlx\Libc\Libc;
 
-$libc = new Libc();
-
-$libc->printf("Hello, World from libc!\n");
-$libc->puts("And this line is printed by libc puts.");
+Libc::printf("Hello, World from libc!\n");
+Libc::puts("And this line is printed by libc puts.");
 ```

@@ -3,10 +3,8 @@
 ```php
 use Pnlx\Liblzo2\Liblzo2;
 
-$liblzo2 = new Liblzo2();
-
 // lzo_version_string() returns the LZO release, e.g. "2.10".
-$version = $liblzo2->lzo_version_string();
+$version = Liblzo2::lzo_version_string();
 echo "LZO: $version\n";
 
 // Explore further: lzo1x_1_compress(), lzo1x_decompress_safe(),

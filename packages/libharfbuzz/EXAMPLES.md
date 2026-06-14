@@ -3,16 +3,14 @@
 ```php
 use Pnlx\Libharfbuzz\Libharfbuzz;
 
-$libharfbuzz = new Libharfbuzz();
-
 // Query HarfBuzz version
-$versionStr = $libharfbuzz->hb_version_string();
+$versionStr = Libharfbuzz::hb_version_string();
 echo "HarfBuzz: " . $versionStr . "\n";
 
 // Create a shaping buffer, add text, then destroy it
-$buf = $libharfbuzz->hb_buffer_create();
-$libharfbuzz->hb_buffer_add_utf8($buf, 'Hello', -1, 0, -1);
-$libharfbuzz->hb_buffer_guess_segment_properties($buf);
-// Shape with a font: $libharfbuzz->hb_shape($font, $buf, null, 0);
-$libharfbuzz->hb_buffer_destroy($buf);
+$buf = Libharfbuzz::hb_buffer_create();
+Libharfbuzz::hb_buffer_add_utf8($buf, 'Hello', -1, 0, -1);
+Libharfbuzz::hb_buffer_guess_segment_properties($buf);
+// Shape with a font: Libharfbuzz::hb_shape($font, $buf, null, 0);
+Libharfbuzz::hb_buffer_destroy($buf);
 ```

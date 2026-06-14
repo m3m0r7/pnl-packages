@@ -3,10 +3,8 @@
 ```php
 use Pnlx\Libsoxr\Libsoxr;
 
-$libsoxr = new Libsoxr();
-
 // soxr_version() returns the libsoxr version string.
-$version = $libsoxr->soxr_version();
+$version = Libsoxr::soxr_version();
 echo "libsoxr: $version\n";
 
 // Explore further: soxr_create(), soxr_process(),

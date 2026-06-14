@@ -3,10 +3,8 @@
 ```php
 use Pnlx\Libtheora\Libtheora;
 
-$libtheora = new Libtheora();
-
 // th_version_string() returns the Theora release string.
-$version = $libtheora->th_version_string();
+$version = Libtheora::th_version_string();
 echo "libtheora: $version\n";
 
 // Explore further: th_decode_alloc(), th_decode_packetin(),

@@ -3,20 +3,18 @@
 ```php
 use Pnlx\Libportaudio\Libportaudio;
 
-$libportaudio = new Libportaudio();
-
 // Initialise PortAudio and print library version info
-$err = $libportaudio->Pa_Initialize();
+$err = Libportaudio::Pa_Initialize();
 if ($err !== 0) { // paNoError = 0
-    throw new \RuntimeException('Pa_Initialize failed: ' . $libportaudio->Pa_GetErrorText($err));
+    throw new \RuntimeException('Pa_Initialize failed: ' . Libportaudio::Pa_GetErrorText($err));
 }
 
-$versionText = $libportaudio->Pa_GetVersionText();
+$versionText = Libportaudio::Pa_GetVersionText();
 echo "PortAudio: {$versionText}\n";
 
-$deviceCount = $libportaudio->Pa_GetDeviceCount();
+$deviceCount = Libportaudio::Pa_GetDeviceCount();
 echo "Audio devices: {$deviceCount}\n";
 
-// Open a default output stream: $libportaudio->Pa_OpenDefaultStream($stream, 0, 2, paFloat32, 44100, 256, $callback, null)
-$libportaudio->Pa_Terminate();
+// Open a default output stream: Libportaudio::Pa_OpenDefaultStream($stream, 0, 2, paFloat32, 44100, 256, $callback, null)
+Libportaudio::Pa_Terminate();
 ```

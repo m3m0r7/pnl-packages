@@ -4,19 +4,17 @@
 use Pnlx\Libavif\Libavif;
 use function Pnlx\Util\is_null;
 
-$libavif = new Libavif();
-
 // Print the libavif version string
-$version = $libavif->avifVersion();
+$version = Libavif::avifVersion();
 echo "libavif version: {$version}\n";
 
 // Decode an AVIF file
-$decoder = $libavif->avifDecoderCreate();
+$decoder = Libavif::avifDecoderCreate();
 if (is_null($decoder)) {
     throw new \RuntimeException('avifDecoderCreate failed');
 }
-// $libavif->avifDecoderSetIOFile($decoder, 'image.avif');
-// $libavif->avifDecoderParse($decoder);
-// $libavif->avifDecoderNextImage($decoder);
-$libavif->avifDecoderDestroy($decoder);
+// Libavif::avifDecoderSetIOFile($decoder, 'image.avif');
+// Libavif::avifDecoderParse($decoder);
+// Libavif::avifDecoderNextImage($decoder);
+Libavif::avifDecoderDestroy($decoder);
 ```

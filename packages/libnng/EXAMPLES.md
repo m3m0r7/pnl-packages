@@ -3,10 +3,8 @@
 ```php
 use Pnlx\Libnng\Libnng;
 
-$libnng = new Libnng();
-
 // nng_version() returns the NNG version string, e.g. "1.8.0".
-$version = $libnng->nng_version();
+$version = Libnng::nng_version();
 echo "nng: $version\n";
 
 // Explore further: nng_req0_open(), nng_dial(),

@@ -3,10 +3,8 @@
 ```php
 use Pnlx\Libnotcurses\Libnotcurses;
 
-$libnotcurses = new Libnotcurses();
-
 // notcurses_version() returns the runtime version, e.g. "3.0.9".
-$version = $libnotcurses->notcurses_version();
+$version = Libnotcurses::notcurses_version();
 echo "notcurses: $version\n";
 
 // Explore further: notcurses_core_init(), notcurses_stdplane(),

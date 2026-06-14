@@ -3,10 +3,8 @@
 ```php
 use Pnlx\Libglib2\Libglib2;
 
-$libglib2 = new Libglib2();
-
 // g_get_num_processors() returns the CPU count GLib sees.
-$cpus = $libglib2->g_get_num_processors();
+$cpus = Libglib2::g_get_num_processors();
 echo "GLib sees $cpus CPU(s)\n";
 
 // Explore further: g_strdup(), g_hash_table_new(),

@@ -3,13 +3,11 @@
 ```php
 use Pnlx\Libzmq\Libzmq;
 
-$libzmq = new Libzmq();
-
 // zmq_version() fills three int out-parameters with major/minor/patch.
 $major = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
 $minor = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
 $patch = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
-$libzmq->zmq_version($major, $minor, $patch);
+Libzmq::zmq_version($major, $minor, $patch);
 echo "ZeroMQ {$major[0]}.{$minor[0]}.{$patch[0]}\n";
 
 // Explore further: zmq_ctx_new(), zmq_socket(), zmq_bind(),

@@ -4,21 +4,19 @@
 use Pnlx\Libpcre2\Libpcre2;
 use function Pnlx\Util\is_null;
 
-$libpcre2 = new Libpcre2();
-
 // Compile a PCRE2 pattern (8-bit / UTF-8 API)
 $errorCode   = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
 $errorOffset = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
-$re = $libpcre2->pcre2_compile_8('\\d+', -1, 0, $errorCode, $errorOffset, null);
+$re = Libpcre2::pcre2_compile_8('\\d+', -1, 0, $errorCode, $errorOffset, null);
 if (is_null($re)) {
     throw new \RuntimeException('pcre2_compile_8 failed at offset ' . $errorOffset[0]);
 }
 
 // Match against a subject string
-$matchData = $libpcre2->pcre2_match_data_create_from_pattern_8($re, null);
-$rc = $libpcre2->pcre2_match_8($re, '42 items', 8, 0, 0, $matchData, null);
+$matchData = Libpcre2::pcre2_match_data_create_from_pattern_8($re, null);
+$rc = Libpcre2::pcre2_match_8($re, '42 items', 8, 0, 0, $matchData, null);
 echo "Match count: {$rc}\n"; // 1 on success
 
-$libpcre2->pcre2_match_data_free_8($matchData);
-$libpcre2->pcre2_code_free_8($re);
+Libpcre2::pcre2_match_data_free_8($matchData);
+Libpcre2::pcre2_code_free_8($re);
 ```

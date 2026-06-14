@@ -3,10 +3,8 @@
 ```php
 use Pnlx\Libvorbis\Libvorbis;
 
-$libvorbis = new Libvorbis();
-
 // vorbis_version_string() returns the library version as a plain C string.
-$version = $libvorbis->vorbis_version_string();
+$version = Libvorbis::vorbis_version_string();
 echo "Vorbis version: $version\n";
 
 // Explore further: vorbis_info_init(), vorbis_encode_init(),

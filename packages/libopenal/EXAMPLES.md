@@ -4,22 +4,20 @@
 use Pnlx\Libopenal\Libopenal;
 use function Pnlx\Util\is_null;
 
-$libopenal = new Libopenal();
-
 // Open the default audio device and create a context
-$device = $libopenal->alcOpenDevice(null);
+$device = Libopenal::alcOpenDevice(null);
 if (is_null($device)) {
     echo "No audio device available\n";
 } else {
-    $ctx = $libopenal->alcCreateContext($device, null);
-    $libopenal->alcMakeContextCurrent($ctx);
+    $ctx = Libopenal::alcCreateContext($device, null);
+    Libopenal::alcMakeContextCurrent($ctx);
 
     // Query the renderer string (char* → PHP string)
-    $renderer = $libopenal->alGetString(0xB004); // AL_RENDERER = 0xB004
+    $renderer = Libopenal::alGetString(0xB004); // AL_RENDERER = 0xB004
     echo "OpenAL renderer: $renderer\n";
 
-    $libopenal->alcMakeContextCurrent(null);
-    $libopenal->alcDestroyContext($ctx);
-    $libopenal->alcCloseDevice($device);
+    Libopenal::alcMakeContextCurrent(null);
+    Libopenal::alcDestroyContext($ctx);
+    Libopenal::alcCloseDevice($device);
 }
 ```

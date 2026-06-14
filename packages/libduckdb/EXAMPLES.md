@@ -3,10 +3,8 @@
 ```php
 use Pnlx\Libduckdb\Libduckdb;
 
-$libduckdb = new Libduckdb();
-
 // Query the DuckDB library version string.
-$version = $libduckdb->duckdb_library_version();
+$version = Libduckdb::duckdb_library_version();
 echo "DuckDB version: " . $version . PHP_EOL;
 
 // Open an in-memory database, connect, run a query, then close.
@@ -15,10 +13,10 @@ $allocator = (new \Pnlx\FFI\Allocator());
 $db     = $allocator->make(\Pnlx\FFI\AllocationType::VoidPointer);
 $con    = $allocator->make(\Pnlx\FFI\AllocationType::VoidPointer);
 $result = $allocator->make(\Pnlx\FFI\AllocationType::VoidPointer);
-$libduckdb->duckdb_open(null, $db);
-$libduckdb->duckdb_connect($db->cdata, $con);
-$libduckdb->duckdb_query($con->cdata, "SELECT 42 AS answer", $result);
-$libduckdb->duckdb_destroy_result($result);
-$libduckdb->duckdb_disconnect($con);
-$libduckdb->duckdb_close($db);
+Libduckdb::duckdb_open(null, $db);
+Libduckdb::duckdb_connect($db->cdata, $con);
+Libduckdb::duckdb_query($con->cdata, "SELECT 42 AS answer", $result);
+Libduckdb::duckdb_destroy_result($result);
+Libduckdb::duckdb_disconnect($con);
+Libduckdb::duckdb_close($db);
 ```

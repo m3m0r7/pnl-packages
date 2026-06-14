@@ -3,11 +3,9 @@
 ```php
 use Pnlx\Libassimp\Libassimp;
 
-$libassimp = new Libassimp();
-
 // aiGetVersionMajor()/aiGetVersionMinor() report the Assimp version.
-$major = $libassimp->aiGetVersionMajor();
-$minor = $libassimp->aiGetVersionMinor();
+$major = Libassimp::aiGetVersionMajor();
+$minor = Libassimp::aiGetVersionMinor();
 echo "Assimp: $major.$minor\n";
 
 // Explore further: aiImportFile(), aiApplyPostProcessing(),

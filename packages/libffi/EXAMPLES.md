@@ -3,8 +3,6 @@
 ```php
 use Pnlx\Libffi\Libffi;
 
-$libffi = new Libffi();
-
 // libffi does not expose a runtime version function; the main entry point is
 // ffi_prep_cif() to build a call interface, then ffi_call() to invoke it.
 // Here we allocate a ffi_cif struct and call ffi_prep_cif for a void(void) CIF.

@@ -14,14 +14,12 @@ use const Pnlx\Libsdl\SDL_WINDOW_SHOWN;
 // so it cannot be generated as a constant — define it by hand.
 const SDL_WINDOWPOS_CENTERED = 0x2FFF0000;
 
-$sdl = new Libsdl();
-
-$sdl->SDL_Init(SDL_INIT_VIDEO);
-$window = $sdl->SDL_CreateWindow('Hello', SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 360, SDL_WINDOW_SHOWN);
+Libsdl::SDL_Init(SDL_INIT_VIDEO);
+$window = Libsdl::SDL_CreateWindow('Hello', SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 360, SDL_WINDOW_SHOWN);
 if (is_null($window)) {
-    throw new RuntimeException('SDL_CreateWindow failed: ' . $sdl->SDL_GetError());
+    throw new RuntimeException('SDL_CreateWindow failed: ' . Libsdl::SDL_GetError());
 }
-$sdl->SDL_Delay(2000);
-$sdl->SDL_DestroyWindow($window);
-$sdl->SDL_Quit();
+Libsdl::SDL_Delay(2000);
+Libsdl::SDL_DestroyWindow($window);
+Libsdl::SDL_Quit();
 ```

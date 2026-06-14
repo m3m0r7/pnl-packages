@@ -4,17 +4,15 @@
 use Pnlx\Libidn2\Libidn2;
 use function Pnlx\Util\is_null;
 
-$libidn2 = new Libidn2();
-
 // Check library version
-$version = $libidn2->idn2_check_version('2.0.0');
+$version = Libidn2::idn2_check_version('2.0.0');
 echo "libidn2 version >= 2.0.0: " . ($version !== null ? $version : 'no') . "\n";
 
 // Convert an internationalized domain name to ACE (ASCII-compatible encoding)
 $output = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::VoidPointer);
-$rc = $libidn2->idn2_lookup_u8('www.b\u00fccher.example', $output, 0);
+$rc = Libidn2::idn2_lookup_u8('www.b\u00fccher.example', $output, 0);
 if ($rc === 0) {
     echo "ACE label: " . $output[0] . "\n";
-    $libidn2->idn2_free($output[0]);
+    Libidn2::idn2_free($output[0]);
 }
 ```

@@ -3,10 +3,8 @@
 ```php
 use Pnlx\Libgnutls\Libgnutls;
 
-$libgnutls = new Libgnutls();
-
 // gnutls_check_version(null) returns the runtime version string.
-$version = $libgnutls->gnutls_check_version(null);
+$version = Libgnutls::gnutls_check_version(null);
 echo "GnuTLS: $version\n";
 
 // Explore further: gnutls_global_init(), gnutls_init(),

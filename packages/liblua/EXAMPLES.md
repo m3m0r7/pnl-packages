@@ -4,14 +4,12 @@
 use Pnlx\Liblua\Liblua;
 use function Pnlx\Util\is_null;
 
-$liblua = new Liblua();
-
 // Create a Lua state, execute a snippet, then close the state.
-$L = $liblua->luaL_newstate();
+$L = Liblua::luaL_newstate();
 if (is_null($L)) {
     throw new \RuntimeException('Failed to create Lua state');
 }
-$liblua->luaL_openlibs($L);
-$liblua->luaL_dostring($L, 'print("Hello from Lua!")');
-$liblua->lua_close($L);
+Liblua::luaL_openlibs($L);
+Liblua::luaL_dostring($L, 'print("Hello from Lua!")');
+Liblua::lua_close($L);
 ```

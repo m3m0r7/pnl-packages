@@ -4,19 +4,17 @@
 use Pnlx\Libcjson\Libcjson;
 use function Pnlx\Util\is_null;
 
-$libcjson = new Libcjson();
-
 // Parse a JSON string and read a field value
 $json = '{"name":"Alice","age":30}';
-$root = $libcjson->cJSON_Parse($json);
+$root = Libcjson::cJSON_Parse($json);
 if (is_null($root)) {
-    throw new \RuntimeException('cJSON_Parse failed: ' . $libcjson->cJSON_GetErrorPtr());
+    throw new \RuntimeException('cJSON_Parse failed: ' . Libcjson::cJSON_GetErrorPtr());
 }
-$nameItem = $libcjson->cJSON_GetObjectItemCaseSensitive($root, 'name');
-$name     = $libcjson->cJSON_GetStringValue($nameItem);
+$nameItem = Libcjson::cJSON_GetObjectItemCaseSensitive($root, 'name');
+$name     = Libcjson::cJSON_GetStringValue($nameItem);
 echo "name: {$name}\n"; // Alice
 
-$printed = $libcjson->cJSON_Print($root);
+$printed = Libcjson::cJSON_Print($root);
 echo $printed . "\n";
-$libcjson->cJSON_Delete($root);
+Libcjson::cJSON_Delete($root);
 ```

@@ -3,16 +3,14 @@
 ```php
 use Pnlx\Libncurses\Libncurses;
 
-$libncurses = new Libncurses();
-
 // Initialise the terminal, print a message, wait for a key, then exit
-$libncurses->initscr();
-$libncurses->cbreak();
-$libncurses->noecho();
+Libncurses::initscr();
+Libncurses::cbreak();
+Libncurses::noecho();
 
-$libncurses->mvprintw(0, 0, "Hello from ncurses!");
-$libncurses->refresh();
-$libncurses->getch();
+Libncurses::mvprintw(0, 0, "Hello from ncurses!");
+Libncurses::refresh();
+Libncurses::getch();
 
-$libncurses->endwin();
+Libncurses::endwin();
 ```
