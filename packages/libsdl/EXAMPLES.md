@@ -4,9 +4,15 @@
 use Pnlx\Libsdl\Libsdl;
 use function Pnlx\Util\is_null;
 
-const SDL_INIT_VIDEO = 0x00000020;
+// Constants from the SDL headers are generated into @pnlx/.../const.php and
+// live under the package namespace, so import them instead of redefining them.
+// SDL_INIT_VIDEO is a #define; SDL_WINDOW_SHOWN is an enum value — both generated.
+use const Pnlx\Libsdl\SDL_INIT_VIDEO;
+use const Pnlx\Libsdl\SDL_WINDOW_SHOWN;
+
+// SDL_WINDOWPOS_CENTERED is a function-like macro (SDL_WINDOWPOS_CENTERED_DISPLAY(0)),
+// so it cannot be generated as a constant — define it by hand.
 const SDL_WINDOWPOS_CENTERED = 0x2FFF0000;
-const SDL_WINDOW_SHOWN = 0x00000004;
 
 $sdl = new Libsdl();
 
