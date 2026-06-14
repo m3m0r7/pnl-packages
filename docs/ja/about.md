@@ -46,14 +46,16 @@ pnl install https://github.com/m3m0r7/pnl-packages/tree/main/packages/libusb
 
 ### PHP Usage
 
-アプリケーションは、生成されたエンティティクラスを通じてネイティブライブラリとやり取りします。典型的なワークフローでは、`Runtime` を読み込み、ネイティブライブラリのエンティティを取得し、生成されたラッパーメソッドを呼び出します。
+アプリケーションは、生成されたエンティティクラスを通じてネイティブライブラリとやり取りします。C ライブラリは関数の集まりなので、エンティティは **static** で、インスタンス化しません。最初の static 呼び出しで自動的に boot します。
 
 ```php
-$runtime = new Runtime(__DIR__);
-$libusb = $runtime->load(Libusb::class);
-$result = $libusb->libusbInit(null);
+require_once __DIR__ . '/@pnlx/autoload.php';
+
+use Pnlx\Libusb\Libusb;
+
+$result = Libusb::libusbInit(null);
 ```
 
-生成されたコードは、エンティティのメソッドと、任意で利用できるグローバルな PHP 関数の両方をサポートします。これは `features.use_functions` の設定によって制御されます。
+生成されたコードは、static なエンティティメソッドと、任意で利用できるグローバルな PHP 関数の両方をサポートします。これは `features.use_functions` の設定によって制御されます。
 
 > **ステータス:** pnl は初期段階の実装です。ローカルパス、`file://`、git ベースのインストールは現時点で動作します。リポジトリインデックスの解決、署名付きパッケージインデックス、FTP ダウンロードは設計中です。

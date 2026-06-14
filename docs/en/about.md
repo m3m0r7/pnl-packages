@@ -46,14 +46,16 @@ pnl install https://github.com/m3m0r7/pnl-packages/tree/main/packages/libusb
 
 ### PHP Usage
 
-Applications interact with native libraries through generated entity classes. A typical workflow loads the `Runtime`, retrieves a native library entity, and calls generated wrapper methods:
+Applications interact with native libraries through generated entity classes. A C library is a bag of functions, so the entity is **static** — never instantiated. The first static call boots it automatically:
 
 ```php
-$runtime = new Runtime(__DIR__);
-$libusb = $runtime->load(Libusb::class);
-$result = $libusb->libusbInit(null);
+require_once __DIR__ . '/@pnlx/autoload.php';
+
+use Pnlx\Libusb\Libusb;
+
+$result = Libusb::libusbInit(null);
 ```
 
-Generated code supports both entity methods and optional global PHP functions, controlled by the `features.use_functions` configuration setting.
+Generated code supports both static entity methods and optional global PHP functions, controlled by the `features.use_functions` configuration setting.
 
 > **Status:** pnl is an early implementation. Local path, `file://`, and git-based installations work today. Repository index solving, signed package indexes, and FTP downloads are still in design.
