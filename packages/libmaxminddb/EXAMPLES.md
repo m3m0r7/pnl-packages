@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libmaxminddb\Libmaxminddb;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libmaxminddb = $runtime->load(Libmaxminddb::class);
+$libmaxminddb = new Libmaxminddb();
 
 // MMDB_lib_version() returns the libmaxminddb version string.
 $version = $libmaxminddb->MMDB_lib_version();

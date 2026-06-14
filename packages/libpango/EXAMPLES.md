@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libpango\Libpango;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libpango = $runtime->load(Libpango::class);
+$libpango = new Libpango();
 
 // pango_version_string() returns the Pango version, e.g. "1.52.0".
 $version = $libpango->pango_version_string();

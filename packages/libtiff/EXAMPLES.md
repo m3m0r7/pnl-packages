@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libtiff\Libtiff;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libtiff = $runtime->load(Libtiff::class);
+$libtiff = new Libtiff();
 
 // Print the libtiff version string.
 echo $libtiff->TIFFGetVersion() . PHP_EOL;

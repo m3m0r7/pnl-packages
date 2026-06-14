@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libnghttp2\Libnghttp2;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libnghttp2 = $runtime->load(Libnghttp2::class);
+$libnghttp2 = new Libnghttp2();
 
 // nghttp2_version() returns a pointer to a nghttp2_info struct
 $info = $libnghttp2->nghttp2_version(0);

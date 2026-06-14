@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libwavpack\Libwavpack;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libwavpack = $runtime->load(Libwavpack::class);
+$libwavpack = new Libwavpack();
 
 // WavpackGetLibraryVersionString() returns the library version, e.g. "5.7.0".
 $version = $libwavpack->WavpackGetLibraryVersionString();

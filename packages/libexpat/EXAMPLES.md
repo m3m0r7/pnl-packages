@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libexpat\Libexpat;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libexpat = $runtime->load(Libexpat::class);
+$libexpat = new Libexpat();
 
 // Query Expat's version string (e.g. "expat_2.6.2").
 $version = $libexpat->XML_ExpatVersion();

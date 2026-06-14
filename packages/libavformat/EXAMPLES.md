@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libavformat\Libavformat;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libavformat = $runtime->load(Libavformat::class);
+$libavformat = new Libavformat();
 
 // Print the libavformat version and configuration
 $version = $libavformat->avformat_version();

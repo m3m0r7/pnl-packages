@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libudev\Libudev;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libudev = $runtime->load(Libudev::class);
+$libudev = new Libudev();
 
 // Create a udev context, then release it.
 $udev = $libudev->udev_new();

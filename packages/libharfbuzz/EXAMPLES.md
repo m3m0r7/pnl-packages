@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libharfbuzz\Libharfbuzz;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libharfbuzz = $runtime->load(Libharfbuzz::class);
+$libharfbuzz = new Libharfbuzz();
 
 // Query HarfBuzz version
 $versionStr = $libharfbuzz->hb_version_string();

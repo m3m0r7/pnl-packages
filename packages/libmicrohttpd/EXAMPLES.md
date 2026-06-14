@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libmicrohttpd\Libmicrohttpd;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libmicrohttpd = $runtime->load(Libmicrohttpd::class);
+$libmicrohttpd = new Libmicrohttpd();
 
 // Query the libmicrohttpd runtime version string.
 $ver = $libmicrohttpd->MHD_get_version(); // returns string, e.g. "0.9.77"

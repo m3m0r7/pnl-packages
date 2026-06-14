@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libmpg123\Libmpg123;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libmpg123 = $runtime->load(Libmpg123::class);
+$libmpg123 = new Libmpg123();
 
 $libmpg123->mpg123_init();
 

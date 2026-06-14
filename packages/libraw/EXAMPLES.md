@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libraw\Libraw;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libraw = $runtime->load(Libraw::class);
+$libraw = new Libraw();
 
 // libraw_init(0) creates a processing handle; libraw_close() frees it.
 $handle = $libraw->libraw_init(0);

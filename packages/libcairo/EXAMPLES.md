@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libcairo\Libcairo;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libcairo = $runtime->load(Libcairo::class);
+$libcairo = new Libcairo();
 
 // Draw a red circle on a PNG image surface and save it
 $surface = $libcairo->cairo_image_surface_create(

@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libavcodec\Libavcodec;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libavcodec = $runtime->load(Libavcodec::class);
+$libavcodec = new Libavcodec();
 
 // Print the libavcodec version string
 $version = $libavcodec->avcodec_version();

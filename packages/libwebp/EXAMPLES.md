@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libwebp\Libwebp;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libwebp = $runtime->load(Libwebp::class);
+$libwebp = new Libwebp();
 
 // WebPGetDecoderVersion() returns version as (major<<16|minor<<8|revision).
 $ver = $libwebp->WebPGetDecoderVersion();

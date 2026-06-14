@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libftdi\Libftdi;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libftdi = $runtime->load(Libftdi::class);
+$libftdi = new Libftdi();
 
 // Allocate and initialise a new ftdi_context.
 $ctx = $libftdi->ftdi_new();

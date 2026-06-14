@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libmariadb\Libmariadb;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libmariadb = $runtime->load(Libmariadb::class);
+$libmariadb = new Libmariadb();
 
 // Connect to MariaDB, run a query, fetch a row, then close.
 $info = $libmariadb->mysql_get_client_info(); // returns string

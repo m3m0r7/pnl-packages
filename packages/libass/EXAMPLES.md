@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libass\Libass;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libass = $runtime->load(Libass::class);
+$libass = new Libass();
 
 // Create an ass_library handle, then free it.
 $library = $libass->ass_library_init();

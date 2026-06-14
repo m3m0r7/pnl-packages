@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libarchive\Libarchive;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libarchive = $runtime->load(Libarchive::class);
+$libarchive = new Libarchive();
 
 // Read a tar.gz archive entry by entry
 $a = $libarchive->archive_read_new();

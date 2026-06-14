@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libquickjs\Libquickjs;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libquickjs = $runtime->load(Libquickjs::class);
+$libquickjs = new Libquickjs();
 
 // Create a QuickJS runtime and context
 $jsRuntime = $libquickjs->JS_NewRuntime();

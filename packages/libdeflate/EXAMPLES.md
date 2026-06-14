@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libdeflate\Libdeflate;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libdeflate = $runtime->load(Libdeflate::class);
+$libdeflate = new Libdeflate();
 
 // Allocate a compressor at level 6, then free it.
 $compressor = $libdeflate->libdeflate_alloc_compressor(6);

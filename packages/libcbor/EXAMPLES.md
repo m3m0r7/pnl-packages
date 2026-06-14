@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libcbor\Libcbor;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libcbor = $runtime->load(Libcbor::class);
+$libcbor = new Libcbor();
 
 // Build a CBOR unsigned integer item.
 $item = $libcbor->cbor_build_uint32(1234);

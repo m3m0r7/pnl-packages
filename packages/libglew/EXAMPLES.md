@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libglew\Libglew;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libglew = $runtime->load(Libglew::class);
+$libglew = new Libglew();
 
 // glewGetString returns a GLubyte* (string) with GLEW version info.
 // A valid OpenGL context must be current before calling glewInit().

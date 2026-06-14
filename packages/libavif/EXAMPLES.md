@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libavif\Libavif;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libavif = $runtime->load(Libavif::class);
+$libavif = new Libavif();
 
 // Print the libavif version string
 $version = $libavif->avifVersion();

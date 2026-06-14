@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libncurses\Libncurses;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libncurses = $runtime->load(Libncurses::class);
+$libncurses = new Libncurses();
 
 // Initialise the terminal, print a message, wait for a key, then exit
 $libncurses->initscr();

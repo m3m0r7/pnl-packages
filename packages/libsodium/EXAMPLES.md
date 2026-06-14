@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libsodium\Libsodium;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libsodium = $runtime->load(Libsodium::class);
+$libsodium = new Libsodium();
 
 // Initialise the library (must be called once before any crypto operation).
 $libsodium->sodium_init();

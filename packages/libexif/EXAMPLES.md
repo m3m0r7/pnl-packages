@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libexif\Libexif;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libexif = $runtime->load(Libexif::class);
+$libexif = new Libexif();
 
 // Load EXIF data from a JPEG file.
 $data = $libexif->exif_data_new_from_file('/path/to/photo.jpg');

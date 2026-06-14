@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libreadline\Libreadline;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libreadline = $runtime->load(Libreadline::class);
+$libreadline = new Libreadline();
 
 // Initialise the Readline library explicitly
 $libreadline->rl_initialize();

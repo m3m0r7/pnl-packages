@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libassimp\Libassimp;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libassimp = $runtime->load(Libassimp::class);
+$libassimp = new Libassimp();
 
 // aiGetVersionMajor()/aiGetVersionMinor() report the Assimp version.
 $major = $libassimp->aiGetVersionMajor();

@@ -2,15 +2,13 @@
 
 ```php
 use Pnlx\Libgmp\Libgmp;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libgmp = $runtime->load(Libgmp::class);
+$libgmp = new Libgmp();
 
 // Arbitrary-precision addition: a + b -> result printed as decimal string
-$a = $runtime->allocator()->make(\Pnlx\FFI\AllocationType::Int);
-$b = $runtime->allocator()->make(\Pnlx\FFI\AllocationType::Int);
-$result = $runtime->allocator()->make(\Pnlx\FFI\AllocationType::Int);
+$a = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
+$b = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
+$result = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
 
 $libgmp->__gmpz_init($a);
 $libgmp->__gmpz_init($b);

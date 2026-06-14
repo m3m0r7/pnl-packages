@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libsecp256k1\Libsecp256k1;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libsecp256k1 = $runtime->load(Libsecp256k1::class);
+$libsecp256k1 = new Libsecp256k1();
 
 // Create a context for signing and verification, then destroy it.
 // SECP256K1_CONTEXT_NONE = 1.

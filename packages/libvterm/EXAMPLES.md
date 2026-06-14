@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libvterm\Libvterm;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libvterm = $runtime->load(Libvterm::class);
+$libvterm = new Libvterm();
 
 // Create an 80x24 virtual terminal, then free it.
 $vt = $libvterm->vterm_new(24, 80);

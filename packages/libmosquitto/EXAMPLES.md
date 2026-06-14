@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libmosquitto\Libmosquitto;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libmosquitto = $runtime->load(Libmosquitto::class);
+$libmosquitto = new Libmosquitto();
 
 // Initialise the library, create a client, publish a message, then clean up.
 $libmosquitto->mosquitto_lib_init();

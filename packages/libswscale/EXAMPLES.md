@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libswscale\Libswscale;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libswscale = $runtime->load(Libswscale::class);
+$libswscale = new Libswscale();
 
 // Print the libswscale version and license.
 echo $libswscale->swscale_version() . PHP_EOL;

@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libxslt\Libxslt;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libxslt = $runtime->load(Libxslt::class);
+$libxslt = new Libxslt();
 
 // Allocate an empty stylesheet and release it again.
 $sheet = $libxslt->xsltNewStylesheet();

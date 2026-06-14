@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libxml2\Libxml2;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libxml2 = $runtime->load(Libxml2::class);
+$libxml2 = new Libxml2();
 
 // xmlReadMemory() parses an XML document held in a string buffer.
 $xml = "<root><item>hello</item></root>";

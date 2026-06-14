@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libtcc\Libtcc;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libtcc = $runtime->load(Libtcc::class);
+$libtcc = new Libtcc();
 
 // Create a TinyCC compilation context.
 $tcc = $libtcc->tcc_new();

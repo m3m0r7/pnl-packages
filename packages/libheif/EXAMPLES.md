@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libheif\Libheif;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libheif = $runtime->load(Libheif::class);
+$libheif = new Libheif();
 
 // Query libheif version string
 $version = $libheif->heif_get_version();

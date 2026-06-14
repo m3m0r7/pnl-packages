@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libsixel\Libsixel;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libsixel = $runtime->load(Libsixel::class);
+$libsixel = new Libsixel();
 
 // Grab the built-in xterm 256-colour palette (SIXEL_BUILTIN_XTERM256 = 2).
 $dither = $libsixel->sixel_dither_get(2);

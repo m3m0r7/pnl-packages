@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libusb\Libusb;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$usb = $runtime->load(Libusb::class);
+$usb = new Libusb();
 
 if ($usb->libusb_init(null) !== 0) {
     throw new RuntimeException('libusb_init failed');

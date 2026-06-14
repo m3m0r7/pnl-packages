@@ -2,13 +2,11 @@
 
 ```php
 use Pnlx\Libfreetype\Libfreetype;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libfreetype = $runtime->load(Libfreetype::class);
+$libfreetype = new Libfreetype();
 
 // Initialise the FreeType library and query its version.
-$allocator = $runtime->allocator();
+$allocator = (new \Pnlx\FFI\Allocator());
 $library = $allocator->make(\Pnlx\FFI\AllocationType::VoidPointer);
 $libfreetype->FT_Init_FreeType($library);
 

@@ -2,17 +2,15 @@
 
 ```php
 use Pnlx\Libdbus\Libdbus;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libdbus = $runtime->load(Libdbus::class);
+$libdbus = new Libdbus();
 
 // dbus_get_local_machine_id() returns the machine's D-Bus UUID as a string.
 $machineId = $libdbus->dbus_get_local_machine_id();
 echo "Machine ID: " . $machineId . PHP_EOL;
 
 // Retrieve library version components via out-parameters.
-$allocator = $runtime->allocator();
+$allocator = (new \Pnlx\FFI\Allocator());
 $major = $allocator->make(\Pnlx\FFI\AllocationType::Int);
 $minor = $allocator->make(\Pnlx\FFI\AllocationType::Int);
 $micro = $allocator->make(\Pnlx\FFI\AllocationType::Int);

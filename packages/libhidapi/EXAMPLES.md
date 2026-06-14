@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libhidapi\Libhidapi;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libhidapi = $runtime->load(Libhidapi::class);
+$libhidapi = new Libhidapi();
 
 // Initialize HIDAPI and enumerate connected USB HID devices
 $rc = $libhidapi->hid_init();

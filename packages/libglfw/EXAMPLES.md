@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libglfw\Libglfw;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libglfw = $runtime->load(Libglfw::class);
+$libglfw = new Libglfw();
 
 // Query GLFW version string before initializing (always safe)
 $versionStr = $libglfw->glfwGetVersionString();

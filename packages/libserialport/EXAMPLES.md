@@ -2,14 +2,12 @@
 
 ```php
 use Pnlx\Libserialport\Libserialport;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libserialport = $runtime->load(Libserialport::class);
+$libserialport = new Libserialport();
 
 // Get a port handle by name and open it
-$port = $runtime->allocator()->make(\Pnlx\FFI\AllocationType::VoidPointer);
+$port = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::VoidPointer);
 $rc = $libserialport->sp_get_port_by_name('/dev/ttyUSB0', $port);
 if ($rc !== 0) { // SP_OK = 0
     throw new \RuntimeException('sp_get_port_by_name failed: ' . $rc);

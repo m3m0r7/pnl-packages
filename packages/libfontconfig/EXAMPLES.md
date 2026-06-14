@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libfontconfig\Libfontconfig;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libfontconfig = $runtime->load(Libfontconfig::class);
+$libfontconfig = new Libfontconfig();
 
 // FcGetVersion() returns the runtime version, e.g. 21500 for 2.15.0.
 $version = $libfontconfig->FcGetVersion();

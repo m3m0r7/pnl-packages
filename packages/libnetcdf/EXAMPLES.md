@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libnetcdf\Libnetcdf;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libnetcdf = $runtime->load(Libnetcdf::class);
+$libnetcdf = new Libnetcdf();
 
 // nc_inq_libvers() returns the netCDF library version string.
 $version = $libnetcdf->nc_inq_libvers();

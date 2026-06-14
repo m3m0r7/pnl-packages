@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libcmark\Libcmark;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libcmark = $runtime->load(Libcmark::class);
+$libcmark = new Libcmark();
 
 // Convert CommonMark (Markdown) to HTML
 $markdown = "# Hello\n\nThis is **cmark** via PHP FFI.\n";

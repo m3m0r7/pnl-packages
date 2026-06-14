@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libproj\Libproj;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libproj = $runtime->load(Libproj::class);
+$libproj = new Libproj();
 
 // proj_context_create() makes a threading context; free it when done.
 $ctx = $libproj->proj_context_create();

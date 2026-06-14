@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libenet\Libenet;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libenet = $runtime->load(Libenet::class);
+$libenet = new Libenet();
 
 // enet_initialize() must be called once before any other ENet call.
 if ($libenet->enet_initialize() !== 0) {

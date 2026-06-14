@@ -2,17 +2,15 @@
 
 ```php
 use Pnlx\Libargon2\Libargon2;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libargon2 = $runtime->load(Libargon2::class);
+$libargon2 = new Libargon2();
 
 // Hash a password with Argon2id and verify it
 // argon2id_hash_encoded writes into a caller-supplied buffer (char *encoded)
 $password   = 'hunter2';
 $salt       = 'somesalt12345678'; // 16 bytes
 $encodedLen = 512;
-$encodedBuf = $runtime->allocator()->make(\Pnlx\FFI\AllocationType::VoidPointer);
+$encodedBuf = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::VoidPointer);
 
 $rc = $libargon2->argon2id_hash_encoded(
     2,              // t_cost: iterations

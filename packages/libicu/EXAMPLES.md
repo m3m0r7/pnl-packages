@@ -2,13 +2,11 @@
 
 ```php
 use Pnlx\Libicu\Libicu;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libicu = $runtime->load(Libicu::class);
+$libicu = new Libicu();
 
 // Query the ICU library version
-$verBuf = $runtime->allocator()->make(\Pnlx\FFI\AllocationType::Int);
+$verBuf = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
 $libicu->u_getVersion($verBuf);
 echo "ICU version: " . $verBuf[0] . "." . $verBuf[1] . "\n";
 

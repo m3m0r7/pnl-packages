@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libavutil\Libavutil;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libavutil = $runtime->load(Libavutil::class);
+$libavutil = new Libavutil();
 
 // Print the libavutil version string
 $version = $libavutil->avutil_version();

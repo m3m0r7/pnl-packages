@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libmagic\Libmagic;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libmagic = $runtime->load(Libmagic::class);
+$libmagic = new Libmagic();
 
 // Detect the MIME type of a file using libmagic.
 $magic = $libmagic->magic_open(0x000010); // MAGIC_MIME_TYPE = 0x000010

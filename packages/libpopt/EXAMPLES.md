@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libpopt\Libpopt;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libpopt = $runtime->load(Libpopt::class);
+$libpopt = new Libpopt();
 
 // poptStrerror() turns a popt error code into a readable message.
 $message = $libpopt->poptStrerror(-10);

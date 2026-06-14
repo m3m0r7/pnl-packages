@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libuv\Libuv;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libuv = $runtime->load(Libuv::class);
+$libuv = new Libuv();
 
 // Print the libuv version string and numeric version.
 echo $libuv->uv_version_string() . PHP_EOL; // e.g. '1.48.0'

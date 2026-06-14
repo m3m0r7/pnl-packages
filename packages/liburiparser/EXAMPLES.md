@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Liburiparser\Liburiparser;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$liburiparser = $runtime->load(Liburiparser::class);
+$liburiparser = new Liburiparser();
 
 // uriparser parses a URI string into its RFC 3986 components.
 // The parser writes into a UriUriA struct you allocate with FFI.

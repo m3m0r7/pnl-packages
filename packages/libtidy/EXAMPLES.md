@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libtidy\Libtidy;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libtidy = $runtime->load(Libtidy::class);
+$libtidy = new Libtidy();
 
 // Create a Tidy document, clean and repair an HTML string, then release.
 $doc = $libtidy->tidyCreate();

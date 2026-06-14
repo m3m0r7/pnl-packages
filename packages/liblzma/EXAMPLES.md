@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Liblzma\Liblzma;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$liblzma = $runtime->load(Liblzma::class);
+$liblzma = new Liblzma();
 
 // Query the liblzma runtime version string and number.
 $verStr = $liblzma->lzma_version_string(); // returns string, e.g. "5.6.1"

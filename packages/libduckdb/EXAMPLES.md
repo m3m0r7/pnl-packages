@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libduckdb\Libduckdb;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libduckdb = $runtime->load(Libduckdb::class);
+$libduckdb = new Libduckdb();
 
 // Query the DuckDB library version string.
 $version = $libduckdb->duckdb_library_version();
@@ -13,7 +11,7 @@ echo "DuckDB version: " . $version . PHP_EOL;
 
 // Open an in-memory database, connect, run a query, then close.
 // duckdb_open(path, *db)  duckdb_connect(db, *con)  duckdb_query(con, sql, *result)
-$allocator = $runtime->allocator();
+$allocator = (new \Pnlx\FFI\Allocator());
 $db     = $allocator->make(\Pnlx\FFI\AllocationType::VoidPointer);
 $con    = $allocator->make(\Pnlx\FFI\AllocationType::VoidPointer);
 $result = $allocator->make(\Pnlx\FFI\AllocationType::VoidPointer);

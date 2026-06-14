@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libbz2\Libbz2;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libbz2 = $runtime->load(Libbz2::class);
+$libbz2 = new Libbz2();
 
 // Open a file for bzip2-compressed writing, write data, then close it
 $bzfile = $libbz2->BZ2_bzopen('output.bz2', 'w');

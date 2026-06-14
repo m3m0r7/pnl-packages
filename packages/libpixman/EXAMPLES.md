@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libpixman\Libpixman;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libpixman = $runtime->load(Libpixman::class);
+$libpixman = new Libpixman();
 
 // Query the Pixman library version
 $versionStr = $libpixman->pixman_version_string();

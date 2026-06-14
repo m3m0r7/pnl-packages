@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libzstd\Libzstd;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libzstd = $runtime->load(Libzstd::class);
+$libzstd = new Libzstd();
 
 // ZSTD_versionString() returns the library version, e.g. "1.5.6".
 $version = $libzstd->ZSTD_versionString();

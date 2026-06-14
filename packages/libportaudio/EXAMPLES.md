@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libportaudio\Libportaudio;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libportaudio = $runtime->load(Libportaudio::class);
+$libportaudio = new Libportaudio();
 
 // Initialise PortAudio and print library version info
 $err = $libportaudio->Pa_Initialize();

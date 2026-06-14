@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libgsl\Libgsl;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libgsl = $runtime->load(Libgsl::class);
+$libgsl = new Libgsl();
 
 // Evaluate a Bessel function J0(x) and a polynomial power
 $j0 = $libgsl->gsl_sf_bessel_J0(5.0);

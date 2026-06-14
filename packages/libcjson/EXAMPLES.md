@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libcjson\Libcjson;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libcjson = $runtime->load(Libcjson::class);
+$libcjson = new Libcjson();
 
 // Parse a JSON string and read a field value
 $json = '{"name":"Alice","age":30}';

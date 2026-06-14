@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libfftw3\Libfftw3;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libfftw3 = $runtime->load(Libfftw3::class);
+$libfftw3 = new Libfftw3();
 
 // Allocate a complex input/output array and create a 1-D DFT plan.
 $n = 8;

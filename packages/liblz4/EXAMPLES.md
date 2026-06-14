@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Liblz4\Liblz4;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$liblz4 = $runtime->load(Liblz4::class);
+$liblz4 = new Liblz4();
 
 // Compress and decompress a string with LZ4.
 $src = 'Hello, LZ4 compression!';

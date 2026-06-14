@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libflac\Libflac;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libflac = $runtime->load(Libflac::class);
+$libflac = new Libflac();
 
 // Create a stream decoder.
 $decoder = $libflac->FLAC__stream_decoder_new();

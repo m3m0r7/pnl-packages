@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libtreesitter\Libtreesitter;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libtreesitter = $runtime->load(Libtreesitter::class);
+$libtreesitter = new Libtreesitter();
 
 // Create a parser (language must be set before parsing).
 $parser = $libtreesitter->ts_parser_new();

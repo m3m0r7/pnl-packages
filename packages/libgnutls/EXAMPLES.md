@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libgnutls\Libgnutls;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libgnutls = $runtime->load(Libgnutls::class);
+$libgnutls = new Libgnutls();
 
 // gnutls_check_version(null) returns the runtime version string.
 $version = $libgnutls->gnutls_check_version(null);

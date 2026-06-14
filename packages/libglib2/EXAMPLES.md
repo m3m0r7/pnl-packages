@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libglib2\Libglib2;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libglib2 = $runtime->load(Libglib2::class);
+$libglib2 = new Libglib2();
 
 // g_get_num_processors() returns the CPU count GLib sees.
 $cpus = $libglib2->g_get_num_processors();

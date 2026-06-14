@@ -2,14 +2,12 @@
 
 ```php
 use Pnlx\Libzip\Libzip;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libzip = $runtime->load(Libzip::class);
+$libzip = new Libzip();
 
 // zip_open() opens a ZIP archive; zip_get_num_entries() counts its entries.
-$errp = $runtime->allocator()->make(\Pnlx\FFI\AllocationType::Int);
+$errp = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
 $zip = $libzip->zip_open("/path/to/archive.zip", 0, $errp);
 if (is_null($zip)) {
     echo "zip_open failed, error: " . $errp[0] . "\n";

@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libvorbis\Libvorbis;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libvorbis = $runtime->load(Libvorbis::class);
+$libvorbis = new Libvorbis();
 
 // vorbis_version_string() returns the library version as a plain C string.
 $version = $libvorbis->vorbis_version_string();

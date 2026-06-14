@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libopenal\Libopenal;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libopenal = $runtime->load(Libopenal::class);
+$libopenal = new Libopenal();
 
 // Open the default audio device and create a context
 $device = $libopenal->alcOpenDevice(null);

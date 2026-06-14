@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libhiredis\Libhiredis;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libhiredis = $runtime->load(Libhiredis::class);
+$libhiredis = new Libhiredis();
 
 // Connect to Redis, run a PING command, then disconnect
 $ctx = $libhiredis->redisConnect('127.0.0.1', 6379);

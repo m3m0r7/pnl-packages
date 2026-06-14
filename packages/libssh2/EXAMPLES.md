@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libssh2\Libssh2;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libssh2 = $runtime->load(Libssh2::class);
+$libssh2 = new Libssh2();
 
 // Print the libssh2 version string.
 echo $libssh2->libssh2_version(0) . PHP_EOL;

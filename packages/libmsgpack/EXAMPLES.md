@@ -2,14 +2,12 @@
 
 ```php
 use Pnlx\Libmsgpack\Libmsgpack;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libmsgpack = $runtime->load(Libmsgpack::class);
+$libmsgpack = new Libmsgpack();
 
 // Pack an integer into a msgpack buffer
-$sbuf = $runtime->allocator()->make(\Pnlx\FFI\AllocationType::VoidPointer);
-$packer = $runtime->allocator()->make(\Pnlx\FFI\AllocationType::VoidPointer);
+$sbuf = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::VoidPointer);
+$packer = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::VoidPointer);
 
 $libmsgpack->msgpack_sbuffer_init($sbuf);
 $libmsgpack->msgpack_packer_init($packer, $sbuf, null);

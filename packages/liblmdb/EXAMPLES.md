@@ -2,15 +2,13 @@
 
 ```php
 use Pnlx\Liblmdb\Liblmdb;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$liblmdb = $runtime->load(Liblmdb::class);
+$liblmdb = new Liblmdb();
 
 // Query the LMDB library version string (returns char*).
-$majorPtr = $runtime->allocator()->make(\Pnlx\FFI\AllocationType::Int);
-$minorPtr = $runtime->allocator()->make(\Pnlx\FFI\AllocationType::Int);
-$patchPtr = $runtime->allocator()->make(\Pnlx\FFI\AllocationType::Int);
+$majorPtr = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
+$minorPtr = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
+$patchPtr = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
 $ver = $liblmdb->mdb_version($majorPtr, $minorPtr, $patchPtr); // returns string
 echo 'LMDB version: ' . $ver . PHP_EOL;
 // Main entry points to explore: mdb_env_create, mdb_env_open,

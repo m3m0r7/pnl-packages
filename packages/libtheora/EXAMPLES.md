@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libtheora\Libtheora;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libtheora = $runtime->load(Libtheora::class);
+$libtheora = new Libtheora();
 
 // th_version_string() returns the Theora release string.
 $version = $libtheora->th_version_string();

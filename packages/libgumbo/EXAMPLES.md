@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libgumbo\Libgumbo;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libgumbo = $runtime->load(Libgumbo::class);
+$libgumbo = new Libgumbo();
 
 $html = '<html><body><h1>Hello, Gumbo!</h1></body></html>';
 

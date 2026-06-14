@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libbrotli\Libbrotli;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libbrotli = $runtime->load(Libbrotli::class);
+$libbrotli = new Libbrotli();
 
 // Print the Brotli encoder version number
 $version = $libbrotli->BrotliEncoderVersion();

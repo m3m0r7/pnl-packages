@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libpq\Libpq;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libpq = $runtime->load(Libpq::class);
+$libpq = new Libpq();
 
 // Connect to a PostgreSQL database
 $conn = $libpq->PQconnectdb('host=127.0.0.1 dbname=mydb user=postgres password=secret');

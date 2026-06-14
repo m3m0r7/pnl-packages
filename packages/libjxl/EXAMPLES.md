@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libjxl\Libjxl;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libjxl = $runtime->load(Libjxl::class);
+$libjxl = new Libjxl();
 
 // JxlDecoderVersion() returns the encoded version, e.g. 10002 for 0.10.2.
 $version = $libjxl->JxlDecoderVersion();

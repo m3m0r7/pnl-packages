@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libwebsockets\Libwebsockets;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libwebsockets = $runtime->load(Libwebsockets::class);
+$libwebsockets = new Libwebsockets();
 
 // lws_get_library_version() returns the version string, e.g. "4.3.3".
 $version = $libwebsockets->lws_get_library_version();

@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libssh\Libssh;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libssh = $runtime->load(Libssh::class);
+$libssh = new Libssh();
 
 // Create a new SSH session.
 $session = $libssh->ssh_new();

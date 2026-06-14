@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libopenblas\Libopenblas;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libopenblas = $runtime->load(Libopenblas::class);
+$libopenblas = new Libopenblas();
 
 // Compute dot product of two double vectors: [1,2,3] · [4,5,6] = 32
 // cblas_ddot(n, x, incx, y, incy) → double (returned as PHP float)

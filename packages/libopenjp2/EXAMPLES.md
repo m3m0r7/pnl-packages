@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libopenjp2\Libopenjp2;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libopenjp2 = $runtime->load(Libopenjp2::class);
+$libopenjp2 = new Libopenjp2();
 
 // opj_version() returns the OpenJPEG version string, e.g. "2.5.2".
 $version = $libopenjp2->opj_version();

@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libmongoc\Libmongoc;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libmongoc = $runtime->load(Libmongoc::class);
+$libmongoc = new Libmongoc();
 
 // mongoc_init() must run once before any other driver call.
 $libmongoc->mongoc_init();

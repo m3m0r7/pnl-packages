@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libcap\Libcap;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libcap = $runtime->load(Libcap::class);
+$libcap = new Libcap();
 
 // cap_init() allocates an empty capability set; cap_free() releases it.
 $caps = $libcap->cap_init();

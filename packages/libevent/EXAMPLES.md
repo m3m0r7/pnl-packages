@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libevent\Libevent;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libevent = $runtime->load(Libevent::class);
+$libevent = new Libevent();
 
 // Query the libevent version string and method (backend) name.
 $version = $libevent->event_get_version();

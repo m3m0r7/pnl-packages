@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libprotobufc\Libprotobufc;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libprotobufc = $runtime->load(Libprotobufc::class);
+$libprotobufc = new Libprotobufc();
 
 // Query protobuf-c library version
 $versionStr = $libprotobufc->protobuf_c_version();

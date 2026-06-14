@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libutf8proc\Libutf8proc;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libutf8proc = $runtime->load(Libutf8proc::class);
+$libutf8proc = new Libutf8proc();
 
 // Print the library version string.
 echo $libutf8proc->utf8proc_version() . PHP_EOL;

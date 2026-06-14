@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libgcrypt\Libgcrypt;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libgcrypt = $runtime->load(Libgcrypt::class);
+$libgcrypt = new Libgcrypt();
 
 // Check the runtime version (returns null if requirement not met).
 $version = $libgcrypt->gcry_check_version(null);
@@ -13,7 +11,7 @@ echo "libgcrypt version: " . $version . PHP_EOL;
 
 // Hash a string with SHA-256.
 // GCRY_MD_SHA256 = 8, GCRY_MD_FLAG_SECURE = 2
-$allocator = $runtime->allocator();
+$allocator = (new \Pnlx\FFI\Allocator());
 $hd = $allocator->make(\Pnlx\FFI\AllocationType::VoidPointer);
 $libgcrypt->gcry_md_open($hd, 8, 0);
 $data = "Hello, world!";

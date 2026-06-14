@@ -2,15 +2,13 @@
 
 ```php
 use Pnlx\Libzmq\Libzmq;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libzmq = $runtime->load(Libzmq::class);
+$libzmq = new Libzmq();
 
 // zmq_version() fills three int out-parameters with major/minor/patch.
-$major = $runtime->allocator()->make(\Pnlx\FFI\AllocationType::Int);
-$minor = $runtime->allocator()->make(\Pnlx\FFI\AllocationType::Int);
-$patch = $runtime->allocator()->make(\Pnlx\FFI\AllocationType::Int);
+$major = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
+$minor = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
+$patch = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
 $libzmq->zmq_version($major, $minor, $patch);
 echo "ZeroMQ {$major[0]}.{$minor[0]}.{$patch[0]}\n";
 

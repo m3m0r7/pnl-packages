@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Liblua\Liblua;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$liblua = $runtime->load(Liblua::class);
+$liblua = new Liblua();
 
 // Create a Lua state, execute a snippet, then close the state.
 $L = $liblua->luaL_newstate();

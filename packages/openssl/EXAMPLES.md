@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Openssl\Openssl;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$openssl = $runtime->load(Openssl::class);
+$openssl = new Openssl();
 
 // OpenSSL_version(0) returns the full version string (OPENSSL_VERSION == 0).
 $version = $openssl->OpenSSL_version(0);

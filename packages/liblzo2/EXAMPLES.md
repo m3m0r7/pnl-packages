@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Liblzo2\Liblzo2;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$liblzo2 = $runtime->load(Liblzo2::class);
+$liblzo2 = new Liblzo2();
 
 // lzo_version_string() returns the LZO release, e.g. "2.10".
 $version = $liblzo2->lzo_version_string();

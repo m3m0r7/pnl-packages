@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libspeex\Libspeex;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libspeex = $runtime->load(Libspeex::class);
+$libspeex = new Libspeex();
 
 // Create a narrowband encoder (SPEEX_MODEID_NB = 0) and free it.
 $mode = $libspeex->speex_lib_get_mode(0);

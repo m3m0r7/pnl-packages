@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libsoxr\Libsoxr;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libsoxr = $runtime->load(Libsoxr::class);
+$libsoxr = new Libsoxr();
 
 // soxr_version() returns the libsoxr version string.
 $version = $libsoxr->soxr_version();

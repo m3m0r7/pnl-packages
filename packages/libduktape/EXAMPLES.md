@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libduktape\Libduktape;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libduktape = $runtime->load(Libduktape::class);
+$libduktape = new Libduktape();
 
 // Create a Duktape heap and evaluate a JavaScript expression.
 $ctx = $libduktape->duk_create_heap_default();

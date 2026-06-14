@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libpng\Libpng;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libpng = $runtime->load(Libpng::class);
+$libpng = new Libpng();
 
 // Print the runtime libpng version string
 $versionNum = $libpng->png_access_version_number();

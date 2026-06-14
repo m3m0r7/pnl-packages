@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libmodbus\Libmodbus;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libmodbus = $runtime->load(Libmodbus::class);
+$libmodbus = new Libmodbus();
 
 // Create a Modbus TCP context, connect, read holding registers, then close.
 $ctx = $libmodbus->modbus_new_tcp('192.168.1.10', 502);

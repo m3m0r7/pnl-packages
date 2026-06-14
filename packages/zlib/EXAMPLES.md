@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Zlib\Zlib;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$zlib = $runtime->load(Zlib::class);
+$zlib = new Zlib();
 
 // zlibVersion() returns the library version string, e.g. "1.3.1".
 $version = $zlib->zlibVersion();

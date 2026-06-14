@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libnng\Libnng;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libnng = $runtime->load(Libnng::class);
+$libnng = new Libnng();
 
 // nng_version() returns the NNG version string, e.g. "1.8.0".
 $version = $libnng->nng_version();

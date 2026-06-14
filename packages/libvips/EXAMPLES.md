@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libvips\Libvips;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libvips = $runtime->load(Libvips::class);
+$libvips = new Libvips();
 
 // vips_init(argv0) must run once before any other vips call.
 $libvips->vips_init('pnl');

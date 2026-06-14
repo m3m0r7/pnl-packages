@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libjansson\Libjansson;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libjansson = $runtime->load(Libjansson::class);
+$libjansson = new Libjansson();
 
 // Parse a JSON string and read a value from it.
 $root = $libjansson->json_loads('{"name":"pnl","version":1}', 0, null);

@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libxxhash\Libxxhash;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libxxhash = $runtime->load(Libxxhash::class);
+$libxxhash = new Libxxhash();
 
 // XXH_versionNumber() returns version as (major*100*100 + minor*100 + patch).
 $ver = $libxxhash->XXH_versionNumber();

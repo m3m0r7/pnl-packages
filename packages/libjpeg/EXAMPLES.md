@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libjpeg\Libjpeg;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libjpeg = $runtime->load(Libjpeg::class);
+$libjpeg = new Libjpeg();
 
 // Query the compile-time library version (e.g. 80 for libjpeg v8).
 $version = $libjpeg->jpeg_lib_version(); // returns int

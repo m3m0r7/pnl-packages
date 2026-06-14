@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libnlopt\Libnlopt;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libnlopt = $runtime->load(Libnlopt::class);
+$libnlopt = new Libnlopt();
 
 // Create an optimizer over 2 variables (NLOPT_LD_MMA = 24), then free it.
 $opt = $libnlopt->nlopt_create(24, 2);

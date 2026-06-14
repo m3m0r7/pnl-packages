@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libnotcurses\Libnotcurses;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libnotcurses = $runtime->load(Libnotcurses::class);
+$libnotcurses = new Libnotcurses();
 
 // notcurses_version() returns the runtime version, e.g. "3.0.9".
 $version = $libnotcurses->notcurses_version();

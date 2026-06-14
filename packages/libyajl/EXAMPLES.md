@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libyajl\Libyajl;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libyajl = $runtime->load(Libyajl::class);
+$libyajl = new Libyajl();
 
 // Build a tiny JSON document with the streaming generator.
 $gen = $libyajl->yajl_gen_alloc(null);

@@ -2,11 +2,9 @@
 
 ```php
 use Pnlx\Libcurl\Libcurl;
-use Pnlx\Runtime;
 use function Pnlx\Util\is_null;
 
-$runtime = new Runtime(__DIR__);
-$libcurl = $runtime->load(Libcurl::class);
+$libcurl = new Libcurl();
 
 // Perform a simple GET request and print the response body
 $libcurl->curl_global_init(3); // CURL_GLOBAL_ALL

@@ -2,10 +2,8 @@
 
 ```php
 use Pnlx\Libconfig\Libconfig;
-use Pnlx\Runtime;
 
-$runtime = new Runtime(__DIR__);
-$libconfig = $runtime->load(Libconfig::class);
+$libconfig = new Libconfig();
 
 // Initialise a config_t, read a file, then release it.
 $cfg = FFI::new('config_t'); // allocate a config_t
