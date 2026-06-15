@@ -6,7 +6,7 @@ This repository contains example `pnlx` extension packages for [pnl](https://git
 
 A package is an installable extension root containing `pnlx.json`. During `pnl install`, package files are copied into `@pnlx/packages/<vendor>/<package>`, while source `src/generated` is ignored and regenerated for the current machine.
 
-`packages/repository-index.json` is a generated catalogue of every package and version. It lets `pnl find` browse this repository over HTTP without cloning. Regenerate it whenever packages or versions change:
+`packages/repository-index.json` is a generated catalogue of every package and version. It lets `pnl search` browse this repository over HTTP without cloning. Regenerate it whenever packages or versions change:
 
 ```sh
 pnl repo index packages \

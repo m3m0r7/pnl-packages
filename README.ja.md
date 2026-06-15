@@ -6,7 +6,7 @@
 
 パッケージとは、`pnlx.json` を含むインストール可能な拡張のルートです。`pnl install` を実行すると、パッケージのファイルは `@pnlx/packages/<vendor>/<package>` へコピーされ、`src/generated` のソースは無視されたうえで、対象マシン向けに再生成されます。
 
-`packages/repository-index.json` は全パッケージ・全バージョンを列挙した生成物のカタログです。これにより `pnl find` はクローンせずに HTTP 経由でこのリポジトリを一覧できます。パッケージやバージョンを変更したら再生成してください。
+`packages/repository-index.json` は全パッケージ・全バージョンを列挙した生成物のカタログです。これにより `pnl search` はクローンせずに HTTP 経由でこのリポジトリを一覧できます。パッケージやバージョンを変更したら再生成してください。
 
 ```sh
 pnl repo index packages \
