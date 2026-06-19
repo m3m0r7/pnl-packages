@@ -1,6 +1,9 @@
 # libcap/libcap examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libcap\Libcap;
 
 // cap_init() allocates an empty capability set; cap_free() releases it.

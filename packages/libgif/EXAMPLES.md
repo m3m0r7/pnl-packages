@@ -1,6 +1,9 @@
 # libgif/libgif examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libgif\Libgif;
 use function Pnlx\Util\is_null;
 
@@ -12,7 +15,7 @@ if (is_null($gif)) {
     echo "Could not open GIF (error code: {$error})\n";
 } else {
     Libgif::DGifSlurp($gif);
-    echo "Image count: " . $gif->ImageCount . "\n";
+    echo "Image count: " . $gif->cdata()->ImageCount . "\n";
     Libgif::DGifCloseFile($gif, $error);
 }
 ```

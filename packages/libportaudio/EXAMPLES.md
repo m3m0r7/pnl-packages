@@ -1,11 +1,14 @@
 # libportaudio/libportaudio examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libportaudio\Libportaudio;
 
 // Initialise PortAudio and print library version info
 $err = Libportaudio::Pa_Initialize();
-if ($err !== 0) { // paNoError = 0
+if ($err->toInt() !== 0) { // paNoError = 0
     throw new \RuntimeException('Pa_Initialize failed: ' . Libportaudio::Pa_GetErrorText($err));
 }
 

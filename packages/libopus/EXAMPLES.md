@@ -1,6 +1,9 @@
 # libopus/libopus examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libopus\Libopus;
 use function Pnlx\Util\is_null;
 

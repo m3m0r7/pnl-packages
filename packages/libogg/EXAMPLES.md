@@ -1,6 +1,9 @@
 # libogg/libogg examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libogg\Libogg;
 use Pnlx\Libogg\Types\ogg_sync_state;
 

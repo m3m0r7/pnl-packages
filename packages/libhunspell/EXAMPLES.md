@@ -1,6 +1,9 @@
 # libhunspell/libhunspell examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libhunspell\Libhunspell;
 
 // Create a Hunspell handle from an affix + dictionary pair, then free it.

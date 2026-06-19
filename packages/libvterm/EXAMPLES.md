@@ -1,6 +1,9 @@
 # libvterm/libvterm examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libvterm\Libvterm;
 
 // Create an 80x24 virtual terminal, then free it.

@@ -1,6 +1,9 @@
 # libexif/libexif examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libexif\Libexif;
 use function Pnlx\Util\is_null;
 

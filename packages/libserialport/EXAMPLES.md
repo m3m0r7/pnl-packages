@@ -1,13 +1,16 @@
 # libserialport/libserialport examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libserialport\Libserialport;
 use function Pnlx\Util\is_null;
 
 // Get a port handle by name and open it
 $port = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::VoidPointer);
 $rc = Libserialport::sp_get_port_by_name('/dev/ttyUSB0', $port);
-if ($rc !== 0) { // SP_OK = 0
+if ($rc->toInt() !== 0) { // SP_OK = 0
     throw new \RuntimeException('sp_get_port_by_name failed: ' . $rc);
 }
 

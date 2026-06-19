@@ -1,6 +1,9 @@
 # libwebsockets/libwebsockets examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libwebsockets\Libwebsockets;
 
 // lws_get_library_version() returns the version string, e.g. "4.3.3".

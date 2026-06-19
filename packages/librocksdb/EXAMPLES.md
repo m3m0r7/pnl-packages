@@ -1,6 +1,9 @@
 # librocksdb/librocksdb examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Librocksdb\Librocksdb;
 use function Pnlx\Util\is_null;
 

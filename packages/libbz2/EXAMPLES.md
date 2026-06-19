@@ -1,11 +1,15 @@
 # libbz2/libbz2 examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libbz2\Libbz2;
+use function Pnlx\Util\is_null;
 
 // Open a file for bzip2-compressed writing, write data, then close it
 $bzfile = Libbz2::BZ2_bzopen('output.bz2', 'w');
-if (\is_null($bzfile)) {
+if (is_null($bzfile)) {
     throw new \RuntimeException('BZ2_bzopen failed');
 }
 $data = 'Hello, bzip2 compression!';

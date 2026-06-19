@@ -1,6 +1,9 @@
 # libffi/libffi examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libffi\Libffi;
 
 // libffi has no runtime version function; its API is the low-level call-interface

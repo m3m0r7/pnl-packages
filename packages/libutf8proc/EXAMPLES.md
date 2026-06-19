@@ -1,6 +1,9 @@
 # libutf8proc/libutf8proc examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libutf8proc\Libutf8proc;
 
 // Print the library version string.

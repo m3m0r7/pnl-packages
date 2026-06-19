@@ -1,6 +1,9 @@
 # libsecp256k1/libsecp256k1 examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libsecp256k1\Libsecp256k1;
 
 // Create a context for signing and verification, then destroy it.

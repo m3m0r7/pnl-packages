@@ -1,6 +1,9 @@
 # libxml2/libxml2 examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libxml2\Libxml2;
 use function Pnlx\Util\is_null;
 

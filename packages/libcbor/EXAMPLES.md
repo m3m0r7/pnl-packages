@@ -1,6 +1,9 @@
 # libcbor/libcbor examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libcbor\Libcbor;
 
 // Build a CBOR unsigned integer item.

@@ -1,6 +1,9 @@
 # libcurl/libcurl examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libcurl\Libcurl;
 use function Pnlx\Util\is_null;
 
@@ -13,7 +16,7 @@ if (is_null($handle)) {
 Libcurl::curl_easy_setopt($handle, 10002, 'https://example.com'); // CURLOPT_URL
 Libcurl::curl_easy_setopt($handle, 64,    1);                      // CURLOPT_FOLLOWLOCATION
 $rc = Libcurl::curl_easy_perform($handle);
-if ($rc !== 0) {
+if ($rc->toInt() !== 0) {
     echo 'curl error: ' . Libcurl::curl_easy_strerror($rc) . "\n";
 }
 Libcurl::curl_easy_cleanup($handle);

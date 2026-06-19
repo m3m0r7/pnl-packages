@@ -1,6 +1,9 @@
 # libopenal/libopenal examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libopenal\Libopenal;
 use function Pnlx\Util\is_null;
 

@@ -1,6 +1,9 @@
 # libvulkan/libvulkan examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libvulkan\Libvulkan;
 
 // vkEnumerateInstanceVersion writes the loader's API version through a uint32* out-param.

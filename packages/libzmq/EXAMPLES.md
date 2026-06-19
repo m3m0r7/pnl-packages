@@ -1,6 +1,9 @@
 # libzmq/libzmq examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libzmq\Libzmq;
 
 // zmq_version() fills three int out-parameters. Pass plain variables by

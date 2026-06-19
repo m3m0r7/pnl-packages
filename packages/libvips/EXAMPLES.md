@@ -1,6 +1,9 @@
 # libvips/libvips examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libvips\Libvips;
 
 // vips_init(argv0) must run once before any other vips call.

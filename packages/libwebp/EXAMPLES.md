@@ -1,10 +1,13 @@
 # libwebp/libwebp examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libwebp\Libwebp;
 
 // WebPGetDecoderVersion() returns version as (major<<16|minor<<8|revision).
-$ver = Libwebp::WebPGetDecoderVersion();
+$ver = Libwebp::WebPGetDecoderVersion()->toInt();
 echo sprintf("libwebp decoder %d.%d.%d\n",
     ($ver >> 16) & 0xff, ($ver >> 8) & 0xff, $ver & 0xff);
 

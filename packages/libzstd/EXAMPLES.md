@@ -1,6 +1,9 @@
 # libzstd/libzstd examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libzstd\Libzstd;
 
 // ZSTD_versionString() returns the library version, e.g. "1.5.6".

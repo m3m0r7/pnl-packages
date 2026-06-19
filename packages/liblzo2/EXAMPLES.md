@@ -1,6 +1,9 @@
 # liblzo2/liblzo2 examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Liblzo2\Liblzo2;
 
 // lzo_version_string() returns the LZO release, e.g. "2.10".

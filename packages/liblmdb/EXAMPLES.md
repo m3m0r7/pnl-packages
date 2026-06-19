@@ -1,6 +1,9 @@
 # liblmdb/liblmdb examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Liblmdb\Liblmdb;
 
 // mdb_version() returns the version string and fills three int out-parameters.

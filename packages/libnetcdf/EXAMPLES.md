@@ -1,6 +1,9 @@
 # libnetcdf/libnetcdf examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libnetcdf\Libnetcdf;
 
 // nc_inq_libvers() returns the netCDF library version string.

@@ -1,6 +1,9 @@
 # libsndfile/libsndfile examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libsndfile\Libsndfile;
 use function Pnlx\Util\is_null;
 

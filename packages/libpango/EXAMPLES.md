@@ -1,6 +1,9 @@
 # libpango/libpango examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libpango\Libpango;
 
 // pango_version_string() returns the Pango version, e.g. "1.52.0".

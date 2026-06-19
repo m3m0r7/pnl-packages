@@ -1,6 +1,9 @@
 # libass/libass examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libass\Libass;
 
 // Create an ass_library handle, then free it.

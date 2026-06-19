@@ -1,6 +1,9 @@
 # libsixel/libsixel examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libsixel\Libsixel;
 
 // Grab the built-in xterm 256-colour palette (SIXEL_BUILTIN_XTERM256 = 2).

@@ -1,6 +1,9 @@
 # libcjson/libcjson examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libcjson\Libcjson;
 use function Pnlx\Util\is_null;
 

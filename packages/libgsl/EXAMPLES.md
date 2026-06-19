@@ -6,6 +6,9 @@ GSL's BLAS routines live in `libgsl` but call into a **second** shared library,
 `Pnlx\Libgsl\Libgsl` entity.
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libgsl\Libgsl;
 
 // Plain math (libgsl).

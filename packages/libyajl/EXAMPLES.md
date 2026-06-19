@@ -1,6 +1,9 @@
 # libyajl/libyajl examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libyajl\Libyajl;
 
 // Build a tiny JSON document with the streaming generator.

@@ -1,6 +1,9 @@
 # libuv/libuv examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libuv\Libuv;
 use function Pnlx\Util\is_null;
 

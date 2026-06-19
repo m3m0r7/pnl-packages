@@ -1,6 +1,9 @@
 # libduckdb/libduckdb examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libduckdb\Libduckdb;
 
 // Query the DuckDB library version string.

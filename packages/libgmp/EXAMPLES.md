@@ -1,6 +1,9 @@
 # libgmp/libgmp examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libgmp\Libgmp;
 use Pnlx\Libgmp\Types\__mpz_struct;
 

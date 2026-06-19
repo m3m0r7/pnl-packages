@@ -1,6 +1,9 @@
 # libidn2/libidn2 examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libidn2\Libidn2;
 
 // Check library version
@@ -13,7 +16,7 @@ echo "libidn2 version >= 2.0.0: " . ($version !== null ? $version : 'no') . "\n"
 // and copied for you).
 $ace = null;
 $rc = Libidn2::idn2_lookup_u8("www.b\u{00fc}cher.example", $ace, 0);
-if ($rc === 0) {
+if ($rc->toInt() === 0) {
     echo "ACE label: $ace\n"; // www.xn--bcher-kva.example
 }
 ```

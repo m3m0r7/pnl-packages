@@ -1,6 +1,9 @@
 # libdeflate/libdeflate examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libdeflate\Libdeflate;
 
 // Allocate a compressor at level 6, then free it.

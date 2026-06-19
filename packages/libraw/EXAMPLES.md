@@ -1,6 +1,9 @@
 # libraw/libraw examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libraw\Libraw;
 
 // libraw_init(0) creates a processing handle; libraw_close() frees it.

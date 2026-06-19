@@ -1,6 +1,9 @@
 # libssh2/libssh2 examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libssh2\Libssh2;
 use function Pnlx\Util\is_null;
 

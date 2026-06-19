@@ -1,6 +1,9 @@
 # libyaml/libyaml examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libyaml\Libyaml;
 
 // yaml_get_version_string() returns the libyaml version, e.g. "0.2.5".

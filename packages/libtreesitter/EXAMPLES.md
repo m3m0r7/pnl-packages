@@ -1,6 +1,9 @@
 # libtreesitter/libtreesitter examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libtreesitter\Libtreesitter;
 use function Pnlx\Util\is_null;
 

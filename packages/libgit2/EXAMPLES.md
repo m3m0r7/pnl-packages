@@ -1,6 +1,9 @@
 # libgit2/libgit2 examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libgit2\Libgit2;
 
 Libgit2::git_libgit2_init();

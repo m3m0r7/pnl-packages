@@ -1,6 +1,9 @@
 # libcmark/libcmark examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libcmark\Libcmark;
 
 // Convert CommonMark (Markdown) to HTML

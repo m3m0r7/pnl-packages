@@ -1,6 +1,9 @@
 # libudev/libudev examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libudev\Libudev;
 
 // Create a udev context, then release it.

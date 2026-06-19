@@ -1,6 +1,9 @@
 # libglew/libglew examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libglew\Libglew;
 
 // glewGetString returns a GLubyte* (string) with GLEW version info.

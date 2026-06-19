@@ -1,6 +1,9 @@
 # libnng/libnng examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libnng\Libnng;
 
 // nng_version() returns the NNG version string, e.g. "1.8.0".

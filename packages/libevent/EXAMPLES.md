@@ -1,6 +1,9 @@
 # libevent/libevent examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libevent\Libevent;
 use function Pnlx\Util\is_null;
 

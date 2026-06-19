@@ -1,6 +1,9 @@
 # libswscale/libswscale examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libswscale\Libswscale;
 use function Pnlx\Util\is_null;
 

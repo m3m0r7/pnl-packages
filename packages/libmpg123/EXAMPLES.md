@@ -1,6 +1,9 @@
 # libmpg123/libmpg123 examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libmpg123\Libmpg123;
 use function Pnlx\Util\is_null;
 

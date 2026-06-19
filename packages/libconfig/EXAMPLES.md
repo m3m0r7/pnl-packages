@@ -1,6 +1,9 @@
 # libconfig/libconfig examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libconfig\Libconfig;
 use Pnlx\Libconfig\Types\config_t;
 

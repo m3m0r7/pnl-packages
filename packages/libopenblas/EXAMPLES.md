@@ -1,6 +1,9 @@
 # libopenblas/libopenblas examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libopenblas\Libopenblas;
 
 // Compute dot product of two double vectors: [1,2,3] · [4,5,6] = 32

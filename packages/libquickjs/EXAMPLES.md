@@ -1,6 +1,9 @@
 # libquickjs/libquickjs examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libquickjs\Libquickjs;
 use function Pnlx\Util\is_null;
 

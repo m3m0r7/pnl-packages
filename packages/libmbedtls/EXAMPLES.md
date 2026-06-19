@@ -1,6 +1,9 @@
 # libmbedtls/libmbedtls examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libmbedtls\Libmbedtls;
 
 // Look up a TLS ciphersuite by name, then resolve its id back to a name.

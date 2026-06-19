@@ -1,6 +1,9 @@
 # libtheora/libtheora examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libtheora\Libtheora;
 
 // theora_version_string() returns the Theora release string.

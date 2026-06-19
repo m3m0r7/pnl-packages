@@ -1,6 +1,9 @@
 # libopenjp2/libopenjp2 examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libopenjp2\Libopenjp2;
 
 // opj_version() returns the OpenJPEG version string, e.g. "2.5.2".

@@ -1,6 +1,9 @@
 # openssl/openssl examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Openssl\Openssl;
 
 // Build a TLS context and a fresh SSL object, then read the
@@ -19,4 +22,3 @@ Openssl::SSL_free($ssl);
 // Explore further: SSL_CTX_new(), SSL_connect(), SSL_read(),
 // SSL_write(), SSL_shutdown(), SSL_CTX_free(), ...
 ```
-</content>

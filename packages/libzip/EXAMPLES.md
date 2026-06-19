@@ -1,6 +1,9 @@
 # libzip/libzip examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libzip\Libzip;
 use function Pnlx\Util\is_null;
 

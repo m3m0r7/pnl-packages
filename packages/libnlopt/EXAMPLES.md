@@ -1,6 +1,9 @@
 # libnlopt/libnlopt examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libnlopt\Libnlopt;
 
 // Create an optimizer over 2 variables (NLOPT_LD_MMA = 24), then free it.

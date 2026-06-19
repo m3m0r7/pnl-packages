@@ -1,6 +1,9 @@
 # libmongoc/libmongoc examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libmongoc\Libmongoc;
 
 // mongoc_init() must run once before any other driver call.

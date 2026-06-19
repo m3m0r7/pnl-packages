@@ -1,10 +1,13 @@
 # libcares/libcares examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libcares\Libcares;
 
 // Initialise the c-ares library and print its version string
-$rc = Libcares::ares_library_init(1); // ARES_LIB_INIT_ALL = 1
+$rc = Libcares::ares_library_init(1)->toInt(); // ARES_LIB_INIT_ALL = 1
 if ($rc !== 0) {
     throw new \RuntimeException("ares_library_init failed: {$rc}");
 }

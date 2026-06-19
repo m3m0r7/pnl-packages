@@ -1,6 +1,9 @@
 # libcairo/libcairo examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libcairo\Libcairo;
 use function Pnlx\Util\is_null;
 

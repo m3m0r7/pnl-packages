@@ -1,10 +1,13 @@
 # libavutil/libavutil examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libavutil\Libavutil;
 
 // Print the libavutil version string
-$version = Libavutil::avutil_version();
+$version = Libavutil::avutil_version()->toInt();
 $major   = ($version >> 16) & 0xff;
 $minor   = ($version >>  8) & 0xff;
 $micro   = $version & 0xff;

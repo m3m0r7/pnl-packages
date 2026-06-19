@@ -1,6 +1,9 @@
 # libsnappy/libsnappy examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libsnappy\Libsnappy;
 
 // `size_t`/`snappy_status` returns may arrive wrapped (64-bit) or as a plain int

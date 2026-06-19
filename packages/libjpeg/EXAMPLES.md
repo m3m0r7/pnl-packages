@@ -1,6 +1,9 @@
 # libjpeg/libjpeg examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libjpeg\Libjpeg;
 
 // jpeg_quality_scaling() maps a 0-100 quality value onto libjpeg's internal

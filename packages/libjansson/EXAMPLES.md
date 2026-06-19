@@ -1,6 +1,9 @@
 # libjansson/libjansson examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libjansson\Libjansson;
 
 // Parse a JSON string and read a value from it.

@@ -1,6 +1,9 @@
 # libglib2/libglib2 examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libglib2\Libglib2;
 
 // g_get_num_processors() returns the CPU count GLib sees.

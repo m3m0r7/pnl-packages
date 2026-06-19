@@ -1,10 +1,13 @@
 # libavcodec/libavcodec examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libavcodec\Libavcodec;
 
 // Print the libavcodec version string
-$version = Libavcodec::avcodec_version();
+$version = Libavcodec::avcodec_version()->toInt();
 $major   = ($version >> 16) & 0xff;
 $minor   = ($version >>  8) & 0xff;
 $micro   = $version & 0xff;

@@ -1,6 +1,9 @@
 # libsoxr/libsoxr examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libsoxr\Libsoxr;
 
 // soxr_version() returns the libsoxr version string.

@@ -1,6 +1,9 @@
 # libgnutls/libgnutls examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libgnutls\Libgnutls;
 
 // gnutls_check_version(null) returns the runtime version string.

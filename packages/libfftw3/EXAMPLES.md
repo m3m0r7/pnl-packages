@@ -1,6 +1,9 @@
 # libfftw3/libfftw3 examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libfftw3\Libfftw3;
 use function Pnlx\Util\is_null;
 

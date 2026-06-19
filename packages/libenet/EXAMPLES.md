@@ -1,10 +1,13 @@
 # libenet/libenet examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libenet\Libenet;
 
 // enet_initialize() must be called once before any other ENet call.
-if (Libenet::enet_initialize() !== 0) {
+if (Libenet::enet_initialize()->toInt() !== 0) {
     throw new \RuntimeException('ENet failed to initialise');
 }
 

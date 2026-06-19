@@ -1,6 +1,9 @@
 # libgd/libgd examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libgd\Libgd;
 use function Pnlx\Util\is_null;
 

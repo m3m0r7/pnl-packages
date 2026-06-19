@@ -1,6 +1,9 @@
 # liblzma/liblzma examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Liblzma\Liblzma;
 
 // Query the liblzma runtime version string and number.

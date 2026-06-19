@@ -1,6 +1,9 @@
 # libdbus/libdbus examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libdbus\Libdbus;
 
 // dbus_get_version writes major/minor/micro through int* out-parameters (no bus needed).

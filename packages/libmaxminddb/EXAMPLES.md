@@ -1,6 +1,9 @@
 # libmaxminddb/libmaxminddb examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libmaxminddb\Libmaxminddb;
 
 // MMDB_lib_version() returns the libmaxminddb version string.

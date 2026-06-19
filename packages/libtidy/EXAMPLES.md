@@ -1,6 +1,9 @@
 # libtidy/libtidy examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libtidy\Libtidy;
 
 use const Pnlx\Libtidy\TidyShowWarnings;

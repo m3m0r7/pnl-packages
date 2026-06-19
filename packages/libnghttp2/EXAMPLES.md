@@ -1,6 +1,9 @@
 # libnghttp2/libnghttp2 examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libnghttp2\Libnghttp2;
 
 // nghttp2_check_header_name() validates an HTTP/2 header name (1 = valid, 0 = not).

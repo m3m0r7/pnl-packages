@@ -1,6 +1,9 @@
 # libseccomp/libseccomp examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libseccomp\Libseccomp;
 
 // Build a filter that allows all syscalls by default (SCMP_ACT_ALLOW).

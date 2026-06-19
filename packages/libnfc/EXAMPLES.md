@@ -1,6 +1,9 @@
 # libnfc/libnfc examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libnfc\Libnfc;
 use function Pnlx\Util\is_null;
 

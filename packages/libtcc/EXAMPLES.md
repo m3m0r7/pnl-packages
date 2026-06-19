@@ -1,6 +1,9 @@
 # libtcc/libtcc examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libtcc\Libtcc;
 use function Pnlx\Util\is_null;
 

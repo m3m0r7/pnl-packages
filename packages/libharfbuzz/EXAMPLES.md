@@ -1,6 +1,9 @@
 # libharfbuzz/libharfbuzz examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libharfbuzz\Libharfbuzz;
 
 // Query HarfBuzz version

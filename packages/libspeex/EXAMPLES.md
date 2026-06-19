@@ -1,6 +1,9 @@
 # libspeex/libspeex examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libspeex\Libspeex;
 
 // Create a narrowband encoder (SPEEX_MODEID_NB = 0) and free it.

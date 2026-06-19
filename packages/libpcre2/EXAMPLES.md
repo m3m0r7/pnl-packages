@@ -1,6 +1,9 @@
 # libpcre2/libpcre2 examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libpcre2\Libpcre2;
 
 // PCRE2_CONFIG_VERSION (= 11) asks the library for its version string.

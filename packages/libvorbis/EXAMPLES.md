@@ -1,6 +1,9 @@
 # libvorbis/libvorbis examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libvorbis\Libvorbis;
 
 // vorbis_version_string() returns the library version as a plain C string.

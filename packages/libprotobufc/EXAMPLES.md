@@ -1,6 +1,9 @@
 # libprotobufc/libprotobufc examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libprotobufc\Libprotobufc;
 
 // Query protobuf-c library version

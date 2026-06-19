@@ -1,11 +1,14 @@
 # librtlsdr/librtlsdr examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Librtlsdr\Librtlsdr;
 use function Pnlx\Util\is_null;
 
 // List all connected RTL-SDR devices
-$count = Librtlsdr::rtlsdr_get_device_count();
+$count = Librtlsdr::rtlsdr_get_device_count()->toInt();
 echo "RTL-SDR devices found: {$count}\n";
 for ($i = 0; $i < $count; $i++) {
     $name = Librtlsdr::rtlsdr_get_device_name($i);

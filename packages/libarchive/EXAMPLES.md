@@ -1,6 +1,9 @@
 # libarchive/libarchive examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libarchive\Libarchive;
 use function Pnlx\Util\is_null;
 

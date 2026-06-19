@@ -1,6 +1,9 @@
 # libuuid/libuuid examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libuuid\Libuuid;
 use Pnlx\Types\UnsignedChar;
 

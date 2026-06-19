@@ -1,6 +1,9 @@
 # libproj/libproj examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libproj\Libproj;
 
 // proj_context_create() makes a threading context; free it when done.

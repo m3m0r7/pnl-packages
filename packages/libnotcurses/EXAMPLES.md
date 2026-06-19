@@ -1,6 +1,9 @@
 # libnotcurses/libnotcurses examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libnotcurses\Libnotcurses;
 
 // notcurses_version() returns the runtime version, e.g. "3.0.9".

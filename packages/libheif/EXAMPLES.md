@@ -1,6 +1,9 @@
 # libheif/libheif examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libheif\Libheif;
 use function Pnlx\Util\is_null;
 

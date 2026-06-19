@@ -1,6 +1,9 @@
 # libpixman/libpixman examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libpixman\Libpixman;
 
 // Query the Pixman library version

@@ -6,6 +6,9 @@ entity. The decoder is the package's own library and the encoder is co-loaded vi
 `dependencies`, so both APIs are callable from `Pnlx\Libbrotli\Libbrotli`.
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libbrotli\Libbrotli;
 
 // Versions (encoder lives in libbrotlienc, decoder in libbrotlidec).

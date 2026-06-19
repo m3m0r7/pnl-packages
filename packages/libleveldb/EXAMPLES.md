@@ -1,6 +1,9 @@
 # libleveldb/libleveldb examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libleveldb\Libleveldb;
 use function Pnlx\Util\is_null;
 

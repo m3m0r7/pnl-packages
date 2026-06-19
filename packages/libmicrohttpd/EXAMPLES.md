@@ -1,6 +1,9 @@
 # libmicrohttpd/libmicrohttpd examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libmicrohttpd\Libmicrohttpd;
 
 // Query the libmicrohttpd runtime version string.

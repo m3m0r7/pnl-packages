@@ -1,6 +1,9 @@
 # libavif/libavif examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libavif\Libavif;
 use function Pnlx\Util\is_null;
 

@@ -1,6 +1,9 @@
 # libflac/libflac examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libflac\Libflac;
 use function Pnlx\Util\is_null;
 

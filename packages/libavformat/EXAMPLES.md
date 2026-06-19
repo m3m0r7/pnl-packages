@@ -1,10 +1,13 @@
 # libavformat/libavformat examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libavformat\Libavformat;
 
 // Print the libavformat version and configuration
-$version = Libavformat::avformat_version();
+$version = Libavformat::avformat_version()->toInt();
 $major   = ($version >> 16) & 0xff;
 $minor   = ($version >>  8) & 0xff;
 $micro   = $version & 0xff;

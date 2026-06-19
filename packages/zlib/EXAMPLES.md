@@ -1,6 +1,9 @@
 # zlib/zlib examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Zlib\Zlib;
 
 // zlibVersion() returns the library version string, e.g. "1.3.1".

@@ -1,6 +1,9 @@
 # libassimp/libassimp examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libassimp\Libassimp;
 
 // How many import formats does this Assimp build support?

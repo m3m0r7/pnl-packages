@@ -1,6 +1,9 @@
 # libicu/libicu examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libicu\Libicu;
 
 // ICU exports every entry point under a version-suffixed symbol (e.g.

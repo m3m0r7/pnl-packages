@@ -1,6 +1,9 @@
 # libmagic/libmagic examples
 
 ```php
+<?php
+require_once __DIR__ . '/@pnlx/autoload.php';
+
 use Pnlx\Libmagic\Libmagic;
 use function Pnlx\Util\is_null;
 
