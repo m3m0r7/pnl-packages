@@ -86,6 +86,8 @@
     "notcurses": {
       "symbol_prefix": "notcurses",
       "library_names": [
+        "libnotcurses-core.dylib",
+        "libnotcurses-core.so",
         "libnotcurses.dylib",
         "libnotcurses.so"
       ],

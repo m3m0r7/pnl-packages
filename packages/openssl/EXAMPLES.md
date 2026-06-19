@@ -3,10 +3,20 @@
 ```php
 use Pnlx\Openssl\Openssl;
 
-// OpenSSL_version(0) returns the full version string (OPENSSL_VERSION == 0).
-$version = Openssl::OpenSSL_version(0);
-echo "OpenSSL: $version\n";
+// Build a TLS context and a fresh SSL object, then read the
+// negotiated protocol version label via the libssl API.
+$method = Openssl::TLS_method();
+$ctx    = Openssl::SSL_CTX_new($method);
+$ssl    = Openssl::SSL_new($ctx);
 
-// Explore further: EVP_MD_CTX_new(), EVP_DigestInit_ex(),
-// EVP_DigestUpdate(), EVP_DigestFinal_ex(), EVP_MD_CTX_free(), ...
+// SSL_get_version() returns a const char* (e.g. "TLS").
+$version = (string) Openssl::SSL_get_version($ssl);
+echo "SSL protocol family: {$version}\n";
+
+// Clean up the SSL object.
+Openssl::SSL_free($ssl);
+
+// Explore further: SSL_CTX_new(), SSL_connect(), SSL_read(),
+// SSL_write(), SSL_shutdown(), SSL_CTX_free(), ...
 ```
+</content>

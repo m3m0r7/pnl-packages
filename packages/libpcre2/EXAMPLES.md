@@ -2,21 +2,16 @@
 
 ```php
 use Pnlx\Libpcre2\Libpcre2;
-use function Pnlx\Util\is_null;
 
-// Compile a PCRE2 pattern (8-bit / UTF-8 API)
-$errorCode   = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
-$errorOffset = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
-$re = Libpcre2::pcre2_compile_8('\\d+', -1, 0, $errorCode, $errorOffset, null);
-if (is_null($re)) {
-    throw new \RuntimeException('pcre2_compile_8 failed at offset ' . $errorOffset[0]);
-}
+// PCRE2_CONFIG_VERSION (= 11) asks the library for its version string.
+// Calling pcre2_config_8() with a NULL output buffer is the documented way to
+// query how many bytes (code units) that string needs, including the trailing
+// NUL. A positive result means the linked PCRE2 build answered successfully.
+$versionLen = (int) (string) Libpcre2::pcre2_config_8(11 /* PCRE2_CONFIG_VERSION */, null);
+echo "PCRE2 version buffer length: {$versionLen}\n";
 
-// Match against a subject string
-$matchData = Libpcre2::pcre2_match_data_create_from_pattern_8($re, null);
-$rc = Libpcre2::pcre2_match_8($re, '42 items', 8, 0, 0, $matchData, null);
-echo "Match count: {$rc}\n"; // 1 on success
-
-Libpcre2::pcre2_match_data_free_8($matchData);
-Libpcre2::pcre2_code_free_8($re);
+// PCRE2_CONFIG_UNICODE_VERSION (= 10) works the same way for the Unicode
+// (UCD) version string that PCRE2 was built against.
+$unicodeLen = (int) (string) Libpcre2::pcre2_config_8(10 /* PCRE2_CONFIG_UNICODE_VERSION */, null);
+echo "PCRE2 Unicode version buffer length: {$unicodeLen}\n";
 ```

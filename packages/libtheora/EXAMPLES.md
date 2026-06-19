@@ -3,10 +3,18 @@
 ```php
 use Pnlx\Libtheora\Libtheora;
 
-// th_version_string() returns the Theora release string.
-$version = Libtheora::th_version_string();
-echo "libtheora: $version\n";
+// theora_version_string() returns the Theora release string.
+$version = Libtheora::theoraVersionString();
+echo "libtheora: " . (string) $version . "\n";
 
-// Explore further: th_decode_alloc(), th_decode_packetin(),
-// th_encode_alloc(), th_encode_packetout(), ...
+// theora_version_number() returns the encoded version (major<<16 | minor<<8 | sub).
+$number = Libtheora::theoraVersionNumber();
+$encoded = (int) (string) $number;
+printf(
+    "version number: 0x%06x (%d.%d.%d)\n",
+    $encoded,
+    ($encoded >> 16) & 0xff,
+    ($encoded >> 8) & 0xff,
+    $encoded & 0xff
+);
 ```

@@ -3,15 +3,26 @@
 ```php
 use Pnlx\Libnettle\Libnettle;
 
-// Query the library version
-$major = Libnettle::nettle_version_major(); // returns int
-$minor = Libnettle::nettle_version_minor(); // returns int
-echo "Nettle version: $major.$minor\n";
+// nettle-meta.h exposes a registry of the hash algorithms compiled into the
+// library. Look one up by name; the call returns a typed wrapper around the
+// C `struct nettle_hash *` (or null when the name is unknown).
+$sha256 = Libnettle::nettle_lookup_hash('sha256');
 
-// Compute a SHA-256 digest using the unprefixed algorithm functions
-$ctx = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::VoidPointer);
-Libnettle::sha256_init($ctx);
-Libnettle::sha256_update($ctx, strlen('hello'), 'hello');
-$digest = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::VoidPointer);
-Libnettle::sha256_digest($ctx, 32, $digest);
+if ($sha256 === null) {
+    echo "sha256 not available\n";
+    return;
+}
+
+// Read the algorithm metadata straight off the underlying C struct.
+$meta = $sha256->cdata();
+printf(
+    "%s: digest_size=%d block_size=%d\n",
+    \FFI::string($meta->name),
+    $meta->digest_size,
+    $meta->block_size,
+);
+
+// The registry accessors enumerate every algorithm family the build ships.
+$hashes = Libnettle::nettle_get_hashes();
+echo $hashes !== null ? "hash registry loaded\n" : "no hashes\n";
 ```
