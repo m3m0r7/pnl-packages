@@ -2,17 +2,22 @@
 
 ```php
 use Pnlx\Liboniguruma\Liboniguruma;
-use function Pnlx\Util\is_null;
+use Pnlx\Liboniguruma\OnigDefaultSyntax;
+use Pnlx\Liboniguruma\OnigSyntaxPerl;
 
-// Query library version (char* → PHP string)
-$version = Liboniguruma::onig_version();
-echo "Oniguruma version: $version\n";
+// Library version (char* → PHP string)
+echo 'Oniguruma version: ' . Liboniguruma::onig_version() . "\n"; // e.g. 6.9.10
 
-// Compile a regex and search a string
-$regex = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::VoidPointer);
-$err   = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::VoidPointer);
-$pattern = 'hel+o';
-Liboniguruma::onig_new($regex, $pattern, $pattern, 0, 0, null, $err);
-// ... use onig_search() / onig_free() ...
-// Liboniguruma::onig_free($regex);
+// Encodings and syntaxes are exported global *variables* (not functions). Each is
+// surfaced as a flat marker class — \Pnlx\Liboniguruma\OnigDefaultSyntax,
+// \Pnlx\Liboniguruma\OnigEncodingUTF8, \Pnlx\Liboniguruma\OnigSyntaxPerl, ... — so
+// you pass its ::class straight to a function and the dispatch resolves the marker
+// to the real C global transparently.
+echo 'default syntax options: '
+    . sprintf('0x%x', Liboniguruma::onig_get_syntax_options(OnigDefaultSyntax::class)) . "\n"; // 0x0
+echo 'perl syntax options:    '
+    . sprintf('0x%x', Liboniguruma::onig_get_syntax_options(OnigSyntaxPerl::class)) . "\n";    // 0x8
+
+// The same marker classes are what onig_new()'s encoding/syntax arguments take,
+// e.g. ...->onig_new($reg, ..., OnigEncodingUTF8::class, OnigDefaultSyntax::class, ...).
 ```

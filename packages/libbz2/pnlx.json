@@ -28,7 +28,7 @@
         "sudo apt-get install -y libbz2-dev"
       ],
       "checkIfExists": [
-        "ldconfig -p | grep -q libbz2"
+        "dpkg -s libbz2-dev >/dev/null 2>&1"
       ]
     },
     "debian": {

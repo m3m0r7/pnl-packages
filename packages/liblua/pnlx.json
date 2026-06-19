@@ -97,12 +97,17 @@
       "library_names": [
         "liblua.dylib",
         "liblua.so",
-        "lua54.dll"
+        "lua54.dll",
+        "liblua5.4.so",
+        "liblua-5.4.so"
       ],
       "header_names": [
         "lua.h",
         "lauxlib.h",
-        "lualib.h"
+        "lualib.h",
+        "lua5.4/lua.h",
+        "lua5.4/lauxlib.h",
+        "lua5.4/lualib.h"
       ],
       "version": ">=5.1.0 & <6.0.0",
       "required": true

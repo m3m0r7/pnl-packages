@@ -3,9 +3,10 @@
 ```php
 use Pnlx\Libjpeg\Libjpeg;
 
-// Query the compile-time library version (e.g. 80 for libjpeg v8).
-$version = Libjpeg::jpeg_lib_version(); // returns int
-echo 'libjpeg version: ' . $version . PHP_EOL;
+// jpeg_quality_scaling() maps a 0-100 quality value onto libjpeg's internal
+// scaling factor without needing a compression/decompression struct.
+$scaled = Libjpeg::jpeg_quality_scaling(75); // returns int
+echo 'libjpeg quality scaling for 75: ' . $scaled . PHP_EOL;
 // Main entry points to explore: jpeg_CreateCompress / jpeg_CreateDecompress,
 // jpeg_stdio_dest / jpeg_stdio_src, jpeg_start_compress, jpeg_finish_compress.
 ```

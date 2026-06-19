@@ -2,14 +2,17 @@
 
 ```php
 use Pnlx\Liblua\Liblua;
-use function Pnlx\Util\is_null;
 
-// Create a Lua state, execute a snippet, then close the state.
 $L = Liblua::luaL_newstate();
-if (is_null($L)) {
-    throw new \RuntimeException('Failed to create Lua state');
-}
 Liblua::luaL_openlibs($L);
-Liblua::luaL_dostring($L, 'print("Hello from Lua!")');
+
+// luaL_dostring() is a macro; use the real luaL_loadstring + lua_pcallk (= lua_pcall).
+if (Liblua::luaL_loadstring($L, 'return 7 * 6') === 0) { // LUA_OK
+    Liblua::lua_pcallk($L, 0, 1, 0, 0, null);
+    $isnum = 0;
+    $answer = Liblua::lua_tointegerx($L, -1, $isnum);
+    echo "lua: 7 * 6 = {$answer}\n";
+}
+
 Liblua::lua_close($L);
 ```

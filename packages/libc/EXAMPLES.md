@@ -3,6 +3,9 @@
 ```php
 use Pnlx\Libc\Libc;
 
-Libc::printf("Hello, World from libc!\n");
-Libc::puts("And this line is printed by libc puts.");
+// With the scalar-friendly feature flags, plain PHP scalars go straight in and out.
+Libc::puts('Hello, World from libc!');                  // prints the line, returns >= 0
+printf("strcmp: %d\n", Libc::strcmp('abc', 'abd'));     // negative
+printf("toupper: %s\n", chr(Libc::toupper(ord('p'))));  // P
+printf("strstr: %s\n", Libc::strstr('native php', 'php')); // php
 ```

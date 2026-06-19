@@ -96,7 +96,9 @@
       ],
       "header_names": [
         "tidy.h",
-        "tidybuffio.h"
+        "tidybuffio.h",
+        "tidy/tidy.h",
+        "tidy/tidybuffio.h"
       ],
       "version": ">=5.0.0 & <6.0.0",
       "required": true

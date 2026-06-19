@@ -25,7 +25,7 @@
     },
     "ubuntu": {
       "install": [
-        "sudo apt-get install -y libduktape-dev"
+        "sudo apt-get install -y duktape-dev"
       ],
       "checkIfExists": [
         "ldconfig -p | grep -q libduktape.so"

@@ -2,20 +2,13 @@
 
 ```php
 use Pnlx\Libgit2\Libgit2;
-use function Pnlx\Util\is_null;
 
 Libgit2::git_libgit2_init();
 
-// Open an existing repository and read its HEAD reference
-$repo = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::VoidPointer);
-$rc = Libgit2::git_repository_open($repo, '/path/to/repo');
-if ($rc === 0) {
-    $ref = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::VoidPointer);
-    Libgit2::git_repository_head($ref, $repo[0]);
-    echo "HEAD: " . Libgit2::git_reference_shorthand($ref[0]) . "\n";
-    Libgit2::git_reference_free($ref[0]);
-    Libgit2::git_repository_free($repo[0]);
-}
+// git_libgit2_version writes major/minor/rev through three int* out-parameters.
+$major = 0; $minor = 0; $rev = 0;
+Libgit2::git_libgit2_version($major, $minor, $rev);
+echo "libgit2 {$major}.{$minor}.{$rev}\n";
 
 Libgit2::git_libgit2_shutdown();
 ```

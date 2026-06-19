@@ -28,7 +28,7 @@
         "sudo apt-get install -y libgmp-dev"
       ],
       "checkIfExists": [
-        "ldconfig -p | grep -q libgmp.so"
+        "dpkg -s libgmp-dev >/dev/null 2>&1"
       ]
     },
     "debian": {

@@ -10,6 +10,7 @@ if (is_null($session)) { throw new \RuntimeException('ssh_new failed'); }
 
 // Configure the host before connecting.
 Libssh::ssh_options_set($session, 0 /* SSH_OPTIONS_HOST */, 'example.com');
+echo "libssh: session created and host option set\n";
 
 // Connect, authenticate, run commands, then free the session.
 // Libssh::ssh_connect($session);

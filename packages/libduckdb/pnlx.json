@@ -74,14 +74,6 @@
       "arch": "x86_64"
     },
     {
-      "os": "linux",
-      "arch": "x86_64"
-    },
-    {
-      "os": "linux",
-      "arch": "aarch64"
-    },
-    {
       "os": "windows",
       "arch": "x86_64"
     }

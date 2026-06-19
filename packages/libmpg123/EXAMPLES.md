@@ -6,8 +6,10 @@ use function Pnlx\Util\is_null;
 
 Libmpg123::mpg123_init();
 
-// Open a handle for decoding; mpg123_new() returns a pointer
-$handle = Libmpg123::mpg123_new(null, null);
+// Open a handle for decoding; mpg123_new() returns a pointer and writes any
+// error code into its second (int *) out-parameter, so pass a variable for it.
+$error = 0;
+$handle = Libmpg123::mpg123_new(null, $error);
 if (is_null($handle)) {
     echo "Failed to create mpg123 handle\n";
 } else {

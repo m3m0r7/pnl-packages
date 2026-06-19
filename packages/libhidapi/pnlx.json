@@ -97,7 +97,9 @@
       "library_names": [
         "libhidapi.dylib",
         "libhidapi.so",
-        "hidapi.dll"
+        "hidapi.dll",
+        "libhidapi-libusb.so",
+        "libhidapi-hidraw.so"
       ],
       "header_names": [
         "hidapi/hidapi.h"

@@ -2,19 +2,11 @@
 
 ```php
 use Pnlx\Libftdi\Libftdi;
-use function Pnlx\Util\is_null;
 
-// Allocate and initialise a new ftdi_context.
+// ftdi_new() allocates and initialises a context (no device needed); free it again.
 $ctx = Libftdi::ftdi_new();
-if (is_null($ctx)) {
-    throw new \RuntimeException('ftdi_new() failed');
+echo $ctx !== null ? "ftdi context created\n" : "ftdi_new() failed\n";
+if ($ctx !== null) {
+    Libftdi::ftdi_free($ctx);
 }
-
-// Query the libftdi version information struct.
-$vi = Libftdi::ftdi_get_library_version();
-echo "libftdi version: {$vi->major}.{$vi->minor}.{$vi->micro}" . PHP_EOL;
-echo "Version string: " . $vi->version_str . PHP_EOL;
-
-// ftdi_usb_open(ctx, vendor, product) opens a connected FTDI device.
-Libftdi::ftdi_free($ctx);
 ```

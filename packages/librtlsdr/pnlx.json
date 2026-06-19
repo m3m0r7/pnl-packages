@@ -41,7 +41,7 @@
     },
     "alpine": {
       "install": [
-        "apk add rtl-sdr-dev"
+        "apk add librtlsdr-dev"
       ],
       "checkIfExists": [
         "apk info -e rtl-sdr-dev"

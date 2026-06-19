@@ -75,11 +75,13 @@
     },
     {
       "os": "linux",
-      "arch": "x86_64"
+      "arch": "x86_64",
+      "libc": "musl"
     },
     {
       "os": "linux",
-      "arch": "aarch64"
+      "arch": "aarch64",
+      "libc": "musl"
     },
     {
       "os": "windows",
@@ -95,7 +97,8 @@
         "quickjs.dll"
       ],
       "header_names": [
-        "quickjs.h"
+        "quickjs.h",
+        "quickjs/quickjs.h"
       ],
       "version": ">=0.1.0 & <1.0.0",
       "required": true

@@ -3,13 +3,12 @@
 ```php
 use Pnlx\Libnghttp2\Libnghttp2;
 
-// nghttp2_version() returns a pointer to a nghttp2_info struct
-$info = Libnghttp2::nghttp2_version(0);
-echo "nghttp2 version: " . $info->version_str . "\n";
-echo "Protocol: "       . $info->proto_str    . "\n";
+// nghttp2_check_header_name() validates an HTTP/2 header name (1 = valid, 0 = not).
+$name = 'content-type';
+echo 'content-type valid: ' . Libnghttp2::nghttp2_check_header_name($name, strlen($name)) . "\n"; // 1
 
-// Validate an HTTP/2 header name (returns int 1 = valid, 0 = invalid)
-$valid = Libnghttp2::nghttp2_check_header_name('content-type', strlen('content-type'));
-echo "Header valid: $valid\n";
-// ... use nghttp2_session_client_new() to start an HTTP/2 session ...
+$bad = 'Bad Header';
+echo 'Bad Header valid: '  . Libnghttp2::nghttp2_check_header_name($bad, strlen($bad)) . "\n";   // 0
+
+// nghttp2_check_authority() and nghttp2_session_client_new() build on the same API.
 ```

@@ -3,12 +3,10 @@
 ```php
 use Pnlx\Libicu\Libicu;
 
-// Query the ICU library version
-$verBuf = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
-Libicu::u_getVersion($verBuf);
-echo "ICU version: " . $verBuf[0] . "." . $verBuf[1] . "\n";
-
-// Normalize a Unicode string to NFC using unorm2
-// $norm = Libicu::unorm2_getNFCInstance($error);
-// Libicu::unorm2_normalize($norm, $src, -1, $dest, $destCapacity, $error);
+// ICU exports every entry point under a version-suffixed symbol (e.g.
+// `u_errorName_74`) and ships `#define u_errorName …` so callers use the
+// unversioned name. pnl recovers that rename, so the public name works directly.
+echo "U_ZERO_ERROR             => " . Libicu::u_errorName(0) . "\n";
+echo "U_ILLEGAL_ARGUMENT_ERROR => " . Libicu::u_errorName(1) . "\n";
+echo "U_INDEX_OUTOFBOUNDS_ERROR=> " . Libicu::u_errorName(8) . "\n";
 ```

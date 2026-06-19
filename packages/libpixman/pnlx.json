@@ -95,7 +95,8 @@
         "pixman-1.dll"
       ],
       "header_names": [
-        "pixman.h"
+        "pixman.h",
+        "pixman-1/pixman.h"
       ],
       "version": ">=0.40.0 & <1.0.0",
       "required": true

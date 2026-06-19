@@ -9,9 +9,11 @@ if ($rc !== 0) {
     throw new \RuntimeException("ares_library_init failed: {$rc}");
 }
 
-$versionNumber = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
+// ares_version() writes the version number into its int out-parameter and
+// returns the version string. Pass a plain variable by reference.
+$versionNumber = 0;
 $versionStr    = Libcares::ares_version($versionNumber);
-echo "c-ares version: {$versionStr}\n";
+echo "c-ares version: {$versionStr} ({$versionNumber})\n";
 
 // Asynchronous DNS: Libcares::ares_init($channel) then Libcares::ares_gethostbyname(...)
 Libcares::ares_library_cleanup();

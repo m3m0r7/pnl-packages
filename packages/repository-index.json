@@ -7,7 +7,7 @@
           "manifest": "libarchive/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libarchive",
-            "sha256": "0b688778879ec4349c00b36ab83e46196d470e5492ab992b825df87ef834b05c"
+            "sha256": "f27ea097d6636b6029059afd918ff3a2446a2c11cf3fae8ebe3e2553cb6de09f"
           },
           "source": {
             "type": "git",
@@ -23,7 +23,7 @@
           "manifest": "libargon2/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libargon2",
-            "sha256": "4066a362a9885100f8caf2150e8d3e6a21a0cd3291739cbb002faaf669c3fc99"
+            "sha256": "a68d36ad7e202df4201104b5ed5c4af053b08bc53932bbe9f76eed7123959587"
           },
           "source": {
             "type": "git",
@@ -39,7 +39,7 @@
           "manifest": "libass/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libass",
-            "sha256": "98b5f3e8f21e38c953fc972f8cb5db57a0192eff13b1e8f42572ec01fa2a7d2f"
+            "sha256": "92faab423c89074197ff3be3b96d2ce80904f9729db4b1b3ba529851899f25ce"
           },
           "source": {
             "type": "git",
@@ -55,7 +55,7 @@
           "manifest": "libassimp/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libassimp",
-            "sha256": "3d6c800e0316ee35ff2bc5febed404af6d9782cc9c10e64a44e4bfb01fdb5b2f"
+            "sha256": "ecd8ff006cbe1ac0e1d4138a7b18aa0c5e703cf31ca5fdab6d91394339faa02f"
           },
           "source": {
             "type": "git",
@@ -71,7 +71,7 @@
           "manifest": "libavcodec/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libavcodec",
-            "sha256": "b41fde5de7c61f9fe31ce1b9f9cc29266d96ba7ecb6350569d7d7d06cfabe1bf"
+            "sha256": "ae960d01a07111f22c5ee00fcbe4189489fc9d259f79aebac23feeba81102b93"
           },
           "source": {
             "type": "git",
@@ -87,7 +87,7 @@
           "manifest": "libavformat/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libavformat",
-            "sha256": "92782e03d8be9671838e2ab8a4ad45b6d2a45d07910eb7856b444eb804ccf26a"
+            "sha256": "bb80fdf856d72e753977ee4dcc3c24a9f74efea849c964eda6b2fa03950de6ab"
           },
           "source": {
             "type": "git",
@@ -103,7 +103,7 @@
           "manifest": "libavif/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libavif",
-            "sha256": "7a0b337a9fd129e465a9ea7940ed5134339487b8523a5f58c60ead49740260de"
+            "sha256": "41babbd7367eacfad7db5b159f9bb940d4c37332a0886b3810eaaf613480dcd9"
           },
           "source": {
             "type": "git",
@@ -119,7 +119,7 @@
           "manifest": "libavutil/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libavutil",
-            "sha256": "84cf5a8c2df05aa773870c5b4f3ac42a72eb35c532ad06270aadb3392ed3f6b4"
+            "sha256": "e9e185bab4f5e6d14c9b6ed0be4378d857ba7a844c370d13b639c140c930a60b"
           },
           "source": {
             "type": "git",
@@ -135,7 +135,7 @@
           "manifest": "libbrotli/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libbrotli",
-            "sha256": "cadf994dbbbd8ae671dc039b28978fa0c6e1301bf17f7b33ffc5b01bff360ca4"
+            "sha256": "cc6d5a5a9ff8115d0ec8b6054186ea749b990f251e3d9ca8f9d773f52105be4f"
           },
           "source": {
             "type": "git",
@@ -151,7 +151,7 @@
           "manifest": "libbz2/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libbz2",
-            "sha256": "56169624144bed5bf8b00958d0edfbf9afe3103cb54537fe622295bb36a735f7"
+            "sha256": "ec5874f94e780ce6567fe625689a6c49692d2954b7705fc53cd91dda629eed38"
           },
           "source": {
             "type": "git",
@@ -167,7 +167,7 @@
           "manifest": "libc/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libc",
-            "sha256": "1a21ae5d3e1f370fe2a33925ddb3b1799ced08564d0efaad0997db6bfaebd5c3"
+            "sha256": "23ffd9e00db8208a896129ccac33a31d2c7d2dcca14f60d61d01c32dc2b17106"
           },
           "source": {
             "type": "git",
@@ -183,7 +183,7 @@
           "manifest": "libcairo/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libcairo",
-            "sha256": "c46d3c68246fa4d38196aeed6971642e90ab612876c40e96bf49de66e4af847e"
+            "sha256": "e70df0eafb1d99cd0d4002d88d3d67516ad37c2e5ad29f62604d591fda997edd"
           },
           "source": {
             "type": "git",
@@ -199,7 +199,7 @@
           "manifest": "libcap/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libcap",
-            "sha256": "a6a90cf0aab980176ba5e49c23008146cf857a8645b56efcb6f8eec435f67f84"
+            "sha256": "9caf540a805fab59b8cd9d19974d7791cd5a9530fa1a679933c1d54e043beb7b"
           },
           "source": {
             "type": "git",
@@ -215,7 +215,7 @@
           "manifest": "libcares/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libcares",
-            "sha256": "d78a765adc5e42810c71f156ee3cc45a30012874743573f5a1b2af5dedbf7dfe"
+            "sha256": "ec93e74f38298a0a9a0381e7d5567305753b532d6388102ba3a76cc3ca29f85f"
           },
           "source": {
             "type": "git",
@@ -231,7 +231,7 @@
           "manifest": "libcbor/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libcbor",
-            "sha256": "0cf1acc01d2a5e957314fc38d39f22b9e83d385b5d40bd9d60e139e5da17f3db"
+            "sha256": "33ca22038d524ca2ccb97633b9ef6e16f5cbad58c6ba1674db057ce26f89906c"
           },
           "source": {
             "type": "git",
@@ -247,7 +247,7 @@
           "manifest": "libcjson/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libcjson",
-            "sha256": "d4a1bc8f141097b722a79b5d75393d68114ffeda1fe54cfaa39a4639b88f145a"
+            "sha256": "174b15fba37e684b5c6b72a58bb04d9f71ff2c2daff4515a5d7467410162107b"
           },
           "source": {
             "type": "git",
@@ -263,7 +263,7 @@
           "manifest": "libcmark/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libcmark",
-            "sha256": "ecbc57be8e877f47cb77bc6697c7cf5666ab6e20f62a30f6257cfde667b75331"
+            "sha256": "f6de6231efca6552c2ab8090fe0bacdc40b09d150973a28405e5069c7d658642"
           },
           "source": {
             "type": "git",
@@ -279,7 +279,7 @@
           "manifest": "libconfig/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libconfig",
-            "sha256": "67c99d030b5f886d8bd1a5f83a1afd4004ae41064efc5ae1d8e0f97a256daa24"
+            "sha256": "e1304743a9b529f5c6e4a6cb90e5b4eac464138bc949a39bf46989d907d99848"
           },
           "source": {
             "type": "git",
@@ -295,7 +295,7 @@
           "manifest": "libcurl/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libcurl",
-            "sha256": "2fffcbdba6ea37444543c72fd3cdb8f09b35f49081ccd6346a7d62b8c8c601f8"
+            "sha256": "e76627d82fe2a9b71a2d86de065e0c834ff403c41a5fa5f396f93958bbde1004"
           },
           "source": {
             "type": "git",
@@ -311,7 +311,7 @@
           "manifest": "libdbus/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libdbus",
-            "sha256": "2880c48370786a5b2d53cdf3507f49a251055474594a940109cdc0db1c1058aa"
+            "sha256": "ec5e30cf4519412a5ff90b5f31938f40a35af69a8a8bbb4b05ec0f4e05ceeb93"
           },
           "source": {
             "type": "git",
@@ -327,7 +327,7 @@
           "manifest": "libdeflate/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libdeflate",
-            "sha256": "06b775af284f57402b5d0c84e91215913d82a3e584604b583ea487c637408c86"
+            "sha256": "53e4940336f064fb1e7c02f45ba01f89aa205952669e0ba2cf67f6aa2cebdb64"
           },
           "source": {
             "type": "git",
@@ -343,7 +343,7 @@
           "manifest": "libduckdb/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libduckdb",
-            "sha256": "bd41dcc911f7bdce691b797574b5012ab93911fe9b0cab338566ad5fb4809311"
+            "sha256": "eacca8e68e6d152f62fb6e5d0b4d46a9476a00ca59e7126d6d95e78b50804331"
           },
           "source": {
             "type": "git",
@@ -359,7 +359,7 @@
           "manifest": "libduktape/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libduktape",
-            "sha256": "b092cf0e725f34c046f7a9b0cc7f1e31f422a22951fdc41345fdaa7471fb1189"
+            "sha256": "143effe435ef7ca67713fe55c7cfb8a2b3931a980a9a8992bddc349ef880cd8c"
           },
           "source": {
             "type": "git",
@@ -375,7 +375,7 @@
           "manifest": "libenet/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libenet",
-            "sha256": "c23a0d47b03c9be9e86162eef969bfe6a8394d3d1d2ee980daaaa7f9f17e4e63"
+            "sha256": "6e86095e48b43ade3274a5f4bd9e49e7b77c833a95cec3d376c71d6e55d2bdb9"
           },
           "source": {
             "type": "git",
@@ -391,7 +391,7 @@
           "manifest": "libevent/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libevent",
-            "sha256": "3747dcbe8e90a5a63d046f12956f33947c7f6f00cb1f81e7b13df995611ba90a"
+            "sha256": "d33f5755dbcb66525e4cf6994aad63cd13389ffd52bf030729b2324389f9f5bb"
           },
           "source": {
             "type": "git",
@@ -407,7 +407,7 @@
           "manifest": "libexif/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libexif",
-            "sha256": "9831f91f652dc9b9756d29f76533a55e904e89533b12ce20d68d749e6936e8d7"
+            "sha256": "dc8d6ba7088c7d76ef9975721cb8b6240e6e435878b17fefc0c0d8f8f6b5c4cd"
           },
           "source": {
             "type": "git",
@@ -423,7 +423,7 @@
           "manifest": "libexpat/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libexpat",
-            "sha256": "409756cd95e464c51c75e32605ac87f1bc60f8cd42d21abd5c73f0d91f1814d2"
+            "sha256": "35d29b3c56f0baa992a3640d35f9a5e142e6d5ffdc1b30159801da4bc44f55b4"
           },
           "source": {
             "type": "git",
@@ -439,7 +439,7 @@
           "manifest": "libffi/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libffi",
-            "sha256": "3de6250e02842736d82dbdb15b681b5cddcaef17215947005e9b2f2723711f8d"
+            "sha256": "d44fe5db2d557a90385f4dd44cda917bd4ff7190816cf0d9ef9ed0a9406b0a56"
           },
           "source": {
             "type": "git",
@@ -455,7 +455,7 @@
           "manifest": "libfftw3/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libfftw3",
-            "sha256": "050e77485e303f44de384f335452a668f5744df180f531b3a23032fa5ac9a728"
+            "sha256": "18613df585c8aa5dfdb5803ba0b2182d198be2c41b5ab9cd934ad91820017fca"
           },
           "source": {
             "type": "git",
@@ -471,7 +471,7 @@
           "manifest": "libflac/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libflac",
-            "sha256": "3a6562911edd614ed1e69707e902720e3bebb1f6519714123cb084d5c7b65c8b"
+            "sha256": "b5446604fc1b72e4af568cc971f657c4f91550fe4c5710470d4fbae258e1bba5"
           },
           "source": {
             "type": "git",
@@ -487,7 +487,7 @@
           "manifest": "libfontconfig/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libfontconfig",
-            "sha256": "46f715808b423476f517debbad0c3d461d4573fb36ef71b3a62ebef280f37bce"
+            "sha256": "7f4028e3c099cf10d747996de15873f9bd9a043669c05a296cf7a822a8ef7832"
           },
           "source": {
             "type": "git",
@@ -503,7 +503,7 @@
           "manifest": "libfreetype/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libfreetype",
-            "sha256": "f62201e97fc09a140816b77068ef927e81f3ac7cb94d841ab64a7af15a1fac0b"
+            "sha256": "c9545d918aa5c5a663fd29de0e427d147cbfcdd41506a393ece334a0f8c84098"
           },
           "source": {
             "type": "git",
@@ -519,7 +519,7 @@
           "manifest": "libftdi/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libftdi",
-            "sha256": "d056306dc2b954bdac9ce45de215d3c80eb1b5eb54676d9eed42643aaf946a65"
+            "sha256": "b9af8c71d7a327e0e6c83e4c96c6600e4742a1a99a4ddcc9c68c28ea555606e2"
           },
           "source": {
             "type": "git",
@@ -535,7 +535,7 @@
           "manifest": "libgcrypt/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libgcrypt",
-            "sha256": "eacd5cc2b3e659f4bad90bb734e9a1b63f9b4c3d13f37547e7304a38b5349039"
+            "sha256": "b3f803e0ceb2832b0a5e17497834edc7ee520b1c54bb4064205a2d6c7cc0c948"
           },
           "source": {
             "type": "git",
@@ -551,7 +551,7 @@
           "manifest": "libgd/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libgd",
-            "sha256": "79340187e83a12743069f78b60c8fcd28675a0b16b47ccb5f3d23bc612728900"
+            "sha256": "62282d7a0cffb3fa40581776f526caa87879f88e01d14b5dc31b75853d5807fc"
           },
           "source": {
             "type": "git",
@@ -567,7 +567,7 @@
           "manifest": "libgif/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libgif",
-            "sha256": "64f0ea5a887d49893998a62d6587789a0c6e31c132c03895460aaf063e9dd5a5"
+            "sha256": "6470276fa1be0ba45a68ae03e50ae38c8ffd564bf70ad8ba779a83f903b3c27b"
           },
           "source": {
             "type": "git",
@@ -583,7 +583,7 @@
           "manifest": "libgit2/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libgit2",
-            "sha256": "be10ed42b82f1d4cbe62d029eadf7ca61b17485f90d228de9bfe7d8124387d87"
+            "sha256": "0d0f1a55beec8039d837f3e99614260520ef86ec262105742b0ecb7d08bbd277"
           },
           "source": {
             "type": "git",
@@ -599,7 +599,7 @@
           "manifest": "libglew/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libglew",
-            "sha256": "febc04ff63166c7775be52bf43c0312d87abeb5ad341706316dfee2924651010"
+            "sha256": "11dfc38afc9e272c3b0b6f44e9df85b514f67d65cf78c567efdc1e83512695e0"
           },
           "source": {
             "type": "git",
@@ -615,7 +615,7 @@
           "manifest": "libglfw/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libglfw",
-            "sha256": "a20d4c22523c3aae76bc11bec6ad4139f4fddbbefdddd5fdde91e3fa4a94e357"
+            "sha256": "63e2af5d6f2832c230a95928e8641a0329ef3ec7c9fd36a004e26d3cd46ea1b6"
           },
           "source": {
             "type": "git",
@@ -631,7 +631,7 @@
           "manifest": "libglib2/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libglib2",
-            "sha256": "8dcf9a00b677441788da1985fa127a0dd2f4d3ffd973d4b6dfdb13088397e4c1"
+            "sha256": "15838ff2e3ca40dc79ec6c7c6e7cd508bb610e76abba9f452adecf52748e108b"
           },
           "source": {
             "type": "git",
@@ -647,7 +647,7 @@
           "manifest": "libgmp/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libgmp",
-            "sha256": "f6f494a51ef07a5bde1e57a27f6c80fc440243472cf88d5d5143fcd9ea33eca8"
+            "sha256": "86609fad3e2ba9ae63e6da1528ba6728a6bdfd218f56238cff76548338688f66"
           },
           "source": {
             "type": "git",
@@ -663,7 +663,7 @@
           "manifest": "libgnutls/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libgnutls",
-            "sha256": "b410893e0b363898f1877033880f0f58e42d2e2a2cffa4161c3630495c2f394e"
+            "sha256": "0c19351700fa77c7e49e0f13f235fe684d562b35c94dd61e999f0aeabc72bfec"
           },
           "source": {
             "type": "git",
@@ -679,7 +679,7 @@
           "manifest": "libgsl/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libgsl",
-            "sha256": "42cb4bf5965447f4fb06f2e134164bbad86b9b7bd8de6094fb9b5e17a516d7f6"
+            "sha256": "ab996bc13a283e922241a75d4d2d674bfc802c172a26f74b1448fe05d5bd2f37"
           },
           "source": {
             "type": "git",
@@ -695,7 +695,7 @@
           "manifest": "libgumbo/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libgumbo",
-            "sha256": "9b93af7663daa2baace1ac34e1b0d2335479cf435edf1788a8399b583f39756d"
+            "sha256": "3783fa5b037a7d8a78aa31bdb643082e27871762f80def61a2698c868ef5bbc7"
           },
           "source": {
             "type": "git",
@@ -711,7 +711,7 @@
           "manifest": "libharfbuzz/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libharfbuzz",
-            "sha256": "5689d04472b538a3524631467c44f521a860cb3529aa40d031050f0ca7fa1088"
+            "sha256": "29dd94241eb4376de34eac69f254d200a22ebb064f286f21c5755c3f624a7225"
           },
           "source": {
             "type": "git",
@@ -727,7 +727,7 @@
           "manifest": "libheif/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libheif",
-            "sha256": "c35cab6b931cd5da465674f8a9867bf0ce8c84e12ff76432ba004be7a312dc2c"
+            "sha256": "c43f54cf04469849c2f398339f0cd03e18871a10a7688da7c2d13e869de45744"
           },
           "source": {
             "type": "git",
@@ -743,7 +743,7 @@
           "manifest": "libhidapi/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libhidapi",
-            "sha256": "e13d7353aafae1f9982d05b9c6888b72f3759509fa4f26d0cb11541ec2276b68"
+            "sha256": "b834d16192c8255f38d1269fd006c064eea154bf3d83e963521618fff7d74e2b"
           },
           "source": {
             "type": "git",
@@ -759,7 +759,7 @@
           "manifest": "libhiredis/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libhiredis",
-            "sha256": "65f8a64f6f5ebbc09663754623d9c92975a94b1de6647f4703937e9807bf21ed"
+            "sha256": "61e7820b63f4fd5c0d9eacde95ce285af50e4e7a126ea978be7390118337e337"
           },
           "source": {
             "type": "git",
@@ -775,7 +775,7 @@
           "manifest": "libhunspell/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libhunspell",
-            "sha256": "e0480aedae52cd0a46c08c288ca3f5ba12a5ef191c7b661cba6b3f542c8e2f70"
+            "sha256": "2a10b11005e23d76d166f8cd5321318f18ee76802e19daebe20efe9e4f40f297"
           },
           "source": {
             "type": "git",
@@ -791,7 +791,7 @@
           "manifest": "libicu/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libicu",
-            "sha256": "9691ed8f7dce44b1fc5f660b952d6bf8f788615563efe4e035e7072f231faf58"
+            "sha256": "0affe140f06450ae7eedaf0a83da7b58853083702bd04585274c150ff0f0956e"
           },
           "source": {
             "type": "git",
@@ -807,7 +807,7 @@
           "manifest": "libidn2/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libidn2",
-            "sha256": "cf3ac4d5080053bbbfe9cd0f38c175f6fa44ea446dc795a7e650c681271ea512"
+            "sha256": "4722f423a84378d656a05efca793934e3b43321486960a5e6585b09ff8748f45"
           },
           "source": {
             "type": "git",
@@ -823,7 +823,7 @@
           "manifest": "libjansson/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libjansson",
-            "sha256": "25276f6f79fb77359b805483c4a545ecd77d691c495c976ff9a6debcf0fe162d"
+            "sha256": "907b4f0e03a369ec49758f35899dfd6033152c7eb81780e5179042b126d50a38"
           },
           "source": {
             "type": "git",
@@ -839,7 +839,7 @@
           "manifest": "libjpeg/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libjpeg",
-            "sha256": "98c85edf970a99ed70c66848e0d6a7cb87326fa703e2e65107e4baf7f100750c"
+            "sha256": "85e87286d91b1025faec979ceff2ebd8899854f6e2e81a3f828cd6c67bee089e"
           },
           "source": {
             "type": "git",
@@ -855,7 +855,7 @@
           "manifest": "libjxl/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libjxl",
-            "sha256": "0002344bc832c15a53f4ef9393c103fe7a5482ea5892dbc7383313054f535ba9"
+            "sha256": "a7c40ae6353082a866a7ac2d4aa16472ec528c22080c995c7cc5fea88116d8d8"
           },
           "source": {
             "type": "git",
@@ -871,7 +871,7 @@
           "manifest": "libleveldb/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libleveldb",
-            "sha256": "3e33337b83cdda65b2c897cbcb5a3241a7cd7af38ac62a1e94103e842ff25874"
+            "sha256": "3748185a2ef6208c5b9f981d5f586221cb3e5ce30facd86f9b3514c998cb2405"
           },
           "source": {
             "type": "git",
@@ -887,7 +887,7 @@
           "manifest": "liblmdb/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/liblmdb",
-            "sha256": "5b72da4bc95fb150b8ff6e1d7be6ddd7b2209eb2f17d270d03b27d6f972aa6c1"
+            "sha256": "0916232351975b0ded4d728976f8a88942c5ea34892a011b5633c664f4f28ef2"
           },
           "source": {
             "type": "git",
@@ -903,7 +903,7 @@
           "manifest": "liblua/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/liblua",
-            "sha256": "5f1525e23d63d2fee86aa1f85ddec3cd14936f0fa6de9690a1476cb8e9bfcbb1"
+            "sha256": "f68d70f24b5a2e054925d84c3a17e0a9c3279042714211a98f48c426e988ec44"
           },
           "source": {
             "type": "git",
@@ -919,7 +919,7 @@
           "manifest": "liblz4/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/liblz4",
-            "sha256": "87ab627e3b26bf368174e61f375cdf13b02158d74805f3943b4dd96ede885fe1"
+            "sha256": "99e54841dd578b1911bb71476c5f9388b73c79c402479dd68b98da690f79720f"
           },
           "source": {
             "type": "git",
@@ -935,7 +935,7 @@
           "manifest": "liblzma/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/liblzma",
-            "sha256": "a1041dda7db46fe9cc2bbb7e31116ff333a6e433349b908aedbc5120bdf2701a"
+            "sha256": "a330c49609ac4824ef0a5c25e1835ad058a175238d2a34c4311ab9e87ede0493"
           },
           "source": {
             "type": "git",
@@ -951,7 +951,7 @@
           "manifest": "liblzo2/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/liblzo2",
-            "sha256": "9fb770925debb86f4becf6ab90bc24a2889baf1a3e3ccd44f765f24099f78720"
+            "sha256": "198f5b771f906f45566baea40effdb37249196c5869a4eac72e53a17a160fa33"
           },
           "source": {
             "type": "git",
@@ -967,7 +967,7 @@
           "manifest": "libmagic/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmagic",
-            "sha256": "cda20cd0901f5aae4fe330da7cb3c67b524e8c2937019b3d9ca8c6264ee9706e"
+            "sha256": "394af0e78065d757b8d4e259bc1d468a8f42a28ff33c8c167a54894545eb7827"
           },
           "source": {
             "type": "git",
@@ -983,7 +983,7 @@
           "manifest": "libmariadb/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmariadb",
-            "sha256": "03a078adabfbdedd40bae3d3baf5ad5a69ed0a8b9d4d684c9f46b2b18f5e9f8c"
+            "sha256": "c2541ea558e03fa3ab8abf60130e40e68d34084c68421baf56c69b6276a840b8"
           },
           "source": {
             "type": "git",
@@ -999,7 +999,7 @@
           "manifest": "libmaxminddb/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmaxminddb",
-            "sha256": "1c4d82594eeebeedda08bf629d8a1aba676ee1407d717113778db153abb512ef"
+            "sha256": "a87eff2be3f1289919965254d01f52475480d4de5bb2bf74559ff950f2e64e58"
           },
           "source": {
             "type": "git",
@@ -1015,7 +1015,7 @@
           "manifest": "libmbedtls/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmbedtls",
-            "sha256": "d201fccca88eb704cfd01a037a08472806eb17df43f2cc50d8075f9a14fb4614"
+            "sha256": "19a4a255102a247741f5c6d757c43b826063c8f770d16ae852a1bdfa928c0e05"
           },
           "source": {
             "type": "git",
@@ -1031,7 +1031,7 @@
           "manifest": "libmicrohttpd/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmicrohttpd",
-            "sha256": "915080b806b115ed7531b8c16a39f1d01ac55faa8423022b45ebb944e983f466"
+            "sha256": "2bf8359a382601b1b6c2a48fcd2dea5c9bbaeb40281ac5018bc01d1f8652ec12"
           },
           "source": {
             "type": "git",
@@ -1047,7 +1047,7 @@
           "manifest": "libmodbus/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmodbus",
-            "sha256": "1b79a7a4ed15e1eed1f600633e3f2334201ec46c54a30334623ccaec5cc9a58a"
+            "sha256": "fbc5ea8ee8e84322f830912673ab82303eefb50bd353943bd09755462b367d8e"
           },
           "source": {
             "type": "git",
@@ -1063,7 +1063,7 @@
           "manifest": "libmongoc/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmongoc",
-            "sha256": "89fb01dae831d49cdbebe74e583eda8efa5bc08f33f7eaf9ebc8dbdbadd8ef98"
+            "sha256": "48bf0efe67bfefb5912c97590ceae757104cc8a290c3f1d5d7dc834425f2ab01"
           },
           "source": {
             "type": "git",
@@ -1079,7 +1079,7 @@
           "manifest": "libmosquitto/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmosquitto",
-            "sha256": "3857a9252e5f53feb244e50020198a30cada92993ef590d4ffa15c5aa29b5c12"
+            "sha256": "bce2cd3942852c86419d84af92f3bcf3b8486aaa5eb52cad1d631cd2c12fb0ba"
           },
           "source": {
             "type": "git",
@@ -1095,7 +1095,7 @@
           "manifest": "libmpfr/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmpfr",
-            "sha256": "afdbb3909775ca04c7f7a8f3558a300b54eea4734f7115cf637bf07bac487c71"
+            "sha256": "779588f62f782101a9d75c7d8e6da79bfbcdfc5c67a8c51c15c86dd75403f921"
           },
           "source": {
             "type": "git",
@@ -1111,7 +1111,7 @@
           "manifest": "libmpg123/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmpg123",
-            "sha256": "468328860f625e2a48d36536f41016c1e0330a7ebf354e8516437c01b59e6d9d"
+            "sha256": "0d74ea14cdecd522bdccdf071ab8ab3567cccc42782bad325d4ced7b85e15831"
           },
           "source": {
             "type": "git",
@@ -1127,7 +1127,7 @@
           "manifest": "libmsgpack/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libmsgpack",
-            "sha256": "375b625a1823460aad30921ae0ebeeef5ce5e2bfaf37c92bbd8c472365e1ca05"
+            "sha256": "16a4d127b5ffe0d3e1361e12996cd89a40250592d07362375dabc0500301b956"
           },
           "source": {
             "type": "git",
@@ -1143,7 +1143,7 @@
           "manifest": "libncurses/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libncurses",
-            "sha256": "4b7fef4efee0ef5ff54fd65573a688541298bfd0cea94db6590439741f8a5db6"
+            "sha256": "a8b27efc6c05f387b7a8cc84b2fc8aae1f13238f42e2b802af15b6855d6be959"
           },
           "source": {
             "type": "git",
@@ -1159,7 +1159,7 @@
           "manifest": "libnetcdf/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libnetcdf",
-            "sha256": "fa4c9ffcf5ff6d08d678bc7598f1f9f0065e98b32cf6d8d85f81189b7bc73944"
+            "sha256": "dfc67c1a95127a453a4bb5b188402937ebce5b6b9273830aa1055b7d1d43dec2"
           },
           "source": {
             "type": "git",
@@ -1175,7 +1175,7 @@
           "manifest": "libnettle/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libnettle",
-            "sha256": "9f765c71e740afe4f93faaf9747d8e2bfa631c1e164a22ee1c8118f045baf2ed"
+            "sha256": "8c5c0ee017fc723dceec2c357d265a880f2bd264b1753ca7b8e173c359bd0a5b"
           },
           "source": {
             "type": "git",
@@ -1191,7 +1191,7 @@
           "manifest": "libnfc/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libnfc",
-            "sha256": "211350a76203ab33127b7526059cb5d7689f37011d1bf93311be499d913e3672"
+            "sha256": "1f33082b5082d72f0aa7f4476a6292a47a6ffe5055557bde08ee26cc1eb78cc7"
           },
           "source": {
             "type": "git",
@@ -1207,7 +1207,7 @@
           "manifest": "libnghttp2/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libnghttp2",
-            "sha256": "243d0f19c1f5c92bed7b5a6713edd5c85c59718eb4dd17a76a507eaf99a6d1dd"
+            "sha256": "307dda1679b9bf4a61eb5a0bfeca8d309721654f8ae5c4cc347ae3b5f1665da1"
           },
           "source": {
             "type": "git",
@@ -1223,7 +1223,7 @@
           "manifest": "libnlopt/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libnlopt",
-            "sha256": "714f25201c8624d1e09068079b03339ffe5be767332bdc197834c9ce6dc550b1"
+            "sha256": "57c598caca00233a91b542eec105c3d9f7f9705a2b64dcbdb9ab9ae23118f3f6"
           },
           "source": {
             "type": "git",
@@ -1239,7 +1239,7 @@
           "manifest": "libnng/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libnng",
-            "sha256": "55bc22f1bd5bcfa7ec8fadb14db9f35faaf52f6b4e8e793dd56454322153bfc9"
+            "sha256": "05cc9cefff99f913a206424a8674efad14302cd06249a4a695234336653f1c5d"
           },
           "source": {
             "type": "git",
@@ -1255,7 +1255,7 @@
           "manifest": "libnotcurses/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libnotcurses",
-            "sha256": "087bc164853cfac15768140ebb22dd64b846eb8dc4db736c126ac949cead58e3"
+            "sha256": "891ac39503511176c0d5aee28ce8101d9d0d4f06dd6fa0befb256ec4d02b21ae"
           },
           "source": {
             "type": "git",
@@ -1271,7 +1271,7 @@
           "manifest": "libogg/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libogg",
-            "sha256": "8daa627f85dbfe296c430ef0209f7e4ce0e13655450f3dc0d09745145c60d24d"
+            "sha256": "5493c5373553cbb24b754e1a70eb0fadf45ba24df2d95003883d53bef66fdd3d"
           },
           "source": {
             "type": "git",
@@ -1287,7 +1287,7 @@
           "manifest": "liboniguruma/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/liboniguruma",
-            "sha256": "d98fc14a61a2c3b9323c9bf110b6690a07ec62b26ae1638d75aae765c6ec5f9a"
+            "sha256": "c04795f1054fddc2d6a16e762fdc35b5044c932984cd311b1c8b2c419c6e4074"
           },
           "source": {
             "type": "git",
@@ -1303,7 +1303,7 @@
           "manifest": "libopenal/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libopenal",
-            "sha256": "f1136e3f5940d02dc08c39c5cccef0fecf5cbb795dbb2e044a0109a09ad77a1b"
+            "sha256": "bcb5b932cc7bbbda3f785c2a7857058b63335d0d018ddbc1f7b2dda1ec506129"
           },
           "source": {
             "type": "git",
@@ -1319,7 +1319,7 @@
           "manifest": "libopenblas/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libopenblas",
-            "sha256": "d045b5583809b93d7c333b897594064663a50e376c7715cbef7861afdb808062"
+            "sha256": "08c4da3382ccf20deb6b63987eb59eecf9fb2e896fc53b730e930f787e25487a"
           },
           "source": {
             "type": "git",
@@ -1335,7 +1335,7 @@
           "manifest": "libopenjp2/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libopenjp2",
-            "sha256": "b1b4a5da206af49738c334fe1289d9ede65fdf52693b0f10593542f9c5d8cfce"
+            "sha256": "ee8d9348f96b8d5c9afa8510593157a7c788d68bc4bd49aa23fcce4396ab7b53"
           },
           "source": {
             "type": "git",
@@ -1351,7 +1351,7 @@
           "manifest": "libopus/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libopus",
-            "sha256": "1da4048f5962e4f02180327635765771b0cc5d944ef3a0c063acb92a53380a7e"
+            "sha256": "e6b35b82dc9d4f557e01526cb337bf9bdc977e3b4dc3e8a4b5fdf8dc02b35614"
           },
           "source": {
             "type": "git",
@@ -1367,7 +1367,7 @@
           "manifest": "libpango/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libpango",
-            "sha256": "77a39ae9f95b6d6ce574a7ec61c1228928cb1787eda8e7f6016c42acaead2bc3"
+            "sha256": "130c741bfbb391207a925dd8becca6c696ac5be6d0c66cf98a44e0e391c2e706"
           },
           "source": {
             "type": "git",
@@ -1383,7 +1383,7 @@
           "manifest": "libpcap/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libpcap",
-            "sha256": "acaf3d94dead423d88e036055fecded5ee708f00e43c1c7f1ca2df8190cb25bc"
+            "sha256": "1f3bea9ca8a4d44493f9ac54878e76b29c1a904641569194b73dfbe6623c7901"
           },
           "source": {
             "type": "git",
@@ -1399,7 +1399,7 @@
           "manifest": "libpcre2/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libpcre2",
-            "sha256": "7b126a1a4ab99da2b76e35b27a5eae31cced22729ef874da714a260016d579f7"
+            "sha256": "5e4af26f6ea3bb645c355e3cd800d2d3d2208fa4c01d93e425ec1c2c1399df53"
           },
           "source": {
             "type": "git",
@@ -1415,7 +1415,7 @@
           "manifest": "libpixman/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libpixman",
-            "sha256": "ddfd634db76bff016c796d8f7a7e7e91f27a680f100a79270b1231827f7b0d49"
+            "sha256": "e02ca7473d6626c8ef572ace60e120de9559f9331f688b3ed4e42be64e74494b"
           },
           "source": {
             "type": "git",
@@ -1431,7 +1431,7 @@
           "manifest": "libpng/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libpng",
-            "sha256": "fd379eb6f331bfc9f0901a08bb964434ed32a5db24c1fc9b174789025f78ac5b"
+            "sha256": "23a38704422c521a79186a38196e36a7706c2debc4f64e84550960cdfd2e3b3e"
           },
           "source": {
             "type": "git",
@@ -1447,7 +1447,7 @@
           "manifest": "libpopt/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libpopt",
-            "sha256": "d00c83a15a949083b61da94afaefcab1da4ad868c99b44d7ad06a80c85c2d33c"
+            "sha256": "46df253f1f9c3141049a31d95735babf87365082eee5e24ac01471739b45bd11"
           },
           "source": {
             "type": "git",
@@ -1463,7 +1463,7 @@
           "manifest": "libportaudio/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libportaudio",
-            "sha256": "46f69baa81bd596a89ffc4d9d1b30400091124f89a154699ab8709ee4189f450"
+            "sha256": "3bfd623bafa73899cef3ce425f3233543e65f34e90a6f88b2181c27f6f6efbce"
           },
           "source": {
             "type": "git",
@@ -1479,7 +1479,7 @@
           "manifest": "libpq/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libpq",
-            "sha256": "b2b3a8893aa761a4a7e8da45b35ee96d1cb08e890c58a50c3ceec1de8f841267"
+            "sha256": "5a590d5bdae61c2a249d957fed099bf00c2dd0e504b164f06a1b0e4a1e0790b9"
           },
           "source": {
             "type": "git",
@@ -1495,7 +1495,7 @@
           "manifest": "libproj/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libproj",
-            "sha256": "afd37cc8fca5270b5cf692d4883a645c1783f8abca34413590654ad81ce0a74c"
+            "sha256": "7d48c99e66a21747153a8b6af64a2ada751e382aabd6006d6227543a0808d7cd"
           },
           "source": {
             "type": "git",
@@ -1511,7 +1511,7 @@
           "manifest": "libprotobufc/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libprotobufc",
-            "sha256": "daaedc89ccedb805b3eea1b08fc1c825858ca6b43bcde8c9725e6c5ab35b304f"
+            "sha256": "519ad154ca68b83760d08625e46b7d1ec7ab019e0d8c40afc2eebf94af62b7d5"
           },
           "source": {
             "type": "git",
@@ -1527,7 +1527,7 @@
           "manifest": "libquickjs/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libquickjs",
-            "sha256": "d0a4a4c63c17aad99e53b8f405bfdcf71994132f38f2768a18b62b28db87201f"
+            "sha256": "395648a94ff33c55c7e32d562565276404809aa672d9038f130c5225ca5f31aa"
           },
           "source": {
             "type": "git",
@@ -1543,7 +1543,7 @@
           "manifest": "libraw/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libraw",
-            "sha256": "c54caae6bff72a06dffcac09479364a1ba5f9f222f1138d5f257f6f88c4259de"
+            "sha256": "cdf78456f62bb0b37b53286c5fe7e02f1a2bd89cbca464995e98f9a45be9c3bd"
           },
           "source": {
             "type": "git",
@@ -1559,7 +1559,7 @@
           "manifest": "libreadline/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libreadline",
-            "sha256": "0e74ea043718a70c24a57c78b672ce8fa19b421e51fb48bf342f4455a2537f06"
+            "sha256": "fd371637830f96a515bbf026dcbd750fc8012819ea2c6d24d617ec26b5c156be"
           },
           "source": {
             "type": "git",
@@ -1575,7 +1575,7 @@
           "manifest": "librocksdb/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/librocksdb",
-            "sha256": "e2202884d2da693d2ee1ab747f41526228ab3d75bba073058a329ce0bd02124c"
+            "sha256": "06bcbdbb67fe2b2c24d2cadbef163835f3b652b8193cc19867f60294366877d5"
           },
           "source": {
             "type": "git",
@@ -1591,7 +1591,7 @@
           "manifest": "librtlsdr/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/librtlsdr",
-            "sha256": "f2f3f66693ec04bb0526cf809b763fca77b0b3f398f1e6b6a00c1deb03efe983"
+            "sha256": "99be2abf92c75b40241eb0fa2cd89837dc64828d255d486e26b98e84c0485fe7"
           },
           "source": {
             "type": "git",
@@ -1607,7 +1607,7 @@
           "manifest": "libsamplerate/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libsamplerate",
-            "sha256": "03de24fb0b1dcd3a226c3289101e37256ad174ba4aa63abdc269be9b3efb46ca"
+            "sha256": "faba4b4685408117b0c5dc3314c2e575bbd9694b556d4e4c9787ad1958130b46"
           },
           "source": {
             "type": "git",
@@ -1623,7 +1623,7 @@
           "manifest": "libsdl/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libsdl",
-            "sha256": "ab13348dedd3552444482979af0ab1cce424b6a41c9f58a5e8ea8ec673af38a1"
+            "sha256": "f2131c4504316d8c173f00ec2aeaa358081e31cd44dacf14961f99eddbd87040"
           },
           "source": {
             "type": "git",
@@ -1639,7 +1639,7 @@
           "manifest": "libseccomp/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libseccomp",
-            "sha256": "49f29c97646cea8270382ef2f939e0ea2182f0ae3e6efc4896741f25833403e9"
+            "sha256": "52e9c5f686c77da563c3aaf5a72ac1c0d14e5fb71876218a36086ebb0716a1c8"
           },
           "source": {
             "type": "git",
@@ -1655,7 +1655,7 @@
           "manifest": "libsecp256k1/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libsecp256k1",
-            "sha256": "75ac93ffa9f20edad321a383c1d5c6a02c915689ce89172c8dc61dc71c9ddc2b"
+            "sha256": "1cd63d260e5c62fd33727ccacdcec45e4a9cf663c099a7410c74e8d173333626"
           },
           "source": {
             "type": "git",
@@ -1671,7 +1671,7 @@
           "manifest": "libserialport/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libserialport",
-            "sha256": "3c8663a13e463fef345a9c5328ca2e81005e2951c79863f4e30b10962796000b"
+            "sha256": "7cb199e4ea6213ff9ef22a54ac7976a04d55288a05603eeecb07c20a7fb38299"
           },
           "source": {
             "type": "git",
@@ -1687,7 +1687,7 @@
           "manifest": "libsixel/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libsixel",
-            "sha256": "eb78dc9d258147c1e91df8a77f7799d14bee4b80f2924e1904a808fc2124ac64"
+            "sha256": "85c341eec408b8d558453bf2e047a042e8f0032d72d3012879c16294a0c67d0a"
           },
           "source": {
             "type": "git",
@@ -1703,7 +1703,7 @@
           "manifest": "libsnappy/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libsnappy",
-            "sha256": "b3007e0bbd15636707442b31c1259886ae6bf1b437fc70568b26257a6d656d8e"
+            "sha256": "b383838ffa11e42e0f2e71681f42742b0f04daf373aa3cac355a32fa65e733e2"
           },
           "source": {
             "type": "git",
@@ -1719,7 +1719,7 @@
           "manifest": "libsndfile/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libsndfile",
-            "sha256": "f7623d1057fab670b58b68652f93972f53f3b3631e2c2e58584817aa559c7806"
+            "sha256": "4d4105c3919d438780620299fdc1282de4334ece4713aea7dc3e03c85e69136a"
           },
           "source": {
             "type": "git",
@@ -1735,7 +1735,7 @@
           "manifest": "libsodium/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libsodium",
-            "sha256": "3e8a99564f27397de93ab748d73febb64da036befc206b38cf86acb3c1ffa7e3"
+            "sha256": "f191751f62075bbb5bf6b45933ca22dd09f1c6f4f6779b8e1b57a6b54b40ec1c"
           },
           "source": {
             "type": "git",
@@ -1751,7 +1751,7 @@
           "manifest": "libsoxr/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libsoxr",
-            "sha256": "bfb59f99a2cd06e6d5845395c88e668c2041907156e9a2039b9ce39726f2d38f"
+            "sha256": "a11a4903dfeb992f83f1dd415e292b0b613065dc613c08dd34d6651f78aef038"
           },
           "source": {
             "type": "git",
@@ -1767,7 +1767,7 @@
           "manifest": "libspeex/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libspeex",
-            "sha256": "6a4399f0a2f8de9b2a3ced0bf6983473990eb722b94811be9cfe8532c8d88edc"
+            "sha256": "9e57caaa6105e9f28194b8f533f8b0fbfa8e5f61eae35451fc93173424616cee"
           },
           "source": {
             "type": "git",
@@ -1783,7 +1783,7 @@
           "manifest": "libsqlite3/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libsqlite3",
-            "sha256": "13eae91097b77bde4bd869666c221d000c71b772d0632472052a611ae2cf0439"
+            "sha256": "7a7e4459ca68c95bb62172fd809253e61facf51fd4e2177d0150e6c265f32371"
           },
           "source": {
             "type": "git",
@@ -1799,7 +1799,7 @@
           "manifest": "libssh/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libssh",
-            "sha256": "13dbfa1c341005061eba1f153b2e710ed4289347e4ff60f3f2e8f692740c6beb"
+            "sha256": "fc7d56e78f1ca46e76544119fac2a771cf28e53d64d7761bbaff415ccdbd15d6"
           },
           "source": {
             "type": "git",
@@ -1815,7 +1815,7 @@
           "manifest": "libssh2/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libssh2",
-            "sha256": "886af729b309b70d06a7caa4fca50309bb4ddff7e3ef2914d3a738bd4264fdae"
+            "sha256": "d8ca8c41593590ba81e374bb5aaefb16681e5a9eeada8973ec916082da5aad9a"
           },
           "source": {
             "type": "git",
@@ -1831,7 +1831,7 @@
           "manifest": "libswscale/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libswscale",
-            "sha256": "55149f08c36c91f6fe9f4c39a9f14452fb43d6f4674d2642ebae2654e38fd3f4"
+            "sha256": "089aa90ad8efabfe2242f96faef5b3ad776000ed6d8436e2f0843031169ec6a4"
           },
           "source": {
             "type": "git",
@@ -1847,7 +1847,7 @@
           "manifest": "libtcc/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libtcc",
-            "sha256": "a75ce1ec953ff9b1de123fbf367ef43840175c89ce87669a1a5c192098ddf064"
+            "sha256": "d09949654c89ac074c1ad3db555bf7dfb8d57f3ef17086e3136ec77bc4e39dd9"
           },
           "source": {
             "type": "git",
@@ -1863,7 +1863,7 @@
           "manifest": "libtheora/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libtheora",
-            "sha256": "4325ba5105c9a01faba88239eb877838e08ccf646604c737a571e135ecf8f68a"
+            "sha256": "71494dec1ae5ad0bded8407c624d60de93f6efaa4c6dfda5a5c28ab645e57435"
           },
           "source": {
             "type": "git",
@@ -1879,7 +1879,7 @@
           "manifest": "libtidy/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libtidy",
-            "sha256": "88bbe85392573d3f3b951c540e36dc982d677e43916b21c9e78823836a9148a8"
+            "sha256": "a0ad5118790141a9c05f10798b090710ed74d4545d1c8a1cc05935f5531272bc"
           },
           "source": {
             "type": "git",
@@ -1895,7 +1895,7 @@
           "manifest": "libtiff/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libtiff",
-            "sha256": "8a5c3a69722769368509d462ad90f1bdd85e600b0d599e79ddc80f0836e45427"
+            "sha256": "fdfc0d8fbf60516b50f18af9896cbbcfe66e7e9e9fe7a53e69e99f0611d35c73"
           },
           "source": {
             "type": "git",
@@ -1911,7 +1911,7 @@
           "manifest": "libtreesitter/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libtreesitter",
-            "sha256": "344edf48fecf6ad022931806957b20100f4cd5c9c622be0a069c057e0e2cee5b"
+            "sha256": "9ff8aa5894c7d30bbc0da96a0faa6cf52651cfafaa9e2575d5289c80231f061b"
           },
           "source": {
             "type": "git",
@@ -1927,7 +1927,7 @@
           "manifest": "libudev/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libudev",
-            "sha256": "0c3bddea31d114838d47b0ae583b0c4099f256c4818ed34b858a412c80ece680"
+            "sha256": "6d9b4fa56c7a45b243bb3be536df037a833683155a2e290a61fa8972d3af893d"
           },
           "source": {
             "type": "git",
@@ -1943,7 +1943,7 @@
           "manifest": "liburiparser/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/liburiparser",
-            "sha256": "72a77c96a304cebb5aaa21483237130c057c205b09a2f08b04bd75d98a04955a"
+            "sha256": "f70b066e8fbbfb7f62d507761c978a15d0c2a50c7c58314b921d063b9871e215"
           },
           "source": {
             "type": "git",
@@ -1959,7 +1959,7 @@
           "manifest": "libusb/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libusb",
-            "sha256": "ff6822ba361525fc36f43ec5c7c84d3cb2acf453e2cd9640d9a972ad2b5e7478"
+            "sha256": "b7390b377be67f09a7f3a0d04ad874ecfde2f836d365743e4d4bece27fbb7690"
           },
           "source": {
             "type": "git",
@@ -1975,7 +1975,7 @@
           "manifest": "libutf8proc/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libutf8proc",
-            "sha256": "893c8e2ae9de0952fc5b716a98cc8f375c5071f0481e815aaedb5242fa8b1a49"
+            "sha256": "0d6d0affefd8df4d9be6b14f42a29ad2906da94ec1435744d9025a463ffb468a"
           },
           "source": {
             "type": "git",
@@ -1991,7 +1991,7 @@
           "manifest": "libuuid/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libuuid",
-            "sha256": "c21c1e32236e866ca0f1ee6d89b6fb54f6236786877674157f9df2143274d3c7"
+            "sha256": "426cd6b6b94e624f268377d65ba53220f92e4bf25d0310a65ab3d861fe0d12dd"
           },
           "source": {
             "type": "git",
@@ -2007,7 +2007,7 @@
           "manifest": "libuv/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libuv",
-            "sha256": "1be4865b68ad08fb21daf1012bc0a34803eca43c0a5869176b49b699dfa4c7b0"
+            "sha256": "9a1377b4db7a2c93388d2667235e4d4f525ab64c9d1bc228df27163bfca0bcfd"
           },
           "source": {
             "type": "git",
@@ -2023,7 +2023,7 @@
           "manifest": "libvips/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libvips",
-            "sha256": "48fd7bd20c20605e90d49feca41a7499f16b3494af15f4f6bebce5ff4aa22c5c"
+            "sha256": "72acabbd48df425f9de69721953a8fb14894a8a50221c49de8f8ee963458f6db"
           },
           "source": {
             "type": "git",
@@ -2039,7 +2039,7 @@
           "manifest": "libvorbis/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libvorbis",
-            "sha256": "d37d9d850ee6c35a42fe7875cd50a6da611058a732f152be86584365cceed6c8"
+            "sha256": "777d82550568431a459b76aa59ff8aa3731b6858e26fca8ae4a6d26df2f2b15a"
           },
           "source": {
             "type": "git",
@@ -2055,7 +2055,7 @@
           "manifest": "libvpx/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libvpx",
-            "sha256": "883f4633af505cc205bf96564cfb1674eeff2013adad069c7adc3e49c9059bdd"
+            "sha256": "e1d6ee607f8d6d1c43502205c1d9b1b03190462799c5c6c797bef4c4167c1b91"
           },
           "source": {
             "type": "git",
@@ -2071,7 +2071,7 @@
           "manifest": "libvterm/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libvterm",
-            "sha256": "e62adc95509cb079ad6932d8fbec2a1d71d097646d2ba298b18de431d35e0158"
+            "sha256": "358a59455b98503f8901cbf2e757bf7fe0ea049fc75960b168cba7e22e02e3e5"
           },
           "source": {
             "type": "git",
@@ -2087,7 +2087,7 @@
           "manifest": "libvulkan/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libvulkan",
-            "sha256": "cfcab9c843e85bf3e0d061126140516caa0ec62b75a34fd7b2545b6445dfc28e"
+            "sha256": "37dde4cbea61e9feb3bb7091a5b17d457620c07ca5637c38d82a438c7c60a47c"
           },
           "source": {
             "type": "git",
@@ -2103,7 +2103,7 @@
           "manifest": "libwavpack/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libwavpack",
-            "sha256": "e422850cb4a8443bd11b40bde85b02c895a4ead4456fc63629f22362d302342d"
+            "sha256": "68a4d2f7b625b00ba4bf792c27ec874ac831df5be84e7baf8abc62f4a09d021a"
           },
           "source": {
             "type": "git",
@@ -2119,7 +2119,7 @@
           "manifest": "libwebp/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libwebp",
-            "sha256": "4af65950253d98f4cfecbd0eefbc830db2f78d0b8016701e24112ee4f2023695"
+            "sha256": "178683704968bde5426c047618d0dcfe440e755cf308660850b455df9dcd5fe4"
           },
           "source": {
             "type": "git",
@@ -2135,7 +2135,7 @@
           "manifest": "libwebsockets/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libwebsockets",
-            "sha256": "661c3e56aea7efa873ae3bac9afe30e5dd6a9b7b9793a4a7ce1db54c853e0127"
+            "sha256": "0172b6cc15dde4be41b92fba0be9604d8e254e1bb614d36442b333ad2fad9c6a"
           },
           "source": {
             "type": "git",
@@ -2151,7 +2151,7 @@
           "manifest": "libxml2/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libxml2",
-            "sha256": "47c8ae56ab4a4dba688e99d4c415da842b1c498774aee5d726943d1a7fb301b8"
+            "sha256": "fef5385aded0fde98abd1a926c7d3146d5560fdab216ac6720f5c1085636bdaf"
           },
           "source": {
             "type": "git",
@@ -2167,7 +2167,7 @@
           "manifest": "libxslt/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libxslt",
-            "sha256": "c355a15d4ce716a842f4c5d978c351b92681bbc0a02217e6ee115dc41a220715"
+            "sha256": "e1486097114e23bf12a3336127019a4d53c62589035e8ed6dcc37a6bff69d389"
           },
           "source": {
             "type": "git",
@@ -2183,7 +2183,7 @@
           "manifest": "libxxhash/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libxxhash",
-            "sha256": "7c74a6233f64a27f8772218368d89c8fc6adc1ff9a4ea630da3839f9b5817aa3"
+            "sha256": "7129c7cc9374b62c9055d504587dc3aaabcbb232e841f14912328a10c7f632f4"
           },
           "source": {
             "type": "git",
@@ -2199,7 +2199,7 @@
           "manifest": "libyajl/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libyajl",
-            "sha256": "76c59871260726fb1c16c4541b5f9e41d0297ee6ec4378f37350782fe8ad0668"
+            "sha256": "c2b510ea138a809d57b74bb67d72e505a5ca1284927d8e0f930c736bff2d1772"
           },
           "source": {
             "type": "git",
@@ -2215,7 +2215,7 @@
           "manifest": "libyaml/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libyaml",
-            "sha256": "992a799cb8a2f9499dc4cb1ad1494bf1e0c45768b6f234733143abb648f473d8"
+            "sha256": "01222df0d7a49d890c1db4b433bb29783d69788c330eb468064c242442688d9a"
           },
           "source": {
             "type": "git",
@@ -2231,7 +2231,7 @@
           "manifest": "libzip/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libzip",
-            "sha256": "29cb7edc56568425d6f5377d75eb2a2cf8a7cabae6f3769766cb704d8a8b0393"
+            "sha256": "c4635ee228ba3b9348849ea497bab6a3be916012b3a96b0ddbf6a08d9ff1f052"
           },
           "source": {
             "type": "git",
@@ -2247,7 +2247,7 @@
           "manifest": "libzmq/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libzmq",
-            "sha256": "db1f18c28a04eaadf3e5f4c6299ef580d1c9f2922ee4cd54b249dc5b70f3b868"
+            "sha256": "e79f8813a70a1b23d9f8bf6fd1322a22b1087707e7b5d45325dfe6f34cdbf54a"
           },
           "source": {
             "type": "git",
@@ -2263,7 +2263,7 @@
           "manifest": "libzstd/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/libzstd",
-            "sha256": "fbbd7fe0436ec2765d1d1a7e21eb9e7dc7e2870e1dae4ee85dd4d02169b27824"
+            "sha256": "79c0facca6e5d8c1ec27efbb6ae5eecb90de84d5e53e81d2fbe700a44fea1328"
           },
           "source": {
             "type": "git",
@@ -2279,7 +2279,7 @@
           "manifest": "openssl/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/openssl",
-            "sha256": "6f209a26785b4bfc41b04a7cd774db71977fa05c4d490aeebf27a8ee08100637"
+            "sha256": "588c84fbf065f89f5515d8715c9885129ed241f25824aba2133e9990a837a476"
           },
           "source": {
             "type": "git",
@@ -2295,7 +2295,7 @@
           "manifest": "zlib/pnlx.json",
           "dist": {
             "url": "https://github.com/m3m0r7/pnl-packages/tree/main/packages/zlib",
-            "sha256": "f1daf66282ddaa5d92287e18b2928e144e12f190fffb634e3d976e1f695aba83"
+            "sha256": "a2c71bd8ea3ebb6845ca1c6ca84dcb7f4cd977c474433e7a25b557cc3818eaea"
           },
           "source": {
             "type": "git",

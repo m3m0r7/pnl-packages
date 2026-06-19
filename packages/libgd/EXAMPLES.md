@@ -13,11 +13,10 @@ if (is_null($image)) {
 $red  = Libgd::gdImageColorAllocate($image, 255, 0, 0);
 Libgd::gdImageFilledRectangle($image, 0, 0, 199, 99, $red);
 
-// gdImagePngPtr(image, &size) returns a PNG blob in memory.
-$allocator = (new \Pnlx\FFI\Allocator());
-$size = $allocator->make(\Pnlx\FFI\AllocationType::Int);
+// gdImagePngPtr(image, int *size) writes the blob length into its out-parameter.
+$size = 0;
 $png = Libgd::gdImagePngPtr($image, $size);
-echo "PNG blob: " . $size->cdata . " bytes" . PHP_EOL;
+echo "PNG blob: {$size} bytes" . PHP_EOL;
 
 Libgd::gdFree($png);
 Libgd::gdImageDestroy($image);

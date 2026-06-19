@@ -3,15 +3,8 @@
 ```php
 use Pnlx\Libdbus\Libdbus;
 
-// dbus_get_local_machine_id() returns the machine's D-Bus UUID as a string.
-$machineId = Libdbus::dbus_get_local_machine_id();
-echo "Machine ID: " . $machineId . PHP_EOL;
-
-// Retrieve library version components via out-parameters.
-$allocator = (new \Pnlx\FFI\Allocator());
-$major = $allocator->make(\Pnlx\FFI\AllocationType::Int);
-$minor = $allocator->make(\Pnlx\FFI\AllocationType::Int);
-$micro = $allocator->make(\Pnlx\FFI\AllocationType::Int);
+// dbus_get_version writes major/minor/micro through int* out-parameters (no bus needed).
+$major = 0; $minor = 0; $micro = 0;
 Libdbus::dbus_get_version($major, $minor, $micro);
-echo "libdbus version: {$major->cdata}.{$minor->cdata}.{$micro->cdata}" . PHP_EOL;
+echo "libdbus {$major}.{$minor}.{$micro}\n";
 ```

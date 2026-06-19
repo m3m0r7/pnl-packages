@@ -3,23 +3,6 @@
 ```php
 use Pnlx\Libargon2\Libargon2;
 
-// Hash a password with Argon2id and verify it
-// argon2id_hash_encoded writes into a caller-supplied buffer (char *encoded)
-$password   = 'hunter2';
-$salt       = 'somesalt12345678'; // 16 bytes
-$encodedLen = 512;
-$encodedBuf = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::VoidPointer);
-
-$rc = Libargon2::argon2id_hash_encoded(
-    2,              // t_cost: iterations
-    1 << 16,        // m_cost: memory (64 MiB)
-    1,              // parallelism
-    $password, strlen($password),
-    $salt, strlen($salt),
-    32,             // hash length in bytes
-    $encodedBuf, $encodedLen
-);
-// ARGON2_OK == 0
-echo $rc === 0 ? "hash ok\n" : 'error: ' . Libargon2::argon2_error_message($rc) . "\n";
-// Verify: Libargon2::argon2id_verify($encodedBuf, $password, strlen($password))
+// argon2_type2string maps an argon2 type id to its name (0=Argon2d, 1=Argon2i, 2=Argon2id).
+echo Libargon2::argon2_type2string(1, 1) . "\n"; // Argon2i
 ```

@@ -101,7 +101,9 @@
       ],
       "header_names": [
         "libxml/parser.h",
-        "libxml/tree.h"
+        "libxml/tree.h",
+        "libxml2/libxml/parser.h",
+        "libxml2/libxml/tree.h"
       ],
       "version": ">=2.9.0 & <3.0.0",
       "required": true

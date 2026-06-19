@@ -3,13 +3,8 @@
 ```php
 use Pnlx\Libvulkan\Libvulkan;
 
-// vkEnumerateInstanceVersion() fills an out-parameter with the Vulkan
-// instance version packed as (major<<22|minor<<12|patch).
-$pApiVersion = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int);
-$result = Libvulkan::vkEnumerateInstanceVersion($pApiVersion);
-$ver = $pApiVersion[0];
-echo sprintf("Vulkan %d.%d.%d (VkResult=%d)\n",
-    ($ver >> 22) & 0x7f, ($ver >> 12) & 0x3ff, $ver & 0xfff, $result);
-
-// Explore further: vkCreateInstance(), vkEnumeratePhysicalDevices(), ...
+// vkEnumerateInstanceVersion writes the loader's API version through a uint32* out-param.
+$version = 0;
+Libvulkan::vkEnumerateInstanceVersion($version);
+printf("Vulkan %d.%d.%d\n", ($version >> 22) & 0x7f, ($version >> 12) & 0x3ff, $version & 0xfff);
 ```

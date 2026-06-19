@@ -1,7 +1,8 @@
 # libc
 
-A zero-dependency pnl package that wraps a few functions from the C standard
-library (`printf`, `puts`).
+A zero-dependency pnl package that declares the portable C standard library
+surface exposed by libc: ctype, inttypes, locale, setjmp/longjmp, signal, stdio,
+stdlib, string/memory, time, wide-character, and wide-ctype functions.
 
 libc is part of the operating system — it ships with macOS (as part of
 libSystem, in the dyld shared cache), Linux (glibc/musl), and Windows — so there
@@ -13,6 +14,9 @@ pnl install libc
 ```
 
 ```php
-$libc = $runtime->load(Pnlx\Libc\Libc::class);
-$libc->printf("Hello, World from libc!\n");
+use Pnlx\Libc\Libc;
+use Pnlx\Helpers\String_;
+
+Libc::puts(new String_("Hello, World from libc!"));
+echo Libc::strlen(new String_("pnl"))->toInt(), PHP_EOL;
 ```

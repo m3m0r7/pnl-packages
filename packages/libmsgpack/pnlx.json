@@ -97,7 +97,8 @@
       "library_names": [
         "libmsgpackc.dylib",
         "libmsgpackc.so",
-        "msgpackc.dll"
+        "msgpackc.dll",
+        "libmsgpack-c.so"
       ],
       "header_names": [
         "msgpack.h"

@@ -28,7 +28,7 @@
         "sudo apt-get install -y libreadline-dev"
       ],
       "checkIfExists": [
-        "ldconfig -p | grep -q libreadline"
+        "dpkg -s libreadline-dev >/dev/null 2>&1"
       ]
     },
     "debian": {

@@ -41,7 +41,7 @@
     },
     "alpine": {
       "install": [
-        "apk add gumbo-dev"
+        "apk add gumbo-parser-dev"
       ],
       "checkIfExists": [
         "apk info -e gumbo-dev"

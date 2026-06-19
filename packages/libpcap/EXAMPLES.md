@@ -2,19 +2,14 @@
 
 ```php
 use Pnlx\Libpcap\Libpcap;
-use function Pnlx\Util\is_null;
 
-// Query the library version string (char* → PHP string)
-$version = Libpcap::pcap_lib_version();
-echo "libpcap version: $version\n";
+echo Libpcap::pcap_lib_version() . "\n"; // e.g. "libpcap version 1.10.x"
 
-// Look up the default network device for capture
-$errbuf = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::VoidPointer);
-$handle = Libpcap::pcap_open_live('eth0', 65535, 1, 1000, $errbuf);
-if (is_null($handle)) {
-    echo "Could not open device\n";
-} else {
-    // ... capture packets with pcap_loop() / pcap_next() ...
-    Libpcap::pcap_close($handle);
+// pcap_open_dead() builds a capture handle with no live device — useful for
+// compiling/inspecting without root or an interface. Close it when done.
+$pcap = Libpcap::pcap_open_dead(1 /* DLT_EN10MB */, 65535);
+echo $pcap !== null ? "pcap handle created\n" : "failed\n";
+if ($pcap !== null) {
+    Libpcap::pcap_close($pcap);
 }
 ```

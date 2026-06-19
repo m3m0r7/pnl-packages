@@ -4,17 +4,21 @@
 use Pnlx\Libleveldb\Libleveldb;
 use function Pnlx\Util\is_null;
 
-// Open a LevelDB database, write a key, read it back, then close.
+// Open a LevelDB database, write a key, read it back, then close. The char**
+// error and size_t* value-length out-parameters are plain variables by reference.
 $options = Libleveldb::leveldb_options_create();
 Libleveldb::leveldb_options_set_create_if_missing($options, 1);
-$errPtr = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::VoidPointer);
-$db = Libleveldb::leveldb_open($options, '/tmp/pnl-test-leveldb', $errPtr);
+$err = null;
+$db = Libleveldb::leveldb_open($options, '/tmp/pnl-test-leveldb', $err);
+if (is_null($db)) {
+    throw new \RuntimeException('leveldb_open failed: ' . ($err ?? 'unknown'));
+}
 $wopts = Libleveldb::leveldb_writeoptions_create();
-Libleveldb::leveldb_put($db, $wopts, 'hello', 5, 'world', 5, $errPtr);
+Libleveldb::leveldb_put($db, $wopts, 'hello', 5, 'world', 5, $err);
 $ropts = Libleveldb::leveldb_readoptions_create();
-$vlenPtr = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::Int64);
-$val = Libleveldb::leveldb_get($db, $ropts, 'hello', 5, $vlenPtr, $errPtr);
+$vlen = 0;
+$val = Libleveldb::leveldb_get($db, $ropts, 'hello', 5, $vlen, $err);
 echo $val . PHP_EOL; // "world"
+
 Libleveldb::leveldb_close($db);
-Libleveldb::leveldb_options_destroy($options);
 ```

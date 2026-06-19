@@ -95,7 +95,8 @@
         "dbus-1.dll"
       ],
       "header_names": [
-        "dbus/dbus.h"
+        "dbus/dbus.h",
+        "dbus-1.0/dbus/dbus.h"
       ],
       "version": ">=1.12.0 & <2.0.0",
       "required": true
