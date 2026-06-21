@@ -1,0 +1,34 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libpoppler/libpoppler",
+  "version": "24.4.0",
+  "description": "PHP FFI wrapper for Poppler (glib API), the PDF rendering library.",
+  "authors": [ { "name": "Libpoppler maintainers" } ],
+  "license": "GPL-2.0-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libpoppler\\Libpoppler",
+  "examples": [ "EXAMPLES.md" ],
+  "installation": {
+    "darwin": { "install": [ "brew install poppler" ], "checkIfExists": [ "brew list poppler" ] },
+    "ubuntu": { "install": [ "sudo apt-get install -y libpoppler-glib-dev" ],
+      "checkIfExists": [ "pkg-config --exists poppler-glib" ] },
+    "debian": { "install": [ "sudo apt-get install -y libpoppler-glib-dev" ],
+      "checkIfExists": [ "pkg-config --exists poppler-glib" ] },
+    "fedora": { "install": [ "sudo dnf install -y poppler-glib-devel" ],
+      "checkIfExists": [ "pkg-config --exists poppler-glib" ] }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" }, { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" }, { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "poppler": {
+      "symbol_prefix": "poppler",
+      "library_names": [ "libpoppler-glib.dylib", "libpoppler-glib.so", "poppler-glib.dll" ],
+      "header_names": [ "poppler/glib/poppler.h" ],
+      "version": ">=20.0.0 & <26.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

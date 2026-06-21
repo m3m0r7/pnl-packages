@@ -1,0 +1,73 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libsrt/libsrt",
+  "version": "1.5.4",
+  "description": "PHP FFI wrapper for SRT, the Secure Reliable Transport protocol.",
+  "authors": [
+    {
+      "name": "Libsrt maintainers"
+    }
+  ],
+  "license": "MPL-2.0",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libsrt\\Libsrt",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install srt"
+      ],
+      "checkIfExists": [
+        "brew list srt"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libsrt-openssl-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists srt"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libsrt-openssl-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists srt"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y srt-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists srt"
+      ]
+    }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" },
+    { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" },
+    { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "srt": {
+      "symbol_prefix": "srt",
+      "library_names": [
+        "libsrt.dylib",
+        "libsrt.so",
+        "srt.dll"
+      ],
+      "header_names": [
+        "srt/srt.h"
+      ],
+      "version": ">=1.4.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

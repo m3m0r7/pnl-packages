@@ -1,0 +1,64 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libmpdecimal/libmpdecimal",
+  "version": "4.0.1",
+  "description": "PHP FFI wrapper for mpdecimal, the arbitrary-precision decimal library.",
+  "authors": [
+    {
+      "name": "Libmpdecimal maintainers"
+    }
+  ],
+  "license": "BSD-2-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libmpdecimal\\Libmpdecimal",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install mpdecimal"
+      ],
+      "checkIfExists": [
+        "brew list mpdecimal"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libmpdec-dev"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libmpdec-dev"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y mpdecimal-devel"
+      ]
+    }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" },
+    { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" },
+    { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "mpdecimal": {
+      "symbol_prefix": "mpd",
+      "library_names": [
+        "libmpdec.dylib",
+        "libmpdec.so",
+        "mpdec.dll"
+      ],
+      "header_names": [
+        "mpdecimal.h"
+      ],
+      "version": ">=2.5.0 & <5.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

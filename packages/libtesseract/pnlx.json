@@ -1,0 +1,73 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libtesseract/libtesseract",
+  "version": "5.5.0",
+  "description": "PHP FFI wrapper for the Tesseract OCR engine C API.",
+  "authors": [
+    {
+      "name": "Libtesseract maintainers"
+    }
+  ],
+  "license": "Apache-2.0",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libtesseract\\Libtesseract",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install tesseract"
+      ],
+      "checkIfExists": [
+        "brew list tesseract"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libtesseract-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists tesseract"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libtesseract-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists tesseract"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y tesseract-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists tesseract"
+      ]
+    }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" },
+    { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" },
+    { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "tesseract": {
+      "symbol_prefix": "Tess",
+      "library_names": [
+        "libtesseract.dylib",
+        "libtesseract.so",
+        "tesseract.dll"
+      ],
+      "header_names": [
+        "tesseract/capi.h"
+      ],
+      "version": ">=5.0.0 & <6.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libtasn1/libtasn1",
+  "version": "4.20.0",
+  "description": "PHP FFI wrapper for GNU Libtasn1, an ASN.1 / DER library.",
+  "authors": [
+    {
+      "name": "Libtasn1 maintainers"
+    }
+  ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libtasn1\\Libtasn1",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install libtasn1"
+      ],
+      "checkIfExists": [
+        "brew list libtasn1"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libtasn1-6-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libtasn1"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libtasn1-6-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libtasn1"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libtasn1-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libtasn1"
+      ]
+    }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" },
+    { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" },
+    { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "libtasn1": {
+      "symbol_prefix": "asn1",
+      "library_names": [
+        "libtasn1.dylib",
+        "libtasn1.so",
+        "tasn1.dll"
+      ],
+      "header_names": [
+        "libtasn1.h"
+      ],
+      "version": ">=4.0.0 & <5.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

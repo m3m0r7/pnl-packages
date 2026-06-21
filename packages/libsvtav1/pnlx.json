@@ -1,0 +1,73 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libsvtav1/libsvtav1",
+  "version": "3.1.2",
+  "description": "PHP FFI wrapper for SVT-AV1, the scalable AV1 encoder.",
+  "authors": [
+    {
+      "name": "Libsvtav1 maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libsvtav1\\Libsvtav1",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install svt-av1"
+      ],
+      "checkIfExists": [
+        "brew list svt-av1"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libsvtav1enc-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists SvtAv1Enc"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libsvtav1enc-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists SvtAv1Enc"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y svt-av1-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists SvtAv1Enc"
+      ]
+    }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" },
+    { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" },
+    { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "svtav1": {
+      "symbol_prefix": "svt",
+      "library_names": [
+        "libSvtAv1Enc.dylib",
+        "libSvtAv1Enc.so",
+        "SvtAv1Enc.dll"
+      ],
+      "header_names": [
+        "svt-av1/EbSvtAv1Enc.h"
+      ],
+      "version": ">=1.0.0 & <4.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libldns/libldns",
+  "version": "1.8.4",
+  "description": "PHP FFI wrapper for ldns, the NLnet Labs DNS library.",
+  "authors": [
+    {
+      "name": "Libldns maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libldns\\Libldns",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install ldns"
+      ],
+      "checkIfExists": [
+        "brew list ldns"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libldns-dev"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libldns-dev"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y ldns-devel"
+      ]
+    }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" },
+    { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" },
+    { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "ldns": {
+      "symbol_prefix": "ldns",
+      "library_names": [
+        "libldns.dylib",
+        "libldns.so",
+        "ldns.dll"
+      ],
+      "header_names": [
+        "ldns/ldns.h"
+      ],
+      "version": ">=1.6.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

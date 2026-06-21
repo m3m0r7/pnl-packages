@@ -1,0 +1,85 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libmecab/libmecab",
+  "version": "0.996.0",
+  "description": "PHP FFI wrapper for MeCab, the Japanese morphological analyzer.",
+  "authors": [
+    {
+      "name": "MeCab maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libmecab\\Libmecab",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install mecab mecab-ipadic"
+      ],
+      "checkIfExists": [
+        "brew list mecab"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libmecab-dev mecab-ipadic-utf8"
+      ],
+      "checkIfExists": [
+        "mecab-config --version"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libmecab-dev mecab-ipadic-utf8"
+      ],
+      "checkIfExists": [
+        "mecab-config --version"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y mecab-devel"
+      ],
+      "checkIfExists": [
+        "mecab-config --version"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "requires": {
+    "mecab": {
+      "symbol_prefix": "mecab",
+      "library_names": [
+        "libmecab.dylib",
+        "libmecab.so",
+        "mecab.dll"
+      ],
+      "header_names": [
+        "mecab.h"
+      ],
+      "version": ">=0.996.0 & <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

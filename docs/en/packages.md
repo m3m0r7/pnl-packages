@@ -113,3 +113,39 @@ Each package wraps a native library. The `License` column reflects the upstream 
 | `libtidy/libtidy` | HTML Tidy | W3C |
 | `libgumbo/libgumbo` | Gumbo | Apache-2.0 |
 | `libcmark/libcmark` | cmark | BSD-2-Clause |
+| `libmecab/libmecab` | MeCab | BSD-3-Clause |
+| `libtasn1/libtasn1` | GNU Libtasn1 | LGPL-2.1-or-later |
+| `libldns/libldns` | ldns | BSD-3-Clause |
+| `libhwloc/libhwloc` | hwloc | BSD-3-Clause |
+| `libmpdecimal/libmpdecimal` | mpdecimal | BSD-2-Clause |
+| `libcapstone/libcapstone` | Capstone | BSD-3-Clause |
+| `libtesseract/libtesseract` | Tesseract OCR | Apache-2.0 |
+| `libaom/libaom` | libaom AV1 | BSD-2-Clause |
+| `libdav1d/libdav1d` | dav1d | BSD-2-Clause |
+| `libde265/libde265` | libde265 | LGPL-3.0-or-later |
+| `librav1e/librav1e` | rav1e | BSD-2-Clause |
+| `libsvtav1/libsvtav1` | SVT-AV1 | BSD-3-Clause |
+| `libsrt/libsrt` | SRT | MPL-2.0 |
+| `libzimg/libzimg` | zimg | WTFPL |
+| `libmatio/libmatio` | matio | BSD-2-Clause |
+| `libksba/libksba` | libksba | LGPL-3.0-or-later |
+| `libunbound/libunbound` | Unbound | BSD-3-Clause |
+| `libopenldap/libopenldap` | OpenLDAP | OLDAP-2.8 |
+| `liblcms2/liblcms2` | Little-CMS | MIT |
+| `libgraphite2/libgraphite2` | Graphite2 | LGPL-2.1-or-later |
+| `liblame/liblame` | LAME | LGPL-2.0-or-later |
+| `libz3/libz3` | Z3 | MIT |
+| `libnss/libnss` | NSS | MPL-2.0 |
+| `libfreetds/libfreetds` | FreeTDS | LGPL-2.0-or-later |
+| `libpoppler/libpoppler` | Poppler | GPL-2.0-or-later |
+| `libaspell/libaspell` | GNU Aspell | LGPL-2.1-or-later |
+| `libhdf5/libhdf5` | HDF5 | BSD-3-Clause |
+| `libimagequant/libimagequant` | libimagequant | GPL-3.0-or-later |
+| `libcfitsio/libcfitsio` | CFITSIO | cfitsio |
+| `libjasper/libjasper` | JasPer | JasPer-2.0 |
+| `libfido2/libfido2` | libfido2 | BSD-2-Clause |
+| `libp11kit/libp11kit` | p11-kit | BSD-3-Clause |
+| `libapr/libapr` | Apache Portable Runtime | Apache-2.0 |
+| `libgdbm/libgdbm` | GDBM | GPL-3.0-or-later |
+| `libfribidi/libfribidi` | GNU FriBidi | LGPL-2.1-or-later |
+| `libunistring/libunistring` | GNU libunistring | LGPL-3.0-or-later |

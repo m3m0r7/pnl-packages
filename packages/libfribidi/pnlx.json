@@ -1,0 +1,34 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libfribidi/libfribidi",
+  "version": "1.0.16",
+  "description": "PHP FFI wrapper for GNU FriBidi, the Unicode bidirectional algorithm.",
+  "authors": [ { "name": "Libfribidi maintainers" } ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libfribidi\\Libfribidi",
+  "examples": [ "EXAMPLES.md" ],
+  "installation": {
+    "darwin": { "install": [ "brew install fribidi" ], "checkIfExists": [ "brew list fribidi" ] },
+    "ubuntu": { "install": [ "sudo apt-get install -y libfribidi-dev" ],
+      "checkIfExists": [ "pkg-config --exists fribidi" ] },
+    "debian": { "install": [ "sudo apt-get install -y libfribidi-dev" ],
+      "checkIfExists": [ "pkg-config --exists fribidi" ] },
+    "fedora": { "install": [ "sudo dnf install -y fribidi-devel" ],
+      "checkIfExists": [ "pkg-config --exists fribidi" ] }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" }, { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" }, { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "fribidi": {
+      "symbol_prefix": "fribidi",
+      "library_names": [ "libfribidi.dylib", "libfribidi.so", "fribidi.dll" ],
+      "header_names": [ "fribidi/fribidi.h" ],
+      "version": ">=1.0.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

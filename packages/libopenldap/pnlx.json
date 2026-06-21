@@ -1,0 +1,33 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libopenldap/libopenldap",
+  "version": "2.6.8",
+  "description": "PHP FFI wrapper for OpenLDAP libldap.",
+  "authors": [ { "name": "Libopenldap maintainers" } ],
+  "license": "OLDAP-2.8",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libopenldap\\Libopenldap",
+  "examples": [ "EXAMPLES.md" ],
+  "installation": {
+    "darwin": { "install": [ "brew install openldap" ], "checkIfExists": [ "brew list openldap" ] },
+    "ubuntu": { "install": [ "sudo apt-get install -y libldap2-dev" ] },
+    "debian": { "install": [ "sudo apt-get install -y libldap2-dev" ] },
+    "fedora": { "install": [ "sudo dnf install -y openldap-devel" ] }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" },
+    { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" },
+    { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "ldap": {
+      "symbol_prefix": "ldap",
+      "library_names": [ "libldap.dylib", "libldap.so", "ldap.dll" ],
+      "header_names": [ "ldap.h" ],
+      "version": ">=2.4.0 & <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

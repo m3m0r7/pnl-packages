@@ -1,0 +1,73 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libcapstone/libcapstone",
+  "version": "5.0.6",
+  "description": "PHP FFI wrapper for Capstone, the multi-architecture disassembly framework.",
+  "authors": [
+    {
+      "name": "Libcapstone maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libcapstone\\Libcapstone",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install capstone"
+      ],
+      "checkIfExists": [
+        "brew list capstone"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libcapstone-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists capstone"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libcapstone-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists capstone"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y capstone-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists capstone"
+      ]
+    }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" },
+    { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" },
+    { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "capstone": {
+      "symbol_prefix": "cs",
+      "library_names": [
+        "libcapstone.dylib",
+        "libcapstone.so",
+        "capstone.dll"
+      ],
+      "header_names": [
+        "capstone/capstone.h"
+      ],
+      "version": ">=4.0.0 & <6.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

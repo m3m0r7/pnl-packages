@@ -1,0 +1,73 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libhwloc/libhwloc",
+  "version": "2.12.0",
+  "description": "PHP FFI wrapper for hwloc, the Portable Hardware Locality library.",
+  "authors": [
+    {
+      "name": "Libhwloc maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libhwloc\\Libhwloc",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install hwloc"
+      ],
+      "checkIfExists": [
+        "brew list hwloc"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libhwloc-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists hwloc"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libhwloc-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists hwloc"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y hwloc-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists hwloc"
+      ]
+    }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" },
+    { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" },
+    { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "hwloc": {
+      "symbol_prefix": "hwloc",
+      "library_names": [
+        "libhwloc.dylib",
+        "libhwloc.so",
+        "hwloc.dll"
+      ],
+      "header_names": [
+        "hwloc.h"
+      ],
+      "version": ">=2.0.0 & <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

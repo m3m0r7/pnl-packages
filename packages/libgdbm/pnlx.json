@@ -1,0 +1,31 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libgdbm/libgdbm",
+  "version": "1.24.0",
+  "description": "PHP FFI wrapper for GDBM, the GNU dbm key/value database.",
+  "authors": [ { "name": "Libgdbm maintainers" } ],
+  "license": "GPL-3.0-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libgdbm\\Libgdbm",
+  "examples": [ "EXAMPLES.md" ],
+  "installation": {
+    "darwin": { "install": [ "brew install gdbm" ], "checkIfExists": [ "brew list gdbm" ] },
+    "ubuntu": { "install": [ "sudo apt-get install -y libgdbm-dev" ] },
+    "debian": { "install": [ "sudo apt-get install -y libgdbm-dev" ] },
+    "fedora": { "install": [ "sudo dnf install -y gdbm-devel" ] }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" }, { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" }, { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "gdbm": {
+      "symbol_prefix": "gdbm",
+      "library_names": [ "libgdbm.dylib", "libgdbm.so", "gdbm.dll" ],
+      "header_names": [ "gdbm.h" ],
+      "version": ">=1.10.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

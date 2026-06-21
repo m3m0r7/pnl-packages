@@ -1,0 +1,42 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libgraphite2/libgraphite2",
+  "version": "1.3.14",
+  "description": "PHP FFI wrapper for Graphite2, the smart-font rendering engine.",
+  "authors": [ { "name": "Libgraphite2 maintainers" } ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libgraphite2\\Libgraphite2",
+  "examples": [ "EXAMPLES.md" ],
+  "installation": {
+    "darwin": { "install": [ "brew install graphite2" ], "checkIfExists": [ "brew list graphite2" ] },
+    "ubuntu": { "install": [ "sudo apt-get install -y libgraphite2-dev" ],
+      "checkIfExists": [
+        "pkg-config --exists graphite2"
+      ] },
+    "debian": { "install": [ "sudo apt-get install -y libgraphite2-dev" ],
+      "checkIfExists": [
+        "pkg-config --exists graphite2"
+      ] },
+    "fedora": { "install": [ "sudo dnf install -y graphite2-devel" ],
+      "checkIfExists": [
+        "pkg-config --exists graphite2"
+      ] }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" },
+    { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" },
+    { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "graphite2": {
+      "symbol_prefix": "gr",
+      "library_names": [ "libgraphite2.dylib", "libgraphite2.so", "graphite2.dll" ],
+      "header_names": [ "graphite2/Font.h" ],
+      "version": ">=1.3.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

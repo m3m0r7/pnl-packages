@@ -1,0 +1,31 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libaspell/libaspell",
+  "version": "0.60.8",
+  "description": "PHP FFI wrapper for GNU Aspell, the spell checker library.",
+  "authors": [ { "name": "Libaspell maintainers" } ],
+  "license": "LGPL-2.1-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libaspell\\Libaspell",
+  "examples": [ "EXAMPLES.md" ],
+  "installation": {
+    "darwin": { "install": [ "brew install aspell" ], "checkIfExists": [ "brew list aspell" ] },
+    "ubuntu": { "install": [ "sudo apt-get install -y libaspell-dev" ] },
+    "debian": { "install": [ "sudo apt-get install -y libaspell-dev" ] },
+    "fedora": { "install": [ "sudo dnf install -y aspell-devel" ] }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" }, { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" }, { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "aspell": {
+      "symbol_prefix": "aspell",
+      "library_names": [ "libaspell.dylib", "libaspell.so", "aspell.dll" ],
+      "header_names": [ "aspell.h" ],
+      "version": ">=0.60.0 & <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

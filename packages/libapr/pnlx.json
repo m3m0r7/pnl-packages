@@ -1,0 +1,86 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libapr/libapr",
+  "version": "1.7.6",
+  "description": "PHP FFI wrapper for the Apache Portable Runtime (APR).",
+  "authors": [
+    {
+      "name": "APR maintainers"
+    }
+  ],
+  "license": "Apache-2.0",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libapr\\Libapr",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install apr"
+      ],
+      "checkIfExists": [
+        "brew list apr"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libapr1-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists apr-1"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libapr1-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists apr-1"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y apr-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists apr-1"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "requires": {
+    "apr-1": {
+      "symbol_prefix": "apr",
+      "library_names": [
+        "libapr-1.dylib",
+        "libapr-1.so",
+        "apr-1.dll"
+      ],
+      "header_names": [
+        "apr.h",
+        "apr_version.h"
+      ],
+      "version": ">=1.5.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

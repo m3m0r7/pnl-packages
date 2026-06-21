@@ -1,0 +1,31 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libunistring/libunistring",
+  "version": "1.3.0",
+  "description": "PHP FFI wrapper for GNU libunistring, Unicode string functions.",
+  "authors": [ { "name": "libunistring maintainers" } ],
+  "license": "LGPL-3.0-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libunistring\\Libunistring",
+  "examples": [ "EXAMPLES.md" ],
+  "installation": {
+    "darwin": { "install": [ "brew install libunistring" ], "checkIfExists": [ "brew list libunistring" ] },
+    "ubuntu": { "install": [ "sudo apt-get install -y libunistring-dev" ] },
+    "debian": { "install": [ "sudo apt-get install -y libunistring-dev" ] },
+    "fedora": { "install": [ "sudo dnf install -y libunistring-devel" ] }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" }, { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" }, { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "unistring": {
+      "symbol_prefix": "uc_",
+      "library_names": [ "libunistring.dylib", "libunistring.so", "unistring.dll" ],
+      "header_names": [ "unictype.h" ],
+      "version": ">=0.9.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

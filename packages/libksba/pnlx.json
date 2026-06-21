@@ -1,0 +1,33 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libksba/libksba",
+  "version": "1.6.7",
+  "description": "PHP FFI wrapper for libksba, the X.509 / CMS ASN.1 library.",
+  "authors": [ { "name": "Libksba maintainers" } ],
+  "license": "LGPL-3.0-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libksba\\Libksba",
+  "examples": [ "EXAMPLES.md" ],
+  "installation": {
+    "darwin": { "install": [ "brew install libksba" ], "checkIfExists": [ "brew list libksba" ] },
+    "ubuntu": { "install": [ "sudo apt-get install -y libksba-dev" ] },
+    "debian": { "install": [ "sudo apt-get install -y libksba-dev" ] },
+    "fedora": { "install": [ "sudo dnf install -y libksba-devel" ] }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" },
+    { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" },
+    { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "ksba": {
+      "symbol_prefix": "ksba",
+      "library_names": [ "libksba.dylib", "libksba.so", "ksba.dll" ],
+      "header_names": [ "ksba.h" ],
+      "version": ">=1.0.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libp11kit/libp11kit",
+  "version": "0.25.5",
+  "description": "PHP FFI wrapper for p11-kit, the PKCS#11 module manager.",
+  "authors": [
+    {
+      "name": "Libp11kit maintainers"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libp11kit\\Libp11kit",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install p11-kit"
+      ],
+      "checkIfExists": [
+        "brew list p11-kit"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libp11-kit-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists p11-kit-1"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libp11-kit-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists p11-kit-1"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y p11-kit-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists p11-kit-1"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "requires": {
+    "p11-kit-1": {
+      "symbol_prefix": "p11_kit",
+      "library_names": [
+        "libp11-kit.dylib",
+        "libp11-kit.so",
+        "p11-kit.dll"
+      ],
+      "header_names": [
+        "p11-kit/p11-kit.h",
+        "p11-kit/version.h"
+      ],
+      "version": ">=0.23.0 & <1.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

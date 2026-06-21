@@ -1,0 +1,34 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libcfitsio/libcfitsio",
+  "version": "4.5.0",
+  "description": "PHP FFI wrapper for CFITSIO, the FITS-file I/O library.",
+  "authors": [ { "name": "Libcfitsio maintainers" } ],
+  "license": "cfitsio",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libcfitsio\\Libcfitsio",
+  "examples": [ "EXAMPLES.md" ],
+  "installation": {
+    "darwin": { "install": [ "brew install cfitsio" ], "checkIfExists": [ "brew list cfitsio" ] },
+    "ubuntu": { "install": [ "sudo apt-get install -y libcfitsio-dev" ],
+      "checkIfExists": [ "pkg-config --exists cfitsio" ] },
+    "debian": { "install": [ "sudo apt-get install -y libcfitsio-dev" ],
+      "checkIfExists": [ "pkg-config --exists cfitsio" ] },
+    "fedora": { "install": [ "sudo dnf install -y cfitsio-devel" ],
+      "checkIfExists": [ "pkg-config --exists cfitsio" ] }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" }, { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" }, { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "cfitsio": {
+      "symbol_prefix": "ff",
+      "library_names": [ "libcfitsio.dylib", "libcfitsio.so", "cfitsio.dll" ],
+      "header_names": [ "fitsio.h" ],
+      "version": ">=4.0.0 & <5.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

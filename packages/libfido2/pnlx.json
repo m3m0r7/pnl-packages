@@ -1,0 +1,86 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libfido2/libfido2",
+  "version": "1.16.0",
+  "description": "PHP FFI wrapper for libfido2, the FIDO2 / WebAuthn / CTAP library.",
+  "authors": [
+    {
+      "name": "Libfido2 maintainers"
+    }
+  ],
+  "license": "BSD-2-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libfido2\\Libfido2",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install libfido2"
+      ],
+      "checkIfExists": [
+        "brew list libfido2"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libfido2-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libfido2"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libfido2-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libfido2"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libfido2-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libfido2"
+      ]
+    }
+  },
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "requires": {
+    "fido2": {
+      "symbol_prefix": "fido",
+      "library_names": [
+        "libfido2.dylib",
+        "libfido2.so",
+        "fido2.dll"
+      ],
+      "header_names": [
+        "fido.h",
+        "fido/err.h"
+      ],
+      "version": ">=1.5.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

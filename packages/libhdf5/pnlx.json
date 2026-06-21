@@ -1,0 +1,34 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libhdf5/libhdf5",
+  "version": "1.14.0",
+  "description": "PHP FFI wrapper for HDF5, the hierarchical scientific data library.",
+  "authors": [ { "name": "Libhdf5 maintainers" } ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libhdf5\\Libhdf5",
+  "examples": [ "EXAMPLES.md" ],
+  "installation": {
+    "darwin": { "install": [ "brew install hdf5" ], "checkIfExists": [ "brew list hdf5" ] },
+    "ubuntu": { "install": [ "sudo apt-get install -y libhdf5-dev" ],
+      "checkIfExists": [ "pkg-config --exists hdf5" ] },
+    "debian": { "install": [ "sudo apt-get install -y libhdf5-dev" ],
+      "checkIfExists": [ "pkg-config --exists hdf5" ] },
+    "fedora": { "install": [ "sudo dnf install -y hdf5-devel" ],
+      "checkIfExists": [ "pkg-config --exists hdf5" ] }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" }, { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" }, { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "hdf5": {
+      "symbol_prefix": "H5",
+      "library_names": [ "libhdf5.dylib", "libhdf5.so", "hdf5.dll" ],
+      "header_names": [ "hdf5.h" ],
+      "version": ">=1.10.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libaom/libaom",
+  "version": "3.13.1",
+  "description": "PHP FFI wrapper for libaom, the AV1 reference codec.",
+  "authors": [
+    {
+      "name": "Libaom maintainers"
+    }
+  ],
+  "license": "BSD-2-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libaom\\Libaom",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install aom"
+      ],
+      "checkIfExists": [
+        "brew list aom"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libaom-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists aom"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libaom-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists aom"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libaom-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists aom"
+      ]
+    }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" },
+    { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" },
+    { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "aom": {
+      "symbol_prefix": "aom",
+      "library_names": [
+        "libaom.dylib",
+        "libaom.so",
+        "aom.dll"
+      ],
+      "header_names": [
+        "aom/aom_codec.h"
+      ],
+      "version": ">=3.0.0 & <4.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

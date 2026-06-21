@@ -1,0 +1,42 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libunbound/libunbound",
+  "version": "1.22.0",
+  "description": "PHP FFI wrapper for libunbound, the recursive DNS resolver library.",
+  "authors": [ { "name": "Libunbound maintainers" } ],
+  "license": "BSD-3-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libunbound\\Libunbound",
+  "examples": [ "EXAMPLES.md" ],
+  "installation": {
+    "darwin": { "install": [ "brew install unbound" ], "checkIfExists": [ "brew list unbound" ] },
+    "ubuntu": { "install": [ "sudo apt-get install -y libunbound-dev" ],
+      "checkIfExists": [
+        "pkg-config --exists libunbound"
+      ] },
+    "debian": { "install": [ "sudo apt-get install -y libunbound-dev" ],
+      "checkIfExists": [
+        "pkg-config --exists libunbound"
+      ] },
+    "fedora": { "install": [ "sudo dnf install -y unbound-devel" ],
+      "checkIfExists": [
+        "pkg-config --exists libunbound"
+      ] }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" },
+    { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" },
+    { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "unbound": {
+      "symbol_prefix": "ub",
+      "library_names": [ "libunbound.dylib", "libunbound.so", "unbound.dll" ],
+      "header_names": [ "unbound.h" ],
+      "version": ">=1.10.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

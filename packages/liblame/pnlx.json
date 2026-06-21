@@ -1,0 +1,31 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "liblame/liblame",
+  "version": "3.100.0",
+  "description": "PHP FFI wrapper for LAME, the MP3 audio encoder.",
+  "authors": [ { "name": "Liblame maintainers" } ],
+  "license": "LGPL-2.0-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Liblame\\Liblame",
+  "examples": [ "EXAMPLES.md" ],
+  "installation": {
+    "darwin": { "install": [ "brew install lame" ], "checkIfExists": [ "brew list lame" ] },
+    "ubuntu": { "install": [ "sudo apt-get install -y libmp3lame-dev" ] },
+    "debian": { "install": [ "sudo apt-get install -y libmp3lame-dev" ] },
+    "fedora": { "install": [ "sudo dnf install -y lame-devel" ] }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" }, { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" }, { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "lame": {
+      "symbol_prefix": "lame",
+      "library_names": [ "libmp3lame.dylib", "libmp3lame.so", "mp3lame.dll" ],
+      "header_names": [ "lame/lame.h" ],
+      "version": ">=3.99.0 & <4.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

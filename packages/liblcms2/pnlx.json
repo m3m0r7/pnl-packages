@@ -1,0 +1,42 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "liblcms2/liblcms2",
+  "version": "2.17.0",
+  "description": "PHP FFI wrapper for Little-CMS (lcms2), the color management engine.",
+  "authors": [ { "name": "Liblcms2 maintainers" } ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Liblcms2\\Liblcms2",
+  "examples": [ "EXAMPLES.md" ],
+  "installation": {
+    "darwin": { "install": [ "brew install little-cms2" ], "checkIfExists": [ "brew list little-cms2" ] },
+    "ubuntu": { "install": [ "sudo apt-get install -y liblcms2-dev" ],
+      "checkIfExists": [
+        "pkg-config --exists lcms2"
+      ] },
+    "debian": { "install": [ "sudo apt-get install -y liblcms2-dev" ],
+      "checkIfExists": [
+        "pkg-config --exists lcms2"
+      ] },
+    "fedora": { "install": [ "sudo dnf install -y lcms2-devel" ],
+      "checkIfExists": [
+        "pkg-config --exists lcms2"
+      ] }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" },
+    { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" },
+    { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "lcms2": {
+      "symbol_prefix": "cms",
+      "library_names": [ "liblcms2.dylib", "liblcms2.so", "lcms2.dll" ],
+      "header_names": [ "lcms2.h" ],
+      "version": ">=2.0.0 & <3.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

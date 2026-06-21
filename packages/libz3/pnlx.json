@@ -1,0 +1,31 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libz3/libz3",
+  "version": "4.15.4",
+  "description": "PHP FFI wrapper for Z3, the Microsoft Research SMT solver.",
+  "authors": [ { "name": "Z3 maintainers" } ],
+  "license": "MIT",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libz3\\Libz3",
+  "examples": [ "EXAMPLES.md" ],
+  "installation": {
+    "darwin": { "install": [ "brew install z3" ], "checkIfExists": [ "brew list z3" ] },
+    "ubuntu": { "install": [ "sudo apt-get install -y libz3-dev" ], "checkIfExists": [ "pkg-config --exists z3" ] },
+    "debian": { "install": [ "sudo apt-get install -y libz3-dev" ], "checkIfExists": [ "pkg-config --exists z3" ] },
+    "fedora": { "install": [ "sudo dnf install -y z3-devel" ], "checkIfExists": [ "pkg-config --exists z3" ] }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" }, { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" }, { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "z3": {
+      "symbol_prefix": "Z3",
+      "library_names": [ "libz3.dylib", "libz3.so", "z3.dll" ],
+      "header_names": [ "z3.h" ],
+      "version": ">=4.8.0 & <5.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

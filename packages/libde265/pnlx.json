@@ -1,0 +1,73 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libde265/libde265",
+  "version": "1.0.15",
+  "description": "PHP FFI wrapper for libde265, the HEVC/H.265 decoder.",
+  "authors": [
+    {
+      "name": "Libde265 maintainers"
+    }
+  ],
+  "license": "LGPL-3.0-or-later",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libde265\\Libde265",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install libde265"
+      ],
+      "checkIfExists": [
+        "brew list libde265"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libde265-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libde265"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libde265-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libde265"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libde265-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists libde265"
+      ]
+    }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" },
+    { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" },
+    { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "de265": {
+      "symbol_prefix": "de265",
+      "library_names": [
+        "libde265.dylib",
+        "libde265.so",
+        "de265.dll"
+      ],
+      "header_names": [
+        "libde265/de265.h"
+      ],
+      "version": ">=1.0.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": "2026-07-01",
+  "name": "libdav1d/libdav1d",
+  "version": "1.5.1",
+  "description": "PHP FFI wrapper for dav1d, the fast AV1 decoder.",
+  "authors": [
+    {
+      "name": "Libdav1d maintainers"
+    }
+  ],
+  "license": "BSD-2-Clause",
+  "entrypoint": "src/generated/index.php",
+  "class": "Pnlx\\Libdav1d\\Libdav1d",
+  "examples": [
+    "EXAMPLES.md"
+  ],
+  "installation": {
+    "darwin": {
+      "install": [
+        "brew install dav1d"
+      ],
+      "checkIfExists": [
+        "brew list dav1d"
+      ]
+    },
+    "ubuntu": {
+      "install": [
+        "sudo apt-get install -y libdav1d-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists dav1d"
+      ]
+    },
+    "debian": {
+      "install": [
+        "sudo apt-get install -y libdav1d-dev"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists dav1d"
+      ]
+    },
+    "fedora": {
+      "install": [
+        "sudo dnf install -y libdav1d-devel"
+      ],
+      "checkIfExists": [
+        "pkg-config --exists dav1d"
+      ]
+    }
+  },
+  "platforms": [
+    { "os": "darwin", "arch": "aarch64" },
+    { "os": "darwin", "arch": "x86_64" },
+    { "os": "linux", "arch": "x86_64" },
+    { "os": "linux", "arch": "aarch64" }
+  ],
+  "requires": {
+    "dav1d": {
+      "symbol_prefix": "dav1d",
+      "library_names": [
+        "libdav1d.dylib",
+        "libdav1d.so",
+        "dav1d.dll"
+      ],
+      "header_names": [
+        "dav1d/dav1d.h"
+      ],
+      "version": ">=1.0.0 & <2.0.0",
+      "required": true
+    }
+  },
+  "dependencies": {}
+}
