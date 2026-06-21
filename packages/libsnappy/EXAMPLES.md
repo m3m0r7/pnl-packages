@@ -8,7 +8,7 @@ use Pnlx\Libsnappy\Libsnappy;
 
 // `size_t`/`snappy_status` returns may arrive wrapped (64-bit) or as a plain int
 // depending on the platform — normalise with a tiny helper.
-$asInt = static fn ($v) => is_object($v) ? $v->toInt() : (int) $v;
+$asInt = static fn ($v) => $v instanceof \BackedEnum ? $v->value : (is_object($v) ? $v->toInt() : (int) $v);
 
 $input    = str_repeat('Hello, Snappy! ', 8);
 $inputLen = strlen($input);

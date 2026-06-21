@@ -17,11 +17,13 @@ for ($i = 0; $i < $count; $i++) {
 
 // Open the first device and tune to FM broadcast band
 if ($count > 0) {
-    $dev = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::VoidPointer);
+    // rtlsdr_open takes an `rtlsdr_dev_t **` out-parameter, so pass a variable by
+    // reference: the call writes the device handle back into $dev (used directly).
+    $dev = null;
     Librtlsdr::rtlsdr_open($dev, 0);
-    Librtlsdr::rtlsdr_set_center_freq($dev[0], 98_000_000); // 98 MHz
-    Librtlsdr::rtlsdr_set_sample_rate($dev[0], 2_048_000);  // 2.048 MS/s
-    // Librtlsdr::rtlsdr_read_sync($dev[0], $buf, $len, $nRead)
-    Librtlsdr::rtlsdr_close($dev[0]);
+    Librtlsdr::rtlsdr_set_center_freq($dev, 98_000_000); // 98 MHz
+    Librtlsdr::rtlsdr_set_sample_rate($dev, 2_048_000);  // 2.048 MS/s
+    // Librtlsdr::rtlsdr_read_sync($dev, $buf, $len, $nRead)
+    Librtlsdr::rtlsdr_close($dev);
 }
 ```

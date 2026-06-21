@@ -18,13 +18,20 @@ if (is_null($ctx)) {
     throw new \RuntimeException('JS_NewContext failed');
 }
 
-// Evaluate a JavaScript expression
+// Evaluate a JavaScript expression. JS_Eval returns a JSValue *by value* (a small
+// struct), handed back as a typed value.
 $val = Libquickjs::JS_Eval($ctx, '1 + 2', 5, '<input>', 0);
-$str = Libquickjs::JS_ToCString($ctx, $val);
+// Convert it to a C string. JS_ToCString is `static inline` (no exported symbol),
+// so call the exported JS_ToCStringLen2 it wraps (NULL length out-param, cesu8 = 0).
+$len = null;
+$str = Libquickjs::JS_ToCStringLen2($ctx, $len, $val, 0);
 echo "Result: {$str}\n"; // 3
-Libquickjs::JS_FreeCString($ctx, $str);
-Libquickjs::JS_FreeValue($ctx, $val);
-
+// Notes on cleanup: pnl returns $str as a PHP-string copy (not the original C
+// pointer), so there is nothing to JS_FreeCString. The result here is an integer
+// JSValue, which is not reference-counted — quickjs's `static inline` JS_FreeValue
+// would skip freeing it (only the exported __JS_FreeValue exists, and it must not be
+// called on a non-refcounted value), so no value free is needed. Tearing down the
+// context and runtime releases everything.
 Libquickjs::JS_FreeContext($ctx);
 Libquickjs::JS_FreeRuntime($jsRuntime);
 ```

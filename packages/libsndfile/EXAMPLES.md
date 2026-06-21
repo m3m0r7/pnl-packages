@@ -11,8 +11,9 @@ use function Pnlx\Util\is_null;
 $version = Libsndfile::sf_version_string();
 echo $version . PHP_EOL;
 
-// Open a sound file (read-only). SF_INFO must be allocated as a struct.
-// $info = ...; // allocate SF_INFO via (new \Pnlx\FFI\Allocator())
+// Opening a file needs an SF_INFO struct: allocate the generated wrapper
+// (new \Pnlx\Libsndfile\Types\SF_INFO()) and pass it where sf_open wants it:
+// $info = new \Pnlx\Libsndfile\Types\SF_INFO();
 // $sndfile = Libsndfile::sf_open('/path/to/audio.wav', 0x10 /* SFM_READ */, $info);
 // if (!is_null($sndfile)) { Libsndfile::sf_close($sndfile); }
 ```

@@ -11,8 +11,10 @@ use function Pnlx\Util\is_null;
 $version = Libnfc::nfc_version();
 echo "libnfc version: $version\n";
 
-// Initialise a context, open the first available NFC device
-$ctx = (new \Pnlx\FFI\Allocator())->make(\Pnlx\FFI\AllocationType::VoidPointer);
+// Initialise a context, open the first available NFC device. nfc_init takes an
+// `nfc_context **` out-parameter, so pass a variable by reference: the call writes
+// the context handle back into $ctx (no manual allocation needed).
+$ctx = null;
 Libnfc::nfc_init($ctx);
 $device = Libnfc::nfc_open($ctx, null);
 if (is_null($device)) {

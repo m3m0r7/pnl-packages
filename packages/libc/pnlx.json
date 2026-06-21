@@ -41,6 +41,12 @@
       "symbol_prefix": "",
       "library_names": [
         {
+          "name": "libSystem.B.tbd"
+        },
+        {
+          "name": "libc.so.6"
+        },
+        {
           "name": "libc.dylib",
           "virtual": true
         },
