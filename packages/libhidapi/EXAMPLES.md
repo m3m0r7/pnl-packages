@@ -5,21 +5,32 @@
 require_once __DIR__ . '/@pnlx/autoload.php';
 
 use Pnlx\Libhidapi\Libhidapi;
-use function Pnlx\Util\is_null;
 
-// Initialize HIDAPI and enumerate connected USB HID devices
+// Initialize HIDAPI and enumerate connected USB HID devices.
 $rc = Libhidapi::hid_init();
 if ($rc->toInt() === 0) {
-    // Enumerate all HID devices (vendor 0, product 0 = all)
+    // hid_enumerate(0, 0) lists every HID device. It returns a typed
+    // `hid_device_info` wrapper (or null when no device is connected).
     $devs = Libhidapi::hid_enumerate(0, 0);
-    // hid_enumerate() returns a wrapped struct hid_device_info* linked list;
-    // unwrap to the native CData once and walk the `next` pointer.
-    $cur = $devs->cdata();
-    while (!is_null($cur)) {
-        echo "Device: " . $cur->manufacturer_string . "\n";
-        $cur = $cur->next;
+
+    if ($devs === null) {
+        echo "No HID devices found.\n";
+    } else {
+        // Walk the linked list through the typed accessors. `manufacturer_string`
+        // and friends are C `wchar_t *`, decoded to PHP strings by the generated
+        // getters (getManufacturerString()/getProductString()/getSerialNumber()).
+        for ($dev = $devs; $dev !== null; $dev = $dev->getNext()) {
+            printf(
+                "%04x:%04x  %s %s\n",
+                $dev->getVendorId(),
+                $dev->getProductId(),
+                $dev->getManufacturerString() ?? '(unknown)',
+                $dev->getProductString() ?? ''
+            );
+        }
+        Libhidapi::hid_free_enumeration($devs);
     }
-    Libhidapi::hid_free_enumeration($devs);
+
     Libhidapi::hid_exit();
 }
 ```
