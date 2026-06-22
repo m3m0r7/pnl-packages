@@ -10,10 +10,13 @@ use function Pnlx\Util\is_null;
 // Get a port handle by name. sp_get_port_by_name takes a `struct sp_port **`
 // out-parameter, so pass a variable by reference: the call writes the port handle
 // back into $port (no manual allocation, and $port is the handle to use directly).
+// The call returns an `Enums\sp_return` case — read its C value with toInt(), or
+// its label with ->name (PHP enums cannot be string-cast directly).
 $port = null;
 $rc = Libserialport::sp_get_port_by_name('/dev/ttyUSB0', $port);
-if ($rc->toInt() !== 0) { // SP_OK = 0
-    throw new \RuntimeException('sp_get_port_by_name failed: ' . $rc);
+if ($rc->toInt() !== 0) { // not SP_OK (0)
+    echo "No serial port at /dev/ttyUSB0 (sp_get_port_by_name: {$rc->name})\n";
+    return;
 }
 
 Libserialport::sp_open($port, 3); // SP_MODE_READ_WRITE = 3

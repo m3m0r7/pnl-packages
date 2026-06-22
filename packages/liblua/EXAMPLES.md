@@ -7,7 +7,9 @@ require_once __DIR__ . '/@pnlx/autoload.php';
 use Pnlx\Liblua\Liblua;
 
 $L = Liblua::luaL_newstate();
-Liblua::luaL_openlibs($L);
+// luaL_openlibs is a function-like macro in modern Lua (it expands to
+// luaL_openselectedlibs), so pnl surfaces it as a free function, not a method.
+\Pnlx\Func\Liblua\luaL_openlibs($L);
 
 // luaL_dostring() is a macro; use the real luaL_loadstring + lua_pcallk (= lua_pcall).
 if (Liblua::luaL_loadstring($L, 'return 7 * 6')->toInt() === 0) { // LUA_OK
