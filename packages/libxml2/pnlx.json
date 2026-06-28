@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libxml2\\Libxml2",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-strings.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libxml2"
-      ],
-      "checkIfExists": [
-        "brew list libxml2"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libxml2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libxml-2.0"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libxml2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libxml-2.0"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libxml2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libxml-2.0"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libxml2-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libxml-2.0"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libxml2-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libxml-2.0"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libxml2"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libxml2": {
       "symbol_prefix": "xml",
       "library_names": [
@@ -109,5 +55,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libxml2"
+        ],
+        "check_if_exists": [
+          "brew list libxml2"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libxml2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libxml-2.0"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libxml2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libxml-2.0"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libxml2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libxml-2.0"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libxml2-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libxml-2.0"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libxml2-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libxml-2.0"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libxml2"
+        ]
+      }
+    }
+  }
 }

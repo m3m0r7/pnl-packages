@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libwebsockets\\Libwebsockets",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-lookups.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libwebsockets"
-      ],
-      "checkIfExists": [
-        "brew list libwebsockets"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libwebsockets-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libwebsockets"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libwebsockets-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libwebsockets"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libwebsockets-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libwebsockets"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libwebsockets-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libwebsockets"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libwebsockets-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libwebsockets"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libwebsockets": {
       "symbol_prefix": "lws",
       "library_names": [
@@ -101,5 +52,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libwebsockets"
+        ],
+        "check_if_exists": [
+          "brew list libwebsockets"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libwebsockets-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libwebsockets"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libwebsockets-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libwebsockets"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libwebsockets-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libwebsockets"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libwebsockets-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libwebsockets"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libwebsockets-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libwebsockets"
+        ]
+      }
+    }
+  }
 }

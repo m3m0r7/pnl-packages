@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libgcrypt\\Libgcrypt",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-digest-algorithms.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libgcrypt"
-      ],
-      "checkIfExists": [
-        "brew list libgcrypt"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libgcrypt20-dev"
-      ],
-      "checkIfExists": [
-        "libgcrypt-config --version"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libgcrypt20-dev"
-      ],
-      "checkIfExists": [
-        "libgcrypt-config --version"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libgcrypt-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e libgcrypt-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libgcrypt-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libgcrypt-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libgcrypt-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libgcrypt-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libgcrypt": {
       "symbol_prefix": "gcry",
       "library_names": [
@@ -101,5 +52,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libgcrypt"
+        ],
+        "check_if_exists": [
+          "brew list libgcrypt"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libgcrypt20-dev"
+        ],
+        "check_if_exists": [
+          "libgcrypt-config --version"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libgcrypt20-dev"
+        ],
+        "check_if_exists": [
+          "libgcrypt-config --version"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libgcrypt-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e libgcrypt-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libgcrypt-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libgcrypt-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libgcrypt-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libgcrypt-devel"
+        ]
+      }
+    }
+  }
 }

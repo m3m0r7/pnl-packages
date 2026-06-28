@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libicu\\Libicu",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-data-directory.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install icu4c"
-      ],
-      "checkIfExists": [
-        "brew list icu4c"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libicu-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists icu-uc"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libicu-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists icu-uc"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add icu-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists icu-uc"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libicu-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists icu-uc"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libicu-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists icu-uc"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install icu"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libicuuc": {
       "library_names": [
         "libicuuc.dylib",
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install icu4c"
+        ],
+        "check_if_exists": [
+          "brew list icu4c"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libicu-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists icu-uc"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libicu-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists icu-uc"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add icu-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists icu-uc"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libicu-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists icu-uc"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libicu-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists icu-uc"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install icu"
+        ]
+      }
+    }
+  }
 }

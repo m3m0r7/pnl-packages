@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libfftw3\\Libfftw3",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-wisdom.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install fftw"
-      ],
-      "checkIfExists": [
-        "brew list fftw"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libfftw3-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists fftw3"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libfftw3-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists fftw3"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add fftw-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists fftw3"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y fftw-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists fftw3"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y fftw-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists fftw3"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install fftw3"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libfftw3": {
       "symbol_prefix": "fftw",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install fftw"
+        ],
+        "check_if_exists": [
+          "brew list fftw"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libfftw3-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists fftw3"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libfftw3-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists fftw3"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add fftw-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists fftw3"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y fftw-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists fftw3"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y fftw-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists fftw3"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install fftw3"
+        ]
+      }
+    }
+  }
 }

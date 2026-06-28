@@ -12,49 +12,28 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libhwloc\\Libhwloc",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-object-types.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install hwloc"
-      ],
-      "checkIfExists": [
-        "brew list hwloc"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libhwloc-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists hwloc"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libhwloc-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists hwloc"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y hwloc-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists hwloc"
-      ]
-    }
-  },
   "platforms": [
-    { "os": "darwin", "arch": "aarch64" },
-    { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" },
-    { "os": "linux", "arch": "aarch64" }
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
   ],
-  "requires": {
+  "native_libraries": {
     "hwloc": {
       "symbol_prefix": "hwloc",
       "library_names": [
@@ -69,5 +48,49 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install hwloc"
+        ],
+        "check_if_exists": [
+          "brew list hwloc"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libhwloc-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists hwloc"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libhwloc-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists hwloc"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add hwloc-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists hwloc"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y hwloc-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists hwloc"
+        ]
+      }
+    }
+  }
 }

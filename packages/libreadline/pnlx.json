@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libreadline\\Libreadline",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-variables.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install readline"
-      ],
-      "checkIfExists": [
-        "brew list readline"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libreadline-dev"
-      ],
-      "checkIfExists": [
-        "dpkg -s libreadline-dev >/dev/null 2>&1"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libreadline-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libreadline"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add readline-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e readline-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y readline-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q readline-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y readline-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q readline-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install readline"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "readline": {
       "symbol_prefix": "rl",
       "library_names": [
@@ -107,5 +53,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install readline"
+        ],
+        "check_if_exists": [
+          "brew list readline"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libreadline-dev"
+        ],
+        "check_if_exists": [
+          "dpkg -s libreadline-dev >/dev/null 2>&1"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libreadline-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libreadline"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add readline-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e readline-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y readline-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q readline-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y readline-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q readline-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install readline"
+        ]
+      }
+    }
+  }
 }

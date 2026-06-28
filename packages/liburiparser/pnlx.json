@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Liburiparser\\Liburiparser",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install uriparser"
-      ],
-      "checkIfExists": [
-        "brew list uriparser"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y liburiparser-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists liburiparser"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y liburiparser-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists liburiparser"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add uriparser-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists liburiparser"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y uriparser-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q uriparser-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y uriparser-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q uriparser-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install uriparser"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "uriparser": {
       "symbol_prefix": "uri",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install uriparser"
+        ],
+        "check_if_exists": [
+          "brew list uriparser"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y liburiparser-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists liburiparser"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y liburiparser-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists liburiparser"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add uriparser-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists liburiparser"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y uriparser-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q uriparser-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y uriparser-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q uriparser-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install uriparser"
+        ]
+      }
+    }
+  }
 }

@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmodbus\\Libmodbus",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-strerror.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libmodbus"
-      ],
-      "checkIfExists": [
-        "brew list libmodbus"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libmodbus-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmodbus"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libmodbus-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmodbus"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libmodbus-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmodbus"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libmodbus-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmodbus"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libmodbus-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmodbus"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libmodbus": {
       "symbol_prefix": "modbus",
       "library_names": [
@@ -101,5 +52,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libmodbus"
+        ],
+        "check_if_exists": [
+          "brew list libmodbus"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libmodbus-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmodbus"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libmodbus-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmodbus"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libmodbus-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmodbus"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libmodbus-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmodbus"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libmodbus-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmodbus"
+        ]
+      }
+    }
+  }
 }

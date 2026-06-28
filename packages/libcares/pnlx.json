@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libcares\\Libcares",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-strerror.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install c-ares"
-      ],
-      "checkIfExists": [
-        "brew list c-ares"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libc-ares-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcares"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libc-ares-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcares"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add c-ares-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcares"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y c-ares-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcares"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y c-ares-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcares"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install c-ares"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libcares": {
       "symbol_prefix": "ares",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install c-ares"
+        ],
+        "check_if_exists": [
+          "brew list c-ares"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libc-ares-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcares"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libc-ares-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcares"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add c-ares-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcares"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y c-ares-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcares"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y c-ares-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcares"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install c-ares"
+        ]
+      }
+    }
+  }
 }

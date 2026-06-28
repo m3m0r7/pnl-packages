@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libogg\\Libogg",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-bitpacker.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libogg"
-      ],
-      "checkIfExists": [
-        "brew list libogg"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libogg-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists ogg"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libogg-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists ogg"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libogg-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists ogg"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libogg-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists ogg"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libogg-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists ogg"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libogg"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libogg": {
       "symbol_prefix": "ogg",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libogg"
+        ],
+        "check_if_exists": [
+          "brew list libogg"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libogg-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists ogg"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libogg-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists ogg"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libogg-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists ogg"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libogg-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists ogg"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libogg-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists ogg"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libogg"
+        ]
+      }
+    }
+  }
 }

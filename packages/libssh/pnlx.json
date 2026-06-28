@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libssh\\Libssh",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libssh"
-      ],
-      "checkIfExists": [
-        "brew list libssh"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libssh-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libssh"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libssh-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libssh"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libssh-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libssh"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libssh-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libssh"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libssh-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libssh"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libssh"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libssh": {
       "symbol_prefix": "ssh",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libssh"
+        ],
+        "check_if_exists": [
+          "brew list libssh"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libssh-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libssh"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libssh-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libssh"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libssh-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libssh"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libssh-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libssh"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libssh-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libssh"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libssh"
+        ]
+      }
+    }
+  }
 }

@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libevent\\Libevent",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-introspection.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libevent"
-      ],
-      "checkIfExists": [
-        "brew list libevent"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libevent-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libevent"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libevent-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libevent"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libevent-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libevent"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libevent-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libevent"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libevent-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libevent"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libevent"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libevent": {
       "symbol_prefix": "event",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libevent"
+        ],
+        "check_if_exists": [
+          "brew list libevent"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libevent-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libevent"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libevent-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libevent"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libevent-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libevent"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libevent-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libevent"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libevent-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libevent"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libevent"
+        ]
+      }
+    }
+  }
 }

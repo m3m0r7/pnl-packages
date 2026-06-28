@@ -3,29 +3,82 @@
   "name": "libfreetds/libfreetds",
   "version": "1.4.0",
   "description": "PHP FFI wrapper for FreeTDS DB-Library (Sybase/MSSQL).",
-  "authors": [ { "name": "Libfreetds maintainers" } ],
+  "authors": [
+    {
+      "name": "Libfreetds maintainers"
+    }
+  ],
   "license": "LGPL-2.0-or-later",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libfreetds\\Libfreetds",
-  "examples": [ "EXAMPLES.md" ],
-  "installation": {
-    "darwin": { "install": [ "brew install freetds" ], "checkIfExists": [ "brew list freetds" ] },
-    "ubuntu": { "install": [ "sudo apt-get install -y freetds-dev" ] },
-    "debian": { "install": [ "sudo apt-get install -y freetds-dev" ] },
-    "fedora": { "install": [ "sudo dnf install -y freetds-devel" ] }
-  },
-  "platforms": [
-    { "os": "darwin", "arch": "aarch64" }, { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" }, { "os": "linux", "arch": "aarch64" }
+  "examples": [
+    "EXAMPLES.md",
+    "EXAMPLES-types.md"
   ],
-  "requires": {
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "native_libraries": {
     "sybdb": {
       "symbol_prefix": "db",
-      "library_names": [ "libsybdb.dylib", "libsybdb.so", "sybdb.dll" ],
-      "header_names": [ "sybdb.h" ],
+      "library_names": [
+        "libsybdb.dylib",
+        "libsybdb.so",
+        "sybdb.dll"
+      ],
+      "header_names": [
+        "sybdb.h"
+      ],
       "version": ">=1.0.0 & <2.0.0",
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install freetds"
+        ],
+        "check_if_exists": [
+          "brew list freetds"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y freetds-dev"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y freetds-dev"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add freetds-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y freetds-devel"
+        ]
+      }
+    }
+  }
 }

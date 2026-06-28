@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Liblua\\Liblua",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install lua"
-      ],
-      "checkIfExists": [
-        "brew list lua"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y liblua5.4-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q liblua"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y liblua5.4-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q liblua"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add lua5.4-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e lua5.4-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y lua-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q lua-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y lua-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q lua-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install lua"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "liblua": {
       "symbol_prefix": "lua",
       "library_names": [
@@ -113,5 +59,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install lua"
+        ],
+        "check_if_exists": [
+          "brew list lua"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y liblua5.4-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q liblua"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y liblua5.4-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q liblua"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add lua5.4-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e lua5.4-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y lua-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q lua-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y lua-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q lua-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install lua"
+        ]
+      }
+    }
+  }
 }

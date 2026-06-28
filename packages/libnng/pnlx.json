@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libnng\\Libnng",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-utilities.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install nng"
-      ],
-      "checkIfExists": [
-        "brew list nng"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libnng-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists nng"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libnng-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists nng"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add nng-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists nng"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y nng-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q nng-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y nng-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q nng-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install nng"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -93,7 +39,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "nng": {
       "symbol_prefix": "nng",
       "library_names": [
@@ -108,5 +54,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install nng"
+        ],
+        "check_if_exists": [
+          "brew list nng"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libnng-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists nng"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libnng-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists nng"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add nng-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists nng"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y nng-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q nng-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y nng-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q nng-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install nng"
+        ]
+      }
+    }
+  }
 }

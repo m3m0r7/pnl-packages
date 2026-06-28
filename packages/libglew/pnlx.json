@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libglew\\Libglew",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-errors.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install glew"
-      ],
-      "checkIfExists": [
-        "brew list glew"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libglew-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists glew"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libglew-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists glew"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add glew-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists glew"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y glew-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists glew"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y glew-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists glew"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install glew"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libGLEW": {
       "symbol_prefix": "glew",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install glew"
+        ],
+        "check_if_exists": [
+          "brew list glew"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libglew-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists glew"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libglew-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists glew"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add glew-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists glew"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y glew-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists glew"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y glew-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists glew"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install glew"
+        ]
+      }
+    }
+  }
 }

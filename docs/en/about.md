@@ -56,6 +56,15 @@ use Pnlx\Libusb\Libusb;
 $result = Libusb::libusbInit(null);
 ```
 
-Generated code supports both static entity methods and optional global PHP functions, controlled by the `features.use_functions` configuration setting.
+Generated code supports both static entity methods and optional global PHP functions, controlled by the `features.global_functions` configuration setting.
 
-> **Status:** pnl is an early implementation. Local path, `file://`, and git-based installations work today. Repository index solving, signed package indexes, and FTP downloads are still in design.
+> **Status:** pnl is an early implementation. Local path, `file://`, archive, git, and bare-name (`repository-index.json`) installs all work today, as do signed repository indexes and `http(s)`/`ftp`/`ftps`/`git` downloads of native libraries and headers. Full cross-repository version solving is still in design.
+
+## Troubleshooting
+
+**Homebrew HDF5 version skew (`libmatio`, `libvips`, `libhdf5`, `libnetcdf`).** These wrap libraries that load a transitive `libhdf5.<N>.dylib`. When Homebrew upgrades `hdf5` but does not rebuild its dependents, the dependent still links a now-missing `libhdf5` soname and the FFI load fails with `FFI\Exception: Failed loading '…libhdf5.<N>.dylib'`. This is an environment issue, not a pnl bug — pnl loads exactly the library Homebrew links. Fix it by rebuilding the dependents against the current hdf5:
+
+```sh
+brew reinstall hdf5
+brew reinstall libmatio vips netcdf
+```

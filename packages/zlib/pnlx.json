@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Zlib\\Zlib",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-checksums.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install zlib"
-      ],
-      "checkIfExists": [
-        "brew list zlib"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y zlib1g-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists zlib"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y zlib1g-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists zlib"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add zlib-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists zlib"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y zlib-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q zlib-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y zlib-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q zlib-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install zlib"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "zlib": {
       "library_names": [
         "libz.dylib",
@@ -105,5 +51,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install zlib"
+        ],
+        "check_if_exists": [
+          "brew list zlib"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y zlib1g-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists zlib"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y zlib1g-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists zlib"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add zlib-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists zlib"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y zlib-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q zlib-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y zlib-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q zlib-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install zlib"
+        ]
+      }
+    }
+  }
 }

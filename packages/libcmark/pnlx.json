@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libcmark\\Libcmark",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install cmark"
-      ],
-      "checkIfExists": [
-        "brew list cmark"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libcmark-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libcmark"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libcmark-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libcmark"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add cmark-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e cmark-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y cmark-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q cmark-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y cmark-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q cmark-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libcmark": {
       "symbol_prefix": "cmark",
       "library_names": [
@@ -101,5 +52,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install cmark"
+        ],
+        "check_if_exists": [
+          "brew list cmark"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libcmark-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libcmark"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libcmark-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libcmark"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add cmark-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e cmark-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y cmark-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q cmark-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y cmark-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q cmark-devel"
+        ]
+      }
+    }
+  }
 }

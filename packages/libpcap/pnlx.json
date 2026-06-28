@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libpcap\\Libpcap",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-datalink.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libpcap"
-      ],
-      "checkIfExists": [
-        "brew list libpcap"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libpcap-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libpcap"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libpcap-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libpcap"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libpcap-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e libpcap-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libpcap-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libpcap-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libpcap-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libpcap-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libpcap"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libpcap": {
       "symbol_prefix": "pcap",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libpcap"
+        ],
+        "check_if_exists": [
+          "brew list libpcap"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libpcap-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libpcap"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libpcap-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libpcap"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libpcap-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e libpcap-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libpcap-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libpcap-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libpcap-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libpcap-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libpcap"
+        ]
+      }
+    }
+  }
 }

@@ -3,31 +3,76 @@
   "name": "libmatio/libmatio",
   "version": "1.5.28",
   "description": "PHP FFI wrapper for matio, the MATLAB MAT-file I/O library.",
-  "authors": [ { "name": "Libmatio maintainers" } ],
+  "authors": [
+    {
+      "name": "Libmatio maintainers"
+    }
+  ],
   "license": "BSD-2-Clause",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmatio\\Libmatio",
-  "examples": [ "EXAMPLES.md" ],
-  "installation": {
-    "darwin": { "install": [ "brew install libmatio" ], "checkIfExists": [ "brew list libmatio" ] },
-    "ubuntu": { "install": [ "sudo apt-get install -y libmatio-dev" ] },
-    "debian": { "install": [ "sudo apt-get install -y libmatio-dev" ] },
-    "fedora": { "install": [ "sudo dnf install -y matio-devel" ] }
-  },
-  "platforms": [
-    { "os": "darwin", "arch": "aarch64" },
-    { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" },
-    { "os": "linux", "arch": "aarch64" }
+  "examples": [
+    "EXAMPLES.md"
   ],
-  "requires": {
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "native_libraries": {
     "matio": {
       "symbol_prefix": "Mat",
-      "library_names": [ "libmatio.dylib", "libmatio.so", "matio.dll" ],
-      "header_names": [ "matio.h" ],
+      "library_names": [
+        "libmatio.dylib",
+        "libmatio.so",
+        "matio.dll"
+      ],
+      "header_names": [
+        "matio.h"
+      ],
       "version": ">=1.5.0 & <2.0.0",
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libmatio"
+        ],
+        "check_if_exists": [
+          "brew list libmatio"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libmatio-dev"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libmatio-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y matio-devel"
+        ]
+      }
+    }
+  }
 }

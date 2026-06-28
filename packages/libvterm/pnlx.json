@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libvterm\\Libvterm",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-attr-types.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libvterm"
-      ],
-      "checkIfExists": [
-        "brew list libvterm"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libvterm-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vterm"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libvterm-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vterm"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libvterm-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vterm"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libvterm-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libvterm-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libvterm-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libvterm-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -82,7 +33,7 @@
       "arch": "aarch64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "vterm": {
       "symbol_prefix": "vterm",
       "library_names": [
@@ -96,5 +47,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libvterm"
+        ],
+        "check_if_exists": [
+          "brew list libvterm"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libvterm-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vterm"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libvterm-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vterm"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libvterm-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vterm"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libvterm-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libvterm-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libvterm-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libvterm-devel"
+        ]
+      }
+    }
+  }
 }

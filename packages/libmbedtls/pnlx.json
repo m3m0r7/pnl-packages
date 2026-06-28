@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmbedtls\\Libmbedtls",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-ciphersuite-keysize.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install mbedtls"
-      ],
-      "checkIfExists": [
-        "brew list mbedtls"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libmbedtls-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists mbedtls"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libmbedtls-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists mbedtls"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add mbedtls-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists mbedtls"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y mbedtls-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists mbedtls"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y mbedtls-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists mbedtls"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install mbedtls"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libmbedtls": {
       "symbol_prefix": "mbedtls",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install mbedtls"
+        ],
+        "check_if_exists": [
+          "brew list mbedtls"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libmbedtls-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists mbedtls"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libmbedtls-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists mbedtls"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add mbedtls-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists mbedtls"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y mbedtls-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists mbedtls"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y mbedtls-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists mbedtls"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install mbedtls"
+        ]
+      }
+    }
+  }
 }

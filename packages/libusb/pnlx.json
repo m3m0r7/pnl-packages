@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libusb\\Libusb",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-errors.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libusb"
-      ],
-      "checkIfExists": [
-        "brew list libusb"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libusb-1.0-0-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libusb-1.0"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libusb-1.0-0-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libusb-1.0"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libusb-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libusb-1.0"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libusb1-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libusb-1.0"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libusb1-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libusb-1.0"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libusb"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libusb-1.0": {
       "symbol_prefix": "libusb",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libusb"
+        ],
+        "check_if_exists": [
+          "brew list libusb"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libusb-1.0-0-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libusb-1.0"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libusb-1.0-0-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libusb-1.0"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libusb-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libusb-1.0"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libusb1-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libusb-1.0"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libusb1-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libusb-1.0"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libusb"
+        ]
+      }
+    }
+  }
 }

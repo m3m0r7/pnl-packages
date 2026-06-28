@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libgsl\\Libgsl",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-elementary-math.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install gsl"
-      ],
-      "checkIfExists": [
-        "brew list gsl"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libgsl-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists gsl"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libgsl-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists gsl"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add gsl-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists gsl"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y gsl-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists gsl"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y gsl-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists gsl"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libgsl": {
       "symbol_prefix": "gsl",
       "library_names": [
@@ -113,5 +64,57 @@
         ]
       }
     ]
+  },
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install gsl"
+        ],
+        "check_if_exists": [
+          "brew list gsl"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libgsl-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists gsl"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libgsl-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists gsl"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add gsl-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists gsl"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y gsl-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists gsl"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y gsl-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists gsl"
+        ]
+      }
+    }
   }
 }

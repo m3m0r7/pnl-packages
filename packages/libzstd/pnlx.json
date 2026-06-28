@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libzstd\\Libzstd",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-levels.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install zstd"
-      ],
-      "checkIfExists": [
-        "brew list zstd"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libzstd-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libzstd"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libzstd-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libzstd"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add zstd-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libzstd"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libzstd-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libzstd-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libzstd-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libzstd-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install zstd"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libzstd": {
       "symbol_prefix": "ZSTD",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install zstd"
+        ],
+        "check_if_exists": [
+          "brew list zstd"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libzstd-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libzstd"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libzstd-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libzstd"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add zstd-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libzstd"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libzstd-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libzstd-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libzstd-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libzstd-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install zstd"
+        ]
+      }
+    }
+  }
 }

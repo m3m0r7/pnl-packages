@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Liblzma\\Liblzma",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-utilities.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install xz"
-      ],
-      "checkIfExists": [
-        "brew list xz"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y liblzma-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists liblzma"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y liblzma-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists liblzma"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add xz-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists liblzma"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y xz-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists liblzma"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y xz-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists liblzma"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install liblzma"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "liblzma": {
       "symbol_prefix": "lzma",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install xz"
+        ],
+        "check_if_exists": [
+          "brew list xz"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y liblzma-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists liblzma"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y liblzma-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists liblzma"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add xz-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists liblzma"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y xz-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists liblzma"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y xz-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists liblzma"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install liblzma"
+        ]
+      }
+    }
+  }
 }

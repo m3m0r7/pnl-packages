@@ -14,61 +14,6 @@
   "examples": [
     "EXAMPLES.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install jpeg-turbo"
-      ],
-      "checkIfExists": [
-        "brew list jpeg-turbo"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libjpeg-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libjpeg"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libjpeg-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libjpeg"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libjpeg-turbo-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libjpeg"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libjpeg-turbo-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libjpeg"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libjpeg-turbo-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libjpeg"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libjpeg-turbo"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +36,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libjpeg": {
       "symbol_prefix": "jpeg",
       "library_names": [
@@ -106,5 +51,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install jpeg-turbo"
+        ],
+        "check_if_exists": [
+          "brew list jpeg-turbo"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libjpeg-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libjpeg"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libjpeg-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libjpeg"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libjpeg-turbo-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libjpeg"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libjpeg-turbo-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libjpeg"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libjpeg-turbo-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libjpeg"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libjpeg-turbo"
+        ]
+      }
+    }
+  }
 }

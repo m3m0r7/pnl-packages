@@ -14,61 +14,6 @@
   "examples": [
     "EXAMPLES.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libvorbis"
-      ],
-      "checkIfExists": [
-        "brew list libvorbis"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libvorbis-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vorbis"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libvorbis-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vorbis"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libvorbis-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vorbis"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libvorbis-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vorbis"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libvorbis-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vorbis"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libvorbis"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +36,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libvorbis": {
       "symbol_prefix": "vorbis",
       "library_names": [
@@ -106,5 +51,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libvorbis"
+        ],
+        "check_if_exists": [
+          "brew list libvorbis"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libvorbis-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vorbis"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libvorbis-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vorbis"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libvorbis-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vorbis"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libvorbis-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vorbis"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libvorbis-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vorbis"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libvorbis"
+        ]
+      }
+    }
+  }
 }

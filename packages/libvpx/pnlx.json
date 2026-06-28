@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libvpx\\Libvpx",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-error-strings.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libvpx"
-      ],
-      "checkIfExists": [
-        "brew list libvpx"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libvpx-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vpx"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libvpx-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vpx"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libvpx-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vpx"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libvpx-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libvpx-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libvpx-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libvpx-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libvpx"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libvpx": {
       "symbol_prefix": "vpx",
       "library_names": [
@@ -108,5 +54,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libvpx"
+        ],
+        "check_if_exists": [
+          "brew list libvpx"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libvpx-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vpx"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libvpx-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vpx"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libvpx-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vpx"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libvpx-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libvpx-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libvpx-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libvpx-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libvpx"
+        ]
+      }
+    }
+  }
 }

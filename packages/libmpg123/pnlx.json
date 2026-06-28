@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmpg123\\Libmpg123",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-error-strings.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install mpg123"
-      ],
-      "checkIfExists": [
-        "brew list mpg123"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libmpg123-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists mpg123"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libmpg123-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists mpg123"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add mpg123-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists mpg123"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y mpg123-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists mpg123"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y mpg123-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists mpg123"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install mpg123"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libmpg123": {
       "symbol_prefix": "mpg123",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install mpg123"
+        ],
+        "check_if_exists": [
+          "brew list mpg123"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libmpg123-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists mpg123"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libmpg123-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists mpg123"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add mpg123-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists mpg123"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y mpg123-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists mpg123"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y mpg123-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists mpg123"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install mpg123"
+        ]
+      }
+    }
+  }
 }

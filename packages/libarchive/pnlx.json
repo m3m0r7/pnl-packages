@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libarchive\\Libarchive",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libarchive"
-      ],
-      "checkIfExists": [
-        "brew list libarchive"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libarchive-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libarchive"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libarchive-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libarchive"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libarchive-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libarchive"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libarchive-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libarchive"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libarchive-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libarchive"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libarchive"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libarchive": {
       "symbol_prefix": "archive",
       "library_names": [
@@ -107,5 +53,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libarchive"
+        ],
+        "check_if_exists": [
+          "brew list libarchive"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libarchive-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libarchive"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libarchive-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libarchive"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libarchive-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libarchive"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libarchive-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libarchive"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libarchive-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libarchive"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libarchive"
+        ]
+      }
+    }
+  }
 }

@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libffi\\Libffi",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libffi"
-      ],
-      "checkIfExists": [
-        "brew list libffi"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libffi-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libffi"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libffi-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libffi"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libffi-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libffi"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libffi-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libffi"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libffi-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libffi"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libffi"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libffi": {
       "symbol_prefix": "ffi",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libffi"
+        ],
+        "check_if_exists": [
+          "brew list libffi"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libffi-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libffi"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libffi-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libffi"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libffi-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libffi"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libffi-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libffi"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libffi-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libffi"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libffi"
+        ]
+      }
+    }
+  }
 }

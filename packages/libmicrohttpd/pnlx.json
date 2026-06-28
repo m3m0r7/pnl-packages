@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmicrohttpd\\Libmicrohttpd",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-status-phrases.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libmicrohttpd"
-      ],
-      "checkIfExists": [
-        "brew list libmicrohttpd"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libmicrohttpd-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmicrohttpd"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libmicrohttpd-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmicrohttpd"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libmicrohttpd-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmicrohttpd"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libmicrohttpd-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmicrohttpd"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libmicrohttpd-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmicrohttpd"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libmicrohttpd"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libmicrohttpd": {
       "symbol_prefix": "MHD",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libmicrohttpd"
+        ],
+        "check_if_exists": [
+          "brew list libmicrohttpd"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libmicrohttpd-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmicrohttpd"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libmicrohttpd-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmicrohttpd"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libmicrohttpd-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmicrohttpd"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libmicrohttpd-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmicrohttpd"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libmicrohttpd-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmicrohttpd"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libmicrohttpd"
+        ]
+      }
+    }
+  }
 }

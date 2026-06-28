@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libsodium\\Libsodium",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-random.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libsodium"
-      ],
-      "checkIfExists": [
-        "brew list libsodium"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libsodium-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libsodium"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libsodium-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libsodium"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libsodium-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libsodium"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libsodium-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libsodium"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libsodium-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libsodium"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libsodium"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libsodium": {
       "library_names": [
         "libsodium.dylib",
@@ -105,5 +51,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libsodium"
+        ],
+        "check_if_exists": [
+          "brew list libsodium"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libsodium-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libsodium"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libsodium-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libsodium"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libsodium-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libsodium"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libsodium-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libsodium"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libsodium-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libsodium"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libsodium"
+        ]
+      }
+    }
+  }
 }

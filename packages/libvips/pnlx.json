@@ -14,56 +14,6 @@
   "examples": [
     "EXAMPLES.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install vips"
-      ],
-      "checkIfExists": [
-        "brew list vips"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libvips-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vips"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libvips-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vips"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add vips-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vips"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y vips-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q vips-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y vips-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q vips-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -82,7 +32,7 @@
       "arch": "aarch64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "vips": {
       "symbol_prefix": "vips",
       "library_names": [
@@ -96,5 +46,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install vips"
+        ],
+        "check_if_exists": [
+          "brew list vips"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libvips-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vips"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libvips-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vips"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add vips-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vips"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y vips-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q vips-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y vips-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q vips-devel"
+        ]
+      }
+    }
+  }
 }

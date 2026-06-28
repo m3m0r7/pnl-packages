@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Liblz4\\Liblz4",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install lz4"
-      ],
-      "checkIfExists": [
-        "brew list lz4"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y liblz4-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists liblz4"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y liblz4-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists liblz4"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add lz4-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists liblz4"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y lz4-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists liblz4"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y lz4-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists liblz4"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install lz4"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "liblz4": {
       "symbol_prefix": "LZ4",
       "library_names": [
@@ -107,5 +53,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install lz4"
+        ],
+        "check_if_exists": [
+          "brew list lz4"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y liblz4-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists liblz4"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y liblz4-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists liblz4"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add lz4-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists liblz4"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y lz4-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists liblz4"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y lz4-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists liblz4"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install lz4"
+        ]
+      }
+    }
+  }
 }

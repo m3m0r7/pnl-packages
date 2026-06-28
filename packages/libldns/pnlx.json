@@ -12,40 +12,28 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libldns\\Libldns",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-rrtype.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install ldns"
-      ],
-      "checkIfExists": [
-        "brew list ldns"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libldns-dev"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libldns-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y ldns-devel"
-      ]
-    }
-  },
   "platforms": [
-    { "os": "darwin", "arch": "aarch64" },
-    { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" },
-    { "os": "linux", "arch": "aarch64" }
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
   ],
-  "requires": {
+  "native_libraries": {
     "ldns": {
       "symbol_prefix": "ldns",
       "library_names": [
@@ -60,5 +48,40 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install ldns"
+        ],
+        "check_if_exists": [
+          "brew list ldns"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libldns-dev"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libldns-dev"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add ldns-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libldns"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y ldns-devel"
+        ]
+      }
+    }
+  }
 }

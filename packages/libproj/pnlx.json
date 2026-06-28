@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libproj\\Libproj",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-angles.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install proj"
-      ],
-      "checkIfExists": [
-        "brew list proj"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libproj-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists proj"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libproj-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists proj"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add proj-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists proj"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y proj-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q proj-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y proj-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q proj-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install proj"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "proj": {
       "symbol_prefix": "proj",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install proj"
+        ],
+        "check_if_exists": [
+          "brew list proj"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libproj-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists proj"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libproj-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists proj"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add proj-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists proj"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y proj-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q proj-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y proj-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q proj-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install proj"
+        ]
+      }
+    }
+  }
 }

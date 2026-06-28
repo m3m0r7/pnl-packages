@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libenet\\Libenet",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-timing.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install enet"
-      ],
-      "checkIfExists": [
-        "brew list enet"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libenet-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libenet"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libenet-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libenet"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add enet-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libenet"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y enet-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q enet-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y enet-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q enet-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install enet"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "enet": {
       "symbol_prefix": "enet",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install enet"
+        ],
+        "check_if_exists": [
+          "brew list enet"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libenet-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libenet"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libenet-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libenet"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add enet-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libenet"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y enet-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q enet-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y enet-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q enet-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install enet"
+        ]
+      }
+    }
+  }
 }

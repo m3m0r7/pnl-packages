@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libdeflate\\Libdeflate",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-checksums.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libdeflate"
-      ],
-      "checkIfExists": [
-        "brew list libdeflate"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libdeflate-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libdeflate"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libdeflate-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libdeflate"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libdeflate-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libdeflate"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libdeflate-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libdeflate-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libdeflate-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libdeflate-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libdeflate"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libdeflate": {
       "symbol_prefix": "libdeflate",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libdeflate"
+        ],
+        "check_if_exists": [
+          "brew list libdeflate"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libdeflate-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libdeflate"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libdeflate-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libdeflate"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libdeflate-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libdeflate"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libdeflate-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libdeflate-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libdeflate-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libdeflate-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libdeflate"
+        ]
+      }
+    }
+  }
 }

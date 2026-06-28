@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmariadb\\Libmariadb",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-client.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install mariadb-connector-c"
-      ],
-      "checkIfExists": [
-        "brew list mariadb-connector-c"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libmariadb-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmariadb"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libmariadb-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmariadb"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add mariadb-connector-c-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmariadb"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y mariadb-connector-c-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmariadb"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y mariadb-connector-c-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmariadb"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libmariadb"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libmariadb": {
       "symbol_prefix": "mysql",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install mariadb-connector-c"
+        ],
+        "check_if_exists": [
+          "brew list mariadb-connector-c"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libmariadb-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmariadb"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libmariadb-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmariadb"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add mariadb-connector-c-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmariadb"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y mariadb-connector-c-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmariadb"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y mariadb-connector-c-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmariadb"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libmariadb"
+        ]
+      }
+    }
+  }
 }

@@ -14,61 +14,6 @@
   "examples": [
     "EXAMPLES.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install mongo-c-driver"
-      ],
-      "checkIfExists": [
-        "brew list mongo-c-driver"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libmongoc-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmongoc-1.0"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libmongoc-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmongoc-1.0"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add mongo-c-driver-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmongoc-1.0"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y mongo-c-driver-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q mongo-c-driver-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y mongo-c-driver-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q mongo-c-driver-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install mongo-c-driver"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +36,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libmongoc-1.0": {
       "symbol_prefix": "mongoc",
       "library_names": [
@@ -106,5 +51,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install mongo-c-driver"
+        ],
+        "check_if_exists": [
+          "brew list mongo-c-driver"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libmongoc-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmongoc-1.0"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libmongoc-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmongoc-1.0"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add mongo-c-driver-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmongoc-1.0"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y mongo-c-driver-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q mongo-c-driver-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y mongo-c-driver-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q mongo-c-driver-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install mongo-c-driver"
+        ]
+      }
+    }
+  }
 }

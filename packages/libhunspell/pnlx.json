@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libhunspell\\Libhunspell",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-spellcheck.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install hunspell"
-      ],
-      "checkIfExists": [
-        "brew list hunspell"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libhunspell-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists hunspell"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libhunspell-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists hunspell"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add hunspell-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists hunspell"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y hunspell-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q hunspell-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y hunspell-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q hunspell-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install hunspell"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "hunspell": {
       "symbol_prefix": "Hunspell",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install hunspell"
+        ],
+        "check_if_exists": [
+          "brew list hunspell"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libhunspell-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists hunspell"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libhunspell-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists hunspell"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add hunspell-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists hunspell"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y hunspell-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q hunspell-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y hunspell-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q hunspell-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install hunspell"
+        ]
+      }
+    }
+  }
 }

@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libcairo\\Libcairo",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install cairo"
-      ],
-      "checkIfExists": [
-        "brew list cairo"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libcairo2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists cairo"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libcairo2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists cairo"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add cairo-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists cairo"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y cairo-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists cairo"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y cairo-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists cairo"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install cairo"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "cairo": {
       "symbol_prefix": "cairo",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install cairo"
+        ],
+        "check_if_exists": [
+          "brew list cairo"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libcairo2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists cairo"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libcairo2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists cairo"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add cairo-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists cairo"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y cairo-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists cairo"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y cairo-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists cairo"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install cairo"
+        ]
+      }
+    }
+  }
 }

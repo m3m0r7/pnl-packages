@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libopenjp2\\Libopenjp2",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-threading.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install openjpeg"
-      ],
-      "checkIfExists": [
-        "brew list openjpeg"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libopenjp2-7-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libopenjp2"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libopenjp2-7-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libopenjp2"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add openjpeg-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libopenjp2"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y openjpeg2-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q openjpeg2-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y openjpeg2-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q openjpeg2-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install openjpeg"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libopenjp2": {
       "symbol_prefix": "opj",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install openjpeg"
+        ],
+        "check_if_exists": [
+          "brew list openjpeg"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libopenjp2-7-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libopenjp2"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libopenjp2-7-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libopenjp2"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add openjpeg-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libopenjp2"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y openjpeg2-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q openjpeg2-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y openjpeg2-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q openjpeg2-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install openjpeg"
+        ]
+      }
+    }
+  }
 }

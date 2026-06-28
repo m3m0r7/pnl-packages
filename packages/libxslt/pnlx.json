@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libxslt\\Libxslt",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-xinclude.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libxslt"
-      ],
-      "checkIfExists": [
-        "brew list libxslt"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libxslt1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libxslt"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libxslt1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libxslt"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libxslt-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libxslt"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libxslt-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libxslt-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libxslt-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libxslt-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libxslt"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libxslt": {
       "symbol_prefix": "xslt",
       "library_names": [
@@ -107,5 +53,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libxslt"
+        ],
+        "check_if_exists": [
+          "brew list libxslt"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libxslt1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libxslt"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libxslt1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libxslt"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libxslt-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libxslt"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libxslt-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libxslt-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libxslt-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libxslt-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libxslt"
+        ]
+      }
+    }
+  }
 }

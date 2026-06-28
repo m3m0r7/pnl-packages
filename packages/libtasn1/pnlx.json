@@ -12,49 +12,28 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libtasn1\\Libtasn1",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-strerror.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libtasn1"
-      ],
-      "checkIfExists": [
-        "brew list libtasn1"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libtasn1-6-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libtasn1"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libtasn1-6-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libtasn1"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libtasn1-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libtasn1"
-      ]
-    }
-  },
   "platforms": [
-    { "os": "darwin", "arch": "aarch64" },
-    { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" },
-    { "os": "linux", "arch": "aarch64" }
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
   ],
-  "requires": {
+  "native_libraries": {
     "libtasn1": {
       "symbol_prefix": "asn1",
       "library_names": [
@@ -69,5 +48,49 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libtasn1"
+        ],
+        "check_if_exists": [
+          "brew list libtasn1"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libtasn1-6-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libtasn1"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libtasn1-6-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libtasn1"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libtasn1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libtasn1"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libtasn1-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libtasn1"
+        ]
+      }
+    }
+  }
 }

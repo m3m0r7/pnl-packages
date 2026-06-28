@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libglib2\\Libglib2",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-strings.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install glib"
-      ],
-      "checkIfExists": [
-        "brew list glib"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libglib2.0-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists glib-2.0"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libglib2.0-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists glib-2.0"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add glib-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists glib-2.0"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y glib2-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q glib2-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y glib2-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q glib2-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install glib"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "glib-2.0": {
       "symbol_prefix": "g",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install glib"
+        ],
+        "check_if_exists": [
+          "brew list glib"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libglib2.0-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists glib-2.0"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libglib2.0-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists glib-2.0"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add glib-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists glib-2.0"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y glib2-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q glib2-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y glib2-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q glib2-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install glib"
+        ]
+      }
+    }
+  }
 }

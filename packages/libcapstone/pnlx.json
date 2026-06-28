@@ -12,49 +12,28 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libcapstone\\Libcapstone",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-support.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install capstone"
-      ],
-      "checkIfExists": [
-        "brew list capstone"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libcapstone-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists capstone"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libcapstone-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists capstone"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y capstone-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists capstone"
-      ]
-    }
-  },
   "platforms": [
-    { "os": "darwin", "arch": "aarch64" },
-    { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" },
-    { "os": "linux", "arch": "aarch64" }
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
   ],
-  "requires": {
+  "native_libraries": {
     "capstone": {
       "symbol_prefix": "cs",
       "library_names": [
@@ -69,5 +48,49 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install capstone"
+        ],
+        "check_if_exists": [
+          "brew list capstone"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libcapstone-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists capstone"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libcapstone-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists capstone"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add capstone-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists capstone"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y capstone-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists capstone"
+        ]
+      }
+    }
+  }
 }

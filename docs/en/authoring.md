@@ -60,7 +60,7 @@ Minimal shape:
       "arch": "aarch64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "native-key": {
       "symbol_prefix": "native",
       "library_names": [
@@ -93,10 +93,11 @@ Fields:
 | `class` | string | yes | Fully qualified generated PHP entity class. Must include a namespace. |
 | `class_prefix` | string | optional | Prefix applied to generated class/context names. Leave empty unless avoiding class collisions. |
 | `examples` | array | optional | Paths to usage example files, relative to the package root (e.g. `EXAMPLES.md`). The file content is printed when `pnl install` finishes, so users immediately see how to call the package. Keep the snippets short and runnable, and mirror them in the package README. |
-| `installation` | object | optional | Per-OS / per-distro commands that install the package's native dependencies. See [Installing native dependencies](#installing-native-dependencies). |
 | `platforms` | array | yes | Supported OS/arch combinations for the wrapper package. |
-| `requires` | object | yes | Native library requirements. Must contain at least one entry. |
+| `native_libraries` | object | yes | Native library requirements. Must contain at least one entry. |
 | `dependencies` | object | yes | Other pnl extension dependencies. Dependency solving is not complete yet. |
+| `compile_options` | object | optional | Compile-time generation inputs: `headers` (explicit header list) and `definitions` (build-time `-D` macros the user must supply). |
+| `setup` | object | optional | How to make the native dependencies present: `build_script` (a package-relative build script) and/or `install` (per-OS install recipes). See [Installing native dependencies](#installing-native-dependencies). |
 
 ### Package Identity
 
@@ -127,12 +128,12 @@ src/generated/LibusbContext.php
 
 ### Native Requirements
 
-`requires` is keyed by native library identity. The key is used in lock/pathmap files and bridge paths.
+`native_libraries` is keyed by native library identity. The key is used in lock/pathmap files and bridge paths.
 
 Example from libusb:
 
 ```json
-"requires": {
+"native_libraries": {
   "libusb-1.0": {
     "symbol_prefix": "libusb",
     "library_names": [
@@ -154,7 +155,7 @@ Requirement fields:
 | Field | Required | Meaning |
 | --- | --- | --- |
 | `symbol_prefix` | optional | C function prefix to keep. Only declarations whose names start with it are wrapped (e.g. `libnfc` exports `nfc_*`). Set it to `""` to keep **every** declaration and pass an inline header straight through without libclang filtering. When omitted, it defaults to a prefix derived from the library key. |
-| `library_names` | yes | Candidate shared-library filenames to search for in `load_paths`, environment paths, and system defaults. Each entry is either a string, or an object `{ "name": "libc.dylib", "virtual": true }` — see [Virtual libraries](#virtual-libraries). |
+| `library_names` | yes | Candidate shared-library filenames to search for in `library_paths`, environment paths, and system defaults. Each entry is either a string, or an object `{ "name": "libc.dylib", "virtual": true }` — see [Virtual libraries](#virtual-libraries). |
 | `header_names` | optional | Candidate public C header paths, expanded from the resolved include root. Omit when you supply `header_inline` or `header_url`. |
 | `header_inline` | optional | C declarations embedded directly in the manifest, used verbatim instead of reading a header from disk. See [Inline headers](#inline-headers). |
 | `library_url` | optional | Remote source (`http(s)`/`ftp`/`git`) to fetch the native library from instead of searching the local library path. |
@@ -169,7 +170,7 @@ A requirement needs exactly one header source: `header_names`, `header_inline`, 
 `header_inline` declares the C API right inside `pnlx.json` — ideal for small or system libraries where shipping or locating a real header is unnecessary. The string is treated as a C header.
 
 ```json
-"requires": {
+"native_libraries": {
   "libc": {
     "symbol_prefix": "",
     "library_names": [
@@ -202,37 +203,39 @@ A virtual library is **linked by name** and never required to exist as a file. p
 
 ### Installing native dependencies
 
-A package may declare `installation` so `pnl install` can fetch its native libraries/headers for the user. It is an object keyed by OS or Linux distro name — `darwin`, `windows`, `alpine`, `ubuntu`, `debian`, `fedora`, `rhel`, …, plus a generic `linux` fallback; each entry has:
+A package may declare `setup.install` so `pnl install` can fetch its native libraries/headers for the user. It is an object keyed by OS or Linux distro name — `darwin`, `windows`, `alpine`, `ubuntu`, `debian`, `fedora`, `rhel`, …, plus a generic `linux` fallback; each entry has:
 
-- `install` — shell command lines to run to install the dependency.
-- `checkIfExists` (optional) — shell command lines that exit `0` when the dependency is already present. If they all pass, installation is skipped.
+- `commands` — shell command lines to run to install the dependency.
+- `check_if_exists` (optional) — shell command lines that exit `0` when the dependency is already present. If they all pass, installation is skipped.
 
 On Linux, pnl picks the entry using `/etc/os-release`: the distro `ID` (e.g. `alpine`, `ubuntu`, `fedora`) is tried first, then each `ID_LIKE` ancestor (so Ubuntu falls back to a `debian` entry, and Rocky/Alma/CentOS fall back to a `rhel` entry), then `linux`.
 
 ```json
-"installation": {
-  "darwin": {
-    "install": ["brew install sdl2 sdl2_image sdl2_ttf"],
-    "checkIfExists": ["brew list sdl2 && brew list sdl2_image && brew list sdl2_ttf"]
-  },
-  "ubuntu": {
-    "install": ["sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev"],
-    "checkIfExists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
-  },
-  "alpine": {
-    "install": ["apk add sdl2-dev sdl2_image-dev sdl2_ttf-dev"],
-    "checkIfExists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
-  },
-  "fedora": {
-    "install": ["sudo dnf install -y SDL2-devel SDL2_image-devel SDL2_ttf-devel"],
-    "checkIfExists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
+"setup": {
+  "install": {
+    "darwin": {
+      "commands": ["brew install sdl2 sdl2_image sdl2_ttf"],
+      "check_if_exists": ["brew list sdl2 && brew list sdl2_image && brew list sdl2_ttf"]
+    },
+    "ubuntu": {
+      "commands": ["sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev"],
+      "check_if_exists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
+    },
+    "alpine": {
+      "commands": ["apk add sdl2-dev sdl2_image-dev sdl2_ttf-dev"],
+      "check_if_exists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
+    },
+    "fedora": {
+      "commands": ["sudo dnf install -y SDL2-devel SDL2_image-devel SDL2_ttf-devel"],
+      "check_if_exists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
+    }
   }
 }
 ```
 
-When `installation` is present and `checkIfExists` does not pass, `pnl install` asks `Run the following to install them? [Y/n]` before running the commands; `pnl install … -y` (or `--yes`) answers yes automatically. If an install command fails, pnl reports the failed command and asks the user to install the libraries and headers manually before running `pnl install` again. When a package has **no** `installation`, and the native library cannot be found, pnl prints exactly which `library_names` and `header_names` it is looking for and where to place them (e.g. `/usr/local/lib` and `/usr/local/include`).
+When `setup.install` is present and `check_if_exists` does not pass, `pnl install` asks `Run the following to install them? [Y/n]` before running the commands; `pnl install … -y` (or `--yes`) answers yes automatically. If an install command fails, pnl reports the failed command and asks the user to install the libraries and headers manually before running `pnl install` again. When a package has **no** `setup.install`, and the native library cannot be found, pnl prints exactly which `library_names` and `header_names` it is looking for and where to place them (e.g. `/usr/local/lib` and `/usr/local/include`).
 
-Most packages wrap a single system library and need no `installation` at all. Declare it for libraries that come as several packages (e.g. SDL2 plus `sdl2_image` / `sdl2_ttf`) or that are awkward to install by hand.
+Most packages wrap a single system library and need no `setup.install` at all. Declare it for libraries that come as several packages (e.g. SDL2 plus `sdl2_image` / `sdl2_ttf`) or that are awkward to install by hand.
 
 ### Header And Bridge Generation
 

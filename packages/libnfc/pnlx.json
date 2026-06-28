@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libnfc\\Libnfc",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-enum-labels.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libnfc"
-      ],
-      "checkIfExists": [
-        "brew list libnfc"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libnfc-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libnfc"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libnfc-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libnfc"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libnfc-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libnfc"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libnfc-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libnfc"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libnfc-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libnfc"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -88,7 +39,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libnfc": {
       "symbol_prefix": "nfc",
       "library_names": [
@@ -105,5 +56,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libnfc"
+        ],
+        "check_if_exists": [
+          "brew list libnfc"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libnfc-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libnfc"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libnfc-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libnfc"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libnfc-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libnfc"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libnfc-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libnfc"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libnfc-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libnfc"
+        ]
+      }
+    }
+  }
 }

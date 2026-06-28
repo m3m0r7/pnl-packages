@@ -3,29 +3,85 @@
   "name": "libimagequant/libimagequant",
   "version": "4.3.0",
   "description": "PHP FFI wrapper for libimagequant, the high-quality image quantization library.",
-  "authors": [ { "name": "Libimagequant maintainers" } ],
+  "authors": [
+    {
+      "name": "Libimagequant maintainers"
+    }
+  ],
   "license": "GPL-3.0-or-later",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libimagequant\\Libimagequant",
-  "examples": [ "EXAMPLES.md" ],
-  "installation": {
-    "darwin": { "install": [ "brew install libimagequant" ], "checkIfExists": [ "brew list libimagequant" ] },
-    "ubuntu": { "install": [ "sudo apt-get install -y libimagequant-dev" ] },
-    "debian": { "install": [ "sudo apt-get install -y libimagequant-dev" ] },
-    "fedora": { "install": [ "sudo dnf install -y libimagequant-devel" ] }
-  },
-  "platforms": [
-    { "os": "darwin", "arch": "aarch64" }, { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" }, { "os": "linux", "arch": "aarch64" }
+  "examples": [
+    "EXAMPLES.md",
+    "EXAMPLES-attributes.md"
   ],
-  "requires": {
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "native_libraries": {
     "imagequant": {
       "symbol_prefix": "liq",
-      "library_names": [ "libimagequant.dylib", "libimagequant.so", "imagequant.dll" ],
-      "header_names": [ "libimagequant.h" ],
+      "library_names": [
+        "libimagequant.dylib",
+        "libimagequant.so",
+        "imagequant.dll"
+      ],
+      "header_names": [
+        "libimagequant.h"
+      ],
       "version": ">=2.0.0 & <5.0.0",
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libimagequant"
+        ],
+        "check_if_exists": [
+          "brew list libimagequant"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libimagequant-dev"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libimagequant-dev"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libimagequant-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists imagequant"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libimagequant-devel"
+        ]
+      }
+    }
+  }
 }

@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmosquitto\\Libmosquitto",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-error-strings.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install mosquitto"
-      ],
-      "checkIfExists": [
-        "brew list mosquitto"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libmosquitto-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmosquitto"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libmosquitto-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmosquitto"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add mosquitto-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmosquitto"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y mosquitto-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmosquitto"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y mosquitto-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmosquitto"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install mosquitto"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libmosquitto": {
       "symbol_prefix": "mosquitto",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install mosquitto"
+        ],
+        "check_if_exists": [
+          "brew list mosquitto"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libmosquitto-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmosquitto"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libmosquitto-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmosquitto"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add mosquitto-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmosquitto"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y mosquitto-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmosquitto"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y mosquitto-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmosquitto"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install mosquitto"
+        ]
+      }
+    }
+  }
 }

@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libgif\\Libgif",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-errors.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install giflib"
-      ],
-      "checkIfExists": [
-        "brew list giflib"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libgif-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libgif.so"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libgif-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libgif.so"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add giflib-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e giflib-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y giflib-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q giflib-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y giflib-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q giflib-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libgif": {
       "library_names": [
         "libgif.dylib",
@@ -100,5 +51,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install giflib"
+        ],
+        "check_if_exists": [
+          "brew list giflib"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libgif-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libgif.so"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libgif-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libgif.so"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add giflib-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e giflib-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y giflib-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q giflib-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y giflib-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q giflib-devel"
+        ]
+      }
+    }
+  }
 }

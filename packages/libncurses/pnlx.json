@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libncurses\\Libncurses",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-keyname.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install ncurses"
-      ],
-      "checkIfExists": [
-        "brew list ncurses"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libncurses-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libncurses"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libncurses-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libncurses"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add ncurses-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e ncurses-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y ncurses-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q ncurses-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y ncurses-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q ncurses-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install ncurses"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "ncurses": {
       "library_names": [
         "libncurses.dylib",
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install ncurses"
+        ],
+        "check_if_exists": [
+          "brew list ncurses"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libncurses-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libncurses"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libncurses-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libncurses"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add ncurses-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e ncurses-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y ncurses-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q ncurses-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y ncurses-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q ncurses-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install ncurses"
+        ]
+      }
+    }
+  }
 }

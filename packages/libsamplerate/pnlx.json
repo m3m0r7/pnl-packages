@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libsamplerate\\Libsamplerate",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-converter-info.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libsamplerate"
-      ],
-      "checkIfExists": [
-        "brew list libsamplerate"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libsamplerate0-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists samplerate"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libsamplerate0-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists samplerate"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libsamplerate-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists samplerate"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libsamplerate-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists samplerate"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libsamplerate-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists samplerate"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libsamplerate"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libsamplerate": {
       "symbol_prefix": "src",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libsamplerate"
+        ],
+        "check_if_exists": [
+          "brew list libsamplerate"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libsamplerate0-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists samplerate"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libsamplerate0-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists samplerate"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libsamplerate-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists samplerate"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libsamplerate-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists samplerate"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libsamplerate-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists samplerate"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libsamplerate"
+        ]
+      }
+    }
+  }
 }

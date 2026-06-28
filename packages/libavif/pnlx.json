@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libavif\\Libavif",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-formats.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libavif"
-      ],
-      "checkIfExists": [
-        "brew list libavif"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libavif-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libavif"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libavif-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libavif"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libavif-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libavif"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libavif-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libavif"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libavif-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libavif"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libavif"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libavif": {
       "symbol_prefix": "avif",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libavif"
+        ],
+        "check_if_exists": [
+          "brew list libavif"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libavif-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libavif"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libavif-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libavif"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libavif-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libavif"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libavif-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libavif"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libavif-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libavif"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libavif"
+        ]
+      }
+    }
+  }
 }

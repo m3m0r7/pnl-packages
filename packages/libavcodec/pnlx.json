@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libavcodec\\Libavcodec",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-codec-names.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install ffmpeg"
-      ],
-      "checkIfExists": [
-        "brew list ffmpeg"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libavcodec-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libavcodec"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libavcodec-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libavcodec"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add ffmpeg-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libavcodec"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y ffmpeg-free-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libavcodec"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y ffmpeg-free-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libavcodec"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install ffmpeg"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libavcodec": {
       "symbol_prefix": "avcodec",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install ffmpeg"
+        ],
+        "check_if_exists": [
+          "brew list ffmpeg"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libavcodec-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libavcodec"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libavcodec-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libavcodec"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add ffmpeg-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libavcodec"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y ffmpeg-free-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libavcodec"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y ffmpeg-free-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libavcodec"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install ffmpeg"
+        ]
+      }
+    }
+  }
 }

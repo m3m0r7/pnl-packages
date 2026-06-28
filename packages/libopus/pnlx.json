@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libopus\\Libopus",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-errors.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install opus"
-      ],
-      "checkIfExists": [
-        "brew list opus"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libopus-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists opus"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libopus-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists opus"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add opus-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists opus"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y opus-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists opus"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y opus-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists opus"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install opus"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "opus": {
       "symbol_prefix": "opus",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install opus"
+        ],
+        "check_if_exists": [
+          "brew list opus"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libopus-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists opus"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libopus-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists opus"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add opus-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists opus"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y opus-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists opus"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y opus-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists opus"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install opus"
+        ]
+      }
+    }
+  }
 }

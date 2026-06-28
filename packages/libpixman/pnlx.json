@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libpixman\\Libpixman",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-format-support.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install pixman"
-      ],
-      "checkIfExists": [
-        "brew list pixman"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libpixman-1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists pixman-1"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libpixman-1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists pixman-1"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add pixman-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists pixman-1"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y pixman-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists pixman-1"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y pixman-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists pixman-1"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libpixman-1": {
       "symbol_prefix": "pixman",
       "library_names": [
@@ -102,5 +53,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install pixman"
+        ],
+        "check_if_exists": [
+          "brew list pixman"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libpixman-1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists pixman-1"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libpixman-1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists pixman-1"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add pixman-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists pixman-1"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y pixman-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists pixman-1"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y pixman-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists pixman-1"
+        ]
+      }
+    }
+  }
 }

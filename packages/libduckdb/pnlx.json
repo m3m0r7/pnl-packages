@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libduckdb\\Libduckdb",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-values.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install duckdb"
-      ],
-      "checkIfExists": [
-        "brew list duckdb"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libduckdb-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libduckdb.so"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libduckdb-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libduckdb.so"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add duckdb-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e duckdb-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y duckdb-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q duckdb-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y duckdb-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q duckdb-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -78,7 +29,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "duckdb": {
       "symbol_prefix": "duckdb",
       "library_names": [
@@ -93,5 +44,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install duckdb"
+        ],
+        "check_if_exists": [
+          "brew list duckdb"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libduckdb-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libduckdb.so"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libduckdb-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libduckdb.so"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add duckdb-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e duckdb-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y duckdb-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q duckdb-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y duckdb-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q duckdb-devel"
+        ]
+      }
+    }
+  }
 }

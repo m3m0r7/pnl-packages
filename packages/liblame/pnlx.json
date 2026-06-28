@@ -3,29 +3,85 @@
   "name": "liblame/liblame",
   "version": "3.100.0",
   "description": "PHP FFI wrapper for LAME, the MP3 audio encoder.",
-  "authors": [ { "name": "Liblame maintainers" } ],
+  "authors": [
+    {
+      "name": "Liblame maintainers"
+    }
+  ],
   "license": "LGPL-2.0-or-later",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Liblame\\Liblame",
-  "examples": [ "EXAMPLES.md" ],
-  "installation": {
-    "darwin": { "install": [ "brew install lame" ], "checkIfExists": [ "brew list lame" ] },
-    "ubuntu": { "install": [ "sudo apt-get install -y libmp3lame-dev" ] },
-    "debian": { "install": [ "sudo apt-get install -y libmp3lame-dev" ] },
-    "fedora": { "install": [ "sudo dnf install -y lame-devel" ] }
-  },
-  "platforms": [
-    { "os": "darwin", "arch": "aarch64" }, { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" }, { "os": "linux", "arch": "aarch64" }
+  "examples": [
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "requires": {
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "native_libraries": {
     "lame": {
       "symbol_prefix": "lame",
-      "library_names": [ "libmp3lame.dylib", "libmp3lame.so", "mp3lame.dll" ],
-      "header_names": [ "lame/lame.h" ],
+      "library_names": [
+        "libmp3lame.dylib",
+        "libmp3lame.so",
+        "mp3lame.dll"
+      ],
+      "header_names": [
+        "lame/lame.h"
+      ],
       "version": ">=3.99.0 & <4.0.0",
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install lame"
+        ],
+        "check_if_exists": [
+          "brew list lame"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libmp3lame-dev"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libmp3lame-dev"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add lame-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists lame"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y lame-devel"
+        ]
+      }
+    }
+  }
 }

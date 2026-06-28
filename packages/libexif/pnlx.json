@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libexif\\Libexif",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-tags.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libexif"
-      ],
-      "checkIfExists": [
-        "brew list libexif"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libexif-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libexif"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libexif-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libexif"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libexif-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libexif"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libexif-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libexif"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libexif-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libexif"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libexif"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libexif": {
       "symbol_prefix": "exif",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libexif"
+        ],
+        "check_if_exists": [
+          "brew list libexif"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libexif-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libexif"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libexif-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libexif"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libexif-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libexif"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libexif-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libexif"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libexif-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libexif"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libexif"
+        ]
+      }
+    }
+  }
 }

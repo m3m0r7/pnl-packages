@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libgumbo\\Libgumbo",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-tags.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install gumbo-parser"
-      ],
-      "checkIfExists": [
-        "brew list gumbo-parser"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libgumbo-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libgumbo.so"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libgumbo-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libgumbo.so"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add gumbo-parser-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e gumbo-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y gumbo-parser-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q gumbo-parser-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y gumbo-parser-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q gumbo-parser-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libgumbo": {
       "symbol_prefix": "gumbo",
       "library_names": [
@@ -101,5 +52,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install gumbo-parser"
+        ],
+        "check_if_exists": [
+          "brew list gumbo-parser"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libgumbo-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libgumbo.so"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libgumbo-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libgumbo.so"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add gumbo-parser-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e gumbo-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y gumbo-parser-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q gumbo-parser-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y gumbo-parser-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q gumbo-parser-devel"
+        ]
+      }
+    }
+  }
 }

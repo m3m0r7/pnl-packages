@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libassimp\\Libassimp",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-texture-types.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install assimp"
-      ],
-      "checkIfExists": [
-        "brew list assimp"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libassimp-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists assimp"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libassimp-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists assimp"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add assimp-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists assimp"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y assimp-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q assimp-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y assimp-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q assimp-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install assimp"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "assimp": {
       "symbol_prefix": "ai",
       "library_names": [
@@ -107,5 +53,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install assimp"
+        ],
+        "check_if_exists": [
+          "brew list assimp"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libassimp-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists assimp"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libassimp-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists assimp"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add assimp-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists assimp"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y assimp-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q assimp-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y assimp-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q assimp-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install assimp"
+        ]
+      }
+    }
+  }
 }

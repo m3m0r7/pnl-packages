@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libsndfile\\Libsndfile",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-errors.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libsndfile"
-      ],
-      "checkIfExists": [
-        "brew list libsndfile"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libsndfile1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists sndfile"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libsndfile1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists sndfile"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libsndfile-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists sndfile"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libsndfile-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists sndfile"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libsndfile-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists sndfile"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libsndfile"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "sndfile": {
       "symbol_prefix": "sf",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libsndfile"
+        ],
+        "check_if_exists": [
+          "brew list libsndfile"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libsndfile1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists sndfile"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libsndfile1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists sndfile"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libsndfile-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists sndfile"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libsndfile-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists sndfile"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libsndfile-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists sndfile"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libsndfile"
+        ]
+      }
+    }
+  }
 }

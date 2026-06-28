@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libgnutls\\Libgnutls",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-errors.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install gnutls"
-      ],
-      "checkIfExists": [
-        "brew list gnutls"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libgnutls28-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists gnutls"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libgnutls28-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists gnutls"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add gnutls-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists gnutls"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y gnutls-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q gnutls-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y gnutls-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q gnutls-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -82,7 +33,7 @@
       "arch": "aarch64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "gnutls": {
       "symbol_prefix": "gnutls",
       "library_names": [
@@ -96,5 +47,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install gnutls"
+        ],
+        "check_if_exists": [
+          "brew list gnutls"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libgnutls28-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists gnutls"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libgnutls28-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists gnutls"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add gnutls-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists gnutls"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y gnutls-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q gnutls-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y gnutls-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q gnutls-devel"
+        ]
+      }
+    }
+  }
 }

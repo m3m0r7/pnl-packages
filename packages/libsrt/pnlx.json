@@ -12,49 +12,28 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libsrt\\Libsrt",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-errors.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install srt"
-      ],
-      "checkIfExists": [
-        "brew list srt"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libsrt-openssl-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists srt"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libsrt-openssl-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists srt"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y srt-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists srt"
-      ]
-    }
-  },
   "platforms": [
-    { "os": "darwin", "arch": "aarch64" },
-    { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" },
-    { "os": "linux", "arch": "aarch64" }
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
   ],
-  "requires": {
+  "native_libraries": {
     "srt": {
       "symbol_prefix": "srt",
       "library_names": [
@@ -69,5 +48,49 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install srt"
+        ],
+        "check_if_exists": [
+          "brew list srt"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libsrt-openssl-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists srt"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libsrt-openssl-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists srt"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libsrt-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists srt"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y srt-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists srt"
+        ]
+      }
+    }
+  }
 }

@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libnotcurses\\Libnotcurses",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-blitters.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install notcurses"
-      ],
-      "checkIfExists": [
-        "brew list notcurses"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libnotcurses-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists notcurses"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libnotcurses-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists notcurses"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add notcurses-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists notcurses"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y notcurses-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q notcurses-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y notcurses-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q notcurses-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -82,7 +33,7 @@
       "arch": "aarch64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "notcurses": {
       "symbol_prefix": "notcurses",
       "library_names": [
@@ -98,5 +49,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install notcurses"
+        ],
+        "check_if_exists": [
+          "brew list notcurses"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libnotcurses-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists notcurses"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libnotcurses-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists notcurses"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add notcurses-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists notcurses"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y notcurses-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q notcurses-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y notcurses-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q notcurses-devel"
+        ]
+      }
+    }
+  }
 }

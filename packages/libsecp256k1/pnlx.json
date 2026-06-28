@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libsecp256k1\\Libsecp256k1",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-selftest.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install secp256k1"
-      ],
-      "checkIfExists": [
-        "brew list secp256k1"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libsecp256k1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libsecp256k1"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libsecp256k1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libsecp256k1"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libsecp256k1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libsecp256k1"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libsecp256k1-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libsecp256k1-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libsecp256k1-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libsecp256k1-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install secp256k1"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "secp256k1": {
       "symbol_prefix": "secp256k1",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install secp256k1"
+        ],
+        "check_if_exists": [
+          "brew list secp256k1"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libsecp256k1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libsecp256k1"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libsecp256k1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libsecp256k1"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libsecp256k1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libsecp256k1"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libsecp256k1-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libsecp256k1-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libsecp256k1-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libsecp256k1-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install secp256k1"
+        ]
+      }
+    }
+  }
 }

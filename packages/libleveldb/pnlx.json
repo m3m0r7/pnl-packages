@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libleveldb\\Libleveldb",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install leveldb"
-      ],
-      "checkIfExists": [
-        "brew list leveldb"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libleveldb-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libleveldb"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libleveldb-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libleveldb"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add leveldb-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e leveldb-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y leveldb-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q leveldb-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y leveldb-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q leveldb-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install leveldb"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libleveldb": {
       "symbol_prefix": "leveldb",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install leveldb"
+        ],
+        "check_if_exists": [
+          "brew list leveldb"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libleveldb-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libleveldb"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libleveldb-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libleveldb"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add leveldb-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e leveldb-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y leveldb-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q leveldb-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y leveldb-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q leveldb-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install leveldb"
+        ]
+      }
+    }
+  }
 }

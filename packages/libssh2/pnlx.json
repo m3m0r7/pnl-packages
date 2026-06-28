@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libssh2\\Libssh2",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-session.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libssh2"
-      ],
-      "checkIfExists": [
-        "brew list libssh2"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libssh2-1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libssh2"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libssh2-1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libssh2"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libssh2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libssh2"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libssh2-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libssh2"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libssh2-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libssh2"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libssh2"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libssh2": {
       "symbol_prefix": "libssh2",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libssh2"
+        ],
+        "check_if_exists": [
+          "brew list libssh2"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libssh2-1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libssh2"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libssh2-1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libssh2"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libssh2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libssh2"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libssh2-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libssh2"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libssh2-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libssh2"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libssh2"
+        ]
+      }
+    }
+  }
 }

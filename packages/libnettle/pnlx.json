@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libnettle\\Libnettle",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-cipher-registry.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install nettle"
-      ],
-      "checkIfExists": [
-        "brew list nettle"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y nettle-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists nettle"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y nettle-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists nettle"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add nettle-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists nettle"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y nettle-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists nettle"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y nettle-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists nettle"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install nettle"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libnettle": {
       "symbol_prefix": "nettle",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install nettle"
+        ],
+        "check_if_exists": [
+          "brew list nettle"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y nettle-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists nettle"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y nettle-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists nettle"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add nettle-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists nettle"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y nettle-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists nettle"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y nettle-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists nettle"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install nettle"
+        ]
+      }
+    }
+  }
 }

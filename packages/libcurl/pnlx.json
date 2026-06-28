@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libcurl\\Libcurl",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install curl"
-      ],
-      "checkIfExists": [
-        "brew list curl"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libcurl4-openssl-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcurl"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libcurl4-openssl-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcurl"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add curl-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcurl"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libcurl-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcurl"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libcurl-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcurl"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install curl"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libcurl": {
       "symbol_prefix": "curl",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install curl"
+        ],
+        "check_if_exists": [
+          "brew list curl"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libcurl4-openssl-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcurl"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libcurl4-openssl-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcurl"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add curl-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcurl"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libcurl-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcurl"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libcurl-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcurl"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install curl"
+        ]
+      }
+    }
+  }
 }

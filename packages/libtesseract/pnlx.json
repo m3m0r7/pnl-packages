@@ -12,49 +12,28 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libtesseract\\Libtesseract",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-engine-modes.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install tesseract"
-      ],
-      "checkIfExists": [
-        "brew list tesseract"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libtesseract-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists tesseract"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libtesseract-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists tesseract"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y tesseract-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists tesseract"
-      ]
-    }
-  },
   "platforms": [
-    { "os": "darwin", "arch": "aarch64" },
-    { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" },
-    { "os": "linux", "arch": "aarch64" }
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
   ],
-  "requires": {
+  "native_libraries": {
     "tesseract": {
       "symbol_prefix": "Tess",
       "library_names": [
@@ -69,5 +48,49 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install tesseract"
+        ],
+        "check_if_exists": [
+          "brew list tesseract"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libtesseract-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists tesseract"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libtesseract-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists tesseract"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add tesseract-ocr-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists tesseract"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y tesseract-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists tesseract"
+        ]
+      }
+    }
+  }
 }

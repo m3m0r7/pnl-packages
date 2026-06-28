@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libftdi\\Libftdi",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-interface.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libftdi"
-      ],
-      "checkIfExists": [
-        "brew list libftdi"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libftdi1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libftdi1"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libftdi1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libftdi1"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libftdi1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libftdi1"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libftdi-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libftdi1"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libftdi-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libftdi1"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libftdi"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libftdi1": {
       "symbol_prefix": "ftdi",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libftdi"
+        ],
+        "check_if_exists": [
+          "brew list libftdi"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libftdi1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libftdi1"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libftdi1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libftdi1"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libftdi1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libftdi1"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libftdi-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libftdi1"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libftdi-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libftdi1"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libftdi"
+        ]
+      }
+    }
+  }
 }

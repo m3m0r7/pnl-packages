@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libtiff\\Libtiff",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-datawidth.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libtiff"
-      ],
-      "checkIfExists": [
-        "brew list libtiff"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libtiff-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libtiff-4"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libtiff-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libtiff-4"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add tiff-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libtiff-4"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libtiff-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libtiff-4"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libtiff-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libtiff-4"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install tiff"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libtiff": {
       "symbol_prefix": "TIFF",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libtiff"
+        ],
+        "check_if_exists": [
+          "brew list libtiff"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libtiff-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libtiff-4"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libtiff-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libtiff-4"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add tiff-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libtiff-4"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libtiff-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libtiff-4"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libtiff-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libtiff-4"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install tiff"
+        ]
+      }
+    }
+  }
 }

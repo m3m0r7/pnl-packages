@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libflac\\Libflac",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-format.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install flac"
-      ],
-      "checkIfExists": [
-        "brew list flac"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libflac-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists flac"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libflac-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists flac"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add flac-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists flac"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y flac-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists flac"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y flac-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists flac"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libflac"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libflac": {
       "symbol_prefix": "FLAC",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install flac"
+        ],
+        "check_if_exists": [
+          "brew list flac"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libflac-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists flac"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libflac-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists flac"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add flac-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists flac"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y flac-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists flac"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y flac-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists flac"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libflac"
+        ]
+      }
+    }
+  }
 }

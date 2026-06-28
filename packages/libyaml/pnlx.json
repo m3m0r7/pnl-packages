@@ -14,61 +14,6 @@
   "examples": [
     "EXAMPLES.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libyaml"
-      ],
-      "checkIfExists": [
-        "brew list libyaml"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libyaml-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists yaml-0.1"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libyaml-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists yaml-0.1"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add yaml-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists yaml-0.1"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libyaml-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libyaml-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libyaml-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libyaml-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libyaml"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +36,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "yaml": {
       "symbol_prefix": "yaml",
       "library_names": [
@@ -106,5 +51,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libyaml"
+        ],
+        "check_if_exists": [
+          "brew list libyaml"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libyaml-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists yaml-0.1"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libyaml-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists yaml-0.1"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add yaml-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists yaml-0.1"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libyaml-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libyaml-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libyaml-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libyaml-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libyaml"
+        ]
+      }
+    }
+  }
 }

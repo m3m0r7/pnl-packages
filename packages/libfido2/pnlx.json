@@ -12,42 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libfido2\\Libfido2",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-credential.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libfido2"
-      ],
-      "checkIfExists": [
-        "brew list libfido2"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libfido2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libfido2"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libfido2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libfido2"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libfido2-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libfido2"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -66,7 +33,7 @@
       "arch": "aarch64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "fido2": {
       "symbol_prefix": "fido",
       "library_names": [
@@ -82,5 +49,49 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libfido2"
+        ],
+        "check_if_exists": [
+          "brew list libfido2"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libfido2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libfido2"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libfido2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libfido2"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libfido2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libfido2"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libfido2-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libfido2"
+        ]
+      }
+    }
+  }
 }

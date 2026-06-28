@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libglfw\\Libglfw",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-platforms.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install glfw"
-      ],
-      "checkIfExists": [
-        "brew list glfw"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libglfw3-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists glfw3"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libglfw3-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists glfw3"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add glfw-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists glfw3"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y glfw-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists glfw3"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y glfw-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists glfw3"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install glfw3"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "glfw3": {
       "symbol_prefix": "glfw",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install glfw"
+        ],
+        "check_if_exists": [
+          "brew list glfw"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libglfw3-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists glfw3"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libglfw3-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists glfw3"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add glfw-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists glfw3"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y glfw-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists glfw3"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y glfw-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists glfw3"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install glfw3"
+        ]
+      }
+    }
+  }
 }

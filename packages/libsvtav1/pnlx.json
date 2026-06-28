@@ -14,47 +14,25 @@
   "examples": [
     "EXAMPLES.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install svt-av1"
-      ],
-      "checkIfExists": [
-        "brew list svt-av1"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libsvtav1enc-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists SvtAv1Enc"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libsvtav1enc-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists SvtAv1Enc"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y svt-av1-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists SvtAv1Enc"
-      ]
-    }
-  },
   "platforms": [
-    { "os": "darwin", "arch": "aarch64" },
-    { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" },
-    { "os": "linux", "arch": "aarch64" }
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
   ],
-  "requires": {
+  "native_libraries": {
     "svtav1": {
       "symbol_prefix": "svt",
       "library_names": [
@@ -69,5 +47,49 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install svt-av1"
+        ],
+        "check_if_exists": [
+          "brew list svt-av1"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libsvtav1enc-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists SvtAv1Enc"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libsvtav1enc-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists SvtAv1Enc"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add svt-av1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists SvtAv1Enc"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y svt-av1-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists SvtAv1Enc"
+        ]
+      }
+    }
+  }
 }

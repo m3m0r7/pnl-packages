@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Liblmdb\\Liblmdb",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-strerror.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install lmdb"
-      ],
-      "checkIfExists": [
-        "brew list lmdb"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y liblmdb-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q liblmdb"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y liblmdb-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q liblmdb"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add lmdb-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e lmdb-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y lmdb-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q lmdb-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y lmdb-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q lmdb-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install lmdb"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "liblmdb": {
       "symbol_prefix": "mdb",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install lmdb"
+        ],
+        "check_if_exists": [
+          "brew list lmdb"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y liblmdb-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q liblmdb"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y liblmdb-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q liblmdb"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add lmdb-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e lmdb-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y lmdb-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q lmdb-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y lmdb-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q lmdb-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install lmdb"
+        ]
+      }
+    }
+  }
 }

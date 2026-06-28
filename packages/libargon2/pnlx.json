@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libargon2\\Libargon2",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-introspection.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install argon2"
-      ],
-      "checkIfExists": [
-        "brew list argon2"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libargon2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libargon2"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libargon2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libargon2"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add argon2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libargon2"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libargon2-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libargon2"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libargon2-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libargon2"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libargon2": {
       "symbol_prefix": "argon2",
       "library_names": [
@@ -101,5 +52,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install argon2"
+        ],
+        "check_if_exists": [
+          "brew list argon2"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libargon2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libargon2"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libargon2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libargon2"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add argon2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libargon2"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libargon2-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libargon2"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libargon2-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libargon2"
+        ]
+      }
+    }
+  }
 }

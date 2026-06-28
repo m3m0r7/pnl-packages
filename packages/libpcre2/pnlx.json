@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libpcre2\\Libpcre2",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-match-data.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install pcre2"
-      ],
-      "checkIfExists": [
-        "brew list pcre2"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libpcre2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libpcre2-8"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libpcre2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libpcre2-8"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add pcre2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libpcre2-8"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y pcre2-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libpcre2-8"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y pcre2-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libpcre2-8"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install pcre2"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libpcre2-8": {
       "symbol_prefix": "pcre2",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install pcre2"
+        ],
+        "check_if_exists": [
+          "brew list pcre2"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libpcre2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libpcre2-8"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libpcre2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libpcre2-8"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add pcre2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libpcre2-8"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y pcre2-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libpcre2-8"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y pcre2-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libpcre2-8"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install pcre2"
+        ]
+      }
+    }
+  }
 }

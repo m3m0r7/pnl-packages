@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Openssl\\Openssl",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-alerts.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install openssl@3"
-      ],
-      "checkIfExists": [
-        "brew list openssl@3"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libssl-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists openssl"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libssl-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists openssl"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add openssl-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists openssl"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y openssl-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q openssl-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y openssl-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q openssl-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install openssl"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libssl": {
       "library_names": [
         "libssl.dylib",
@@ -107,5 +53,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install openssl@3"
+        ],
+        "check_if_exists": [
+          "brew list openssl@3"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libssl-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists openssl"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libssl-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists openssl"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add openssl-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists openssl"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y openssl-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q openssl-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y openssl-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q openssl-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install openssl"
+        ]
+      }
+    }
+  }
 }

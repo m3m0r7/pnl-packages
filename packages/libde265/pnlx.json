@@ -12,49 +12,28 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libde265\\Libde265",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-error-text.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libde265"
-      ],
-      "checkIfExists": [
-        "brew list libde265"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libde265-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libde265"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libde265-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libde265"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libde265-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libde265"
-      ]
-    }
-  },
   "platforms": [
-    { "os": "darwin", "arch": "aarch64" },
-    { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" },
-    { "os": "linux", "arch": "aarch64" }
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
   ],
-  "requires": {
+  "native_libraries": {
     "de265": {
       "symbol_prefix": "de265",
       "library_names": [
@@ -69,5 +48,49 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libde265"
+        ],
+        "check_if_exists": [
+          "brew list libde265"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libde265-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libde265"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libde265-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libde265"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libde265-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libde265"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libde265-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libde265"
+        ]
+      }
+    }
+  }
 }

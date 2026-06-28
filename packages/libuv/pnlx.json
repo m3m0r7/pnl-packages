@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libuv\\Libuv",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-errors.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libuv"
-      ],
-      "checkIfExists": [
-        "brew list libuv"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libuv1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libuv"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libuv1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libuv"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libuv-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libuv"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libuv-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libuv"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libuv-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libuv"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libuv"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libuv": {
       "symbol_prefix": "uv",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libuv"
+        ],
+        "check_if_exists": [
+          "brew list libuv"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libuv1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libuv"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libuv1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libuv"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libuv-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libuv"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libuv-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libuv"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libuv-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libuv"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libuv"
+        ]
+      }
+    }
+  }
 }

@@ -56,6 +56,15 @@ use Pnlx\Libusb\Libusb;
 $result = Libusb::libusbInit(null);
 ```
 
-生成されたコードは、static なエンティティメソッドと、任意で利用できるグローバルな PHP 関数の両方をサポートします。これは `features.use_functions` の設定によって制御されます。
+生成されたコードは、static なエンティティメソッドと、任意で利用できるグローバルな PHP 関数の両方をサポートします。これは `features.global_functions` の設定によって制御されます。
 
-> **ステータス:** pnl は初期段階の実装です。ローカルパス、`file://`、git ベースのインストールは現時点で動作します。リポジトリインデックスの解決、署名付きパッケージインデックス、FTP ダウンロードは設計中です。
+> **ステータス:** pnl は初期段階の実装です。ローカルパス・`file://`・アーカイブ・git・ベース名（`repository-index.json`）からのインストールはいずれも動作し、署名付きリポジトリインデックスや、ネイティブライブラリ/ヘッダーの `http(s)`/`ftp`/`ftps`/`git` ダウンロードも動作します。リポジトリをまたいだ本格的なバージョン解決は設計中です。
+
+## トラブルシューティング
+
+**Homebrew の HDF5 バージョン不整合（`libmatio`・`libvips`・`libhdf5`・`libnetcdf`）。** これらは推移的に `libhdf5.<N>.dylib` を読み込むライブラリをラップしています。Homebrew が `hdf5` を更新したのに依存ライブラリを再ビルドしていないと、依存側が今は存在しない `libhdf5` の soname をリンクしたままになり、FFI ロードが `FFI\Exception: Failed loading '…libhdf5.<N>.dylib'` で失敗します。これは pnl のバグではなく環境側の問題です（pnl は Homebrew がリンクしているライブラリをそのままロードします）。現在の hdf5 に対して依存側を再ビルドして解決します。
+
+```sh
+brew reinstall hdf5
+brew reinstall libmatio vips netcdf
+```

@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmaxminddb\\Libmaxminddb",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-strerror.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libmaxminddb"
-      ],
-      "checkIfExists": [
-        "brew list libmaxminddb"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libmaxminddb-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmaxminddb"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libmaxminddb-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmaxminddb"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libmaxminddb-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libmaxminddb"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libmaxminddb-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libmaxminddb-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libmaxminddb-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libmaxminddb-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libmaxminddb"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libmaxminddb": {
       "symbol_prefix": "MMDB",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libmaxminddb"
+        ],
+        "check_if_exists": [
+          "brew list libmaxminddb"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libmaxminddb-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmaxminddb"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libmaxminddb-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmaxminddb"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libmaxminddb-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmaxminddb"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libmaxminddb-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libmaxminddb-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libmaxminddb-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libmaxminddb-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libmaxminddb"
+        ]
+      }
+    }
+  }
 }

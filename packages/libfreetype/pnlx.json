@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libfreetype\\Libfreetype",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-fixed-point.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install freetype"
-      ],
-      "checkIfExists": [
-        "brew list freetype"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libfreetype-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists freetype2"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libfreetype-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists freetype2"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add freetype-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists freetype2"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y freetype-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists freetype2"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y freetype-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists freetype2"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install freetype"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "freetype2": {
       "symbol_prefix": "FT",
       "library_names": [
@@ -107,5 +53,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install freetype"
+        ],
+        "check_if_exists": [
+          "brew list freetype"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libfreetype-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists freetype2"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libfreetype-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists freetype2"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add freetype-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists freetype2"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y freetype-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists freetype2"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y freetype-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists freetype2"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install freetype"
+        ]
+      }
+    }
+  }
 }

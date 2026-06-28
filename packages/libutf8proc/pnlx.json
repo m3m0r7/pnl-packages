@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libutf8proc\\Libutf8proc",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-case-mapping.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install utf8proc"
-      ],
-      "checkIfExists": [
-        "brew list utf8proc"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libutf8proc-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libutf8proc"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libutf8proc-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libutf8proc"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add utf8proc-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libutf8proc"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y utf8proc-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libutf8proc"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y utf8proc-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libutf8proc"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install utf8proc"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libutf8proc": {
       "symbol_prefix": "utf8proc",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install utf8proc"
+        ],
+        "check_if_exists": [
+          "brew list utf8proc"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libutf8proc-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libutf8proc"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libutf8proc-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libutf8proc"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add utf8proc-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libutf8proc"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y utf8proc-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libutf8proc"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y utf8proc-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libutf8proc"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install utf8proc"
+        ]
+      }
+    }
+  }
 }

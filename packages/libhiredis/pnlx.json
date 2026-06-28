@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libhiredis\\Libhiredis",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-sds.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install hiredis"
-      ],
-      "checkIfExists": [
-        "brew list hiredis"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libhiredis-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists hiredis"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libhiredis-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists hiredis"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add hiredis-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists hiredis"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y hiredis-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists hiredis"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y hiredis-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists hiredis"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install hiredis"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "hiredis": {
       "symbol_prefix": "redis",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install hiredis"
+        ],
+        "check_if_exists": [
+          "brew list hiredis"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libhiredis-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists hiredis"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libhiredis-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists hiredis"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add hiredis-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists hiredis"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y hiredis-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists hiredis"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y hiredis-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists hiredis"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install hiredis"
+        ]
+      }
+    }
+  }
 }

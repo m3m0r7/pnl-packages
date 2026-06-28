@@ -60,7 +60,7 @@ pnlx build
       "arch": "aarch64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "native-key": {
       "symbol_prefix": "native",
       "library_names": [
@@ -93,10 +93,11 @@ pnlx build
 | `class` | string | yes | 生成される PHP エンティティクラスの完全修飾名。名前空間を含める必要がある。 |
 | `class_prefix` | string | optional | 生成されるクラス／コンテキスト名に付与するプレフィックス。クラス名の衝突を避ける場合を除き空のままにする。 |
 | `examples` | array | optional | 使い方例ファイルへの、パッケージルートからの相対パス（例: `EXAMPLES.md`）。ファイルの内容が `pnl install` 完了時に出力され、利用者がすぐ呼び出し方を確認できます。スニペットは短く実行可能なものにし、パッケージ README にも同じものを載せます。 |
-| `installation` | object | optional | OS / ディストリビューションごとに、パッケージのネイティブ依存をインストールするコマンド。[ネイティブ依存のインストール](#installing-native-dependencies) を参照。 |
 | `platforms` | array | yes | ラッパーパッケージがサポートする OS/arch の組み合わせ。 |
-| `requires` | object | yes | ネイティブライブラリの要件。少なくとも 1 エントリを含める必要がある。 |
+| `native_libraries` | object | yes | ネイティブライブラリの要件。少なくとも 1 エントリを含める必要がある。 |
 | `dependencies` | object | yes | 他の pnl 拡張への依存。依存解決はまだ完成していない。 |
+| `compile_options` | object | optional | コンパイル時の生成入力: `headers`（明示的なヘッダー一覧）と `definitions`（利用者が与えるビルド時 `-D` マクロ）。 |
+| `setup` | object | optional | ネイティブ依存を用意する方法: `build_script`（パッケージ相対のビルドスクリプト）や `install`（OS 別インストールレシピ）。[ネイティブ依存のインストール](#installing-native-dependencies) を参照。 |
 
 ### Package Identity
 
@@ -127,12 +128,12 @@ src/generated/LibusbContext.php
 
 ### Native Requirements
 
-`requires` はネイティブライブラリの識別子をキーとします。このキーは、ロックファイルや pathmap ファイル、bridge のパスで使われます。
+`native_libraries` はネイティブライブラリの識別子をキーとします。このキーは、ロックファイルや pathmap ファイル、bridge のパスで使われます。
 
 libusb の例:
 
 ```json
-"requires": {
+"native_libraries": {
   "libusb-1.0": {
     "symbol_prefix": "libusb",
     "library_names": [
@@ -154,7 +155,7 @@ libusb の例:
 | フィールド | 必須 | 意味 |
 | --- | --- | --- |
 | `symbol_prefix` | optional | 残す C 関数のプレフィックス。名前がこれで始まる宣言だけがラップされる（例: `libnfc` は `nfc_*` をエクスポートする）。`""` を指定すると **すべての** 宣言が残り、インラインヘッダーは libclang のフィルタリングを通さずそのまま渡される。省略した場合は、ライブラリキーから導出したプレフィックスがデフォルトとして使われる。 |
-| `library_names` | yes | `load_paths`、環境変数のパス、システムの既定パスから探索する共有ライブラリのファイル名候補。各エントリは文字列、またはオブジェクト `{ "name": "libc.dylib", "virtual": true }` のいずれか。詳しくは [Virtual libraries](#virtual-libraries) を参照。 |
+| `library_names` | yes | `library_paths`、環境変数のパス、システムの既定パスから探索する共有ライブラリのファイル名候補。各エントリは文字列、またはオブジェクト `{ "name": "libc.dylib", "virtual": true }` のいずれか。詳しくは [Virtual libraries](#virtual-libraries) を参照。 |
 | `header_names` | optional | 解決された include ルートから展開される、公開 C ヘッダーのパス候補。`header_inline` または `header_url` を指定する場合は省略する。 |
 | `header_inline` | optional | マニフェストに直接埋め込む C 宣言。ディスクからヘッダーを読まず、この内容をそのまま使う。[Inline headers](#inline-headers) を参照。 |
 | `library_url` | optional | ローカルのライブラリパスを探索する代わりに、ネイティブライブラリを取得するリモートソース（`http(s)`／`ftp`／`git`）。 |
@@ -169,7 +170,7 @@ libusb の例:
 `header_inline` は、`pnlx.json` の中に直接 C API を宣言します。実際のヘッダーを同梱したり探索したりする必要のない、小さなライブラリやシステムライブラリに最適です。文字列は C ヘッダーとして扱われます。
 
 ```json
-"requires": {
+"native_libraries": {
   "libc": {
     "symbol_prefix": "",
     "library_names": [
@@ -202,37 +203,39 @@ libusb の例:
 
 ### Installing native dependencies
 
-パッケージは `installation` を宣言でき、`pnl install` がネイティブのライブラリ/ヘッダーを利用者の代わりに取得できます。OS 名または Linux ディストリビューション名（`darwin`・`windows`・`alpine`・`ubuntu`・`debian`・`fedora`・`rhel` など、および汎用フォールバックの `linux`）をキーにしたオブジェクトで、各エントリは次を持ちます。
+パッケージは `setup.install` を宣言でき、`pnl install` がネイティブのライブラリ/ヘッダーを利用者の代わりに取得できます。OS 名または Linux ディストリビューション名（`darwin`・`windows`・`alpine`・`ubuntu`・`debian`・`fedora`・`rhel` など、および汎用フォールバックの `linux`）をキーにしたオブジェクトで、各エントリは次を持ちます。
 
-- `install` … 依存をインストールするために実行するシェルコマンド行。
-- `checkIfExists`（任意）… 依存が既に存在するとき終了コード `0` になるシェルコマンド行。すべて成功すればインストールはスキップされます。
+- `commands` … 依存をインストールするために実行するシェルコマンド行。
+- `check_if_exists`（任意）… 依存が既に存在するとき終了コード `0` になるシェルコマンド行。すべて成功すればインストールはスキップされます。
 
 Linux ではエントリは `/etc/os-release` から選択されます。ディストリビューションの `ID`（例: `alpine`・`ubuntu`・`fedora`）→ `ID_LIKE` の各祖先（Ubuntu は `debian` エントリへ、Rocky/Alma/CentOS は `rhel` エントリへフォールバック）→ `linux` の順で照合します。
 
 ```json
-"installation": {
-  "darwin": {
-    "install": ["brew install sdl2 sdl2_image sdl2_ttf"],
-    "checkIfExists": ["brew list sdl2 && brew list sdl2_image && brew list sdl2_ttf"]
-  },
-  "ubuntu": {
-    "install": ["sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev"],
-    "checkIfExists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
-  },
-  "alpine": {
-    "install": ["apk add sdl2-dev sdl2_image-dev sdl2_ttf-dev"],
-    "checkIfExists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
-  },
-  "fedora": {
-    "install": ["sudo dnf install -y SDL2-devel SDL2_image-devel SDL2_ttf-devel"],
-    "checkIfExists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
+"setup": {
+  "install": {
+    "darwin": {
+      "commands": ["brew install sdl2 sdl2_image sdl2_ttf"],
+      "check_if_exists": ["brew list sdl2 && brew list sdl2_image && brew list sdl2_ttf"]
+    },
+    "ubuntu": {
+      "commands": ["sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev"],
+      "check_if_exists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
+    },
+    "alpine": {
+      "commands": ["apk add sdl2-dev sdl2_image-dev sdl2_ttf-dev"],
+      "check_if_exists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
+    },
+    "fedora": {
+      "commands": ["sudo dnf install -y SDL2-devel SDL2_image-devel SDL2_ttf-devel"],
+      "check_if_exists": ["pkg-config --exists sdl2 SDL2_image SDL2_ttf"]
+    }
   }
 }
 ```
 
-`installation` があり `checkIfExists` が通らない場合、`pnl install` はコマンド実行前に `Run the following to install them? [Y/n]` と確認します。`pnl install … -y`（または `--yes`）で自動的に yes になります。インストールコマンドが失敗した場合は、失敗したコマンドを表示し、手動でライブラリとヘッダーをインストールしてから改めて `pnl install` を実行するよう案内します。`installation` が**無い**パッケージでネイティブライブラリが見つからない場合、pnl は探している `library_names` と `header_names`、そしてどこに置けばよいか（例: `/usr/local/lib` と `/usr/local/include`）を表示します。
+`setup.install` があり `check_if_exists` が通らない場合、`pnl install` はコマンド実行前に `Run the following to install them? [Y/n]` と確認します。`pnl install … -y`（または `--yes`）で自動的に yes になります。インストールコマンドが失敗した場合は、失敗したコマンドを表示し、手動でライブラリとヘッダーをインストールしてから改めて `pnl install` を実行するよう案内します。`setup.install` が**無い**パッケージでネイティブライブラリが見つからない場合、pnl は探している `library_names` と `header_names`、そしてどこに置けばよいか（例: `/usr/local/lib` と `/usr/local/include`）を表示します。
 
-ほとんどのパッケージは単一のシステムライブラリをラップしており `installation` は不要です。SDL2 と `sdl2_image` / `sdl2_ttf` のように複数パッケージから成るものや、手動インストールが面倒なライブラリに宣言してください。
+ほとんどのパッケージは単一のシステムライブラリをラップしており `setup.install` は不要です。SDL2 と `sdl2_image` / `sdl2_ttf` のように複数パッケージから成るものや、手動インストールが面倒なライブラリに宣言してください。
 
 ### Header And Bridge Generation
 

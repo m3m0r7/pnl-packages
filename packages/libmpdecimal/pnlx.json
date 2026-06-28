@@ -12,40 +12,28 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmpdecimal\\Libmpdecimal",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-radix.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install mpdecimal"
-      ],
-      "checkIfExists": [
-        "brew list mpdecimal"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libmpdec-dev"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libmpdec-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y mpdecimal-devel"
-      ]
-    }
-  },
   "platforms": [
-    { "os": "darwin", "arch": "aarch64" },
-    { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" },
-    { "os": "linux", "arch": "aarch64" }
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
   ],
-  "requires": {
+  "native_libraries": {
     "mpdecimal": {
       "symbol_prefix": "mpd",
       "library_names": [
@@ -60,5 +48,40 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install mpdecimal"
+        ],
+        "check_if_exists": [
+          "brew list mpdecimal"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libmpdec-dev"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libmpdec-dev"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add mpdecimal-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libmpdec"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y mpdecimal-devel"
+        ]
+      }
+    }
+  }
 }

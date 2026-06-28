@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libcbor\\Libcbor",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-inspect.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libcbor"
-      ],
-      "checkIfExists": [
-        "brew list libcbor"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libcbor-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcbor"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libcbor-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcbor"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libcbor-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcbor"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libcbor-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libcbor-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libcbor-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libcbor-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libcbor"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libcbor": {
       "symbol_prefix": "cbor",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libcbor"
+        ],
+        "check_if_exists": [
+          "brew list libcbor"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libcbor-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcbor"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libcbor-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcbor"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libcbor-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcbor"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libcbor-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libcbor-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libcbor-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libcbor-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libcbor"
+        ]
+      }
+    }
+  }
 }

@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libavformat\\Libavformat",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-networking.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install ffmpeg"
-      ],
-      "checkIfExists": [
-        "brew list ffmpeg"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libavformat-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libavformat"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libavformat-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libavformat"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add ffmpeg-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libavformat"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y ffmpeg-free-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libavformat"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y ffmpeg-free-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libavformat"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install ffmpeg"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libavformat": {
       "symbol_prefix": "avformat",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install ffmpeg"
+        ],
+        "check_if_exists": [
+          "brew list ffmpeg"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libavformat-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libavformat"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libavformat-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libavformat"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add ffmpeg-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libavformat"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y ffmpeg-free-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libavformat"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y ffmpeg-free-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libavformat"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install ffmpeg"
+        ]
+      }
+    }
+  }
 }

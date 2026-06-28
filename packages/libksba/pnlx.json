@@ -3,31 +3,85 @@
   "name": "libksba/libksba",
   "version": "1.6.7",
   "description": "PHP FFI wrapper for libksba, the X.509 / CMS ASN.1 library.",
-  "authors": [ { "name": "Libksba maintainers" } ],
+  "authors": [
+    {
+      "name": "Libksba maintainers"
+    }
+  ],
   "license": "LGPL-3.0-or-later",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libksba\\Libksba",
-  "examples": [ "EXAMPLES.md" ],
-  "installation": {
-    "darwin": { "install": [ "brew install libksba" ], "checkIfExists": [ "brew list libksba" ] },
-    "ubuntu": { "install": [ "sudo apt-get install -y libksba-dev" ] },
-    "debian": { "install": [ "sudo apt-get install -y libksba-dev" ] },
-    "fedora": { "install": [ "sudo dnf install -y libksba-devel" ] }
-  },
-  "platforms": [
-    { "os": "darwin", "arch": "aarch64" },
-    { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" },
-    { "os": "linux", "arch": "aarch64" }
+  "examples": [
+    "EXAMPLES.md",
+    "EXAMPLES-oid-strings.md"
   ],
-  "requires": {
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "native_libraries": {
     "ksba": {
       "symbol_prefix": "ksba",
-      "library_names": [ "libksba.dylib", "libksba.so", "ksba.dll" ],
-      "header_names": [ "ksba.h" ],
+      "library_names": [
+        "libksba.dylib",
+        "libksba.so",
+        "ksba.dll"
+      ],
+      "header_names": [
+        "ksba.h"
+      ],
       "version": ">=1.0.0 & <2.0.0",
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libksba"
+        ],
+        "check_if_exists": [
+          "brew list libksba"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libksba-dev"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libksba-dev"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libksba-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists ksba"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libksba-devel"
+        ]
+      }
+    }
+  }
 }

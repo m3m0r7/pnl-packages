@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libnlopt\\Libnlopt",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-algorithm-introspection.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install nlopt"
-      ],
-      "checkIfExists": [
-        "brew list nlopt"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libnlopt-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists nlopt"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libnlopt-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists nlopt"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add nlopt-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists nlopt"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y nlopt-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q nlopt-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y nlopt-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q nlopt-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install nlopt"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -93,7 +39,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "nlopt": {
       "symbol_prefix": "nlopt",
       "library_names": [
@@ -108,5 +54,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install nlopt"
+        ],
+        "check_if_exists": [
+          "brew list nlopt"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libnlopt-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists nlopt"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libnlopt-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists nlopt"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add nlopt-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists nlopt"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y nlopt-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q nlopt-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y nlopt-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q nlopt-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install nlopt"
+        ]
+      }
+    }
+  }
 }

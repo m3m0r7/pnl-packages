@@ -14,61 +14,6 @@
   "examples": [
     "EXAMPLES.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install vulkan-loader"
-      ],
-      "checkIfExists": [
-        "brew list vulkan-loader"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libvulkan-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vulkan"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libvulkan-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vulkan"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add vulkan-loader-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vulkan"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y vulkan-loader-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vulkan"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y vulkan-loader-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists vulkan"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install vulkan"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +36,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libvulkan": {
       "symbol_prefix": "vk",
       "library_names": [
@@ -106,5 +51,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install vulkan-loader"
+        ],
+        "check_if_exists": [
+          "brew list vulkan-loader"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libvulkan-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vulkan"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libvulkan-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vulkan"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add vulkan-loader-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vulkan"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y vulkan-loader-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vulkan"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y vulkan-loader-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists vulkan"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install vulkan"
+        ]
+      }
+    }
+  }
 }

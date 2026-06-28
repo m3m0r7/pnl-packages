@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libhidapi\\Libhidapi",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install hidapi"
-      ],
-      "checkIfExists": [
-        "brew list hidapi"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libhidapi-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists hidapi-libusb"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libhidapi-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists hidapi-libusb"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add hidapi-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists hidapi-libusb"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y hidapi-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists hidapi-libusb"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y hidapi-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists hidapi-libusb"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install hidapi"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libhidapi": {
       "symbol_prefix": "hid",
       "library_names": [
@@ -108,5 +54,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install hidapi"
+        ],
+        "check_if_exists": [
+          "brew list hidapi"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libhidapi-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists hidapi-libusb"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libhidapi-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists hidapi-libusb"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add hidapi-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists hidapi-libusb"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y hidapi-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists hidapi-libusb"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y hidapi-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists hidapi-libusb"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install hidapi"
+        ]
+      }
+    }
+  }
 }

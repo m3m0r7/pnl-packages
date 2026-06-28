@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libexpat\\Libexpat",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-errors.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install expat"
-      ],
-      "checkIfExists": [
-        "brew list expat"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libexpat1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists expat"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libexpat1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists expat"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add expat-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists expat"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y expat-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists expat"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y expat-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists expat"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install expat"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libexpat": {
       "symbol_prefix": "XML",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install expat"
+        ],
+        "check_if_exists": [
+          "brew list expat"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libexpat1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists expat"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libexpat1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists expat"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add expat-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists expat"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y expat-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists expat"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y expat-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists expat"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install expat"
+        ]
+      }
+    }
+  }
 }

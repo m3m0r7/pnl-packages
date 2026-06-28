@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libsdl\\Libsdl",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-host-info.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install sdl2 sdl2_image sdl2_ttf"
-      ],
-      "checkIfExists": [
-        "brew list sdl2 && brew list sdl2_image && brew list sdl2_ttf"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists sdl2 SDL2_image SDL2_ttf"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists sdl2 SDL2_image SDL2_ttf"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add sdl2-dev sdl2_image-dev sdl2_ttf-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists sdl2 SDL2_image SDL2_ttf"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y SDL2-devel SDL2_image-devel SDL2_ttf-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists sdl2 SDL2_image SDL2_ttf"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y SDL2-devel SDL2_image-devel SDL2_ttf-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists sdl2 SDL2_image SDL2_ttf"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install sdl2 sdl2-image sdl2-ttf"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "sdl2": {
       "symbol_prefix": "SDL",
       "library_names": [
@@ -139,5 +85,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install sdl2 sdl2_image sdl2_ttf"
+        ],
+        "check_if_exists": [
+          "brew list sdl2 && brew list sdl2_image && brew list sdl2_ttf"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists sdl2 SDL2_image SDL2_ttf"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists sdl2 SDL2_image SDL2_ttf"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add sdl2-dev sdl2_image-dev sdl2_ttf-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists sdl2 SDL2_image SDL2_ttf"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y SDL2-devel SDL2_image-devel SDL2_ttf-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists sdl2 SDL2_image SDL2_ttf"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y SDL2-devel SDL2_image-devel SDL2_ttf-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists sdl2 SDL2_image SDL2_ttf"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install sdl2 sdl2-image sdl2-ttf"
+        ]
+      }
+    }
+  }
 }

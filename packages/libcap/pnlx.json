@@ -14,48 +14,6 @@
   "examples": [
     "EXAMPLES.md"
   ],
-  "installation": {
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libcap-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcap"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libcap-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcap"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libcap-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcap"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libcap-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libcap-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libcap-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libcap-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "linux",
@@ -66,7 +24,7 @@
       "arch": "aarch64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libcap": {
       "symbol_prefix": "cap",
       "library_names": [
@@ -79,5 +37,49 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libcap-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcap"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libcap-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcap"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libcap-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcap"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libcap-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libcap-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libcap-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libcap-devel"
+        ]
+      }
+    }
+  }
 }

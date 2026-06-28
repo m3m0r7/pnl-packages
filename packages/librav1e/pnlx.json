@@ -12,49 +12,28 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Librav1e\\Librav1e",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-status.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install rav1e"
-      ],
-      "checkIfExists": [
-        "brew list rav1e"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y librav1e-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists rav1e"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y librav1e-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists rav1e"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y rav1e-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists rav1e"
-      ]
-    }
-  },
   "platforms": [
-    { "os": "darwin", "arch": "aarch64" },
-    { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" },
-    { "os": "linux", "arch": "aarch64" }
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
   ],
-  "requires": {
+  "native_libraries": {
     "rav1e": {
       "symbol_prefix": "rav1e",
       "library_names": [
@@ -69,5 +48,49 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install rav1e"
+        ],
+        "check_if_exists": [
+          "brew list rav1e"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y librav1e-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists rav1e"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y librav1e-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists rav1e"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add rav1e-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists rav1e"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y rav1e-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists rav1e"
+        ]
+      }
+    }
+  }
 }

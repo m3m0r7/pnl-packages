@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libtheora\\Libtheora",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-th-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install theora"
-      ],
-      "checkIfExists": [
-        "brew list theora"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libtheora-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists theora"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libtheora-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists theora"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libtheora-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists theora"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libtheora-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libtheora-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libtheora-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libtheora-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libtheora"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "theora": {
       "symbol_prefix": "th",
       "library_names": [
@@ -107,5 +53,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install theora"
+        ],
+        "check_if_exists": [
+          "brew list theora"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libtheora-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists theora"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libtheora-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists theora"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libtheora-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists theora"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libtheora-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libtheora-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libtheora-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libtheora-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libtheora"
+        ]
+      }
+    }
+  }
 }

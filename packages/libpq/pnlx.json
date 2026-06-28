@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libpq\\Libpq",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-encoding.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libpq"
-      ],
-      "checkIfExists": [
-        "brew list libpq"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libpq-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libpq"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libpq-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libpq"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libpq-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libpq"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libpq-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libpq"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libpq-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libpq"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libpq"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libpq": {
       "symbol_prefix": "PQ",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libpq"
+        ],
+        "check_if_exists": [
+          "brew list libpq"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libpq-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libpq"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libpq-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libpq"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libpq-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libpq"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libpq-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libpq"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libpq-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libpq"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libpq"
+        ]
+      }
+    }
+  }
 }

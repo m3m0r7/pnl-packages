@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libnetcdf\\Libnetcdf",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-error-and-type-info.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install netcdf"
-      ],
-      "checkIfExists": [
-        "brew list netcdf"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libnetcdf-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists netcdf"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libnetcdf-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists netcdf"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add netcdf-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists netcdf"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y netcdf-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q netcdf-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y netcdf-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q netcdf-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install netcdf-c"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "netcdf": {
       "symbol_prefix": "nc",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install netcdf"
+        ],
+        "check_if_exists": [
+          "brew list netcdf"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libnetcdf-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists netcdf"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libnetcdf-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists netcdf"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add netcdf-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists netcdf"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y netcdf-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q netcdf-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y netcdf-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q netcdf-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install netcdf-c"
+        ]
+      }
+    }
+  }
 }

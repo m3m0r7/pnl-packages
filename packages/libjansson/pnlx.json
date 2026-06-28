@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libjansson\\Libjansson",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-values.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install jansson"
-      ],
-      "checkIfExists": [
-        "brew list jansson"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libjansson-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists jansson"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libjansson-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists jansson"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add jansson-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists jansson"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y jansson-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists jansson"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y jansson-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists jansson"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install jansson"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libjansson": {
       "symbol_prefix": "json",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install jansson"
+        ],
+        "check_if_exists": [
+          "brew list jansson"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libjansson-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists jansson"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libjansson-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists jansson"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add jansson-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists jansson"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y jansson-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists jansson"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y jansson-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists jansson"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install jansson"
+        ]
+      }
+    }
+  }
 }

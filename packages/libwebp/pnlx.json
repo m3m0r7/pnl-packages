@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libwebp\\Libwebp",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-encoder-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install webp"
-      ],
-      "checkIfExists": [
-        "brew list webp"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libwebp-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libwebp"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libwebp-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libwebp"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libwebp-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libwebp"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libwebp-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libwebp"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libwebp-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libwebp"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libwebp"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libwebp": {
       "symbol_prefix": "WebP",
       "library_names": [
@@ -107,5 +53,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install webp"
+        ],
+        "check_if_exists": [
+          "brew list webp"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libwebp-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libwebp"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libwebp-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libwebp"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libwebp-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libwebp"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libwebp-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libwebp"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libwebp-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libwebp"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libwebp"
+        ]
+      }
+    }
+  }
 }

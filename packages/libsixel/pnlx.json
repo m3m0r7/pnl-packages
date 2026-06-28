@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libsixel\\Libsixel",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-message.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libsixel"
-      ],
-      "checkIfExists": [
-        "brew list libsixel"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libsixel-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libsixel"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libsixel-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libsixel"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libsixel-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libsixel"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libsixel-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libsixel-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libsixel-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libsixel-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libsixel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libsixel": {
       "symbol_prefix": "sixel",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libsixel"
+        ],
+        "check_if_exists": [
+          "brew list libsixel"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libsixel-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libsixel"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libsixel-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libsixel"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libsixel-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libsixel"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libsixel-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libsixel-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libsixel-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libsixel-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libsixel"
+        ]
+      }
+    }
+  }
 }

@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmsgpack\\Libmsgpack",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install msgpack"
-      ],
-      "checkIfExists": [
-        "brew list msgpack"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libmsgpack-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libmsgpackc"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libmsgpack-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libmsgpackc"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add msgpack-c-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e msgpack-c-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y msgpack-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q msgpack-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y msgpack-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q msgpack-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install msgpack"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libmsgpackc": {
       "symbol_prefix": "msgpack",
       "library_names": [
@@ -107,5 +53,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install msgpack"
+        ],
+        "check_if_exists": [
+          "brew list msgpack"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libmsgpack-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libmsgpackc"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libmsgpack-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libmsgpackc"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add msgpack-c-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e msgpack-c-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y msgpack-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q msgpack-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y msgpack-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q msgpack-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install msgpack"
+        ]
+      }
+    }
+  }
 }

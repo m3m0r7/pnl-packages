@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libopenal\\Libopenal",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-error-state.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install openal-soft"
-      ],
-      "checkIfExists": [
-        "brew list openal-soft"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libopenal-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists openal"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libopenal-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists openal"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add openal-soft-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists openal"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y openal-soft-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists openal"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y openal-soft-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists openal"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install openal-soft"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libopenal": {
       "symbol_prefix": "al",
       "library_names": [
@@ -107,5 +53,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install openal-soft"
+        ],
+        "check_if_exists": [
+          "brew list openal-soft"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libopenal-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists openal"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libopenal-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists openal"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add openal-soft-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists openal"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y openal-soft-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists openal"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y openal-soft-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists openal"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install openal-soft"
+        ]
+      }
+    }
+  }
 }

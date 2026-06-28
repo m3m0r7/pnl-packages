@@ -14,61 +14,6 @@
   "examples": [
     "EXAMPLES.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install protobuf-c"
-      ],
-      "checkIfExists": [
-        "brew list protobuf-c"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libprotobuf-c-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libprotobuf-c"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libprotobuf-c-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libprotobuf-c"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add protobuf-c-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libprotobuf-c"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y protobuf-c-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libprotobuf-c"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y protobuf-c-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libprotobuf-c"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install protobuf-c"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +36,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libprotobuf-c": {
       "symbol_prefix": "protobuf_c",
       "library_names": [
@@ -106,5 +51,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install protobuf-c"
+        ],
+        "check_if_exists": [
+          "brew list protobuf-c"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libprotobuf-c-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libprotobuf-c"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libprotobuf-c-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libprotobuf-c"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add protobuf-c-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libprotobuf-c"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y protobuf-c-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libprotobuf-c"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y protobuf-c-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libprotobuf-c"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install protobuf-c"
+        ]
+      }
+    }
+  }
 }

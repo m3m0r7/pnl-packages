@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libyajl\\Libyajl",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-status.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install yajl"
-      ],
-      "checkIfExists": [
-        "brew list yajl"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libyajl-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists yajl"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libyajl-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists yajl"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add yajl-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists yajl"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y yajl-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q yajl-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y yajl-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q yajl-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install yajl"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "yajl": {
       "symbol_prefix": "yajl",
       "library_names": [
@@ -107,5 +53,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install yajl"
+        ],
+        "check_if_exists": [
+          "brew list yajl"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libyajl-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists yajl"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libyajl-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists yajl"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add yajl-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists yajl"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y yajl-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q yajl-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y yajl-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q yajl-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install yajl"
+        ]
+      }
+    }
+  }
 }

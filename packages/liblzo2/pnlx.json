@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Liblzo2\\Liblzo2",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install lzo"
-      ],
-      "checkIfExists": [
-        "brew list lzo"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y liblzo2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists lzo2"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y liblzo2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists lzo2"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add lzo-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists lzo2"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y lzo-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q lzo-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y lzo-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q lzo-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install lzo"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "lzo2": {
       "symbol_prefix": "lzo",
       "library_names": [
@@ -107,5 +53,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install lzo"
+        ],
+        "check_if_exists": [
+          "brew list lzo"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y liblzo2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists lzo2"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y liblzo2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists lzo2"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add lzo-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists lzo2"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y lzo-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q lzo-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y lzo-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q lzo-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install lzo"
+        ]
+      }
+    }
+  }
 }

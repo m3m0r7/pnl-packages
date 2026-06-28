@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libpango\\Libpango",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-units.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install pango"
-      ],
-      "checkIfExists": [
-        "brew list pango"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libpango1.0-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists pango"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libpango1.0-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists pango"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add pango-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists pango"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y pango-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q pango-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y pango-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q pango-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install pango"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "pango": {
       "symbol_prefix": "pango",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install pango"
+        ],
+        "check_if_exists": [
+          "brew list pango"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libpango1.0-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists pango"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libpango1.0-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists pango"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add pango-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists pango"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y pango-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q pango-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y pango-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q pango-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install pango"
+        ]
+      }
+    }
+  }
 }

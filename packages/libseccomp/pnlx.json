@@ -14,48 +14,6 @@
   "examples": [
     "EXAMPLES.md"
   ],
-  "installation": {
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libseccomp-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libseccomp"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libseccomp-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libseccomp"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libseccomp-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libseccomp"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libseccomp-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libseccomp-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libseccomp-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libseccomp-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "linux",
@@ -66,7 +24,7 @@
       "arch": "aarch64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libseccomp": {
       "symbol_prefix": "seccomp",
       "library_names": [
@@ -79,5 +37,49 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libseccomp-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libseccomp"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libseccomp-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libseccomp"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libseccomp-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libseccomp"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libseccomp-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libseccomp-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libseccomp-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libseccomp-devel"
+        ]
+      }
+    }
+  }
 }

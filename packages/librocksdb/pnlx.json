@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Librocksdb\\Librocksdb",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-writebatch.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install rocksdb"
-      ],
-      "checkIfExists": [
-        "brew list rocksdb"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y librocksdb-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q librocksdb"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y librocksdb-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q librocksdb"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add rocksdb-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e rocksdb-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y rocksdb-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q rocksdb-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y rocksdb-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q rocksdb-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install rocksdb"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "librocksdb": {
       "symbol_prefix": "rocksdb",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install rocksdb"
+        ],
+        "check_if_exists": [
+          "brew list rocksdb"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y librocksdb-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q librocksdb"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y librocksdb-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q librocksdb"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add rocksdb-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e rocksdb-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y rocksdb-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q rocksdb-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y rocksdb-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q rocksdb-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install rocksdb"
+        ]
+      }
+    }
+  }
 }

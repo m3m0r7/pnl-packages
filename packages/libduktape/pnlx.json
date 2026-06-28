@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libduktape\\Libduktape",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-eval.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install duktape"
-      ],
-      "checkIfExists": [
-        "brew list duktape"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y duktape-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libduktape.so"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libduktape-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libduktape.so"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add duktape-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e duktape-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y duktape-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q duktape-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y duktape-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q duktape-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libduktape": {
       "symbol_prefix": "duk",
       "library_names": [
@@ -101,5 +52,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install duktape"
+        ],
+        "check_if_exists": [
+          "brew list duktape"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y duktape-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libduktape.so"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libduktape-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libduktape.so"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add duktape-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e duktape-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y duktape-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q duktape-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y duktape-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q duktape-devel"
+        ]
+      }
+    }
+  }
 }

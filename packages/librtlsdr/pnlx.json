@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Librtlsdr\\Librtlsdr",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-serial-lookup.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install librtlsdr"
-      ],
-      "checkIfExists": [
-        "brew list librtlsdr"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y librtlsdr-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q librtlsdr"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y librtlsdr-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q librtlsdr"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add librtlsdr-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e rtl-sdr-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y rtl-sdr-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q rtl-sdr-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y rtl-sdr-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q rtl-sdr-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "librtlsdr": {
       "symbol_prefix": "rtlsdr",
       "library_names": [
@@ -101,5 +52,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install librtlsdr"
+        ],
+        "check_if_exists": [
+          "brew list librtlsdr"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y librtlsdr-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q librtlsdr"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y librtlsdr-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q librtlsdr"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add librtlsdr-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e rtl-sdr-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y rtl-sdr-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q rtl-sdr-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y rtl-sdr-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q rtl-sdr-devel"
+        ]
+      }
+    }
+  }
 }

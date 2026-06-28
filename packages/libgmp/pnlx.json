@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libgmp\\Libgmp",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-float-precision.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install gmp"
-      ],
-      "checkIfExists": [
-        "brew list gmp"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libgmp-dev"
-      ],
-      "checkIfExists": [
-        "dpkg -s libgmp-dev >/dev/null 2>&1"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libgmp-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libgmp.so"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add gmp-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e gmp-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y gmp-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q gmp-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y gmp-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q gmp-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "gmp": {
       "library_names": [
         "libgmp.dylib",
@@ -100,5 +51,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install gmp"
+        ],
+        "check_if_exists": [
+          "brew list gmp"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libgmp-dev"
+        ],
+        "check_if_exists": [
+          "dpkg -s libgmp-dev >/dev/null 2>&1"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libgmp-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libgmp.so"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add gmp-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e gmp-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y gmp-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q gmp-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y gmp-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q gmp-devel"
+        ]
+      }
+    }
+  }
 }

@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libharfbuzz\\Libharfbuzz",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-scripts-and-tags.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install harfbuzz"
-      ],
-      "checkIfExists": [
-        "brew list harfbuzz"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libharfbuzz-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists harfbuzz"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libharfbuzz-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists harfbuzz"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add harfbuzz-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists harfbuzz"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y harfbuzz-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists harfbuzz"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y harfbuzz-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists harfbuzz"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install harfbuzz"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libharfbuzz": {
       "symbol_prefix": "hb",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install harfbuzz"
+        ],
+        "check_if_exists": [
+          "brew list harfbuzz"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libharfbuzz-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists harfbuzz"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libharfbuzz-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists harfbuzz"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add harfbuzz-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists harfbuzz"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y harfbuzz-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists harfbuzz"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y harfbuzz-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists harfbuzz"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install harfbuzz"
+        ]
+      }
+    }
+  }
 }

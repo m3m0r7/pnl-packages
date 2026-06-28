@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libass\\Libass",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libass"
-      ],
-      "checkIfExists": [
-        "brew list libass"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libass-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libass"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libass-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libass"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libass-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libass"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libass-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libass-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libass-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libass-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libass"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libass": {
       "symbol_prefix": "ass",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libass"
+        ],
+        "check_if_exists": [
+          "brew list libass"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libass-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libass"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libass-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libass"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libass-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libass"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libass-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libass-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libass-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libass-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libass"
+        ]
+      }
+    }
+  }
 }

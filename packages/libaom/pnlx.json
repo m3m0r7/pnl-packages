@@ -12,49 +12,28 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libaom\\Libaom",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-build-info.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install aom"
-      ],
-      "checkIfExists": [
-        "brew list aom"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libaom-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists aom"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libaom-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists aom"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libaom-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists aom"
-      ]
-    }
-  },
   "platforms": [
-    { "os": "darwin", "arch": "aarch64" },
-    { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" },
-    { "os": "linux", "arch": "aarch64" }
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
   ],
-  "requires": {
+  "native_libraries": {
     "aom": {
       "symbol_prefix": "aom",
       "library_names": [
@@ -69,5 +48,49 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install aom"
+        ],
+        "check_if_exists": [
+          "brew list aom"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libaom-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists aom"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libaom-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists aom"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add aom-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists aom"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libaom-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists aom"
+        ]
+      }
+    }
+  }
 }

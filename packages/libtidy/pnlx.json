@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libtidy\\Libtidy",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install tidy-html5"
-      ],
-      "checkIfExists": [
-        "brew list tidy-html5"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libtidy-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libtidy.so"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libtidy-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libtidy.so"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add tidyhtml-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e tidyhtml-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libtidy-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libtidy-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libtidy-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libtidy-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libtidy": {
       "symbol_prefix": "tidy",
       "library_names": [
@@ -104,5 +55,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install tidy-html5"
+        ],
+        "check_if_exists": [
+          "brew list tidy-html5"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libtidy-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libtidy.so"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libtidy-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libtidy.so"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add tidyhtml-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e tidyhtml-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libtidy-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libtidy-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libtidy-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libtidy-devel"
+        ]
+      }
+    }
+  }
 }

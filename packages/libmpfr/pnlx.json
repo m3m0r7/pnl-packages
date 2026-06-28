@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmpfr\\Libmpfr",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-buildinfo.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install mpfr"
-      ],
-      "checkIfExists": [
-        "brew list mpfr"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libmpfr-dev"
-      ],
-      "checkIfExists": [
-        "dpkg -s libmpfr-dev >/dev/null 2>&1"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libmpfr-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libmpfr"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add mpfr-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e mpfr-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y mpfr-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q mpfr-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y mpfr-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q mpfr-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libmpfr": {
       "symbol_prefix": "mpfr",
       "library_names": [
@@ -101,5 +52,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install mpfr"
+        ],
+        "check_if_exists": [
+          "brew list mpfr"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libmpfr-dev"
+        ],
+        "check_if_exists": [
+          "dpkg -s libmpfr-dev >/dev/null 2>&1"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libmpfr-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libmpfr"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add mpfr-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e mpfr-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y mpfr-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q mpfr-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y mpfr-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q mpfr-devel"
+        ]
+      }
+    }
+  }
 }

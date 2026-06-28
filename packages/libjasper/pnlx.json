@@ -3,29 +3,85 @@
   "name": "libjasper/libjasper",
   "version": "4.2.8",
   "description": "PHP FFI wrapper for JasPer, the JPEG-2000 codec library.",
-  "authors": [ { "name": "Libjasper maintainers" } ],
+  "authors": [
+    {
+      "name": "Libjasper maintainers"
+    }
+  ],
   "license": "JasPer-2.0",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libjasper\\Libjasper",
-  "examples": [ "EXAMPLES.md" ],
-  "installation": {
-    "darwin": { "install": [ "brew install jasper" ], "checkIfExists": [ "brew list jasper" ] },
-    "ubuntu": { "install": [ "sudo apt-get install -y libjasper-dev" ] },
-    "debian": { "install": [ "sudo apt-get install -y libjasper-dev" ] },
-    "fedora": { "install": [ "sudo dnf install -y jasper-devel" ] }
-  },
-  "platforms": [
-    { "os": "darwin", "arch": "aarch64" }, { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" }, { "os": "linux", "arch": "aarch64" }
+  "examples": [
+    "EXAMPLES.md",
+    "EXAMPLES-memory.md"
   ],
-  "requires": {
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "native_libraries": {
     "jasper": {
       "symbol_prefix": "jas",
-      "library_names": [ "libjasper.dylib", "libjasper.so", "jasper.dll" ],
-      "header_names": [ "jasper/jasper.h" ],
+      "library_names": [
+        "libjasper.dylib",
+        "libjasper.so",
+        "jasper.dll"
+      ],
+      "header_names": [
+        "jasper/jasper.h"
+      ],
       "version": ">=3.0.0 & <5.0.0",
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install jasper"
+        ],
+        "check_if_exists": [
+          "brew list jasper"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libjasper-dev"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libjasper-dev"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add jasper-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists jasper"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y jasper-devel"
+        ]
+      }
+    }
+  }
 }

@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libzip\\Libzip",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-capabilities.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libzip"
-      ],
-      "checkIfExists": [
-        "brew list libzip"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libzip-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libzip"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libzip-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libzip"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libzip-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libzip"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libzip-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libzip-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libzip-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libzip-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libzip"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libzip": {
       "symbol_prefix": "zip",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libzip"
+        ],
+        "check_if_exists": [
+          "brew list libzip"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libzip-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libzip"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libzip-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libzip"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libzip-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libzip"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libzip-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libzip-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libzip-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libzip-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libzip"
+        ]
+      }
+    }
+  }
 }

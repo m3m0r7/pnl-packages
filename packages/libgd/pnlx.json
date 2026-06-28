@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libgd\\Libgd",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install gd"
-      ],
-      "checkIfExists": [
-        "brew list gd"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libgd-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists gdlib"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libgd-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists gdlib"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add gd-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists gdlib"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y gd-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists gdlib"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y gd-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists gdlib"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libgd": {
       "symbol_prefix": "gd",
       "library_names": [
@@ -101,5 +52,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install gd"
+        ],
+        "check_if_exists": [
+          "brew list gd"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libgd-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists gdlib"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libgd-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists gdlib"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add gd-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists gdlib"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y gd-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists gdlib"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y gd-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists gdlib"
+        ]
+      }
+    }
+  }
 }

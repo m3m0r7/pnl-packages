@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libfontconfig\\Libfontconfig",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-weight.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install fontconfig"
-      ],
-      "checkIfExists": [
-        "brew list fontconfig"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libfontconfig1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists fontconfig"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libfontconfig1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists fontconfig"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add fontconfig-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists fontconfig"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y fontconfig-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q fontconfig-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y fontconfig-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q fontconfig-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install fontconfig"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "fontconfig": {
       "symbol_prefix": "Fc",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install fontconfig"
+        ],
+        "check_if_exists": [
+          "brew list fontconfig"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libfontconfig1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists fontconfig"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libfontconfig1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists fontconfig"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add fontconfig-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists fontconfig"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y fontconfig-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q fontconfig-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y fontconfig-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q fontconfig-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install fontconfig"
+        ]
+      }
+    }
+  }
 }

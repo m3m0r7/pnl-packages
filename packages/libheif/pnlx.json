@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libheif\\Libheif",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version-number.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libheif"
-      ],
-      "checkIfExists": [
-        "brew list libheif"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libheif-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libheif"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libheif-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libheif"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libheif-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libheif"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libheif-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libheif"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libheif-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libheif"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libheif"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libheif": {
       "symbol_prefix": "heif",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libheif"
+        ],
+        "check_if_exists": [
+          "brew list libheif"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libheif-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libheif"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libheif-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libheif"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libheif-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libheif"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libheif-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libheif"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libheif-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libheif"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libheif"
+        ]
+      }
+    }
+  }
 }

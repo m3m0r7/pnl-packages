@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libcjson\\Libcjson",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-build.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install cjson"
-      ],
-      "checkIfExists": [
-        "brew list cjson"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libcjson-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcjson"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libcjson-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcjson"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add cjson-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcjson"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y cjson-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcjson"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y cjson-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libcjson"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install cjson"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "cjson": {
       "symbol_prefix": "cJSON",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install cjson"
+        ],
+        "check_if_exists": [
+          "brew list cjson"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libcjson-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcjson"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libcjson-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcjson"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add cjson-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcjson"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y cjson-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcjson"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y cjson-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libcjson"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install cjson"
+        ]
+      }
+    }
+  }
 }

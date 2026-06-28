@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libnghttp2\\Libnghttp2",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-error-introspection.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install nghttp2"
-      ],
-      "checkIfExists": [
-        "brew list nghttp2"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libnghttp2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libnghttp2"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libnghttp2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libnghttp2"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add nghttp2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libnghttp2"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libnghttp2-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libnghttp2"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libnghttp2-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libnghttp2"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install nghttp2"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libnghttp2": {
       "symbol_prefix": "nghttp2",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install nghttp2"
+        ],
+        "check_if_exists": [
+          "brew list nghttp2"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libnghttp2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libnghttp2"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libnghttp2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libnghttp2"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add nghttp2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libnghttp2"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libnghttp2-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libnghttp2"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libnghttp2-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libnghttp2"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install nghttp2"
+        ]
+      }
+    }
+  }
 }

@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libpng\\Libpng",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libpng"
-      ],
-      "checkIfExists": [
-        "brew list libpng"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libpng-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libpng"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libpng-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libpng"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libpng-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libpng"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libpng-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libpng"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libpng-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libpng"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libpng"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libpng": {
       "symbol_prefix": "png",
       "library_names": [
@@ -107,5 +53,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libpng"
+        ],
+        "check_if_exists": [
+          "brew list libpng"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libpng-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libpng"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libpng-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libpng"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libpng-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libpng"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libpng-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libpng"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libpng-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libpng"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libpng"
+        ]
+      }
+    }
+  }
 }

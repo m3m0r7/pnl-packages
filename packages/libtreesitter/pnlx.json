@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libtreesitter\\Libtreesitter",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-query-cursor.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install tree-sitter"
-      ],
-      "checkIfExists": [
-        "brew list tree-sitter"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libtree-sitter-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists tree-sitter"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libtree-sitter-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists tree-sitter"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add tree-sitter-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists tree-sitter"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libtree-sitter-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists tree-sitter"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libtree-sitter-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists tree-sitter"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libtree-sitter": {
       "symbol_prefix": "ts",
       "library_names": [
@@ -101,5 +52,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install tree-sitter"
+        ],
+        "check_if_exists": [
+          "brew list tree-sitter"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libtree-sitter-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists tree-sitter"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libtree-sitter-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists tree-sitter"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add tree-sitter-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists tree-sitter"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libtree-sitter-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists tree-sitter"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libtree-sitter-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists tree-sitter"
+        ]
+      }
+    }
+  }
 }

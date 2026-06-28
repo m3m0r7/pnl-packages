@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libsoxr\\Libsoxr",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version-macro.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libsoxr"
-      ],
-      "checkIfExists": [
-        "brew list libsoxr"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libsoxr-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists soxr"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libsoxr-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists soxr"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add soxr-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists soxr"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y soxr-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q soxr-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y soxr-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q soxr-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install soxr"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "soxr": {
       "symbol_prefix": "soxr",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libsoxr"
+        ],
+        "check_if_exists": [
+          "brew list libsoxr"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libsoxr-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists soxr"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libsoxr-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists soxr"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add soxr-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists soxr"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y soxr-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q soxr-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y soxr-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q soxr-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install soxr"
+        ]
+      }
+    }
+  }
 }

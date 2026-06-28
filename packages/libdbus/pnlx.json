@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libdbus\\Libdbus",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-message-types.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install dbus"
-      ],
-      "checkIfExists": [
-        "brew list dbus"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libdbus-1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists dbus-1"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libdbus-1-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists dbus-1"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add dbus-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists dbus-1"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y dbus-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists dbus-1"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y dbus-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists dbus-1"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libdbus-1": {
       "symbol_prefix": "dbus",
       "library_names": [
@@ -102,5 +53,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install dbus"
+        ],
+        "check_if_exists": [
+          "brew list dbus"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libdbus-1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists dbus-1"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libdbus-1-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists dbus-1"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add dbus-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists dbus-1"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y dbus-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists dbus-1"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y dbus-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists dbus-1"
+        ]
+      }
+    }
+  }
 }

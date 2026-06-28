@@ -12,49 +12,28 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libdav1d\\Libdav1d",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-api-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install dav1d"
-      ],
-      "checkIfExists": [
-        "brew list dav1d"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libdav1d-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists dav1d"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libdav1d-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists dav1d"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libdav1d-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists dav1d"
-      ]
-    }
-  },
   "platforms": [
-    { "os": "darwin", "arch": "aarch64" },
-    { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" },
-    { "os": "linux", "arch": "aarch64" }
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
   ],
-  "requires": {
+  "native_libraries": {
     "dav1d": {
       "symbol_prefix": "dav1d",
       "library_names": [
@@ -69,5 +48,49 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install dav1d"
+        ],
+        "check_if_exists": [
+          "brew list dav1d"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libdav1d-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists dav1d"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libdav1d-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists dav1d"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add dav1d-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists dav1d"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libdav1d-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists dav1d"
+        ]
+      }
+    }
+  }
 }

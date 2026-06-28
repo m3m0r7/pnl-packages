@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libspeex\\Libspeex",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-bits.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install speex"
-      ],
-      "checkIfExists": [
-        "brew list speex"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libspeex-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists speex"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libspeex-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists speex"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add speex-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists speex"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y speex-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q speex-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y speex-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q speex-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install speex"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "speex": {
       "symbol_prefix": "speex",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install speex"
+        ],
+        "check_if_exists": [
+          "brew list speex"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libspeex-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists speex"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libspeex-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists speex"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add speex-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists speex"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y speex-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q speex-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y speex-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q speex-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install speex"
+        ]
+      }
+    }
+  }
 }

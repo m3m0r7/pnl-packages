@@ -3,32 +3,94 @@
   "name": "libnss/libnss",
   "version": "3.99.0",
   "description": "PHP FFI wrapper for NSS, the Network Security Services crypto library.",
-  "authors": [ { "name": "Libnss maintainers" } ],
+  "authors": [
+    {
+      "name": "Libnss maintainers"
+    }
+  ],
   "license": "MPL-2.0",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libnss\\Libnss",
-  "examples": [ "EXAMPLES.md" ],
-  "installation": {
-    "darwin": { "install": [ "brew install nss" ], "checkIfExists": [ "brew list nss" ] },
-    "ubuntu": { "install": [ "sudo apt-get install -y libnss3-dev" ],
-      "checkIfExists": [ "pkg-config --exists nss" ] },
-    "debian": { "install": [ "sudo apt-get install -y libnss3-dev" ],
-      "checkIfExists": [ "pkg-config --exists nss" ] },
-    "fedora": { "install": [ "sudo dnf install -y nss-devel" ],
-      "checkIfExists": [ "pkg-config --exists nss" ] }
-  },
-  "platforms": [
-    { "os": "darwin", "arch": "aarch64" }, { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" }, { "os": "linux", "arch": "aarch64" }
+  "examples": [
+    "EXAMPLES.md",
+    "EXAMPLES-version-check.md"
   ],
-  "requires": {
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "native_libraries": {
     "nss": {
       "symbol_prefix": "NSS",
-      "library_names": [ "libnss3.dylib", "libnss3.so", "nss3.dll" ],
-      "header_names": [ "nss.h" ],
+      "library_names": [
+        "libnss3.dylib",
+        "libnss3.so",
+        "nss3.dll"
+      ],
+      "header_names": [
+        "nss.h"
+      ],
       "version": ">=3.0.0 & <4.0.0",
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install nss"
+        ],
+        "check_if_exists": [
+          "brew list nss"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libnss3-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists nss"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libnss3-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists nss"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add nss-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists nss"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y nss-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists nss"
+        ]
+      }
+    }
+  }
 }

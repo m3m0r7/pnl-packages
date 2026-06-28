@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libportaudio\\Libportaudio",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install portaudio"
-      ],
-      "checkIfExists": [
-        "brew list portaudio"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y portaudio19-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists portaudio-2.0"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y portaudio19-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists portaudio-2.0"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add portaudio-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists portaudio-2.0"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y portaudio-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists portaudio-2.0"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y portaudio-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists portaudio-2.0"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install portaudio"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libportaudio": {
       "symbol_prefix": "Pa",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install portaudio"
+        ],
+        "check_if_exists": [
+          "brew list portaudio"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y portaudio19-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists portaudio-2.0"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y portaudio19-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists portaudio-2.0"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add portaudio-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists portaudio-2.0"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y portaudio-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists portaudio-2.0"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y portaudio-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists portaudio-2.0"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install portaudio"
+        ]
+      }
+    }
+  }
 }

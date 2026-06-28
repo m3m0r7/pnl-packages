@@ -14,56 +14,6 @@
   "examples": [
     "EXAMPLES.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install tinycc"
-      ],
-      "checkIfExists": [
-        "brew list tinycc"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libtcc-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libtcc.so"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libtcc-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libtcc.so"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add tcc"
-      ],
-      "checkIfExists": [
-        "apk info -e tcc"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y tcc"
-      ],
-      "checkIfExists": [
-        "rpm -q tcc"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y tcc"
-      ],
-      "checkIfExists": [
-        "rpm -q tcc"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -78,7 +28,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libtcc": {
       "symbol_prefix": "tcc",
       "library_names": [
@@ -93,5 +43,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install tinycc"
+        ],
+        "check_if_exists": [
+          "brew list tinycc"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libtcc-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libtcc.so"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libtcc-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libtcc.so"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add tcc"
+        ],
+        "check_if_exists": [
+          "apk info -e tcc"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y tcc"
+        ],
+        "check_if_exists": [
+          "rpm -q tcc"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y tcc"
+        ],
+        "check_if_exists": [
+          "rpm -q tcc"
+        ]
+      }
+    }
+  }
 }

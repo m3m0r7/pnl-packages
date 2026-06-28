@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libraw\\Libraw",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libraw"
-      ],
-      "checkIfExists": [
-        "brew list libraw"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libraw-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libraw"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libraw-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libraw"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libraw-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libraw"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y LibRaw-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q LibRaw-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y LibRaw-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q LibRaw-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libraw"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libraw": {
       "symbol_prefix": "libraw",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libraw"
+        ],
+        "check_if_exists": [
+          "brew list libraw"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libraw-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libraw"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libraw-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libraw"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libraw-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libraw"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y LibRaw-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q LibRaw-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y LibRaw-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q LibRaw-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libraw"
+        ]
+      }
+    }
+  }
 }

@@ -14,56 +14,6 @@
   "examples": [
     "EXAMPLES.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install quickjs"
-      ],
-      "checkIfExists": [
-        "brew list quickjs"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y quickjs"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libquickjs"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y quickjs"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libquickjs"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add quickjs-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e quickjs-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y quickjs-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q quickjs-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y quickjs-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q quickjs-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -88,7 +38,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libquickjs": {
       "symbol_prefix": "JS",
       "library_names": [
@@ -104,5 +54,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install quickjs"
+        ],
+        "check_if_exists": [
+          "brew list quickjs"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y quickjs"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libquickjs"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y quickjs"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libquickjs"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add quickjs-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e quickjs-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y quickjs-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q quickjs-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y quickjs-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q quickjs-devel"
+        ]
+      }
+    }
+  }
 }

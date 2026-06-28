@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libconfig\\Libconfig",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-options.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libconfig"
-      ],
-      "checkIfExists": [
-        "brew list libconfig"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libconfig-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libconfig"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libconfig-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libconfig"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libconfig-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libconfig"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libconfig-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libconfig-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libconfig-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libconfig-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libconfig"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libconfig": {
       "symbol_prefix": "config",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libconfig"
+        ],
+        "check_if_exists": [
+          "brew list libconfig"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libconfig-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libconfig"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libconfig-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libconfig"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libconfig-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libconfig"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libconfig-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libconfig-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libconfig-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libconfig-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libconfig"
+        ]
+      }
+    }
+  }
 }

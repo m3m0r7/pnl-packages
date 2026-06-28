@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libgit2\\Libgit2",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-features.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libgit2"
-      ],
-      "checkIfExists": [
-        "brew list libgit2"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libgit2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libgit2"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libgit2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libgit2"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libgit2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libgit2"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libgit2-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libgit2"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libgit2-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libgit2"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libgit2"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libgit2": {
       "symbol_prefix": "git",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libgit2"
+        ],
+        "check_if_exists": [
+          "brew list libgit2"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libgit2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libgit2"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libgit2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libgit2"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libgit2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libgit2"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libgit2-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libgit2"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libgit2-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libgit2"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libgit2"
+        ]
+      }
+    }
+  }
 }

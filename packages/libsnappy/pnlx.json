@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libsnappy\\Libsnappy",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-validate.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install snappy"
-      ],
-      "checkIfExists": [
-        "brew list snappy"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libsnappy-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libsnappy"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libsnappy-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libsnappy"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add snappy-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e snappy-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y snappy-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q snappy-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y snappy-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q snappy-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install snappy"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "snappy": {
       "symbol_prefix": "snappy",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install snappy"
+        ],
+        "check_if_exists": [
+          "brew list snappy"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libsnappy-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libsnappy"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libsnappy-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libsnappy"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add snappy-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e snappy-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y snappy-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q snappy-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y snappy-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q snappy-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install snappy"
+        ]
+      }
+    }
+  }
 }

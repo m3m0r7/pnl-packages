@@ -12,42 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmecab\\Libmecab",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-nbest.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install mecab mecab-ipadic"
-      ],
-      "checkIfExists": [
-        "brew list mecab"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libmecab-dev mecab-ipadic-utf8"
-      ],
-      "checkIfExists": [
-        "mecab-config --version"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libmecab-dev mecab-ipadic-utf8"
-      ],
-      "checkIfExists": [
-        "mecab-config --version"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y mecab-devel"
-      ],
-      "checkIfExists": [
-        "mecab-config --version"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -66,7 +33,7 @@
       "arch": "aarch64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "mecab": {
       "symbol_prefix": "mecab",
       "library_names": [
@@ -81,5 +48,41 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install mecab mecab-ipadic"
+        ],
+        "check_if_exists": [
+          "brew list mecab"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libmecab-dev mecab-ipadic-utf8"
+        ],
+        "check_if_exists": [
+          "mecab-config --version"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libmecab-dev mecab-ipadic-utf8"
+        ],
+        "check_if_exists": [
+          "mecab-config --version"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y mecab-devel"
+        ],
+        "check_if_exists": [
+          "mecab-config --version"
+        ]
+      }
+    }
+  }
 }

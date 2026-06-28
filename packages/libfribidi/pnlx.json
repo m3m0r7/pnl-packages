@@ -3,32 +3,94 @@
   "name": "libfribidi/libfribidi",
   "version": "1.0.16",
   "description": "PHP FFI wrapper for GNU FriBidi, the Unicode bidirectional algorithm.",
-  "authors": [ { "name": "Libfribidi maintainers" } ],
+  "authors": [
+    {
+      "name": "Libfribidi maintainers"
+    }
+  ],
   "license": "LGPL-2.1-or-later",
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libfribidi\\Libfribidi",
-  "examples": [ "EXAMPLES.md" ],
-  "installation": {
-    "darwin": { "install": [ "brew install fribidi" ], "checkIfExists": [ "brew list fribidi" ] },
-    "ubuntu": { "install": [ "sudo apt-get install -y libfribidi-dev" ],
-      "checkIfExists": [ "pkg-config --exists fribidi" ] },
-    "debian": { "install": [ "sudo apt-get install -y libfribidi-dev" ],
-      "checkIfExists": [ "pkg-config --exists fribidi" ] },
-    "fedora": { "install": [ "sudo dnf install -y fribidi-devel" ],
-      "checkIfExists": [ "pkg-config --exists fribidi" ] }
-  },
-  "platforms": [
-    { "os": "darwin", "arch": "aarch64" }, { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" }, { "os": "linux", "arch": "aarch64" }
+  "examples": [
+    "EXAMPLES.md",
+    "EXAMPLES-joining-and-charsets.md"
   ],
-  "requires": {
+  "platforms": [
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
+  ],
+  "native_libraries": {
     "fribidi": {
       "symbol_prefix": "fribidi",
-      "library_names": [ "libfribidi.dylib", "libfribidi.so", "fribidi.dll" ],
-      "header_names": [ "fribidi/fribidi.h" ],
+      "library_names": [
+        "libfribidi.dylib",
+        "libfribidi.so",
+        "fribidi.dll"
+      ],
+      "header_names": [
+        "fribidi/fribidi.h"
+      ],
       "version": ">=1.0.0 & <2.0.0",
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install fribidi"
+        ],
+        "check_if_exists": [
+          "brew list fribidi"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libfribidi-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists fribidi"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libfribidi-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists fribidi"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add fribidi-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists fribidi"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y fribidi-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists fribidi"
+        ]
+      }
+    }
+  }
 }

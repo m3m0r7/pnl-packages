@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libxxhash\\Libxxhash",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-oneshot.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install xxhash"
-      ],
-      "checkIfExists": [
-        "brew list xxhash"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libxxhash-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libxxhash"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libxxhash-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libxxhash"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add xxhash-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libxxhash"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y xxhash-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q xxhash-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y xxhash-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q xxhash-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libxxhash": {
       "symbol_prefix": "XXH",
       "library_names": [
@@ -101,5 +52,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install xxhash"
+        ],
+        "check_if_exists": [
+          "brew list xxhash"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libxxhash-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libxxhash"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libxxhash-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libxxhash"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add xxhash-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libxxhash"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y xxhash-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q xxhash-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y xxhash-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q xxhash-devel"
+        ]
+      }
+    }
+  }
 }

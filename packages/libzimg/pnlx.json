@@ -12,49 +12,28 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libzimg\\Libzimg",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-buffer-math.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install zimg"
-      ],
-      "checkIfExists": [
-        "brew list zimg"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libzimg-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists zimg"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libzimg-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists zimg"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y zimg-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists zimg"
-      ]
-    }
-  },
   "platforms": [
-    { "os": "darwin", "arch": "aarch64" },
-    { "os": "darwin", "arch": "x86_64" },
-    { "os": "linux", "arch": "x86_64" },
-    { "os": "linux", "arch": "aarch64" }
+    {
+      "os": "darwin",
+      "arch": "aarch64"
+    },
+    {
+      "os": "darwin",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "x86_64"
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64"
+    }
   ],
-  "requires": {
+  "native_libraries": {
     "zimg": {
       "symbol_prefix": "zimg",
       "library_names": [
@@ -69,5 +48,49 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install zimg"
+        ],
+        "check_if_exists": [
+          "brew list zimg"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libzimg-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists zimg"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libzimg-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists zimg"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add zimg-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists zimg"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y zimg-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists zimg"
+        ]
+      }
+    }
+  }
 }

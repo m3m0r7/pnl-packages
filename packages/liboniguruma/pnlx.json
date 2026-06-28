@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Liboniguruma\\Liboniguruma",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-runtime-limits.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install oniguruma"
-      ],
-      "checkIfExists": [
-        "brew list oniguruma"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libonig-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists oniguruma"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libonig-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists oniguruma"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add oniguruma-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists oniguruma"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y oniguruma-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists oniguruma"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y oniguruma-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists oniguruma"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libonig": {
       "symbol_prefix": "onig",
       "library_names": [
@@ -101,5 +52,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install oniguruma"
+        ],
+        "check_if_exists": [
+          "brew list oniguruma"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libonig-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists oniguruma"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libonig-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists oniguruma"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add oniguruma-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists oniguruma"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y oniguruma-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists oniguruma"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y oniguruma-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists oniguruma"
+        ]
+      }
+    }
+  }
 }

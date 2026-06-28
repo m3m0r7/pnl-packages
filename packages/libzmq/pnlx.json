@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libzmq\\Libzmq",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-diagnostics.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install zeromq"
-      ],
-      "checkIfExists": [
-        "brew list zeromq"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libzmq3-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libzmq"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libzmq3-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libzmq"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add zeromq-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libzmq"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y zeromq-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q zeromq-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y zeromq-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q zeromq-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install zeromq"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libzmq": {
       "symbol_prefix": "zmq",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install zeromq"
+        ],
+        "check_if_exists": [
+          "brew list zeromq"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libzmq3-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libzmq"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libzmq3-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libzmq"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add zeromq-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libzmq"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y zeromq-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q zeromq-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y zeromq-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q zeromq-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install zeromq"
+        ]
+      }
+    }
+  }
 }

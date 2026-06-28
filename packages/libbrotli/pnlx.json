@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libbrotli\\Libbrotli",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-decoder-info.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install brotli"
-      ],
-      "checkIfExists": [
-        "brew list brotli"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libbrotli-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libbrotlidec"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libbrotli-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libbrotlidec"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add brotli-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libbrotlidec"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y brotli-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libbrotlidec"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y brotli-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libbrotlidec"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install brotli"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libbrotlidec": {
       "symbol_prefix": "Brotli",
       "library_names": [
@@ -117,5 +63,62 @@
         ]
       }
     ]
+  },
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install brotli"
+        ],
+        "check_if_exists": [
+          "brew list brotli"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libbrotli-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libbrotlidec"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libbrotli-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libbrotlidec"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add brotli-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libbrotlidec"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y brotli-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libbrotlidec"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y brotli-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libbrotlidec"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install brotli"
+        ]
+      }
+    }
   }
 }

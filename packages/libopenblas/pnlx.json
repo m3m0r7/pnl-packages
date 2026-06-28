@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libopenblas\\Libopenblas",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-runtime-config.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install openblas"
-      ],
-      "checkIfExists": [
-        "brew list openblas"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libopenblas-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists openblas"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libopenblas-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists openblas"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add openblas-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists openblas"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y openblas-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists openblas"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y openblas-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists openblas"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install openblas"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libopenblas": {
       "symbol_prefix": "cblas",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install openblas"
+        ],
+        "check_if_exists": [
+          "brew list openblas"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libopenblas-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists openblas"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libopenblas-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists openblas"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add openblas-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists openblas"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y openblas-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists openblas"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y openblas-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists openblas"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install openblas"
+        ]
+      }
+    }
+  }
 }

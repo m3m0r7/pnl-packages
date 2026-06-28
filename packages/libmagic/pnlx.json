@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libmagic\\Libmagic",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libmagic"
-      ],
-      "checkIfExists": [
-        "brew list libmagic"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libmagic-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libmagic"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libmagic-dev"
-      ],
-      "checkIfExists": [
-        "ldconfig -p | grep -q libmagic"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add file-dev"
-      ],
-      "checkIfExists": [
-        "apk info -e file-dev"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y file-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q file-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y file-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q file-devel"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libmagic": {
       "symbol_prefix": "magic",
       "library_names": [
@@ -101,5 +52,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libmagic"
+        ],
+        "check_if_exists": [
+          "brew list libmagic"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libmagic-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libmagic"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libmagic-dev"
+        ],
+        "check_if_exists": [
+          "ldconfig -p | grep -q libmagic"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add file-dev"
+        ],
+        "check_if_exists": [
+          "apk info -e file-dev"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y file-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q file-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y file-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q file-devel"
+        ]
+      }
+    }
+  }
 }

@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libpopt\\Libpopt",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-file-sanity.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install popt"
-      ],
-      "checkIfExists": [
-        "brew list popt"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libpopt-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists popt"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libpopt-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists popt"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add popt-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists popt"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y popt-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q popt-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y popt-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q popt-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install popt"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "popt": {
       "symbol_prefix": "popt",
       "library_names": [
@@ -106,5 +52,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install popt"
+        ],
+        "check_if_exists": [
+          "brew list popt"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libpopt-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists popt"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libpopt-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists popt"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add popt-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists popt"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y popt-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q popt-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y popt-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q popt-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install popt"
+        ]
+      }
+    }
+  }
 }

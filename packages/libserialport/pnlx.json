@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libserialport\\Libserialport",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-version.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libserialport"
-      ],
-      "checkIfExists": [
-        "brew list libserialport"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libserialport-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libserialport"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libserialport-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libserialport"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libserialport-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libserialport"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libserialport-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libserialport"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libserialport-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libserialport"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libserialport"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -93,7 +39,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libserialport": {
       "symbol_prefix": "sp",
       "library_names": [
@@ -108,5 +54,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libserialport"
+        ],
+        "check_if_exists": [
+          "brew list libserialport"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libserialport-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libserialport"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libserialport-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libserialport"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libserialport-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libserialport"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libserialport-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libserialport"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libserialport-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libserialport"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libserialport"
+        ]
+      }
+    }
+  }
 }

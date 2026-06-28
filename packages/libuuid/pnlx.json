@@ -14,56 +14,6 @@
   "examples": [
     "EXAMPLES.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install ossp-uuid"
-      ],
-      "checkIfExists": [
-        "brew list ossp-uuid"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y uuid-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists uuid"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y uuid-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists uuid"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add util-linux-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists uuid"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libuuid-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists uuid"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libuuid-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists uuid"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +36,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libuuid": {
       "symbol_prefix": "uuid",
       "library_names": [
@@ -101,5 +51,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install ossp-uuid"
+        ],
+        "check_if_exists": [
+          "brew list ossp-uuid"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y uuid-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists uuid"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y uuid-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists uuid"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add util-linux-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists uuid"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libuuid-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists uuid"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libuuid-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists uuid"
+        ]
+      }
+    }
+  }
 }

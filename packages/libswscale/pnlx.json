@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libswscale\\Libswscale",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-format-support.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install ffmpeg"
-      ],
-      "checkIfExists": [
-        "brew list ffmpeg"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libswscale-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libswscale"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libswscale-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libswscale"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add ffmpeg-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libswscale"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y ffmpeg-free-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libswscale"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y ffmpeg-free-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libswscale"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libswscale": {
       "symbol_prefix": "sws",
       "library_names": [
@@ -101,5 +52,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install ffmpeg"
+        ],
+        "check_if_exists": [
+          "brew list ffmpeg"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libswscale-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libswscale"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libswscale-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libswscale"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add ffmpeg-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libswscale"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y ffmpeg-free-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libswscale"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y ffmpeg-free-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libswscale"
+        ]
+      }
+    }
+  }
 }

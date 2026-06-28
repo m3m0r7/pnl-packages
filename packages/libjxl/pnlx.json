@@ -12,63 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libjxl\\Libjxl",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-encoder-quality.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install jpeg-xl"
-      ],
-      "checkIfExists": [
-        "brew list jpeg-xl"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libjxl-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libjxl"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libjxl-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libjxl"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libjxl-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libjxl"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libjxl-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libjxl-devel"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libjxl-devel"
-      ],
-      "checkIfExists": [
-        "rpm -q libjxl-devel"
-      ]
-    },
-    "windows": {
-      "install": [
-        "vcpkg install libjxl"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -91,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libjxl": {
       "symbol_prefix": "Jxl",
       "library_names": [
@@ -107,5 +53,62 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install jpeg-xl"
+        ],
+        "check_if_exists": [
+          "brew list jpeg-xl"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libjxl-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libjxl"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libjxl-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libjxl"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libjxl-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libjxl"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libjxl-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libjxl-devel"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libjxl-devel"
+        ],
+        "check_if_exists": [
+          "rpm -q libjxl-devel"
+        ]
+      },
+      "windows": {
+        "commands": [
+          "vcpkg install libjxl"
+        ]
+      }
+    }
+  }
 }

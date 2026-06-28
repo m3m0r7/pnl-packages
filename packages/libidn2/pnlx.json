@@ -12,58 +12,9 @@
   "entrypoint": "src/generated/index.php",
   "class": "Pnlx\\Libidn2\\Libidn2",
   "examples": [
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "EXAMPLES-error-codes.md"
   ],
-  "installation": {
-    "darwin": {
-      "install": [
-        "brew install libidn2"
-      ],
-      "checkIfExists": [
-        "brew list libidn2"
-      ]
-    },
-    "ubuntu": {
-      "install": [
-        "sudo apt-get install -y libidn2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libidn2"
-      ]
-    },
-    "debian": {
-      "install": [
-        "sudo apt-get install -y libidn2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libidn2"
-      ]
-    },
-    "alpine": {
-      "install": [
-        "apk add libidn2-dev"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libidn2"
-      ]
-    },
-    "fedora": {
-      "install": [
-        "sudo dnf install -y libidn2-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libidn2"
-      ]
-    },
-    "rhel": {
-      "install": [
-        "sudo dnf install -y libidn2-devel"
-      ],
-      "checkIfExists": [
-        "pkg-config --exists libidn2"
-      ]
-    }
-  },
   "platforms": [
     {
       "os": "darwin",
@@ -86,7 +37,7 @@
       "arch": "x86_64"
     }
   ],
-  "requires": {
+  "native_libraries": {
     "libidn2": {
       "symbol_prefix": "idn2",
       "library_names": [
@@ -101,5 +52,57 @@
       "required": true
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "setup": {
+    "install": {
+      "darwin": {
+        "commands": [
+          "brew install libidn2"
+        ],
+        "check_if_exists": [
+          "brew list libidn2"
+        ]
+      },
+      "ubuntu": {
+        "commands": [
+          "sudo apt-get install -y libidn2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libidn2"
+        ]
+      },
+      "debian": {
+        "commands": [
+          "sudo apt-get install -y libidn2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libidn2"
+        ]
+      },
+      "alpine": {
+        "commands": [
+          "apk add libidn2-dev"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libidn2"
+        ]
+      },
+      "fedora": {
+        "commands": [
+          "sudo dnf install -y libidn2-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libidn2"
+        ]
+      },
+      "rhel": {
+        "commands": [
+          "sudo dnf install -y libidn2-devel"
+        ],
+        "check_if_exists": [
+          "pkg-config --exists libidn2"
+        ]
+      }
+    }
+  }
 }
